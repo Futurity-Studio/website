@@ -1,6 +1,6 @@
 {
-  "name": "with-netlify-cms",
-  "version": "1.0.0",
+  "name": "futurity-website",
+  "version": "0.1.0",
   "license": "ISC",
   "scripts": {
     "dev": "next",
