@@ -2,7 +2,7 @@ backend:
   name: git-gateway
 #  name: test-repo
   branch: master
-media_folder: static/img
+media_folder: assets/img
 slug:
   encoding: 'ascii'
   clean_accents: true
