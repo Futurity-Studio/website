@@ -1,0 +1,10 @@
+.footer{
+  .section-content{
+    // alignment inverse of divided content
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    grid-template-rows: 1fr;
+    column-gap: 152px;
+    align-items: center;
+  }
+}

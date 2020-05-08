@@ -1,0 +1,27 @@
+@import "theme/_constants";
+
+.work-banner{
+  &--content {
+    max-width: $main--width-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $content-padding $main--padding;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    span {
+      display: none;
+    }
+  }
+  &:hover {
+    background-color: mediumturquoise;
+    span {
+      display: inline-block;
+    }
+  }
+}

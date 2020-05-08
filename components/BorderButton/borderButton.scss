@@ -1,0 +1,17 @@
+@import "theme/_constants";
+.button-border{
+  padding: $content-padding*.75 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: calc( (100vw - #{$section-width}) / 2 ) 20ch 1fr;
+  align-items: center;
+  &--button{
+
+  }
+  &--line{
+    height: $line--thickness;
+    background-color: $line--color;
+    position: relative;
+    top: 1px;
+  }
+}

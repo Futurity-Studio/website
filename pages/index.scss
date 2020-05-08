@@ -1,0 +1,62 @@
+@import "../theme/_constants";
+
+.index{
+  .hero-banner {
+    position: relative;
+    background: url("/assets/img/hero-banner--background.png") center no-repeat;
+    background-size: cover;
+    padding: $section-padding+$menu--closed-height $main--padding;
+    height: 80vh;
+    height: calc(var(--vh, 1vh) * 80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+
+
+    &--content{
+      margin: 0 auto;
+      //max-width: $main--width-max;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      > div:nth-of-type(1){
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        justify-self: end;
+        align-self: end;
+        background: url("/assets/img/blob_diffusion.png") center no-repeat;
+        background-size: contain;
+        height: 80vh;
+        height: calc(var(--vh, 1vh) * 80);
+        width: 60%;
+
+      }
+      > div:nth-of-type(2) {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        justify-self: start;
+        align-self: center;
+        padding-left: calc((100vw - #{$main--width-max}) / 2);
+        max-width: 70ch;
+      }
+    }
+  }
+
+  .event-banner{
+
+  }
+
+  .approach-banner{
+    background: url("/assets/img/approach-banner--background.png") center no-repeat;
+    background-size: cover;
+  }
+
+  section:nth-of-type(2){
+    padding-bottom: 0;
+  }
+
+
+}

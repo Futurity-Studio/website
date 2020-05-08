@@ -10,9 +10,14 @@
     "deploy": "npm run build && next export"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "framer-motion": "^1.10.3",
     "next": "latest",
+    "nextjs-sitemap-generator": "^1.0.0",
+    "node-sass": "^4.14.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-normalize": "^0.4.4"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^2.0.0"

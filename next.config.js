@@ -1,7 +1,10 @@
-const fs = require('fs')
-const blogPostsFolder = './content/blogPosts'
+const fs = require('fs');
+const blogPostsFolder = './content/blogPosts';
+const withSass = require('@zeit/next-sass');
 
-const getPathsForPosts = () =>
+// do this for SEO - https://snipcart.com/blog/react-seo-nextjs-tutorial
+
+const getPathsForPosts = () => {
   fs.readdirSync(blogPostsFolder).reduce((acc, blogName) => {
     const trimmedName = blogName.substring(0, blogName.length - 3)
     return Object.assign(acc, {
@@ -13,8 +16,9 @@ const getPathsForPosts = () =>
       },
     })
   }, {})
+};
 
-module.exports = {
+module.exports = withSass({
   webpack: configuration => {
     configuration.module.rules.push({
       test: /\.md$/,
@@ -28,4 +32,4 @@ module.exports = {
       ...getPathsForPosts(),
     }
   },
-}
+});

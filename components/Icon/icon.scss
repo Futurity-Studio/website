@@ -1,0 +1,28 @@
+@import "theme/constants";
+
+.icon {
+  font-size: initial !important;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.dark {
+
+    svg,
+    g,
+    mask,
+    use {
+      fill: $icon-dark;
+    }
+
+  }
+
+}
