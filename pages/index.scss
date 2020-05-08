@@ -12,11 +12,10 @@
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
-
+    overflow: hidden;
 
     &--content{
       margin: 0 auto;
-      //max-width: $main--width-max;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
@@ -43,6 +42,26 @@
         max-width: 70ch;
       }
     }
+
+    >div:last-of-type{
+      position: absolute;
+      display: flex;
+      height: $content-padding * 1.5;
+      bottom: 0;
+      left: calc((100vw - #{$main--width-max}) / 2);
+      padding-left: $main--padding;
+      box-sizing: border-box;
+      .down-line{
+        @extend %vr;
+      }
+      em{
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  section:nth-of-type(2){
+    padding-bottom: 0;
   }
 
   .event-banner{
@@ -53,10 +72,5 @@
     background: url("/assets/img/approach-banner--background.png") center no-repeat;
     background-size: cover;
   }
-
-  section:nth-of-type(2){
-    padding-bottom: 0;
-  }
-
 
 }

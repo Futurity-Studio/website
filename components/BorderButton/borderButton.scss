@@ -3,10 +3,10 @@
   padding: $content-padding*.75 0;
   width: 100%;
   display: grid;
-  grid-template-columns: calc( (100vw - #{$section-width}) / 2 ) 20ch 1fr;
+  grid-template-columns: calc( (100vw - #{$main--width-max}) / 2 ) 20ch 1fr;
   align-items: center;
   &--button{
-
+    padding-left: $main--padding;
   }
   &--line{
     height: $line--thickness;

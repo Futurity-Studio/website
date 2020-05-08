@@ -20,3 +20,9 @@ $line--color: #3a3a3a;
   font-weight: 300;
   font-size: 18px;
 }
+
+%vr{
+  background-color: $menu--color;
+  width: $line--thickness;
+  height: 100%;
+}

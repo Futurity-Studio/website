@@ -4,13 +4,13 @@
   display: grid;
   grid-template-columns: 210px 2px 1fr;
   grid-template-rows: 1fr;
+
   column-gap: 15%;
+
   align-items: center;
 
   .--vr{
-    background-color: $menu--color;
-    width: $line--thickness;
-    height: 100%;
+    @extend %vr;
   }
 
   div:last-of-type{

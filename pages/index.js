@@ -29,12 +29,12 @@ const Home = () => (
       <div className={'hero-banner--content'}>
         <div className={'blob'}/>
         <div>
-          <em>we are futurity studio</em>
-          <h1>A strategic R&D studio projecting and prototyping futures</h1>
+          <em>welcome to futurity studio</em>
+          <h1>We are a strategic R&D studio projecting and prototyping futures</h1>
           <em>learn more →</em>
         </div>
       </div>
-      <div><em>explore more</em></div>
+      <div><div className={'down-line'}/><em>explore more</em></div>
     </section>
 
     <section>
