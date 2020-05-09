@@ -24,7 +24,7 @@ h1{
 }
 h2{
   font-weight: bold;
-  @include fluid-type(20px, 4vw, 3.998rem);
+  @include fluid-type(20px, 8vw, 3.998rem);
   margin: .75rem 0 !important;
 }
 h3 {
@@ -60,6 +60,13 @@ span, p{
 
 section{
   padding: $section-padding 0;
+  @include media("<=tablet") {
+    padding: $section-padding*.75 0;
+  }
+
+  &.large{
+    padding: $section-padding*1.75 0;
+  }
   .section-content {
     margin: 0 auto;
     padding: 0 $main--padding;

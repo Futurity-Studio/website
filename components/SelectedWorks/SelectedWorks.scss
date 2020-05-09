@@ -4,7 +4,7 @@
   > div:last-of-type{
     padding-bottom: 0;
   }
-  h3{
+  h4{
     margin-top: 0 !important;
   }
 }
@@ -14,7 +14,7 @@
     max-width: $main--width-max;
     width: 100%;
     margin: 0 auto;
-    padding: $content-padding $main--padding;
+    padding: $content-padding * 2 $main--padding;
     box-sizing: border-box;
     cursor: pointer;
 

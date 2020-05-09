@@ -1,17 +1,18 @@
 @import "theme/_constants";
-.button-border{
+.border-button{
   padding: $content-padding*.75 0;
   width: 100%;
   display: grid;
-  grid-template-columns: calc( (100vw - #{$main--width-max}) / 2 ) 20ch 1fr;
+  grid-template-columns: calc( (100vw - #{$main--width-max}) / 2 ) 25ch 1fr;
   align-items: center;
 
-  &.reverse{
-    grid-template-columns: 1fr 25ch calc( (100vw - #{$main--width-max}) / 2 );
+  .icon{
+    margin: 0 4px;
   }
 
   &--button{
     padding-left: $main--padding;
+    padding-right: $main--padding / 2;
     display: inline-block;
   }
   &--line{
@@ -19,5 +20,13 @@
     background-color: $line--color;
     position: relative;
     top: 1px;
+  }
+
+  &.reverse{
+    grid-template-columns: 1fr 30ch calc( (100vw - #{$main--width-max}) / 2 );
+    .border-button--button{
+      padding-left: $main--padding / 2;
+      padding-right: $main--padding;
+    }
   }
 }

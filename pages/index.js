@@ -41,9 +41,8 @@ const Home = () => (
       <SelectedWorks />
     </section>
 
-    <section className={'event-banner'}>
+    <section className={'event-banner large'}>
       <div className={'section-content'}>
-
         <DividedContent
           leftHeader={
             <h2>Ideas <br /> Worth <br /> Sharing</h2>
@@ -55,7 +54,7 @@ const Home = () => (
       </div>
     </section>
 
-    <section className={'approach-banner'}>
+    <section className={'approach-banner large'}>
       <div className={'section-content'}>
         <em>approach</em>
         <h2>Our methods help us discover, de-risk, and create value in future domains</h2>

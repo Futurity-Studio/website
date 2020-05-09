@@ -3,17 +3,17 @@ import './BorderButton.scss'
 const BorderButton = ({backwards, content}) => {
 
   return( (!backwards) ?
-    <div className={'button-border'}>
+    <div className={'border-button'}>
       <div />
-      <div className={'button-border--button'}>
+      <div className={'border-button--button'}>
         { content }
       </div>
-      <div className={'button-border--line'} />
+      <div className={'border-button--line'} />
     </div>
     :
-    <div className={'button-border reverse'}>
-      <div className={'button-border--line'} />
-      <div className={'button-border--button'}>
+    <div className={'border-button reverse'}>
+      <div className={'border-button--line'} />
+      <div className={'border-button--button'}>
         { content }
       </div>
       <div />

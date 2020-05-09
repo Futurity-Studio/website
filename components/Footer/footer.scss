@@ -1,10 +1,36 @@
+@import "theme/vendor_mixins";
+
 .footer{
   .section-content{
-    // alignment inverse of divided content
     display: grid;
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr;
-    column-gap: 152px;
+    column-gap: 10%;
     align-items: center;
+
+    > div:last-of-type{
+      display: flex;
+      flex-direction: column;
+      p:first-of-type{
+        margin-bottom: 0;
+      }
+    }
+
+    @include media("<=tablet") {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+
+      > div:last-of-type{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-evenly;
+        p {
+          margin-left: 8px;
+        }
+      }
+    }
+
   }
 }
