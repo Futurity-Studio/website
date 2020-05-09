@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Icon, { ICONS, THEME, SIZE } from "../Icon/icon";
+import Icon, { ICONS, THEME, SIZE } from "../Icon/Icon";
 
 import "./menu.scss"
 

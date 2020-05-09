@@ -20,7 +20,7 @@ import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME} from "../comp
 
 import '../theme/index.scss';
 import BorderButton from "../components/BorderButton/BorderButton";
-import Icon from "../components/Icon/icon";
+import Icon from "../components/Icon/Icon";
 
 
 const Home = () => (

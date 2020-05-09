@@ -1,16 +1,16 @@
 import "./SelectedWorks.scss"
 import {DividedContent, ICONS, THEME} from "../index";
 import BorderButton from "../BorderButton/BorderButton";
-import Icon from "../Icon/icon";
+import Icon from "../Icon/Icon";
 
 const works = [
   {type:'artifact', lab:'acommerce',
     title:'Frictionless Kitchen', subheading:'Home delivery with optimized supply chains.',
     cta:'view work →', date:'q1 - 2020'},
-  {type:'artifact', lab:'acommerce',
+  {type:'action', lab:'acommerce',
     title:'BannaWorld', subheading:'Gamifying a way to a better consumer.',
     cta:'view work →', date:'q1 - 2020'},
-  {type:'artifact', lab:'acommerce',
+  {type:'analysis', lab:'acommerce',
     title:'aCommerce in Retail', subheading:'Circular disruptions in fast fashion.',
     cta:'view work →', date:'q1 - 2020'}
 ]
