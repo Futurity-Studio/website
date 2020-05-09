@@ -4,21 +4,29 @@ $page-background-color:  #fff;
 $menu--color: #3A3A3A;
 $menu--closed-height: 80px;
 
-$main--width-max: 1024px;
+$main--width-max: 1280px;
 $main--padding: 2rem;
 
 $icon-dark: #3A3A3A;
 
 $section-padding: 100px;
-$section-width: 750px;
+$section-width: $main--width-max;
 $content-padding: 4rem;
 
 $line--thickness: 2px;
 $line--color: #3a3a3a;
 
+@mixin fluid-type($min, $varible, $max){
+  $clamp-size: #{'min(max(#{$varible}, #{$min}), #{$max})'};
+  $clampped: #{'clamp(#{$min}, #{$varible}, #{$max})'};
+  font-size: $clamp-size !important;
+  font-size: $clampped !important;
+}
+
+
 %default-text{
   font-weight: 300;
-  font-size: 18px;
+  @include fluid-type(18px, 5vw, 1.414rem);
 }
 
 %vr{

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-// import './Icon.scss';
+import './Icon.scss';
 
 export const ICONS = {
   // SETTINGS: 'SETTINGS',
   // MAP: 'MAP',
-  // FILTER: 'FILTER',
+  FILTER: 'FILTER',
   // CALENDAR: 'CALENDAR',
   // LEFT: 'LEFT',
-  // RIGHT: 'RIGHT',
+  RIGHT: 'RIGHT',
   // DOUBLELEFT: 'DOUBLELEFT',
   // DOUBLERIGHT: 'DOUBLERIGHT',
   // CROSS: 'CROSS',

@@ -1,5 +1,14 @@
 @import "theme/_constants";
 
+.selected-works{
+  > div:last-of-type{
+    padding-bottom: 0;
+  }
+  h3{
+    margin-top: 0 !important;
+  }
+}
+
 .work-banner{
   &--content {
     max-width: $main--width-max;

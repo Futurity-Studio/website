@@ -16,10 +16,11 @@
 //
 // export default Home
 
-import {Menu, Footer, DividedContent, SelectedWorks} from "../components";
+import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME} from "../components";
 
-import './index.scss';
-import BorderButton from "../components/BorderButton/borderButton";
+import '../theme/index.scss';
+import BorderButton from "../components/BorderButton/BorderButton";
+import Icon from "../components/Icon/icon";
 
 
 const Home = () => (
@@ -30,8 +31,7 @@ const Home = () => (
         <div className={'blob'}/>
         <div>
           <em>welcome to futurity studio</em>
-          <h1>We are a strategic R&D studio projecting and prototyping futures</h1>
-          <em>learn more →</em>
+          <h1>We're a R&D studio projecting and prototyping futures.</h1>
         </div>
       </div>
       <div><div className={'down-line'}/><em>explore more</em></div>
@@ -46,11 +46,11 @@ const Home = () => (
 
         <DividedContent
           leftHeader={
-            <h1>Ideas <br /> Worth <br /> Sharing</h1>
+            <h2>Ideas <br /> Worth <br /> Sharing</h2>
           } >
-          <h2>2030 by 2023</h2>
-          <h3>How covid is accelerating a decade of innovation</h3>
-          <em>explore more events →</em>
+          <h3>2030 by 2023</h3>
+          <h4>How covid is accelerating a decade of innovation</h4>
+          <em>explore more events <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>
         </DividedContent>
       </div>
     </section>
@@ -58,8 +58,8 @@ const Home = () => (
     <section className={'approach-banner'}>
       <div className={'section-content'}>
         <em>approach</em>
-        <h1>Our methods help us discover, de-risk, and create value in future domains</h1>
-        <em>learn more →</em>
+        <h2>Our methods help us discover, de-risk, and create value in future domains</h2>
+        <em>learn more <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>
       </div>
     </section>
 

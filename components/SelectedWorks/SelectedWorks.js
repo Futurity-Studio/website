@@ -1,6 +1,7 @@
 import "./SelectedWorks.scss"
-import {DividedContent} from "../index";
-import BorderButton from "../BorderButton/borderButton";
+import {DividedContent, ICONS, THEME} from "../index";
+import BorderButton from "../BorderButton/BorderButton";
+import Icon from "../Icon/icon";
 
 const works = [
   {type:'artifact', lab:'acommerce',
@@ -23,9 +24,9 @@ const SelectedWorks = () => {
           <div>
             <div><em>{`${w.type} - ${w.date}`}</em></div><div><em>{w.lab}</em></div>
           </div>
-          <h2>{w.title}</h2>
+          <h3>{w.title}</h3>
           <div>
-            <h3>{w.subheading}</h3>
+            <h4>{w.subheading}</h4>
             <span>View Work</span>
           </div>
         </div>
@@ -35,18 +36,19 @@ const SelectedWorks = () => {
 
 
   return(
-    <>
+    <div className={'selected-works'}>
       <div className={'section-content'}>
         <DividedContent
           leftHeader={
-            <h1>Selected <br /> Works</h1>
+            <h2>Selected <br /> Works</h2>
           } >
           <span>With projects in <em>system design</em>, <em>tech prototyping</em>, and <em>interactive reports</em>, our studio a far cry from the traditional strategic consultancy.</span>
         </DividedContent>
       </div>
-      <BorderButton />
+      <BorderButton content={<em>filter by lab <Icon icon={ICONS.FILTER} theme={THEME.DARK} /></em>} />
       { generateWorkTiles() }
-    </>
+      <BorderButton content={<em>explore offerings <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>} backwards={true}/>
+    </div>
   )
 }
 

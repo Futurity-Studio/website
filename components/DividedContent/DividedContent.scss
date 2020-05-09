@@ -2,10 +2,11 @@
 
 .divided_content{
   display: grid;
-  grid-template-columns: 210px 2px 1fr;
+  grid-template-columns: 250px 2px 1fr;
   grid-template-rows: 1fr;
 
-  column-gap: 15%;
+  column-gap: 10%;
+
 
   align-items: center;
 

@@ -1,6 +1,6 @@
 import Menu from "./Menu/menu";
 import Footer from "./Footer/footer";
-import DividedContent from "./DividedContent/dividedContent";
+import DividedContent from "./DividedContent/DividedContent";
 import SelectedWorks from "./SelectedWorks/SelectedWorks";
 import { ICONS, THEME, SIZE, TYPE } from "./Icon/icon";
 

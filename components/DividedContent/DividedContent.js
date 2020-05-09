@@ -1,4 +1,4 @@
-import "./dividedContent.scss"
+import "./DividedContent.scss"
 
 const DividedContent = ({leftHeader, children}) => {
   return(

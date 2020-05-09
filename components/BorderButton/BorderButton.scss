@@ -5,8 +5,14 @@
   display: grid;
   grid-template-columns: calc( (100vw - #{$main--width-max}) / 2 ) 20ch 1fr;
   align-items: center;
+
+  &.reverse{
+    grid-template-columns: 1fr 25ch calc( (100vw - #{$main--width-max}) / 2 );
+  }
+
   &--button{
     padding-left: $main--padding;
+    display: inline-block;
   }
   &--line{
     height: $line--thickness;
