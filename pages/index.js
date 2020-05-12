@@ -16,7 +16,7 @@ const Home = () => {
           <div className={'blob'}/>
           <div>
             <em>welcome to futurity studio</em>
-            <h1>We're a R&D studio projecting and prototyping futures.dd</h1>
+            <h1>We're a R&D studio projecting and prototyping futures</h1>
           </div>
         </div>
         <div>
