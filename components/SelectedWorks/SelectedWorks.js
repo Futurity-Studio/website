@@ -19,7 +19,7 @@ const SelectedWorks = () => {
   //todo setup pagination
   const generateWorkTiles = () =>{
     return(works.map((w) => (
-      <div className={'work-banner'}>
+      <div className={'work-banner'} key={w.title}>
         <div className={'work-banner--content'}>
           <div>
             <div><em>{`${w.type} - ${w.date}`}</em></div><div><em>{w.lab}</em></div>

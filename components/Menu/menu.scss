@@ -20,6 +20,11 @@
     height: 100%;
   }
 
+  > div:last-of-type{
+    padding: 1rem;
+    cursor: pointer;
+  }
+
   h4{
     font-weight: bold !important;
   }
@@ -31,7 +36,7 @@
       height: auto;
       width: 60px;
       path {
-        fill: $icon-dark;
+        fill: #c7c7c7;
         mix-blend-mode: difference;
       }
     }

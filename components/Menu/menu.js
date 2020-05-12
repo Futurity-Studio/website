@@ -1,11 +1,28 @@
 import Link from 'next/link';
+import React, { useState } from 'react';
 import Icon, { ICONS, THEME, SIZE } from "../Icon/Icon";
-
+import { motion } from 'framer-motion';
 import "./menu.scss"
 
+
+const menuAnimation_variants = {
+  open: {
+    backgroundColor: 'black'
+  },
+  close: {
+    backgroundColor: 'white'
+  }
+}
+
 const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return(
-    <div className={'menu'}>
+    <motion.div
+      className={'menu'}
+      animate={isOpen ? "open" : "close"}
+      variants={menuAnimation_variants}
+    >
       <div>
       <div className={'logo'}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 38">
@@ -14,10 +31,10 @@ const Menu = () => {
       </div>
         <h4>Futurity Studio</h4>
       </div>
-      <div>
+      <div onClick={() => setIsOpen(!isOpen)}>
         <Icon icon={ICONS.MENU} theme={THEME.DARK} />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
