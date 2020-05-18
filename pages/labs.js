@@ -3,16 +3,16 @@ import {Footer, Menu} from "../components";
 
 import '../theme/styles.scss';
 
-const About = () => {
+const Labs = () => {
   return(
-    <main className={'about'}>
+    <main className={'labs'}>
       <Menu/>
       <section>
-        <h1>dis about</h1>
+        <h1>some labs</h1>
       </section>
       <Footer/>
     </main>
   )
 }
 
-export default About
+export default Labs

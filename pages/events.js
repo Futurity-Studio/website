@@ -3,9 +3,9 @@ import {Footer, Menu} from "../components";
 
 import '../theme/styles.scss';
 
-const About = () => {
+const Events = () => {
   return(
-    <main className={'about'}>
+    <main className={'events'}>
       <Menu/>
       <section>
         <h1>dis about</h1>
@@ -15,4 +15,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Events

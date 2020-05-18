@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Icon.scss';
 
 export const ICONS = {
-  // SETTINGS: 'SETTINGS',
   // MAP: 'MAP',
   FILTER: 'FILTER',
   // CALENDAR: 'CALENDAR',
@@ -10,7 +9,7 @@ export const ICONS = {
   RIGHT: 'RIGHT',
   // DOUBLELEFT: 'DOUBLELEFT',
   // DOUBLERIGHT: 'DOUBLERIGHT',
-  // CROSS: 'CROSS',
+  CROSS: 'CROSS',
   // CHECK: 'CHECK',
   // PAUSE: 'PAUSE',
   // MINUS: 'MINUS',
@@ -23,8 +22,13 @@ export const ICONS = {
   // FILE: 'FILE',
   // WAIVER: 'WAIVER',
   // CAMERA: 'CAMERA',
+  MAIL: 'MAIL',
   MENU: 'MENU',
+  LINKEDIN:'LINKEDIN',
+  TWITTER: 'TWITTER',
+  YOUTUBE: 'YOUTUBE'
   // SEARCH: 'search'
+
 };
 
 export const THEME = {
@@ -47,16 +51,6 @@ export const TYPE = {
   LINK: 'lnk'
 };
 
-const SETTINGS = () => {
-  return (
-    <svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <path d="M5.873 1.668a.8.8 0 01.63-.71 7.2 7.2 0 012.994 0 .8.8 0 01.63.71l.108 1.197a5.6 5.6 0 011.094.632l1.09-.505a.8.8 0 01.932.19 7.2 7.2 0 011.497 2.593.8.8 0 01-.3.901l-.984.692a5.6 5.6 0 010 1.264l.983.692a.8.8 0 01.3.9 7.2 7.2 0 01-1.496 2.594.8.8 0 01-.931.19l-1.09-.505a5.6 5.6 0 01-1.095.632l-.108 1.197a.8.8 0 01-.63.71 7.2 7.2 0 01-2.994 0 .8.8 0 01-.63-.71l-.108-1.197a5.6 5.6 0 01-1.094-.632l-1.09.505a.8.8 0 01-.932-.19 7.2 7.2 0 01-1.497-2.593.8.8 0 01.3-.901l.984-.692a5.6 5.6 0 010-1.264l-.983-.692a.8.8 0 01-.3-.9 7.2 7.2 0 011.496-2.594.8.8 0 01.931-.19l1.09.505a5.6 5.6 0 011.095-.632l.108-1.197zm1.537.763l-.097 1.076a.8.8 0 01-.55.689 4 4 0 00-1.44.831.8.8 0 01-.871.132l-.98-.454a5.6 5.6 0 00-.59 1.021l.883.622a.8.8 0 01.322.82 4 4 0 000 1.664.8.8 0 01-.322.82l-.883.622c.16.36.358.702.59 1.021l.98-.454a.8.8 0 01.871.132 4 4 0 001.44.831.8.8 0 01.55.69l.097 1.075a5.6 5.6 0 001.18 0l.097-1.076a.8.8 0 01.55-.689 4 4 0 001.44-.831.8.8 0 01.871-.132l.98.454a5.6 5.6 0 00.59-1.021l-.883-.622a.8.8 0 01-.322-.82 4 4 0 000-1.664.8.8 0 01.322-.82l.883-.622a5.6 5.6 0 00-.59-1.021l-.98.454a.8.8 0 01-.871-.132 4 4 0 00-1.44-.831.8.8 0 01-.55-.69L8.59 2.432a5.6 5.6 0 00-1.18 0zM8 7.2a.8.8 0 10.002 1.602A.8.8 0 008 7.2zm0-1.6a2.4 2.4 0 11-.002 4.802A2.4 2.4 0 018 5.6z" id="icon-settings" />
-      </defs>
-      <use fill="#FFF" xlinkHref="#icon-settings" transform="translate(-1)" fillRule="evenodd" />
-    </svg>
-  );
-};
 
 const MENU = () => {
   return(
@@ -65,6 +59,50 @@ const MENU = () => {
         <path id="icon-menu" d="M2 18a1.5 1.5 0 010-3h12a1.5 1.5 0 010 3H2zm0-7.5a1.5 1.5 0 010-3h18a1.5 1.5 0 010 3H2zm-1.5-9C.5.67 1.17 0 2 0h18a1.5 1.5 0 010 3H2A1.5 1.5 0 01.5 1.5z"/>
       </defs>
       <use fill="#3A3A3A" fillRule="evenodd" xlinkHref="#icon-menu"/>
+    </svg>
+  );
+};
+
+const LINKEDIN = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
+      <defs>
+        <path id="icon-linkedin" d="M2.75 14H.25a.25.25 0 01-.25-.25v-8.5C0 5.11.11 5 .25 5h2.5c.14 0 .25.11.25.25v8.5c0 .14-.11.25-.25.25zm7.75-9.5c2.28 0 3.5 1.26 3.5 3.93v5.32c0 .14-.11.25-.25.25h-2.5a.25.25 0 01-.25-.25V9c0-1.6-.4-2-1.4-2C8.5 7 8 7.75 8 9v4.75c0 .14-.11.25-.25.25h-2.5a.25.25 0 01-.25-.25v-8.5c0-.14.11-.25.25-.25h2.5c.14 0 .25.11.25.25V6c.62-1 1.26-1.5 2.5-1.5zM1.5 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icon-linkedin"/>
+    </svg>
+  );
+};
+
+const TWITTER = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 16 13">
+      <defs>
+        <path id="icon-twitter" d="M16 1.53s-.62 1.01-1.64 1.7C14.57 7.86 11.18 13 5.03 13c-.95 0-1.81-.1-2.6-.32a.65.65 0 010-1.25c.8-.23 1.6-.64 2.42-1.25-1.3-.08-2.2-.57-2.73-1.47a.5.5 0 01.41-.75c.24 0 .49-.05.74-.13C1.77 7.46.9 6.66.67 5.43a.5.5 0 01.64-.56c.26.07.52.1.8.1C.71 3.9.25 2.7.73 1.36a.5.5 0 01.85-.16c1.49 1.73 3.6 2.68 6.3 2.84a3.29 3.29 0 015.6-3c1.1-.18 2.1-.8 2.1-.8s-.35 1.21-1.45 1.8a6.4 6.4 0 001.87-.5z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icon-twitter"/>
+    </svg>
+  );
+};
+
+const YOUTUBE = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="17" width="12" viewBox="0 0 17 12">
+      <defs>
+        <path id="icons-youtube" d="M8 0c5 0 6.53.06 7.22.78.51.53.78 2.13.78 5.22s-.27 4.69-.78 5.22C14.53 11.94 13 12 8 12s-6.53-.06-7.22-.78C.27 10.69 0 9.09 0 6S.27 1.31.78.78C1.47.06 3 0 8 0zM6.5 3.5v5a.25.25 0 00.4.2l3.33-2.5a.25.25 0 000-.4L6.9 3.3a.25.25 0 00-.4.2z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" transform="translate(.5)" xlinkHref="#icons-youtube"/>
+    </svg>
+  )
+}
+
+const MAIL = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 18 12">
+      <defs>
+        <path id="icon-mail" d="M14.8 10l-3.2-3.91-1.95 1.67a1 1 0 01-1.3 0L6.4 6.09 3.2 10h11.6zM16 8.31V2.5a.5.5 0 00-.03-.16l-2.85 2.45L16 8.3zm-14 0l2.88-3.52-2.85-2.45A.5.5 0 002 2.5v5.8zM15.92 0c.1-.01.2 0 .3.02a1.97 1.97 0 011.53 1.01c.19.35.25.68.25 1.24v7.44c0 .56-.06.89-.25 1.24-.18.34-.45.6-.79.79a2.4 2.4 0 01-1.24.25H2.28c-.56 0-.89-.06-1.24-.25a1.9 1.9 0 01-.79-.79A2.4 2.4 0 010 9.72V2.28c0-.56.06-.89.25-1.24A1.9 1.9 0 011.78.03a5.9 5.9 0 01.5-.03H15.92zM4.7 2L9 5.68 13.3 2H4.7z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icon-mail"/>
     </svg>
   );
 };
@@ -462,6 +500,18 @@ export default class Icon extends Component {
         break;
       case ICONS.MINUS:
         svg = MINUS();
+        break;
+      case ICONS.LINKEDIN:
+        svg = LINKEDIN();
+        break;
+      case ICONS.TWITTER:
+        svg = TWITTER();
+        break;
+      case ICONS.MAIL:
+        svg = MAIL();
+        break;
+      case ICONS.YOUTUBE:
+        svg = YOUTUBE();
         break;
       default:
     }
