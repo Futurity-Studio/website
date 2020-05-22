@@ -22,6 +22,8 @@ export const ICONS = {
   // FILE: 'FILE',
   // WAIVER: 'WAIVER',
   // CAMERA: 'CAMERA',
+  LEFT_CHEV:'LEFT_CHEV',
+  RIGHT_CHEV:'RIGHT_CHEV',
   BULB: 'BULB',
   MAIL: 'MAIL',
   MENU: 'MENU',
@@ -52,6 +54,26 @@ export const TYPE = {
   LINK: 'lnk'
 };
 
+const LEFT_CHEV = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="7" viewBox="0 0 7 12">
+      <defs>
+        <path id="icons-left-chevron" d="M2.41 6l4.3 4.3a1 1 0 01-1.42 1.4l-5-5a1 1 0 010-1.4l5-5a1 1 0 111.42 1.4L2.4 6z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icons-left-chevron"/>
+    </svg>
+  )
+}
+const RIGHT_CHEV = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="7" viewBox="0 0 7 12">
+      <defs>
+        <path id="icons-right-chevron" d="M4.59 6L.29 1.7A1 1 0 111.71.3l5 5a1 1 0 010 1.4l-5 5a1 1 0 11-1.42-1.4L4.6 6z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icons-right-chevron"/>
+    </svg>
+  )
+}
 
 const MENU = () => {
   return(
@@ -471,6 +493,12 @@ export default class Icon extends Component {
         break;
       case ICONS.RIGHT:
         svg = RIGHT();
+        break;
+      case ICONS.RIGHT_CHEV:
+        svg = RIGHT_CHEV();
+        break;
+      case ICONS.LEFT_CHEV:
+        svg = LEFT_CHEV();
         break;
       case ICONS.DOUBLELEFT:
         svg = DOUBLELEFT();

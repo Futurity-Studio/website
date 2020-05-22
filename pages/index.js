@@ -3,49 +3,40 @@ import React from 'react';
 import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME} from "../components";
 import '../theme/styles.scss';
 import Icon from "../components/Icon/Icon";
+import Link from "next/link";
 
 const Home = () => {
   return(
     <main className={'index'}>
       <section className={'hero-banner'}>
-        <div className={'hero-banner--content'}>
-          <div className={'blob'}/>
-          <div>
-            <h1>Build better <br />futures faster with<br />Futurity Studio</h1>
-            <em>add some shit to links to the lab page here</em>
+        <div className={'hero-banner--wrapper'}>
+          <div className={'hero-banner--blob'}/>
+          <div className={'hero-banner--content'}>
+            <p><em>Building better</em>&nbsp;<span><em>aCommerce</em></span>&nbsp;<em>Futures Faster</em></p>
+            <div className={'project-description'}>
+              <em>Artifact - Q2 - 2020 - aCommerce</em>
+              <h1>Frictionless Kitchen</h1>
+              <h4>Home delivery with optimized supply chains.</h4>
+              <div className={'content-nav'}>
+                  <Icon icon={ICONS.LEFT_CHEV} theme={THEME.DARK} />
+                  <Icon icon={ICONS.RIGHT_CHEV} theme={THEME.DARK} />
+              </div>
+            </div>
+            <div className={'bottom-menu--wrapper'}>
+              <div>
+                <nav>
+                  <h4>Work</h4>
+                  <h4>About</h4>
+                  <h4>Labs</h4>
+                  <h4>Contact</h4>
+                </nav>
+              </div>
+
+
+            </div>
           </div>
         </div>
-        {/*<div>*/}
-        {/*  <div className={'down-line'}/><em>explore more</em>*/}
-        {/*</div>*/}
       </section>
-
-      {/*<section>*/}
-      {/*  <SelectedWorks/>*/}
-      {/*</section>*/}
-
-      {/*<section className={'event-banner large'}>*/}
-      {/*  <div className={'section-content'}>*/}
-      {/*    <DividedContent*/}
-      {/*      leftHeader={*/}
-      {/*        <h2>Ideas <br/> Worth <br/> Sharing</h2>*/}
-      {/*      }>*/}
-      {/*      <h3>2030 by 2023</h3>*/}
-      {/*      <h4>How covid is accelerating a decade of innovation</h4>*/}
-      {/*      <em>explore more events <Icon icon={ICONS.RIGHT} theme={THEME.DARK}/></em>*/}
-      {/*    </DividedContent>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
-
-      {/*<section className={'approach-banner large'}>*/}
-      {/*  <div className={'section-content'}>*/}
-      {/*    <em>approach</em>*/}
-      {/*    <h2>Our methods help us discover, de-risk, and create value in future domains</h2>*/}
-      {/*    <em>learn more <Icon icon={ICONS.RIGHT} theme={THEME.DARK}/></em>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
-
-      {/*<Footer/>*/}
     </main>)
 }
 

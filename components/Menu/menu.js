@@ -111,7 +111,7 @@ const Menu = () => {
           />
 
           <nav className={'nav-bottom'}>
-            <Link prefetch={false} href={'mainto: inquiry@futurity.studio'}>
+            <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
               <a target='_blank'>
                 <span><em>Inquiry@Futurity.Studio</em></span>
               </a>

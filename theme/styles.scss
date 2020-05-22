@@ -14,14 +14,14 @@
     justify-content: center;
     overflow: hidden;
 
-    &--content{
+    &--wrapper{
       margin: 0 auto;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
 
-      > div:nth-of-type(1){
+      .hero-banner--blob{
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         justify-self: end;
@@ -33,18 +33,50 @@
         min-height: 600px;
         width: 60%;
       }
-      > div:nth-of-type(2) {
+      .hero-banner--content {
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         justify-self: start;
         align-self: center;
-        padding-left: calc((100vw - #{$main-width-max}) / 2);
+        padding: $menu-closed-height $content-padding $content-padding calc((100vw - #{$main-width-max}) / 2);
+        height: 100%;
+
+        display: grid;
+        grid-template-rows: 1fr min-content 20vh;
+        grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 20);
+
         h1 {
           max-width: 20ch;
           @include media("<=tablet") {
             max-width: 50ch;
           }
         }
+      }
+    }
+
+    .content-nav{
+      width: 70px;
+      padding-top: $content-padding/4;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bottom-menu{
+      &--wrapper{
+      //  display: flex;
+      //  align-items: flex-end;
+      //  background: white;
+      //  margin: $content-padding/2 0;
+      //  nav{
+      //    display: grid;
+      //    grid-template-rows: 1fr;
+      //    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      //    align-items: center;
+      //  }
+      //}
+      //
+      //@include media("<=tablet"){
+        visibility: hidden;
       }
     }
 
@@ -72,17 +104,6 @@
     //  }
     //}
   }
-
-  //section:nth-of-type(2){
-  //  padding-bottom: 0;
-  //}
-
-
-  //.approach-banner{
-  //  background: url("/assets/img/approach-banner--background.png") center no-repeat;
-  //  background-size: cover;
-  //}
-
 }
 
 .about{

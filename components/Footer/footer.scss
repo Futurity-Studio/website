@@ -1,4 +1,5 @@
 @import "theme/vendor_mixins";
+@import "theme/constants";
 
 .footer{
   .section-content{
@@ -7,6 +8,7 @@
     grid-template-rows: 1fr;
     column-gap: 10%;
     align-items: center;
+    margin-bottom: $section-padding*.5;
 
     > div:last-of-type{
       display: flex;
