@@ -11,7 +11,7 @@ const About = () => {
       <section className={'banner'}>
         <div className={'section-content'}>
           <h2>Radical innovation is rigorously imaginative, multidisciplinary in execution, and scrupulously reinvents itself.</h2>
-          <h4>Futurity Studio brings this core belief to companies and teams wanting to discover the future.</h4>
+          <h4>We bring this core belief to companies and teams wanting to discover the future.</h4>
         </div>
         <Teaser label={'explore more'} />
       </section>
@@ -32,10 +32,13 @@ const About = () => {
           </>}
         />
         <div className={'section-content'}>
-          <h4>
-            Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
-            The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other forces emerge.
-          </h4>
+          <DividedContent
+            left={<h2>Future Labs</h2>}
+            right={<h4>
+              Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
+              The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other forces emerge.
+            </h4>}
+          />
         </div>
       </section>
 

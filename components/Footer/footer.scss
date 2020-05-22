@@ -15,10 +15,13 @@
         margin-bottom: 0;
       }
     }
-
     @include media("<=tablet") {
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr;
+
+      h2{
+        max-width: 15ex;
+      }
 
       > div:last-of-type{
         display: flex;

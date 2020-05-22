@@ -109,7 +109,9 @@
   }
 
   .methodology{
-
+    h4{
+      max-width: 55ex;
+    }
   }
 
   .deliverables{
@@ -149,7 +151,6 @@
       //padding-top: 50%;
     }
     &--content{
-      background: red;
       > div{
         height: 60vh;
         height: calc(var(--vh, 1vh) * 60);
@@ -162,6 +163,7 @@
   }
 
   .team{
+    margin-bottom: 0;
     &--container{
       .team--header{
         display: grid;
@@ -201,6 +203,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      padding-bottom: 0;
 
       >div:first-of-type{
         width: 300px;
@@ -244,6 +247,7 @@
   }
 
   .clients{
+    margin-top: 0;
     &--list{
       background: $page-background-color--dark;
       height: 32rem;

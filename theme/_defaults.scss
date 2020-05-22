@@ -68,7 +68,7 @@ section{
   //padding: $section-padding 0;
   margin: $section-padding 0;
   @include media("<=tablet") {
-    margin: $section-padding*.75 0;
+    margin: $section-padding*.25 0;
     //padding: $section-padding*.75 0;
   }
 
