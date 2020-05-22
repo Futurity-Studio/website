@@ -3,7 +3,7 @@
   padding: $content-padding*.75 0;
   width: 100%;
   display: grid;
-  grid-template-columns: calc( (100vw - #{$main-width-max}) / 2 ) 25ch 1fr;
+  grid-template-columns: calc( (100vw - #{$main-width-max}) / 2 ) auto 1fr;
   align-items: center;
 
   .icon{

@@ -1,12 +1,13 @@
 import "./DividedContent.scss"
 
-const DividedContent = ({leftHeader, children}) => {
+const DividedContent = ({left, right, hiddenBar = false}) => {
+  console.log(hiddenBar);
   return(
     <div className={'divided_content'}>
-      {leftHeader}
-      <div className={'--vr'} />
+      {left}
+      <div className={'--vr ' + ((hiddenBar) ? 'hidden' : 'no')}/>
       <div>
-        {children}
+        {right}
       </div>
     </div>
   )

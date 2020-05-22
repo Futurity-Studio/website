@@ -22,6 +22,7 @@ export const ICONS = {
   // FILE: 'FILE',
   // WAIVER: 'WAIVER',
   // CAMERA: 'CAMERA',
+  BULB: 'BULB',
   MAIL: 'MAIL',
   MENU: 'MENU',
   LINKEDIN:'LINKEDIN',
@@ -74,6 +75,16 @@ const LINKEDIN = () => {
   );
 };
 
+const BULB = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="18" width="12" viewBox="0 0 12 18">
+      <defs>
+        <path id="icons-bulb" d="M9.44 8.07A3.98 3.98 0 0010 6a4 4 0 10-7.25 2.33l1.08 1.08A4 4 0 015 12.24V13h2v-.76a4 4 0 011.17-2.83l1.08-1.08.19-.26zM12 6.06a5.64 5.64 0 01-1.22 3.56l-.07.09-1.12 1.12A2 2 0 009 12.24V14a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.76a2 2 0 00-.59-1.41L1.3 9.7l-.07-.09c-.8-1-1.2-2.2-1.22-3.56V6a6 6 0 1112 0v.06zM4 16h4a1 1 0 010 2H4a1 1 0 010-2z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icons-bulb"/>
+    </svg>
+  )
+}
 const TWITTER = () => {
   return(
     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 16 13">
@@ -470,6 +481,9 @@ export default class Icon extends Component {
         break;
       case ICONS.TIME:
         svg = TIME();
+        break;
+      case ICONS.BULB:
+        svg = BULB();
         break;
       case ICONS.MENU:
         svg = MENU();

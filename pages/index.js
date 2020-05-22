@@ -7,7 +7,6 @@ import Icon from "../components/Icon/Icon";
 const Home = () => {
   return(
     <main className={'index'}>
-      <Menu/>
       <section className={'hero-banner'}>
         <div className={'hero-banner--content'}>
           <div className={'blob'}/>

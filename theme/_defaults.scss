@@ -4,7 +4,7 @@ body{
   text-rendering: optimizeLegibility;
   font-weight: 300;
   font-size: 100%;
-  background-color: $page-background-color;
+  background-color: $page-background-color--light;
   color: $font-color;
   *, *:before, *:after {
     box-sizing: border-box;
@@ -36,10 +36,15 @@ h4{
   font-weight: 300;
   @include fluid-type(20px, 2vw, 1.999rem);
   margin: .75rem 0 !important;
+  em{
+    @extend h4;
+    text-transform: initial;
+    font-weight: bold !important
+  }
 }
 
 em{
-  @include fluid-type(14px, 1vw, 1rem);
+  @include fluid-type(10px, 1vw, .8rem);
   text-transform: uppercase;
   text-decoration: none;
   font-style: initial;
@@ -50,6 +55,7 @@ em{
 span, p{
   @extend %default-text;
   line-height: 125%;
+  margin: 1rem 0;
   em {
     @extend %default-text;
     text-transform: none;
@@ -60,6 +66,7 @@ span, p{
 
 section{
   padding: $section-padding 0;
+  //margin: 25vh 0;
   @include media("<=tablet") {
     padding: $section-padding*.75 0;
   }

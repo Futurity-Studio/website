@@ -84,3 +84,188 @@
   //}
 
 }
+
+.about{
+  > section:first-of-type{
+    padding: calc(#{$menu-closed-height} + #{$content-padding}) $main-padding;
+  }
+
+  .banner{
+    background: lightskyblue;
+    position: relative;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .methodology{
+
+  }
+
+  .deliverables{
+    padding-top: 0;
+    &--container{
+      display: grid;
+      grid-template-columns: auto 400px;
+      align-items: center;
+      margin-right: calc((100vw - #{$main-width-max}) / 2);
+      align-items: start;
+      padding-right: $main-padding;
+      grid-column-gap: $content-padding;
+
+      @include media("<=1280px"){
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: initial !important;
+        > div:last-of-type {
+          width: 100%;
+          padding: 0 $main-padding $content-padding/4;
+        }
+      }
+      @include media("<=tablet"){
+        > div:last-of-type{
+          padding-bottom: 0;
+        }
+      }
+    }
+    &--graphic{
+      background: $page-background-color--dark;
+      height: 60vh;
+      height: calc(var(--vh, 1vh) * 60);
+      width: 100%;
+      position: sticky;
+      top: 25%;
+      //transform: translateY(-50%);
+      //padding-top: 50%;
+    }
+    &--content{
+      background: red;
+      > div{
+        height: 60vh;
+        height: calc(var(--vh, 1vh) * 60);
+        margin: $content-padding 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  .team{
+    &--container{
+      .team--header{
+        display: grid;
+        grid-template-columns: 300px auto;
+        align-items: center;
+        margin-left: calc((100vw - #{$main-width-max}) / 2);
+        padding-left: $main-padding;
+        grid-column-gap: $content-padding;
+        > div:last-of-type{
+          background: url("/assets/img/team.png") center no-repeat;
+          background-size: cover;
+          background-size: 125%;
+          background-position: 90% 50%;
+          @include fluid-height(8rem, 45vh, 32rem);
+          width: 100%;
+        }
+
+        @include media("<=1280px"){
+          display: block;
+          margin-left: initial !important;
+
+          > div:first-of-type{
+            padding-bottom: $content-padding/4;
+          }
+        }
+        @include media("<=tablet"){
+          > div:first-of-type{
+            padding: 0;
+          }
+        }
+      }
+    }
+    &--content{
+      margin: 0 auto;
+      max-width: $main-width-max;
+      padding: $content-padding $main-padding;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      >div:first-of-type{
+        width: 300px;
+        margin: 0 $content-padding 0 0;
+
+      }
+
+      .team--members{
+        flex-grow: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: $content-padding;
+        align-items: flex-end;
+        >div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          //margin: 1rem 0;
+        }
+      }
+
+      @include media("<=1280px"){
+        padding: $content-padding/2 $main-padding;
+        .team--members>div{
+          padding: .5rem 0;
+        }
+      }
+      @include media("<=tablet"){
+        padding: 0 $main-padding;
+        >p:first-of-type{
+          margin-top: 0;
+        }
+      }
+
+
+    }
+  }
+
+  .methodology{
+  }
+
+  .clients{
+    &--header{
+      display: grid;
+      grid-template-columns: auto 300px;
+      align-items: center;
+      margin-right: calc((100vw - #{$main-width-max}) / 2);
+      padding-right: $main-padding;
+      grid-column-gap: $content-padding;
+
+      @include media("<=1280px"){
+
+
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: initial !important;
+
+        > div:last-of-type {
+          width: 100%;
+          padding: 0 $main-padding $content-padding/4;
+        }
+      }
+      @include media("<=tablet"){
+        > div:last-of-type{
+          padding-bottom: 0;
+        }
+      }
+    }
+    &--list{
+      background: $page-background-color--dark;
+      height: 32rem;
+      width: 100%;
+    }
+  }
+}

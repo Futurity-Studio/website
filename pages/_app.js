@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
-
+import { Menu } from "../components";
 import '../theme/theme.scss'
 
 class MyApp extends App {
@@ -20,6 +20,7 @@ class MyApp extends App {
           <link rel="icon" href="/favicon.ico"/>
         </Head>
         <Normalize/>
+        <Menu/>
         <Component {...pageProps} key={router.route} />
       </>
     );

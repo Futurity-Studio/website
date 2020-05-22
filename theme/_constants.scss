@@ -1,7 +1,8 @@
 @import "theme/vendor_mixins";
 
 $font-color: #3A3A3A;
-$page-background-color:  #fff;
+$page-background-color--light:  #fff;
+$page-background-color--dark:  #3a3a3a;
 
 $menu-color: #3A3A3A;
 $menu-closed-height: 80px;
@@ -15,7 +16,6 @@ $icon-light: #c7c7c7;
 
 $section-padding: 100px;
 
-
 $section-width: $main-width-max;
 $content-padding: 4rem;
 
@@ -27,6 +27,13 @@ $line-color: #3a3a3a;
   $clampped: #{'clamp(#{$min}, #{$varible}, #{$max})'};
   font-size: $clamp-size !important;
   font-size: $clampped !important;
+}
+
+@mixin fluid-height($min, $varible, $max){
+  $clamp-size: #{'min(max(#{$varible}, #{$min}), #{$max})'};
+  $clampped: #{'clamp(#{$min}, #{$varible}, #{$max})'};
+  height: $clamp-size !important;
+  height: $clampped !important;
 }
 
 
