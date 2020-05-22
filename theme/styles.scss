@@ -98,6 +98,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background: url("/assets/img/hero-banner--background.png") center no-repeat;
+    background-size: cover;
+    h2{
+      max-width: 875px
+    }
+    .section-content{
+      padding: 0;
+    }
   }
 
   .methodology{
@@ -236,32 +244,6 @@
   }
 
   .clients{
-    &--header{
-      display: grid;
-      grid-template-columns: auto 300px;
-      align-items: center;
-      margin-right: calc((100vw - #{$main-width-max}) / 2);
-      padding-right: $main-padding;
-      grid-column-gap: $content-padding;
-
-      @include media("<=1280px"){
-
-
-        display: flex;
-        flex-direction: column-reverse;
-        margin-right: initial !important;
-
-        > div:last-of-type {
-          width: 100%;
-          padding: 0 $main-padding $content-padding/4;
-        }
-      }
-      @include media("<=tablet"){
-        > div:last-of-type{
-          padding-bottom: 0;
-        }
-      }
-    }
     &--list{
       background: $page-background-color--dark;
       height: 32rem;

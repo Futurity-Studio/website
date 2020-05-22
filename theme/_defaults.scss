@@ -65,10 +65,11 @@ span, p{
 }
 
 section{
-  padding: $section-padding 0;
-  //margin: 25vh 0;
+  //padding: $section-padding 0;
+  margin: $section-padding 0;
   @include media("<=tablet") {
-    padding: $section-padding*.75 0;
+    margin: $section-padding*.75 0;
+    //padding: $section-padding*.75 0;
   }
 
   &.large{
@@ -79,6 +80,13 @@ section{
     padding: 0 $main-padding;
     max-width: $section-width;
     width: 100%;
+  }
+
+  &:first-of-type{
+    margin-top: 0;
+  }
+  &:last-of-type{
+    margin-bottom: 0;
   }
 }
 

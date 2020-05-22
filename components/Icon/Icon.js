@@ -27,9 +27,9 @@ export const ICONS = {
   MENU: 'MENU',
   LINKEDIN:'LINKEDIN',
   TWITTER: 'TWITTER',
-  YOUTUBE: 'YOUTUBE'
+  YOUTUBE: 'YOUTUBE',
+  GLOBE: 'GLOBE'
   // SEARCH: 'search'
-
 };
 
 export const THEME = {
@@ -180,6 +180,17 @@ const DOUBLELEFT = () => {
     </svg>
   );
 };
+
+const GLOBE = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="19" width="18" viewBox="0 0 18 19">
+      <defs>
+        <path id="icon-globe" d="M9 0a9 9 0 110 18A9 9 0 019 0zm1.4 13H7.6c.24 1.02.58 2.02 1.03 2.99a6.1 6.1 0 00.74 0c.45-.97.79-1.97 1.04-2.99zm-4.86 0H3.26a7.03 7.03 0 002.98 2.44c-.29-.8-.52-1.62-.7-2.44zm9.2 0h-2.28c-.18.82-.41 1.64-.7 2.44A7.02 7.02 0 0014.74 13zM5.22 7H2.29a7 7 0 000 4h2.93a18.9 18.9 0 010-4zm5.55 0H7.23a16.9 16.9 0 000 4h3.54a16.9 16.9 0 000-4zm4.94 0h-2.93a18.9 18.9 0 010 4h2.93a7 7 0 000-4zM6.24 2.56l-.17.08A7.03 7.03 0 003.25 5h2.29c.18-.82.41-1.64.7-2.44zM9 2l-.37.01c-.45.97-.79 1.97-1.04 2.99h2.82c-.25-1.02-.6-2.02-1.04-2.99L9 2zm2.76.56l.1.27c.24.71.44 1.44.6 2.17h2.29a7.03 7.03 0 00-3-2.44z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" transform="translate(0 .32)" xlinkHref="#icon-globe"/>
+    </svg>
+  )
+}
 
 const DOUBLERIGHT = () => {
   return (
@@ -490,6 +501,9 @@ export default class Icon extends Component {
         break;
       case ICONS.PHONE:
         svg = PHONE();
+        break;
+      case ICONS.GLOBE:
+        svg = GLOBE();
         break;
       case ICONS.IMAGE_UPLOAD:
         svg = IMAGE_UPLOAD();

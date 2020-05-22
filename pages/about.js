@@ -101,14 +101,16 @@ const About = () => {
       </section>
 
       <section className={'clients'}>
-        <div className={'clients--container'}>
-          <div className={'clients--header'}>
-            <div className={'clients--list'}>
-            </div>
-            <div>
-              <h2>Select clients</h2>
-              <p>We've taken to the future and back</p>
-            </div>
+        <BorderButton
+          content={<>
+            <em>select clients</em>
+            <Icon icon={ICONS.GLOBE} theme={THEME.DARK} />
+          </>}
+          backwards={true}
+        />
+        <div className={'section-content'}>
+          <div className={'clients--list'}>
+
           </div>
         </div>
       </section>
