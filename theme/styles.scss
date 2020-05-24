@@ -179,6 +179,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        ul{
+          margin: 0;
+          padding-left: 0;
+          list-style: none;
+
+          p {
+            margin: .5rem 0 .5rem 0;
+          }
+
+          li:not(:first-of-type){
+            p {
+              margin-left: 1rem;
+            }
+          }
+        }
       }
     }
   }

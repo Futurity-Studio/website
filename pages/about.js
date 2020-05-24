@@ -22,7 +22,7 @@ const About = () => {
         <div className={'section-content'}>
           <h4>
             We believe the best approach to conduct research is through a deep dive into data... and from that data, remixing it with our own experimentation and analysis.
-            Futurity offers clients membership in our lab&mdash;a year-long cycle of using trend, participatory, and design research to build a future through experimentation.
+            Futurity offers clients membership in our labs&mdash;a year-long cycle of using trend, participatory, and design research to build a better future through experimentation.
           </h4>
         </div>
         <BorderButton
@@ -36,7 +36,7 @@ const About = () => {
             left={<h2>Future Labs</h2>}
             right={<h4>
               Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
-              The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other forces emerge.
+              The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
             </h4>}
           />
         </div>
@@ -50,19 +50,33 @@ const About = () => {
             <div>
               <h3>Analysis</h3>
               <p>
-                We learn everything we can about an innovation space to build a conceptual understanding of how it interacts with our social, economic, and industry systems. Examples include: Timelines, systems maps, forecasts, scenarios, reports appx. 15-25 pages.
+                We learn everything we can about an innovation space to build a conceptual understanding of how it interacts with our social, economic, and industry systems.
               </p>
+              <ul>
+                <li><p>Examples include:</p></li>
+                <li><p>Timelines</p></li>
+                <li><p>Systems aps</p></li>
+                <li><p>Sorecasts</p></li>
+                <li><p>Scenarios</p></li>
+                <li><p>Reports (appx. 15-25 pages)</p></li>
+              </ul>
             </div>
             <div>
               <h3>Artifact</h3>
               <p>
-                We use our data to prototype a narrative into reality. Artifacts are objects based on the interactions, inquiries, and provocations from our analysis. Examples include: speculative physical products, digital experiences, interactive installations.
+                We use our data to prototype a narrative into reality. Artifacts are objects based on the interactions, inquiries, and provocations from our analysis.
               </p>
+                <ul>
+                  <li><p>Examples include:</p></li>
+                  <li><p>Speculative physical products</p></li>
+                  <li><p>Digital experiences</p></li>
+                  <li><p>Interactive installations</p></li>
+                </ul>
             </div>
             <div>
               <h3>Action</h3>
               <p>
-                We pilot the our future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed-back into our analysis to support our future deliverables.
+                We pilot our better future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed-back into our analysis to support our future deliverables.
               </p>
             </div>
           </div>
