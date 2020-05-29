@@ -1,18 +1,19 @@
 import React from 'react';
 
-import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME} from "../components";
+import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon} from "../components";
 import '../theme/styles.scss';
-import Icon from "../components/Icon/Icon";
 import Link from "next/link";
 
 const Home = () => {
   return(
-    <main className={'index'}>
+    <main className={'Index'}>
       <section className={'hero-banner'}>
         <div className={'hero-banner--wrapper'}>
           <div className={'hero-banner--blob'}/>
           <div className={'hero-banner--content'}>
-            <p><em>Building better</em>&nbsp;<span><em>aCommerce</em></span>&nbsp;<em>Futures Faster</em></p>
+            <div className={'tagline'}>
+              <p><em>Building better</em>&nbsp;<span><em>aCommerce</em></span>&nbsp;<em>Futures Faster</em></p>
+            </div>
             <div className={'project-description'}>
               <em>Artifact - Q2 - 2020 - aCommerce</em>
               <h1>Frictionless Kitchen</h1>

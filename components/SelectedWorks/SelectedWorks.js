@@ -1,7 +1,5 @@
 import "./SelectedWorks.scss"
-import {DividedContent, ICONS, THEME} from "../index";
-import BorderButton from "../BorderButton/BorderButton";
-import Icon from "../Icon/Icon";
+import {DividedContent, ICONS, THEME, BorderButton, Icon} from "../index";
 
 const works = [
   {type:'artifact', lab:'acommerce',
@@ -45,9 +43,16 @@ const SelectedWorks = () => {
           <span>With projects in <em>system design</em>, <em>tech prototyping</em>, and <em>interactive reports</em>, our studio a far cry from the traditional strategic consultancy.</span>
         </DividedContent>
       </div>
-      <BorderButton content={<em>filter by lab <Icon icon={ICONS.FILTER} theme={THEME.DARK} /></em>} />
+      <BorderButton
+        content={<em>filter by lab</em>}
+        icon={<Icon icon={ICONS.FILTER} theme={THEME.DARK} /> }
+      />
       { generateWorkTiles() }
-      <BorderButton content={<em>explore offerings <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>} backwards={true}/>
+      <BorderButton
+        content={<em>explore offerings</em>}
+        icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} /> }
+        backwards={true}
+      />
     </div>
   )
 }

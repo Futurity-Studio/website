@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
-import Icon, { ICONS, THEME, SIZE } from "../Icon/Icon";
 import { motion } from 'framer-motion';
-import BorderButton from "../BorderButton/BorderButton";
+import { BorderButton, ICONS, THEME, Icon } from ".."
 
-
-import "./menu.scss"
+import { useWindowScroll } from "react-use";
 import {cubicBezier} from "../../helpers/animation";
 
+import "./menu.scss"
+
 const topNav = [
-  {title: 'Work', link: '/work', children: [] },
-  {title: 'About', link: '/about', children: [{title: 'Services'}, {title: 'Team'}, {title: 'Clients'}] },
+  // {title: 'Work', link: '/work', children: [] },
+  {title: 'About', link: '/about', children: [{title: 'Methodology'}, {title: 'Team'}, {title: 'Clients'}] },
   {title: 'Labs', link: '/labs', children: [{title: 'aCommerce'}, {title: 'Foodturity'}, {title: 'neUIro'}] },
   {title: 'Events', link: '/events', children: [{title: 'Upcoming'}] }
 ]
 
-const menuAnimation_variants = {
+const menuContainerAnimation_variants = {
   open: {
     backgroundColor: 'rgba(58,58,58,1)',
     height: '100vh' // todo -- handle this for mobile
@@ -27,11 +27,35 @@ const menuAnimation_variants = {
   }
 }
 
+const menuHeaderAnimation_variants = {
+  filled: {
+    backgroundColor: 'rgba(255,255,255,1)',
+  },
+  transparent: {
+    backgroundColor: 'rgba(255,255,255,0)',
+  }
+}
+
+
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [isButtonHovering, setButtonHover] = useState(false);
   const router = useRouter();
 
+  const scrollListener = () => {
+    if (!isOpen) {
+      setScrollPosition(window.pageYOffset);
+    } else {
+      setScrollPosition(0);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", scrollListener);
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, );
   const generateTopNavContent = () => { // todo handle children
     return(
       topNav.map((n) => {
@@ -55,13 +79,18 @@ const Menu = () => {
 
   return(
     <motion.div
-      className={'menu ' + (isOpen ? "open" : "close")}
+      className={'menu ' + (isOpen ? 'open' : 'close')}
       animate={(isOpen ? "open" : "close")}
-      variants={menuAnimation_variants}
-      transition={{ ease: cubicBezier, duration: .33 }}
+      variants={menuContainerAnimation_variants}
+      transition={{ ease: cubicBezier, duration: .25 }}
     >
       <div className={'menu-contents'}>
-        <div className={'menu-header'}>
+        <motion.div animate={((scrollPosition >= 1) ? 'filled' : 'transparent')}
+                    variants={menuHeaderAnimation_variants}
+                    transition={{ ease: cubicBezier, duration: .25 }}>
+        <div
+          className={'menu-header'}
+        >
           <div>
             <div className={'logo'}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 38">
@@ -77,7 +106,14 @@ const Menu = () => {
           </div>
           <div
             className={'menu-button'}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => {
+              setIsOpen(!isOpen)
+              if (!isOpen) {
+                setScrollPosition(0)
+              } else {
+                setScrollPosition(window.pageYOffset)
+              }
+            }}
             onMouseEnter={ () => {setButtonHover(true)}}
             onMouseLeave={ () => {setButtonHover(false)}}
           >
@@ -95,6 +131,8 @@ const Menu = () => {
             <motion.div className={'menu-button-background ' + (isButtonHovering ? "open" : "close")} />
           </div>
         </div>
+        </motion.div>
+
         <div className={'menu-body'}>
           <nav className={'nav-top'}>
             <ul>
@@ -104,10 +142,8 @@ const Menu = () => {
           </nav>
 
           <BorderButton
-            content={<>
-              <em>get in touch</em>
-              <Icon icon={ICONS.MAIL} theme={THEME.LIGHT} />
-            </>}
+            content={<em>get in touch</em>}
+            icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT} />}
           />
 
           <nav className={'nav-bottom'}>
@@ -131,14 +167,8 @@ const Menu = () => {
                 <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT} />
               </a>
             </Link>
-            <Link href={'/privacy'}>
-              <a>
-                <span><em>Privacy</em></span>
-              </a>
-            </Link>
           </nav>
         </div>
-
       </div>
     </motion.div>
   )

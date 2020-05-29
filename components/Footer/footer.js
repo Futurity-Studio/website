@@ -1,8 +1,6 @@
 import Link from 'next/link';
-
+import {Icon, ICONS, THEME} from "..";
 import './footer.scss'
-import {ICONS, THEME} from "..";
-import Icon from "../Icon/Icon";
 
 const Footer = () => {
   return(

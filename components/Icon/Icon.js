@@ -12,7 +12,7 @@ export const ICONS = {
   CROSS: 'CROSS',
   // CHECK: 'CHECK',
   // PAUSE: 'PAUSE',
-  // MINUS: 'MINUS',
+  MINUS: 'MINUS',
   // PLAY: 'PLAY',
   // TIME: 'TIME',
   // PHONE: 'PHONE',
@@ -22,6 +22,7 @@ export const ICONS = {
   // FILE: 'FILE',
   // WAIVER: 'WAIVER',
   // CAMERA: 'CAMERA',
+  PLUS: 'PLUS',
   LEFT_CHEV:'LEFT_CHEV',
   RIGHT_CHEV:'RIGHT_CHEV',
   BULB: 'BULB',
@@ -53,6 +54,17 @@ export const SIZE = {
 export const TYPE = {
   LINK: 'lnk'
 };
+
+const PLUS = () => {
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 15 15">
+      <defs>
+        <path id="icons-plus" d="M8 6h5a1 1 0 010 2H8v5a1 1 0 01-2 0V8H1a1 1 0 110-2h5V1a1 1 0 112 0v5z"/>
+      </defs>
+      <use fill="#3A3A3A" fillRule="nonzero" transform="translate(.5 .5)" xlinkHref="#icons-plus"/>
+    </svg>
+  )
+}
 
 const LEFT_CHEV = () => {
   return(
@@ -461,17 +473,16 @@ export const Iffinity = () => {
   );
 }
 
-export default class Icon extends Component {
+export const Icon = ({icon, progress, theme, size, type, hide, url, children, onClick}) => {
 
-  _onClick = () => {
-    const { onClick } = this.props;
+  const _onClick = () => {
     if (onClick) {
       onClick();
     }
   }
 
-  render() {
-    const { icon, progress, theme, size, type, hide, url, children } = this.props;
+  // render() {
+  //   const { icon, progress, theme, size, type, hide, url, children } = this.props;
 
     let svg = <span>{'icon'}</span>;
 
@@ -508,6 +519,9 @@ export default class Icon extends Component {
         break;
       case ICONS.CROSS:
         svg = CROSS();
+        break;
+      case ICONS.PLUS:
+        svg = PLUS();
         break;
       case ICONS.CHECK:
         svg = CHECK();
@@ -617,10 +631,12 @@ export default class Icon extends Component {
     }
 
     return (
-      <div className={`icon ${styles}`} onClick={this._onClick}>
+      <div className={`icon ${styles}`} onClick={_onClick}>
         {children}
         {svg}
       </div>
     );
-  }
+  // }
 }
+
+// export default Icon;

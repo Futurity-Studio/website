@@ -1,17 +1,18 @@
 import React from 'react';
-import {DividedContent, Footer, ICONS, Teaser, THEME} from "../components";
+import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton} from "../components";
 
 import '../theme/styles.scss';
-import Icon from "../components/Icon/Icon";
-import BorderButton from "../components/BorderButton/BorderButton";
+import Link from "next/link";
 
 const About = () => {
   return(
-    <main className={'about'}>
+    <main className={'About'}>
       <section className={'banner'}>
         <div className={'section-content'}>
-          <h2>Radical innovation is rigorously imaginative, multidisciplinary in execution, and scrupulously reinvents itself.</h2>
-          <h4>We bring this core belief to companies and teams wanting to discover the future.</h4>
+          <div>
+            <h2>Radical innovation is rigorously imaginative, multidisciplinary in execution, and scrupulously reinvents itself.</h2>
+            <h4>We bring this core belief to companies and teams wanting to discover the future.</h4>
+          </div>
         </div>
         <Teaser label={'explore more'} />
       </section>
@@ -26,18 +27,19 @@ const About = () => {
           </h4>
         </div>
         <BorderButton
-          content={<>
-            <em>our methodology</em>
-            <Icon icon={ICONS.BULB} theme={THEME.DARK} />
-          </>}
+          content={<em>our methodology</em>}
+          icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
         />
         <div className={'section-content'}>
           <DividedContent
-            left={<h2>Future Labs</h2>}
-            right={<h4>
-              Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
-              The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
-            </h4>}
+            left={<h2>Future Offerings</h2>}
+            right={<>
+              <h4>
+                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
+                The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
+              </h4>
+              <StealthButton label={'explore our labs'} icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />} />
+            </>}
           />
         </div>
       </section>
@@ -66,12 +68,12 @@ const About = () => {
               <p>
                 We use our data to prototype a narrative into reality. Artifacts are objects based on the interactions, inquiries, and provocations from our analysis.
               </p>
-                <ul>
-                  <li><p>Examples include:</p></li>
-                  <li><p>Speculative physical products</p></li>
-                  <li><p>Digital experiences</p></li>
-                  <li><p>Interactive installations</p></li>
-                </ul>
+              <ul>
+                <li><p>Examples include:</p></li>
+                <li><p>Speculative physical products</p></li>
+                <li><p>Digital experiences</p></li>
+                <li><p>Interactive installations</p></li>
+              </ul>
             </div>
             <div>
               <h3>Action</h3>
@@ -88,7 +90,7 @@ const About = () => {
         <div className={'team--container'}>
           <div className={'team--header'}>
             <div><h2>Our Team</h2>
-              <p>Together we have 50+ years of experiences in analysis, forecasting, design and development for startups, moonshot factories, and fortune 500 companies.</p>
+              <p>Together we have 50+ years of experience in analysis, forecasting, design and development for startups, moonshot factories, and fortune 500 companies.</p>
             </div>
             <div className={'team--photo'} />
           </div>
@@ -98,18 +100,30 @@ const About = () => {
             </div>
             <div className={'team--members'}>
               <div>
-                <h4>Cecilia MoSze Tham</h4>
-                <em>Futures Synthesist</em>
+                <Link prefetch={false} href={'https://www.linkedin.com/in/ceciliatham/'}>
+                  <a target={'_blank'}>
+                    <h4>Cecilia MoSze Tham</h4>
+                    <em>Futures Synthesist</em>
+                  </a>
+                </Link>
               </div>
 
               <div>
-                <h4>Lucas Lorenzo Pe&ntilde;a</h4>
-                <em>Technology Synthesist</em>
+                <Link prefetch={false} href={'https://www.linkedin.com/in/lucaslpena/'}>
+                  <a target={'_blank'}>
+                    <h4>Lucas Lorenzo Pe&ntilde;a</h4>
+                    <em>Technology Synthesist</em>
+                  </a>
+                </Link>
               </div>
 
               <div>
-                <h4>Mark B&uuml;nger</h4>
-                <em>Strategy Synthesist</em>
+                <Link prefetch={false} href={'https://www.linkedin.com/in/markbunger/'}>
+                  <a target={'_blank'}>
+                    <h4>Mark Dixon B&uuml;nger</h4>
+                    <em>Strategy Synthesist</em>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -119,11 +133,9 @@ const About = () => {
 
       <section className={'clients'}>
         <BorderButton
-          content={<>
-            <em>select clients</em>
-            <Icon icon={ICONS.GLOBE} theme={THEME.DARK} />
-          </>}
+          content={ <em>select clients</em>}
           backwards={true}
+          icon={<Icon icon={ICONS.GLOBE} theme={THEME.DARK} />}
         />
         <div className={'section-content'}>
           <div className={'clients--list'}>

@@ -1,0 +1,19 @@
+@import 'theme/constants';
+.AccordionSection{
+  background: red;
+  &--header{
+    position: relative;
+  }
+  &--button{
+    position: absolute;
+    bottom: 0;
+    right: $section-padding;
+  }
+  &.closed{
+
+  }
+  &.open{
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}

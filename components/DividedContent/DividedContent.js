@@ -1,7 +1,6 @@
 import "./DividedContent.scss"
 
 const DividedContent = ({left, right, hiddenBar = false}) => {
-  console.log(hiddenBar);
   return(
     <div className={'divided_content'}>
       {left}
