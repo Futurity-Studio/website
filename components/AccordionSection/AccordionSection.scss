@@ -1,19 +1,31 @@
 @import 'theme/constants';
 .AccordionSection{
-  background: red;
+  position: relative;
   &--header{
-    position: relative;
+    padding: $content-padding 0;
+    cursor: pointer;
+    position: sticky;
+    top: $menu-closed-height;
+    z-index: 1;
   }
   &--button{
     position: absolute;
-    bottom: 0;
+    bottom: $content-padding + 1rem;
     right: $section-padding;
   }
   &.closed{
-
+    &:hover{
+      background: url("/assets/img/hero-banner--background.png") center no-repeat;
+      background-size: cover;
+    }
   }
   &.open{
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
+
+    .AccordionSection--header{
+      background: url("/assets/img/hero-banner--background.png") center no-repeat;
+      background-size: cover;
+    }
   }
 }

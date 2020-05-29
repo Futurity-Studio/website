@@ -325,43 +325,56 @@
 
 .Labs{
   &--overview{
-    min-height: 50vh;
-    min-height: calc(var(--vh, 1vh) * 50);
-    background: url("/assets/img/hero-banner--background.png") center no-repeat;
-    background-size: cover;
+    min-height: 30vh;
+    min-height: calc(var(--vh, 1vh) * 30);
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: $menu-closed-height;
-    margin-bottom: 0;
+    margin-bottom: $content-padding/2;
     //background: red;
     > div {
       width: 100%;
     }
   }
 
+  > section:last-of-type{
+    margin-top: $content-padding/2;
+  }
+
   &--wrapper{
     //margin-top: $menu-closed-height;
+    margin: $section-padding/4 0;
 
     .lab{
-      margin: $section-padding 0;
+      margin: $section-padding/2 0;
       &--content{
         display: grid;
         grid-template-columns: 300px 1fr;
         grid-template-rows: 1fr;
         column-gap: 1rem;
         padding-top: $content-padding/2;
+
+        position: relative;
       }
       &--body{
+        //height: calc( 100vw - 291px - #{$menu-closed-height});
+        //height: 400px;
+        //overflow-y: scroll;
         p {
           width: 55ex;
+
         }
       }
       &--menu{
         position: sticky;
-        top: 10%;
-        height: 30vh;
-        height: calc(var(--vh, 1vh) * 30);
+        //top: 300px;
+
+        //background-color: red;
+        top: calc(291px + #{$menu-closed-height});
+        //top: 700px;
+        height: calc(100vh - (291px + 24px) - #{$menu-closed-height});
+        //height: calc(var(--vh, 1vh) * 30);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: min-content min-content min-content 1fr min-content;
@@ -385,12 +398,10 @@
       margin: $content-padding*2 0;
 
       &:last-of-type{
-        padding-bottom: 0;
+        margin-bottom: 0;
       }
 
       .deliverable{
-        background: greens;
-        //padding: 1rem;
       }
     }
   }

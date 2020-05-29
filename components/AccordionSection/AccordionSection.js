@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Icon, ICONS, THEME } from "..";
+import {Icon, ICONS, StealthButton, THEME} from "..";
 
 import './AccordionSection.scss'
 
@@ -14,17 +14,21 @@ const AccordionSection = ({header, children, toggle, className}) => {
   return(
     <section
       className={`AccordionSection ${isOpen ? 'open' : 'closed'} ${className}` }
-      onClick={() => { setIsOpen(!isOpen) }}
     >
-      <div className={'AccordionSection--header'}>
+      <div
+        className={'AccordionSection--header'}
+        onClick={() => { setIsOpen(!isOpen) }}
+      >
         {header}
         <div className={'AccordionSection--button'}>
-          learn more
-          { isOpen ?
-            <Icon icon={ICONS.MINUS} theme={THEME.DARK} />
-            :
-            <Icon icon={ICONS.PLUS} theme={THEME.DARK} />
-          }
+          <StealthButton
+            label={'learn more'}
+            icon={(isOpen) ?
+              <Icon icon={ICONS.MINUS} theme={THEME.DARK}/>
+              :
+              <Icon icon={ICONS.PLUS} theme={THEME.DARK}/>
+            }
+          />
         </div>
       </div>
       { isOpen && // todo - animate presence??

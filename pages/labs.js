@@ -1,8 +1,7 @@
 import React, { useState, useEffect }from 'react';
-import {AccordionSection, DividedContent, Footer, Menu} from "../components";
-import { LabData } from "../constants/";
+import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, THEME} from "../components";
+import {LabData, ROUTES} from "../constants/";
 import '../theme/styles.scss';
-import BorderButton from "../components/BorderButton/BorderButton";
 
 const Labs = () => {
   const [isOpen, setIsOpen ] = useState(false);
@@ -48,7 +47,11 @@ const Labs = () => {
           </div>
         )
       );
+
+
+
       const card = (
+        // <div className={'lab'}>
         <AccordionSection
           key={l.title}
           // open={selected[i]}
@@ -68,11 +71,17 @@ const Labs = () => {
         >
           <div className={'lab--content'}>
             <div className={'lab--menu'}>
-                <span><p>Description</p></span>
-                <span><p>Analysis</p></span>
-                <span><p>Artifact</p></span>
-                <span><p>Analysis</p></span>
-              <span>{`Interested in subscribing to ${l.title} Lab`}</span>
+              <span><p>OverView</p></span>
+              <span><p>Analysis</p></span>
+              <span><p>Artifact</p></span>
+              <span><p>Action</p></span>
+              <div>
+                <StealthButton
+                  label={`Interested in subscribing?`}
+                  icon={<Icon icon={ICONS.WAIVER} theme={THEME.DARK} /> }
+                  link={'mailto:inquiry@futurity.studio'}
+                />
+              </div>
             </div>
             <div className={'lab--body'}>
               <div className={'lab--body--desc'}>
@@ -99,7 +108,9 @@ const Labs = () => {
             </div>
 
           </div>
-        </AccordionSection>)
+        </AccordionSection>
+        // </div>
+      )
       return(card)
     });
     return(labCard);
@@ -111,7 +122,16 @@ const Labs = () => {
         <div className={'section-content'}>
           <DividedContent
             left={<h2>Our Labs</h2>}
-            right={<h4>Labs are year long investigations, and experimentations on a theme packaged for as a subscription service</h4>}
+            right={
+              <>
+                <h4>Labs are year long investigations, and experimentations on a theme packaged for as a subscription service</h4>
+                <StealthButton
+                  label={'explore our methodology'}
+                  icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
+                  link={ROUTES.ABOUT}
+                />
+              </>
+            }
           />
         </div>
       </section>
