@@ -3,6 +3,7 @@ import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, Stealt
 
 import '../theme/styles.scss';
 import Link from "next/link";
+import {ROUTES} from "../constants";
 
 const About = () => {
   return(
@@ -27,6 +28,7 @@ const About = () => {
           </h4>
         </div>
         <BorderButton
+          id={'methodology'}
           content={<em>our methodology</em>}
           icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
         />
@@ -38,7 +40,11 @@ const About = () => {
                 Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
                 The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
               </h4>
-              <StealthButton label={'explore our labs'} icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />} />
+              <StealthButton
+                label={'explore our labs'}
+                icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
+                link={ROUTES.LABS}
+              />
             </>}
           />
         </div>
@@ -57,8 +63,8 @@ const About = () => {
               <ul>
                 <li><p>Examples include:</p></li>
                 <li><p>Timelines</p></li>
-                <li><p>Systems aps</p></li>
-                <li><p>Sorecasts</p></li>
+                <li><p>Systems Maps</p></li>
+                <li><p>Forecasts</p></li>
                 <li><p>Scenarios</p></li>
                 <li><p>Reports (appx. 15-25 pages)</p></li>
               </ul>
@@ -78,7 +84,7 @@ const About = () => {
             <div>
               <h3>Action</h3>
               <p>
-                We pilot our better future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed-back into our analysis to support our future deliverables.
+                We pilot our better future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed back into our analysis to support our future deliverables.
               </p>
             </div>
           </div>
@@ -86,17 +92,17 @@ const About = () => {
       </section>
 
 
-      <section className={'team'}>
+      <section className={'team'} id={'team'}>
         <div className={'team--container'}>
           <div className={'team--header'}>
             <div><h2>Our Team</h2>
-              <p>Together we have 50+ years of experience in analysis, forecasting, design and development for startups, moonshot factories, and fortune 500 companies.</p>
+              <p>Together we have 50+ years of experience in analysis, forecasting, design and development for startups, moonshot factories, and Fortune 500 companies.</p>
             </div>
             <div className={'team--photo'} />
           </div>
           <div className={'team--content'}>
             <div>
-              <p>Synthesist - person which develops the craft unification or coupling things together.</p><em>presented from left to right</em>
+              <p>Synthesist - a person who develops the craft of unifying or coupling things together.</p><em>presented from left to right</em>
             </div>
             <div className={'team--members'}>
               <div>
@@ -131,18 +137,18 @@ const About = () => {
 
       </section>
 
-      <section className={'clients'}>
-        <BorderButton
-          content={ <em>select clients</em>}
-          backwards={true}
-          icon={<Icon icon={ICONS.GLOBE} theme={THEME.DARK} />}
-        />
-        <div className={'section-content'}>
-          <div className={'clients--list'}>
+      {/*<section className={'clients'}>*/}
+      {/*  <BorderButton*/}
+      {/*    content={ <em>select clients</em>}*/}
+      {/*    backwards={true}*/}
+      {/*    icon={<Icon icon={ICONS.GLOBE} theme={THEME.DARK} />}*/}
+      {/*  />*/}
+      {/*  <div className={'section-content'}>*/}
+      {/*    <div className={'clients--list'}>*/}
 
-          </div>
-        </div>
-      </section>
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       <Footer/>
     </main>

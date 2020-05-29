@@ -197,6 +197,11 @@
         flex-direction: column;
         justify-content: center;
 
+
+        @include media("<=tablet"){
+          //margin: $content-padding/1.5 0;
+        }
+
         ul{
           margin: 0;
           padding-left: 0;
@@ -256,13 +261,15 @@
       padding: $content-padding $main-padding;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: stretch;
       padding-bottom: 0;
 
       >div:first-of-type{
         width: 300px;
         margin: 0 $content-padding 0 0;
-
+        p {
+          margin-bottom: 8px;
+        }
       }
 
       .team--members{
@@ -272,17 +279,24 @@
         grid-column-gap: $content-padding;
         align-items: flex-end;
         > div, a{
-          display: flex;
+          display: inline-flex;
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
+          em{
+            margin-top: 8px;
+          }
+        }
+
+        >div {
+          padding-top: 1.5rem;
         }
       }
 
       @include media("<=1280px"){
         padding: $content-padding/2 $main-padding;
         .team--members>div{
-          padding: .5rem 0;
+          padding: 1.5rem 0 .5rem;
         }
       }
       @include media("<=tablet"){
@@ -375,7 +389,7 @@
       }
 
       .deliverable{
-        //background: red;
+        background: greens;
         //padding: 1rem;
       }
     }

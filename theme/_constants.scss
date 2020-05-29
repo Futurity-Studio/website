@@ -59,4 +59,9 @@ $line-color: #3a3a3a;
   grid-template-columns: auto min-content;
   align-items: center;
   grid-column-gap: 8px;
+
+  .icon{
+    position: relative;
+    top: -2px;
+  }
 }

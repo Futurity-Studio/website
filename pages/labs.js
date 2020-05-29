@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import {AccordionSection, DividedContent, Footer, Menu} from "../components";
-import { LabData } from "../constants/labs";
+import { LabData } from "../constants/";
 import '../theme/styles.scss';
 import BorderButton from "../components/BorderButton/BorderButton";
 

@@ -3,5 +3,8 @@
 .Button{
   &-Stealth{
     @extend %labeled-icon;
+    &.link{
+      cursor: pointer;
+    }
   }
 }

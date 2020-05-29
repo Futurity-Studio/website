@@ -3,6 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
 import { Menu } from "../components";
+
 import '../theme/theme.scss'
 
 class MyApp extends App {
@@ -10,6 +11,7 @@ class MyApp extends App {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
+
 
   render(){
     const { Component, pageProps, router } = this.props;

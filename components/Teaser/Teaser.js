@@ -13,7 +13,7 @@ const Teaser = ({label}) => {
         transition={{
           loop: Infinity,
           easing: cubicBezier,
-          duration: 2
+          duration: 1.5
         }}
         className={'down-line--background'}
       />
