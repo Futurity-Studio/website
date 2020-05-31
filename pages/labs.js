@@ -1,26 +1,102 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState, useEffect, useRef }from 'react';
+import { useRouter } from "next/router";
+import { useIntersection } from "react-use";
 import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, THEME} from "../components";
-import {LabData, ROUTES} from "../constants/";
+import {LabData, Links, ROUTES} from "../constants/";
 import '../theme/styles.scss';
 
+
+const scrollToRef = (ref) => {
+    window.scrollTo(0, ref.current.offsetTop);
+}
+
 const Labs = () => {
-  const [isOpen, setIsOpen ] = useState(false);
-  const [selected, setSelected ] = useState(LabData.map(_ => false));
+  const router = useRouter();
+  const labParam = router.query.lab;
 
 
-  // console.log(selected)
+  const [ lab, setLab ] = useState(null);
+  const [ isOpen, setIsOpen ] = useState(false);
+  const [ selected, setSelected ] = useState(LabData.map(_ => false));
+  const labContainerRefs = LabData.map(_ => useRef(null));
+  const intersectionThresholds = LabData.map(_ => 0.2);
+  const intersections = [];
 
-  // useEffect(() => {
-  //   console.log()
-  //   // if (isOpen){
-  //   //
-  //   // }
-  // }, [isOpen]);
+
+  // console.log(lab);
+  // console.log(labParam);
+  // // console.log(router.query);
+  // if ((lab == null) && (labParam != null) && (lab !== labParam)) {
+  //   setLab(labParam);
+  // }
+
+
+  useEffect(() => {
+    // console.log('initial');
+    if (!labParam) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 500);
+    }
+  }, []);
+
+
+  intersectionThresholds.forEach((_, i) => {
+    intersections.push(useIntersection(labContainerRefs[i], {
+        root: null,
+        rootMargin: "0px",
+        threshold: intersectionThresholds[i]
+      }));
+  })
+
+
+  useEffect( () => {
+
+    // if ((lab == null) && (labParam!= null) && (lab !== labParam)) {
+    //   console.log('labs updated');
+    //   setLab(labParam);
+    // }
+
+    console.log('labs updated');
+    console.log(lab);
+    if (lab){
+      let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
+      console.log(labNumber);
+
+      let selection = [...selected];
+      selection[labNumber] = true;
+      setSelected(selection);
+
+      scrollToRef(labContainerRefs[labNumber]);
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+    // return() => {
+    //   setLab(null);
+    // }
+
+  }, [lab]);
+
+  useEffect(() => {
+    // console.log('generic effect hit');
+    const labParam = router.query.lab;
+    if ((labParam!= null) && (lab !== labParam)) {
+      setLab(labParam);
+    }
+
+
+
+  }, );
+
+
   //
-  // useEffect(() => {
-  //   console.log(selected);
-  //
-  // }, [selected])
+  useEffect(() => {
+    // console.log('selection changed');
+    // console.log(selected);
+    // selected.findIndex()
+
+  }, [selected]);
 
 
 
@@ -48,7 +124,7 @@ const Labs = () => {
         )
       );
 
-
+      const inView = intersections[i] && intersections[i].intersectionRatio >= intersectionThresholds[i];
 
       const card = (
         // <div className={'lab'}>
@@ -58,9 +134,13 @@ const Labs = () => {
           toggle={(open) => {
             let selection = [...selected];
             selection[i] = open ? true : false;
+            if (open){
+              scrollToRef(labContainerRefs[i]);
+            }
             setSelected(selection);
           }}
-          className={'lab'}
+          reference={labContainerRefs[i]}
+          className={`lab ${inView}`}
           header={
             <div className={`section-content`}>
               <div><em>{`Lab - ${l.year}`}</em></div>
@@ -143,4 +223,4 @@ const Labs = () => {
   )
 }
 
-export default Labs
+export default Labs;

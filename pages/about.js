@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton} from "../components";
 
 import '../theme/styles.scss';
@@ -6,6 +6,14 @@ import Link from "next/link";
 import {ROUTES} from "../constants";
 
 const About = () => {
+
+  useEffect(() => {
+    console.log('initial');
+    setTimeout( () => {
+      window.scrollTo(0, 0);
+    }, 500);
+  }, []);
+
   return(
     <main className={'About'}>
       <section className={'banner'}>

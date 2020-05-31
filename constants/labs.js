@@ -1,3 +1,5 @@
+import {ROUTES} from "./routes";
+
 export const LabData = [
   {
     title: 'aCommerce',
@@ -90,4 +92,11 @@ export const LabData = [
     ]
   },
 
+]
+
+export const Links = [
+  // {title: 'Work', link: '/work', children: [] },
+  {title: 'About', link: ROUTES.ABOUT , children: [{title: 'Methodology', link: '#methodology'}, {title: 'Team', link: '#team'}] },
+  {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: '?lab=acommerce'}, {title: 'Foodturity', link: '?lab=foodturity'}, {title: 'neUIro', link: '?lab=neuiro'}] },
+  {title: 'Events', link: ROUTES.EVENTS, children: [{title: 'Upcoming', link: '#acommerce'}] }
 ]

@@ -3,17 +3,21 @@ import {Icon, ICONS, StealthButton, THEME} from "..";
 
 import './AccordionSection.scss'
 
-const AccordionSection = ({header, children, toggle, className}) => {
+const AccordionSection = ({header, children, toggle, className, reference}) => {
   const [ isOpen, setIsOpen ] = useState(false);
 
   useEffect(() => {
     // console.log('effect hit');
-      toggle(isOpen)
+    toggle(isOpen)
+    if (isOpen){
+
+    }
   }, [isOpen]);
 
   return(
     <section
       className={`AccordionSection ${isOpen ? 'open' : 'closed'} ${className}` }
+      ref={reference}
     >
       <div
         className={'AccordionSection--header'}

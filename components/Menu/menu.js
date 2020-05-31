@@ -4,19 +4,12 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion';
 import { BorderButton, ICONS, THEME, Icon } from ".."
 
-import { ROUTES } from '../../constants';
+import { ROUTES, Links } from '../../constants';
 
 import { useWindowScroll } from "react-use";
 import {cubicBezier} from "../../helpers/animation";
 
 import "./menu.scss"
-
-const topNav = [
-  // {title: 'Work', link: '/work', children: [] },
-  {title: 'About', link: ROUTES.ABOUT , children: [{title: 'Methodology', link: '#methodology'}, {title: 'Team', link: '#team'}] },
-  {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: '#acommerce'}, {title: 'Foodturity', link: '#foodturity'}, {title: 'neUIro', link: '#neuiro'}] },
-  {title: 'Events', link: ROUTES.EVENTS, children: [{title: 'Upcoming', link: '#acommerce'}] }
-]
 
 const menuContainerAnimation_variants = {
   open: {
@@ -63,7 +56,7 @@ const Menu = ({setLocked}) => {
 
   const generateTopNavContent = () => { // todo handle children
     return(
-      topNav.map((n) => {
+      Links.map((n) => {
 
         let children = n.children.map(c =>
           <div
