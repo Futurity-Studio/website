@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {Icon, ICONS, StealthButton, THEME} from "..";
 
 import './AccordionSection.scss'
 
-const AccordionSection = ({header, children, toggle, className, reference}) => {
-  const [ isOpen, setIsOpen ] = useState(false);
+const AccordionSection = ({header, children, toggle, className, reference, open, id}) => {
+  const [ isOpen, setIsOpen ] = useState(open);
+  const content = useRef(null);
 
   useEffect(() => {
     // console.log('effect hit');
+
+    if (content && content.current){
+      console.log('scrolling');
+      // content.current.scrollTo(0,600);
+    }
+
     toggle(isOpen)
     if (isOpen){
-
+    } else {
     }
   }, [isOpen]);
 
@@ -18,6 +25,7 @@ const AccordionSection = ({header, children, toggle, className, reference}) => {
     <section
       className={`AccordionSection ${isOpen ? 'open' : 'closed'} ${className}` }
       ref={reference}
+      id={id}
     >
       <div
         className={'AccordionSection--header'}
@@ -37,7 +45,7 @@ const AccordionSection = ({header, children, toggle, className, reference}) => {
       </div>
       { isOpen && // todo - animate presence??
         <div className={'AccordionSection--contents'}>
-          <div className={'section-content'}>
+          <div className={'section-content'} ref={content}>
             {children}
           </div>
         </div>

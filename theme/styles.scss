@@ -4,8 +4,6 @@
 .Index{
   .hero-banner {
     position: relative;
-    background: url("/assets/img/hero-banner--background.png") center no-repeat;
-    background-size: cover;
     padding: $main-padding;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
@@ -13,6 +11,19 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+
+    &#acommerce{
+      background: url("/assets/img/hero-banner--background.png") center center no-repeat;
+      background-size: cover;
+    }
+    &#foodturity{
+      background: url("/assets/img/background--foodturity.jpg") center center no-repeat;
+      background-size: cover;
+    }
+    &#neuiro{
+      background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
+      background-size: cover;
+    }
 
     &--wrapper{
       margin: 0 auto;
@@ -73,6 +84,9 @@
       padding-top: $content-padding/4;
       display: flex;
       justify-content: space-between;
+      >div{
+        cursor: pointer;
+      }
     }
 
     .bottom-menu{
@@ -138,7 +152,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: url("/assets/img/hero-banner--background.png") center no-repeat;
+    background: url("/assets/img/background--generic.jpg") center center no-repeat;
     background-size: cover;
     padding: 0;
     h2{
@@ -199,7 +213,7 @@
 
 
         @include media("<=tablet"){
-          //margin: $content-padding/1.5 0;
+          height: initial;
         }
 
         ul{
@@ -338,6 +352,10 @@
     }
   }
 
+  .border-button{
+    padding: $content-padding/8 0  !important;
+  }
+
   > section:last-of-type{
     margin-top: $content-padding/2;
   }
@@ -348,12 +366,16 @@
 
     .lab{
       margin: $section-padding/2 0;
+      @include media('<=tablet'){
+        margin: $section-padding/4 0;
+      }
       &--content{
         display: grid;
-        grid-template-columns: 300px 1fr;
+        //grid-template-columns: 300px 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         column-gap: 1rem;
-        padding-top: $content-padding/2;
+        //padding-top: $content-padding/2;
 
         position: relative;
       }
@@ -361,9 +383,9 @@
         //height: calc( 100vw - 291px - #{$menu-closed-height});
         //height: 400px;
         //overflow-y: scroll;
+        padding-top: $content-padding;
         p {
-          width: 55ex;
-
+          max-width: 55ex;
         }
       }
       &--menu{
@@ -373,7 +395,7 @@
         //background-color: red;
         top: calc(291px + #{$menu-closed-height});
         //top: 700px;
-        height: calc(100vh - (291px + 24px) - #{$menu-closed-height});
+        height: calc(100vh - (291px + 24px) - #{$menu-closed-height} - #{$content-padding});
         //height: calc(var(--vh, 1vh) * 30);
         display: grid;
         grid-template-columns: 1fr;
@@ -392,16 +414,32 @@
     }
     &--container{
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-row: auto;
       column-gap: 2rem;
       row-gap: 2rem;
-      margin: $content-padding*2 0;
+      margin: $content-padding*2.5 0;
+      @include media('<=tablet'){
+        margin: $content-padding 0;
+      }
 
       &:last-of-type{
         margin-bottom: 0;
       }
 
       .deliverable{
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+
+        > * {
+          max-width: 100%;
+        }
+        p {
+          word-wrap: break-spaces;
+          //background-color: red;
+          max-width: 100%;
+        }
       }
     }
   }
