@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import {Icon, ICONS, StealthButton, THEME} from "..";
 
 import './AccordionSection.scss'
@@ -8,18 +8,24 @@ const AccordionSection = ({header, children, toggle, className, reference, open,
   const content = useRef(null);
 
   useEffect(() => {
-    // console.log('effect hit');
-
-    if (content && content.current){
-      console.log('scrolling');
-      // content.current.scrollTo(0,600);
-    }
+    console.log(isOpen);
+    // toggle(isOpen)
+    // if (content && content.current){
+    //   console.log('scrolling');
+    //   // content.current.scrollTo(0,600);
+    // }
 
     toggle(isOpen)
-    if (isOpen){
-    } else {
-    }
+    // if (isOpen){
+    // } else {
+    // }
   }, [isOpen]);
+
+
+
+  useEffect( () => {
+    setIsOpen(open);
+  }, [open]);
 
   return(
     <section
