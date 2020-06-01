@@ -38,7 +38,7 @@ const Labs = () => {
 
   useEffect(() => {
     // console.log('initial');
-    if (!labParam) {
+    if (!router.query.lab) {
       setTimeout(() => {
         window.scrollTo(0, 0);
       }, 500);

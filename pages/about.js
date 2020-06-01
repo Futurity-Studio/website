@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useRouter } from "next/router";
 import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton} from "../components";
 
 import '../theme/styles.scss';
@@ -6,12 +7,16 @@ import Link from "next/link";
 import {ROUTES} from "../constants";
 
 const About = () => {
+  const router = useRouter();
+  console.log(router);
 
   useEffect(() => {
     console.log('initial');
-    setTimeout( () => {
-      window.scrollTo(0, 0);
-    }, 500);
+    if( !router.asPath.includes(('#')) ) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 500);
+    }
   }, []);
 
   return(
