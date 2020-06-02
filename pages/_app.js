@@ -19,7 +19,7 @@ class MyApp extends App {
       <>
         <Head>
           <title>Futurity Studio</title>
-          <link rel="icon" href="/favicon.ico"/>
+          <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>
         <Normalize/>
         <Menu/>

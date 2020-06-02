@@ -1,14 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from "next/router";
 import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton} from "../components";
-
-import '../theme/styles.scss';
 import Link from "next/link";
 import {ROUTES} from "../constants";
+import { useIntersection } from "react-use";
+import '../theme/styles.scss';
 
 const About = () => {
   const router = useRouter();
-  console.log(router);
+  const analysisRef = useRef(null);
+  const artifactRef = useRef(null);
+  const actionRef =   useRef(null);
+
+  let analysisIntersect = useIntersection(analysisRef, {root: null,
+    rootMargin: "0px",
+    threshold: .5});
+
+  let artifactIntersect = useIntersection(artifactRef, {root: null,
+    rootMargin: "0px",
+    threshold: .5});
+
+  let actionIntersect = useIntersection(actionRef, {root: null,
+    rootMargin: "0px",
+    threshold: .5});
+
+  const calculateIntersection = () => {
+    if (actionIntersect && analysisIntersect && actionIntersect){
+      if (actionIntersect.intersectionRatio > 0.45){
+        return 2;
+      }  else if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio > 0.45) && (actionIntersect.intersectionRatio < 0.45)){
+        return 1;
+      } else if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio < 0.45) && (actionIntersect.intersectionRatio < 0.45)) {
+        return 0;
+      }
+    } else {
+      return 0;
+    }
+  };
 
   useEffect(() => {
     console.log('initial');
@@ -18,6 +46,7 @@ const About = () => {
       }, 500);
     }
   }, []);
+
 
   return(
     <main className={'About'}>
@@ -66,9 +95,9 @@ const About = () => {
 
       <section className={'deliverables'}>
         <div className={'deliverables--container'}>
-          <div className={'deliverables--graphic'}></div>
+          <div className={'deliverables--graphic'} id={`graphic-${calculateIntersection() || 0}`}/>
           <div className={'deliverables--content'}>
-            <div>
+            <div ref={analysisRef}>
               <h3>Analysis</h3>
               <p>
                 We learn everything we can about an innovation space to build a conceptual understanding of how it interacts with our social, economic, and industry systems.
@@ -82,7 +111,7 @@ const About = () => {
                 <li><p>Reports (appx. 15-25 pages)</p></li>
               </ul>
             </div>
-            <div>
+            <div ref={artifactRef}>
               <h3>Artifact</h3>
               <p>
                 We use our data to prototype a narrative into reality. Artifacts are objects based on the interactions, inquiries, and provocations from our analysis.
@@ -94,7 +123,7 @@ const About = () => {
                 <li><p>Interactive installations</p></li>
               </ul>
             </div>
-            <div>
+            <div ref={actionRef}>
               <h3>Action</h3>
               <p>
                 We pilot our better future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed back into our analysis to support our future deliverables.

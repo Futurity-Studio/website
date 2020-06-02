@@ -199,8 +199,19 @@
       width: 100%;
       position: sticky;
       top: 25%;
-      //transform: translateY(-50%);
-      //padding-top: 50%;
+
+      &#graphic-0{
+        background: url("/assets/img/metaballs_analysis.png") center center no-repeat;
+        background-size: contain;
+      }
+      &#graphic-1{
+        background: url("/assets/img/metaballs_artifact.png") center center no-repeat;
+        background-size: contain;
+      }
+      &#graphic-2{
+        background: url("/assets/img/metaballs_action.jpg") center center no-repeat;
+        background-size: cover;
+      }
     }
     &--content{
       > div{

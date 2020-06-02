@@ -187,6 +187,7 @@ const Labs = () => {
           }
         >
           <div className={'lab--content'}>
+
             {/*<div className={'lab--menu'}>*/}
             {/*  <span*/}
             {/*    onClick={() => {*/}
@@ -216,6 +217,7 @@ const Labs = () => {
             {/*    />*/}
             {/*  </div>*/}
             {/*</div>*/}
+
             <div className={'lab--body'}>
               <div className={'lab--body--desc'} ref={deliverableRefs[i][0]}>
                 <em>Description</em>
