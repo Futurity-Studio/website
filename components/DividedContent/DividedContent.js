@@ -1,8 +1,8 @@
 import "./DividedContent.scss"
 
-const DividedContent = ({left, right, hiddenBar = false}) => {
+const DividedContent = ({left, right, hiddenBar = false, smallLeft = false}) => {
   return(
-    <div className={'divided_content'}>
+    <div className={`DividedContent ${smallLeft ? 'smallLeft' : ''}`}>
       {left}
       <div className={'--vr ' + ((hiddenBar) ? 'hidden' : 'no')}/>
       <div>

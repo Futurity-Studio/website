@@ -457,3 +457,17 @@
 
 
 }
+
+.Deliverable{
+  .overview{
+    margin: $menu-closed-height;
+    .title{
+      padding: $content-padding 0;
+    }
+    .details{
+      p{
+        margin: 8px 0;
+      }
+    }
+  }
+}

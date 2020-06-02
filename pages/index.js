@@ -10,17 +10,29 @@ const featureContent = [
     tag: 'Upcoming Event - 2020 - aCommerce Lab',
     header:'Future Artifacts',
     short_desc: 'Designing for ubiquitous systems in aCommerce',
-    type: 'acommerce'
+    type: 'acommerce',
+    button: {
+      link: '',
+      text: 'view event information'
+    }
   }, {
     tag: 'Artifact - Q2 - 2020 - aCommerce Lab',
     header:'Tomeato',
     short_desc: 'Polygenic Plantable Meals',
-    type: 'foodturity'
+    type: 'foodturity',
+    button: {
+      link: '',
+      text: 'explore the artifact'
+    }
   }, {
     tag: 'Artifact - Q2 - 2020 - aCommerce Lab',
     header:'Frictionless Kitchen',
     short_desc: 'Home delivery with optimized supply chains.',
-    type: 'acommerce'
+    type: 'acommerce',
+    button: {
+      link: '',
+      text: 'explore the artifact'
+    }
   }
 ]
 

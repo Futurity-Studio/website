@@ -1,15 +1,18 @@
 @import "theme/constants";
 @import "theme/vendor_mixins";
 
-.divided_content{
+.DividedContent{
   display: grid;
   grid-template-columns: 275px 2px 1fr;
+  &.smallLeft{
+    grid-template-columns: 175px 2px 1fr;
+  }
   grid-template-rows: 1fr;
   column-gap: 10%;
 
   @include media("<=tablet") {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr !important;
     .--vr{
       display: none;
     }
