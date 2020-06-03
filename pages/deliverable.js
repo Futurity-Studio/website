@@ -8,18 +8,19 @@ import '../theme/styles.scss';
 
 function Deliverable({pathname, query, asPath, artifact}){
   const a = artifact;
+  console.log(artifact)
 
   const generateContent = () => {
     return a.content.map( (c, i) => {
-
       let special = '';
+      let img = '';
 
       if (Object.keys(c).includes('special')) {
 
         switch (c.special.type) {
           case 'quote':
             special = (<>
-              <h3>{c.special.body.text}</h3>
+              <h4>"{c.special.body.text}"</h4>
               <span><em>{c.special.body.from}</em></span>
             </>)
             break;
@@ -31,12 +32,16 @@ function Deliverable({pathname, query, asPath, artifact}){
         }
       }
 
+      if (a.images && a.images[i]){
+        img = <img src={a.images[i]} />
+      }
 
       return (
-        <div key={i}>
+        <div key={i} className={'content-block'}>
           <h2>{c.header}</h2>
           <p>{c.content}</p>
-          {special}
+          <div className={'content-special'}>{special}</div>
+          <div className={'content-image'}  >{img}</div>
         </div>
       );
     })
@@ -44,11 +49,15 @@ function Deliverable({pathname, query, asPath, artifact}){
 
   return(
     <main className={'Deliverable'}>
+      <section className={'banner'} id={`background-${a.details.lab.title.toLowerCase()}`}>
+        <div className={'section-content'}>
+        <div className={'title'}>
+          <h1>{a.title}</h1>
+        </div>
+        </div>
+      </section>
       <section className={'overview'}>
         <div className={'section-content'}>
-          <div className={'title'}>
-            <h1>{artifact.title}</h1>
-          </div>
           <DividedContent
             smallLeft={true}
             left={<div className={'details'}>
@@ -64,6 +73,7 @@ function Deliverable({pathname, query, asPath, artifact}){
             right={<h4>{artifact.details.question}</h4>}
           />
         </div>
+      </section>
 
         <section className={'media'}>
 
@@ -79,7 +89,6 @@ function Deliverable({pathname, query, asPath, artifact}){
 
 
 
-      </section>
       <Footer/>
     </main>
   )

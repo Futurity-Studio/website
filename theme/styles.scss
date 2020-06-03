@@ -58,7 +58,6 @@
         display: grid;
         grid-template-rows: 1fr min-content 20vh;
         grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 20);
-
         @include media("<=tablet") {
           grid-template-rows: 1fr min-content 10vh;
           grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 10);
@@ -67,10 +66,10 @@
           grid-template-rows: 1fr min-content 1vh;
           grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 1);
         }
-
-
-
-          h1 {
+        .project-description{
+          cursor: pointer;
+        }
+        h1 {
           max-width: 20ch;
           @include media("<=tablet") {
             max-width: 50ch;
@@ -91,19 +90,19 @@
 
     .bottom-menu{
       &--wrapper{
-      //  display: flex;
-      //  align-items: flex-end;
-      //  background: white;
-      //  margin: $content-padding/2 0;
-      //  nav{
-      //    display: grid;
-      //    grid-template-rows: 1fr;
-      //    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      //    align-items: center;
-      //  }
-      //}
-      //
-      //@include media("<=tablet"){
+        //  display: flex;
+        //  align-items: flex-end;
+        //  background: white;
+        //  margin: $content-padding/2 0;
+        //  nav{
+        //    display: grid;
+        //    grid-template-rows: 1fr;
+        //    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        //    align-items: center;
+        //  }
+        //}
+        //
+        //@include media("<=tablet"){
         visibility: hidden;
       }
     }
@@ -459,15 +458,55 @@
 }
 
 .Deliverable{
-  .overview{
-    margin: $menu-closed-height;
+  .banner{
+    margin: $menu-closed-height 0 0;
     .title{
+      max-width: $main-width-max;
+      //margin: auto 0;
       padding: $content-padding 0;
     }
+  }
+  .overview{
+    margin-top: $section-padding/2;
     .details{
       p{
         margin: 8px 0;
       }
     }
+  }
+  .content{
+    &-block{
+      margin: $section-padding 0;
+      //max-width: 77ex;
+    }
+    &-special{
+      margin: $section-padding/4 0;
+    }
+    &-image{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-height: 700px;
+      img{
+        flex: 1;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  #background-acommerce{
+    background: url("/assets/img/background--acommerce.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  #background-foodturity{
+    background: url("/assets/img/background--foodturity.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  #background-neuiro{
+    background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
+    background-size: cover;
   }
 }
