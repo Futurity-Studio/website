@@ -95,7 +95,7 @@ function Deliverable({pathname, query, asPath, artifact}){
 }
 
 Deliverable.getInitialProps = async ({ pathname, query, asPath } ) => {
-  const { id } = query;
+  const { id } = query || 'tomeato';
   const artifact =  FeaturedArtifacts.find(a => a.key === id);
   return { pathname, query, asPath, artifact }
 }
