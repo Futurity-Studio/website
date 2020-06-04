@@ -9,7 +9,6 @@ import '../theme/styles.scss';
 function Deliverable({pathname, query, asPath, id}){
   let param = id || 'tomeato'
   const a =  FeaturedArtifacts.find(a => a.key === param);
-  // console.log(artifact)
 
   const generateContent = () => {
     return a.content.map( (c, i) => {
@@ -71,7 +70,7 @@ function Deliverable({pathname, query, asPath, id}){
                 <a target={'_blank'}><p>Delivered for {a.details.client.title}</p></a>
               </Link>
             </div>}
-            right={<h4>{artifact.details.question}</h4>}
+            right={<h4>{a.details.question}</h4>}
           />
         </div>
       </section>
@@ -86,18 +85,14 @@ function Deliverable({pathname, query, asPath, id}){
           </div>
         </section>
 
-
-
-
-
       <Footer/>
     </main>
   )
 }
 
-Deliverable.getInitialProps = async ({ pathname, query, asPath } ) => {
+Deliverable.getInitialProps = async ({ query } ) => {
   const { id } = query;
-  return { pathname, query, asPath, id }
+  return { id };
 }
 
 export default Deliverable;

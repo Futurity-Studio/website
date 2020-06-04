@@ -12,8 +12,10 @@ const ICalLink = dynamic(
 
 import '../theme/styles.scss';
 
-function Event({pathname, query, asPath, event}){
-  const e = event;
+function Event({pathname, query, asPath, id}){
+  let param = id || 'concord'
+  const e =  FeaturedEvent.find(a => a.key === param);
+
   const router = useRouter();
   const [isWindow, setIsWindow] = useState(false);
 
@@ -78,10 +80,9 @@ function Event({pathname, query, asPath, event}){
   )
 }
 
-Event.getInitialProps = async ({ pathname, query, asPath } ) => {
+Event.getInitialProps = async ({ query } ) => {
   const { id } = query;
-  const event =  FeaturedEvent.find(a => a.key === id);
-  return { pathname, query, asPath, event }
+  return { id };
 }
 
 export default Event;
