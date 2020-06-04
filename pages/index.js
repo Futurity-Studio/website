@@ -68,7 +68,9 @@ const Home = () => {
     <main className={'Index'}>
       <section className={'hero-banner'} id={data.type}>
         <div className={'hero-banner--wrapper'}>
-          <div className={'hero-banner--blob'}/>
+          <div className={'hero-banner--blob'} onClick={() => {
+            router.push('/about#methodology')
+          }}/>
           <div className={'hero-banner--content'}>
             <div className={'tagline'}>
               <p><em>Building better</em>&nbsp;<span><em>aCommerce</em></span>&nbsp;<em>Futures Faster</em></p>

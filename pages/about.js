@@ -28,11 +28,14 @@ const About = () => {
     if (actionIntersect && analysisIntersect && actionIntersect){
       if (actionIntersect.intersectionRatio > 0.45){
         return 2;
-      }  else if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio > 0.45) && (actionIntersect.intersectionRatio < 0.45)){
+      }
+      if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio > 0.45) && (actionIntersect.intersectionRatio < 0.45)){
         return 1;
-      } else if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio < 0.45) && (actionIntersect.intersectionRatio < 0.45)) {
+      }
+      if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio < 0.45) && (actionIntersect.intersectionRatio < 0.45)) {
         return 0;
       }
+      return 0;
     } else {
       return 0;
     }

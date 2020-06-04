@@ -33,6 +33,7 @@
       grid-template-rows: 1fr;
 
       .hero-banner--blob{
+        cursor: pointer;
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         justify-self: end;
@@ -214,15 +215,15 @@
     }
     &--content{
       > div{
-        height: 60vh;
-        height: calc(var(--vh, 1vh) * 60);
+        height: 50vh;
+        height: calc(var(--vh, 1vh) * 50);
         margin: $content-padding 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
 
-        @include media("<=tablet"){
+        @include media("<=1024px"){
           height: initial;
         }
 
@@ -262,6 +263,7 @@
           background-position: 90% 50%;
           @include fluid-height(8rem, 45vh, 32rem);
           width: 100%;
+          min-height: 100%;
         }
 
         @include media("<=1280px"){
@@ -516,6 +518,7 @@
       background-position: 90% 50%;
       @include fluid-height(8rem, 45vh, 32rem);
       width: 100%;
+      min-height: 100%;
     }
 
     @include media("<=1280px"){
