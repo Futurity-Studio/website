@@ -6,8 +6,9 @@ import Link from 'next/link';
 
 import '../theme/styles.scss';
 
-function Deliverable({pathname, query, asPath, artifact}){
-  const a = artifact;
+function Deliverable({pathname, query, asPath, id}){
+  let param = id || 'tomeato'
+  const a =  FeaturedArtifacts.find(a => a.key === param);
   // console.log(artifact)
 
   const generateContent = () => {
@@ -95,9 +96,8 @@ function Deliverable({pathname, query, asPath, artifact}){
 }
 
 Deliverable.getInitialProps = async ({ pathname, query, asPath } ) => {
-  const { id } = query || 'tomeato';
-  const artifact =  FeaturedArtifacts.find(a => a.key === id);
-  return { pathname, query, asPath, artifact }
+  const { id } = query;
+  return { pathname, query, asPath, id }
 }
 
 export default Deliverable;
