@@ -457,7 +457,7 @@
 
 }
 
-.Deliverable{
+.Deliverable, .Event{
   .banner{
     margin: $menu-closed-height 0 0;
     .title{
@@ -495,7 +495,44 @@
         height: auto;
       }
     }
+    a{
+      text-decoration: underline;
+    }
   }
+  .lab-link{
+    cursor: pointer;
+  }
+  .columned-content{
+    display: grid;
+    grid-template-columns: 300px auto;
+    align-items: center;
+    margin-left: calc((100vw - #{$main-width-max}) / 2);
+    padding-left: $main-padding;
+    grid-column-gap: $content-padding;
+    > div:last-of-type{
+      background: url("/assets/img/membrane/cold-lines.jpg") center no-repeat;
+      background-size: cover;
+      background-size: 125%;
+      background-position: 90% 50%;
+      @include fluid-height(8rem, 45vh, 32rem);
+      width: 100%;
+    }
+
+    @include media("<=1280px"){
+      display: block;
+      margin-left: initial !important;
+
+      > div:first-of-type{
+        padding-bottom: $content-padding/4;
+      }
+    }
+    @include media("<=tablet"){
+      > div:first-of-type{
+        padding: 0;
+      }
+    }
+  }
+
 
   #background-acommerce{
     background: url("/assets/img/background--acommerce.jpg") center center no-repeat;
@@ -508,5 +545,11 @@
   #background-neuiro{
     background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
     background-size: cover;
+  }
+}
+.Event{
+  .content, .columned-content, .event-footer{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }

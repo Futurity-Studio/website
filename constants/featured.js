@@ -52,7 +52,6 @@ export const FeaturedArtifacts = [
     },
     images: [ '/assets/img/tomeato/1.jpeg', '/assets/img/tomeato/2.jpeg', '/assets/img/tomeato/3.jpeg']
   },
-
   {
     key: 'membrane',
     title: 'Transaction Membrane',
@@ -119,3 +118,32 @@ export const FeaturedArtifacts = [
     images: [ '/assets/img/membrane/mockup.png', '/assets/img/membrane/moodboard_1.png', '/assets/img/membrane/title.png', '/assets/img/membrane/cold-lines.jpg', '/assets/img/membrane/all-modules.jpg']
   }
 ];
+
+export const FeaturedEvent = [
+  {
+    key: 'concord',
+    lab: 'acommerce',
+    title: 'Future Artifact: 2030 Kitchen',
+    subTitle: 'Transaction Membrane - designing for ubiquitous systems in aCommerce',
+    details: {
+      lab: {
+        title: 'aCommerce',
+        link: '/labs?lab=acommerce'
+      },
+      time: 'Thursday, June 4, 2020 18:30 - 19:30 CET',
+      calendar: {
+        title: "Future Artifact: Kitchen of 2030",
+        description: "Transaction Membrane - designing for ubiquitous systems in aCommerce'",
+        startTime: "2020-06-04T18:30:00+10:00",
+        endTime: "2020-06-04T19:30:00+10:00",
+        location: "Futurity Studio"
+      }
+    },
+    content: [
+      {
+        content: 'Futurity prototypes experiences embedded within different commercial, social, and technology scales. We\'ll present our artifact, the Transaction Membrane, an appliance interfacing autonomous delivery, and the home kitchen in 2030. Finally, we\'ll discuss our methodology on how we build better futures faster.'
+      }
+    ],
+    images: ['/assets/img/membrane/cold-lines.jpg']
+  }
+]

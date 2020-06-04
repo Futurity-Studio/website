@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { useInterval } from "react-use";
 import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon} from "../components";
 import '../theme/styles.scss';
 import Link from "next/link";
@@ -12,8 +12,11 @@ const featureContent = [
     header:'Future Artifacts',
     short_desc: 'Designing for ubiquitous systems in aCommerce',
     type: 'acommerce',
+
+
+
     button: {
-      linkOut: '',
+      link: '/event?id=concord',
       text: 'view event information'
     }
   }, {
@@ -46,6 +49,17 @@ const Home = () => {
    console.log('effect')
     console.log(slide);
   }, [slide]);
+
+  // useEffect( () => {
+  //   setInterval(() => {
+  //     setSlide(Math.abs((slide+1) % featureContent.length ));
+  //   }, 2000);
+  // }, [])
+
+
+  useInterval( () => {
+    setSlide(Math.abs((slide+1) % featureContent.length ));
+  }, 4000);
 
 
   const data = featureContent[slide];

@@ -8,7 +8,7 @@ import '../theme/styles.scss';
 
 function Deliverable({pathname, query, asPath, artifact}){
   const a = artifact;
-  console.log(artifact)
+  // console.log(artifact)
 
   const generateContent = () => {
     return a.content.map( (c, i) => {
@@ -75,9 +75,9 @@ function Deliverable({pathname, query, asPath, artifact}){
         </div>
       </section>
 
-        <section className={'media'}>
+        {/*<section className={'media'}>*/}
 
-        </section>
+        {/*</section>*/}
 
         <section className={'content'}>
           <div className={'section-content'}>
