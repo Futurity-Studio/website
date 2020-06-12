@@ -1,4 +1,4 @@
-import './Images.scss';
+import React from "react";
 
 const Image = ({src, alt}) => {
   return (

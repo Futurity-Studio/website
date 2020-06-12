@@ -18,6 +18,8 @@ class MyApp extends App {
     return(
       <>
         <Head>
+          <meta name="description" content="Futurity Studio—Building better futures faster."/>
+          <meta name="description" content="Futurity Studio Innovation Research and Design Studio."/>
           <title>Futurity Studio</title>
           <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>

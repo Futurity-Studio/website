@@ -4,6 +4,7 @@ const withSass = require('@zeit/next-sass');
 const withOptimizedImages = require("next-optimized-images");
 const path = require("path");
 const withPlugins = require('next-compose-plugins');
+const sitemap = require('nextjs-sitemap-generator');
 
 
 // do this for SEO - https://snipcart.com/blog/react-seo-nextjs-tutorial
