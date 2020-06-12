@@ -8,6 +8,7 @@ import AccordionSection from "./AccordionSection/AccordionSection";
 import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
 import { StealthButton } from "./Button/Button";
+import Image from "./Image/Images";
 
 export {
   Menu,
@@ -19,5 +20,6 @@ export {
   BoundaryLine,
   ICONS, THEME, SIZE, TYPE, Icon,
   BorderButton,
-  StealthButton
+  StealthButton,
+  Image
 }

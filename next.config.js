@@ -1,6 +1,10 @@
 const fs = require('fs');
 const blogPostsFolder = './content/blogPosts';
 const withSass = require('@zeit/next-sass');
+const withOptimizedImages = require("next-optimized-images");
+const path = require("path");
+const withPlugins = require('next-compose-plugins');
+
 
 // do this for SEO - https://snipcart.com/blog/react-seo-nextjs-tutorial
 
@@ -18,12 +22,15 @@ const getPathsForPosts = () => {
   }, {})
 };
 
-module.exports = withSass({
-  webpack: configuration => {
+
+const nextConfig = {
+  distDir: 'build',
+  webpack: (configuration, options) => {
     configuration.module.rules.push({
       test: /\.md$/,
       use: 'frontmatter-markdown-loader',
     })
+    configuration.resolve.alias.images = path.join(__dirname, "images");
     return configuration
   },
   async exportPathMap(defaultPathMap) {
@@ -32,4 +39,11 @@ module.exports = withSass({
       ...getPathsForPosts(),
     }
   },
-});
+};
+
+module.exports = withPlugins([
+  withSass,
+  [ withOptimizedImages, {
+    optimizeImagesInDev: true
+  }]
+], nextConfig);

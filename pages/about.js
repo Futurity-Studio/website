@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from "next/router";
-import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton} from "../components";
+import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image} from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
 import { useIntersection } from "react-use";
@@ -143,7 +143,9 @@ const About = () => {
             <div><h2>Our Team</h2>
               <p>Together we have 50+ years of experience in analysis, forecasting, design and development for startups, moonshot factories, and Fortune 500 companies.</p>
             </div>
-            <div className={'team--photo'} />
+            <div className={'team--photo'}>
+              <Image src={'team.png'} alt={'a team photo'} />
+            </div>
           </div>
           <div className={'team--content'}>
             <div>

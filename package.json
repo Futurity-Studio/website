@@ -13,7 +13,16 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "framer-motion": "^1.10.3",
+    "image-trace-loader": "^1.0.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "jimp": "^0.13.0",
+    "lqip-loader": "^2.2.0",
     "next": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.1",
     "nextjs-sitemap-generator": "^1.0.0",
     "node-sass": "^4.14.1",
     "parallax-js": "^3.1.0",
@@ -23,7 +32,10 @@
     "react-normalize": "^0.4.4",
     "react-scrolllock": "^5.0.1",
     "react-use": "^15.1.0",
-    "version-bump-prompt": "^6.0.3"
+    "responsive-loader": "^1.2.0",
+    "svg-sprite-loader": "^5.0.0",
+    "version-bump-prompt": "^6.0.3",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^2.0.0"

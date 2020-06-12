@@ -1,4 +1,4 @@
-import {Footer, Menu} from "../components";
+import {Footer, Image, Menu} from "../components";
 import '../theme/styles.scss';
 
 const Events = () => {
@@ -6,6 +6,7 @@ const Events = () => {
     <main className={'events'}>
       <section>
         <h1>dis events</h1>
+        <Image src={'team.png'} />
       </section>
       <Footer/>
     </main>
