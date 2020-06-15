@@ -1,4 +1,12 @@
 @import "_constants";
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue Medium.ttf');
+  src: url('/fonts/Helvetica Neue Bold.ttf');
+  src: url('/fonts/Helvetica Neue.ttf');
+}
+
 body{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-rendering: optimizeLegibility;
