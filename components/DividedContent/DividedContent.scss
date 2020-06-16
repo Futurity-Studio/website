@@ -7,6 +7,10 @@
   &.smallLeft{
     grid-template-columns: 175px 2px 1fr;
   }
+
+  &.smallRight{
+    grid-template-columns: 1fr 2px 275px;
+  }
   grid-template-rows: 1fr;
   column-gap: 10%;
 

@@ -4,10 +4,11 @@ import { useIntersection } from "react-use";
 import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, THEME, BorderButton} from "../components";
 import {LabData, Links, ROUTES} from "../constants/";
 import '../theme/styles.scss';
+import Link from "next/link";
 
 
 const scrollToRef = (ref) => {
-    window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
+  window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
 }
 
 const Labs = () => {
@@ -80,28 +81,28 @@ const Labs = () => {
 
   intersectionThresholds.forEach((_, i) => {
     intersections.push(useIntersection(labContainerRefs[i], {
-        root: null,
-        rootMargin: "0px",
-        threshold: intersectionThresholds[i]
-      }));
+      root: null,
+      rootMargin: "0px",
+      threshold: intersectionThresholds[i]
+    }));
   })
 
-  useEffect( () => {
-
-    // if (!!lab) {
-    //   console.log('labs updating');
-    //   let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
-    //   let selection = [...selected];
-    //   selection[labNumber] = true;
-    //   console.log(selection);
-    //   setSelected(selection);
-    //   // let labElement = labContainerRefs[labNumber].current;
-    //
-    // }
-    // console.log(selection);
-    // setSelected(selection);
-    // scrollToRef(labContainerRefs[labNumber]);
-  }, [lab]);
+  // useEffect( () => {
+  //
+  //   // if (!!lab) {
+  //   //   console.log('labs updating');
+  //   //   let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
+  //   //   let selection = [...selected];
+  //   //   selection[labNumber] = true;
+  //   //   console.log(selection);
+  //   //   setSelected(selection);
+  //   //   // let labElement = labContainerRefs[labNumber].current;
+  //   //
+  //   // }
+  //   // console.log(selection);
+  //   // setSelected(selection);
+  //   // scrollToRef(labContainerRefs[labNumber]);
+  // }, [lab]);
 
   useLayoutEffect(() => {
     // console.log('layout labs');
@@ -220,8 +221,23 @@ const Labs = () => {
 
             <div className={'lab--body'}>
               <div className={'lab--body--desc'} ref={deliverableRefs[i][0]}>
-                <em>Description</em>
-                <p>{l.desc}</p>
+                {/*<em>Description</em>*/}
+                {/*<p>{l.desc}</p>*/}
+
+                <DividedContent
+                  left={<div>
+                    <em>Description</em>
+                    <p>{l.desc}</p>
+                  </div>}
+                  smallRight={true}
+                  right={
+                    <Link href={l.one_pager_link} prefetch={false}>
+                      <a target={'_blank'}>
+                        <h4>Download Report</h4>
+                      </a>
+                    </Link>
+                  }
+                />
               </div>
               <div className={'deliverables--wrapper'}>
                 <div>

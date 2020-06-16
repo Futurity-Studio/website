@@ -5,6 +5,7 @@ export const LabData = [
     title: 'aCommerce',
     year:'2020',
     short_desc: 'Autonomous, intelligent agents and driverless delivery will reshape homes, work, and mobility',
+    one_pager_link: 'https://drive.google.com/file/d/1IiXuA4o9cqUw0zN1YgBEioECMU4qsdGf/view?usp=sharing',
     desc:'Autonomous Commerce (aCommerce) is our name for the successor to PC-based electronic commerce and smartphone-based mobile commerce. as intelligent agents begin to orchestrate our lives. We are developing frameworks to ensure that aCommerce not only benefits us as consumers, but enhances prosperity, the environment, our privacy, and the economy as a whole.',
     deliverable_analysis: [
       { number: 1, link: null, image: null, title: 'The Age of Autonomous Commerce', desc: "Societal, industrial, and economic impact as autonomous machines and intelligent agents enter the market" },
@@ -35,6 +36,7 @@ export const LabData = [
     title: 'Foodturity',
     year:'2020',
     short_desc: 'New technologies and tastes decoupling food’s nutritional, cultural, economic, and ecological roles',
+    one_pager_link: 'https://drive.google.com/file/d/11cItvaEYtE0GlPcSvv9rAq4GaJVwBL0J/view?usp=sharing',
     desc:'Food has historically played, interwoven roles in nutrition, taste, healing, culture, economics, and ecology. Today, however, crises of starvation, obesity, water use, animal ethics, farm subsidies, and more are driving a massive revolution in the food system. We’re exploring how emerging food technologies—ranging from meal-delivery, to electronic lemonade, and even de-extinct in-vitro mammoth meat—can decouple and remix these different aspects of food.',
     deliverable_analysis: [
       { number: 1, link: null, image: null, title: 'Remixing Food for Health and Earth', desc: "Decoupling the ecological, health, cultural, taste, financial, and other aspects of food leads to a more sustainable and satisfying system" },
@@ -65,6 +67,7 @@ export const LabData = [
     title: 'neUIro',
     year:'2020',
     short_desc: 'User experience from AR/VR to brain-computer interfaces',
+    one_pager_link: 'https://drive.google.com/file/d/1PXQ_khDyms7bgQfefChaeVzVIDNZc4AG/view?usp=sharing',
     desc:'The next UI is neuro! From the graphical user interface (GUI) to today’s voice UI like Siri and Alexa, a strong connection between human and tool grants us superpowers. We’re testing technologies ranging from today’s to tomorrow’s, like EEG and tDCS for connecting biological brains to digital devices, and chemical catalysts like galantamine for lucid dreams.',
     deliverable_analysis: [
       { number: 1, link: null, image: null, title: 'Neurotech: The Next User Interface', desc: "Startups and tech giants are developing tools to connect our biological brains with digital devices"},
