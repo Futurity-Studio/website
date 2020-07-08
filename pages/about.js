@@ -60,7 +60,7 @@ const About = () => {
             <h4>We bring this core belief to companies and teams wanting to discover the future.</h4>
           </div>
         </div>
-        <Teaser label={'explore more'} />
+        <Teaser label={'explore how'} />
       </section>
 
 
