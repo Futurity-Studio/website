@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useInterval } from "react-use";
 import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon} from "../components";
-import '../theme/styles.scss';
 import Link from "next/link";
 import {useRouter} from "next/router";
-
+import { AnimatePresence, motion } from "framer-motion";
 
 const featureContent = [
   {
@@ -12,9 +11,6 @@ const featureContent = [
     header:'Future Artifacts',
     short_desc: 'Designing for ubiquitous systems in aCommerce',
     type: 'acommerce',
-
-
-
     button: {
       link: '/event?id=concord',
       text: 'view event information'
@@ -46,8 +42,8 @@ const Home = () => {
   const router = useRouter();
 
   useEffect( () => {
-   console.log('effect')
-    console.log(slide);
+    // console.log('effect')
+    // console.log(slide);
   }, [slide]);
 
   // useEffect( () => {
@@ -57,16 +53,16 @@ const Home = () => {
   // }, [])
 
 
-  useInterval( () => {
-    setSlide(Math.abs((slide+1) % featureContent.length ));
-  }, 4000);
+  // useInterval( () => {
+  //   setSlide(Math.abs((slide+1) % featureContent.length ));
+  // }, 4000);
 
-
-  const data = featureContent[slide];
-
-  return(
-    <main className={'Index'}>
-      <section className={'hero-banner'} id={data.type}>
+  const generateSlide = (data) => {
+    return(
+      <section
+        className={'hero-banner'}
+        id={data.type}
+      >
         <div className={'hero-banner--wrapper'}>
           <div className={'hero-banner--blob'} onClick={() => {
             router.push('/about#methodology')
@@ -81,10 +77,10 @@ const Home = () => {
                   router.push(data.button.link);
                 }
               }}>
-              <em>{data.tag}</em>
-              <h1>{data.header}</h1>
-              <h4>{data.short_desc}</h4>
-            </div>
+                <em>{data.tag}</em>
+                <h1>{data.header}</h1>
+                <h4>{data.short_desc}</h4>
+              </div>
               <div className={'content-nav'}>
                 <div onClick={() => {
                   setSlide(Math.abs((slide-1) % featureContent.length ));
@@ -113,7 +109,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </main>)
+    )
+  }
+
+  return(
+    <motion.main
+      className={'Index'}
+      initial={{  opacity: 0, transition:{ delay: 2.5, duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{ duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+    >
+      { generateSlide( featureContent[slide] ) }
+    </motion.main>)
 }
 
 export default Home

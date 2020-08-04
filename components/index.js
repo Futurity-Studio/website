@@ -9,6 +9,7 @@ import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
 import { StealthButton } from "./Button/Button";
 import Image from "./Image/Images";
+import Landing from "./Menu/Landing";
 
 export {
   Menu,
@@ -21,5 +22,6 @@ export {
   ICONS, THEME, SIZE, TYPE, Icon,
   BorderButton,
   StealthButton,
-  Image
+  Image,
+  Landing
 }

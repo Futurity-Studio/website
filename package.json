@@ -29,6 +29,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icalendar-link": "^1.0.3",
+    "react-intersection-observer": "^8.26.2",
     "react-normalize": "^0.4.4",
     "react-scrolllock": "^5.0.1",
     "react-use": "^15.1.0",

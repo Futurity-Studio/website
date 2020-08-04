@@ -1,0 +1,50 @@
+@import "theme/constants";
+@import "theme/vendor_mixins";
+
+.landing{
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  color: #fff;
+  .--vr{
+    background: #fff !important;
+  }
+  .buttonContainer{
+    width: 100%;
+    display: flex;
+    align-content: baseline;
+    justify-content: space-around;
+  }
+  .logo{
+    max-height: 175px;
+    width: auto;
+    display: grid;
+    align-items: center;
+    svg{
+      max-height: 175px;
+    }
+  }
+  h4{
+    max-width: 65ex;
+    line-height: 150%;
+  }
+  h4:last-of-type{
+    text-align: right;
+    width: 100%;
+  }
+  section{
+    max-width: $main-width-max;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .copy{
+    margin: $content-padding;
+  }
+}

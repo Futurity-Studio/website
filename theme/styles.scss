@@ -140,19 +140,15 @@
 }
 
 .About{
-  //> section:first-of-type{
-  //  padding: calc(#{$menu-closed-height} + #{$content-padding}) $main-padding;
-  //}
-
   .banner{
-    background: lightskyblue;
     position: relative;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: url("/assets/img/background--generic.jpg") center center no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
     h2{
@@ -161,6 +157,11 @@
   }
 
   .methodology{
+    h4{
+      max-width: 55ex;
+    }
+  }
+  .services{
     h4{
       max-width: 55ex;
     }
@@ -193,24 +194,18 @@
       }
     }
     &--graphic{
-      background: $page-background-color--dark;
       height: 60vh;
       height: calc(var(--vh, 1vh) * 60);
       width: 100%;
       position: sticky;
       top: 25%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
 
-      &#graphic-0{
-        background: url("/assets/img/metaballs_analysis.png") center center no-repeat;
-        background-size: contain;
-      }
-      &#graphic-1{
-        background: url("/assets/img/metaballs_artifact.png") center center no-repeat;
-        background-size: contain;
-      }
-      &#graphic-2{
-        background: url("/assets/img/metaballs_action.jpg") center center no-repeat;
-        background-size: cover;
+      img{
+        height: 100%;
+        object-fit: contain;
       }
     }
     &--content{
@@ -221,7 +216,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
 
         @include media("<=1024px"){
           height: initial;

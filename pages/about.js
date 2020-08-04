@@ -3,46 +3,45 @@ import { useRouter } from "next/router";
 import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image} from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
-import { useIntersection } from "react-use";
-import '../theme/styles.scss';
+import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer'
+
 
 const About = () => {
   const router = useRouter();
-  const analysisRef = useRef(null);
-  const artifactRef = useRef(null);
-  const actionRef =   useRef(null);
-
-  let analysisIntersect = useIntersection(analysisRef, {root: null,
-    rootMargin: "0px",
-    threshold: .5});
-
-  let artifactIntersect = useIntersection(artifactRef, {root: null,
-    rootMargin: "0px",
-    threshold: .5});
-
-  let actionIntersect = useIntersection(actionRef, {root: null,
-    rootMargin: "0px",
-    threshold: .5});
-
-  const calculateIntersection = () => {
-    if (actionIntersect && analysisIntersect && actionIntersect){
-      if (actionIntersect.intersectionRatio > 0.45){
-        return 2;
-      }
-      if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio > 0.45) && (actionIntersect.intersectionRatio < 0.45)){
-        return 1;
-      }
-      if ((analysisIntersect.intersectionRatio > 0.45) && (artifactIntersect.intersectionRatio < 0.45) && (actionIntersect.intersectionRatio < 0.45)) {
-        return 0;
-      }
-      return 0;
-    } else {
-      return 0;
+  const [ deliverableSection, setDeliverableSection ] = useState(0);
+  const [ analysisRef, analysisRefInView] = useInView({
+    rootMargin: '0px 0px -45% 0px',
+    threshold: 0.25,
+    triggerOnce: true
+  });
+  useEffect(() => {
+    if (analysisRefInView){
+      setDeliverableSection(0);
     }
-  };
+  }, [analysisRefInView])
+  const [ artifactRef, artifactRefInView] = useInView({
+    rootMargin: '0px 0px -45% 0px',
+    threshold: 0.25,
+    triggerOnce: true
+  });
+  useEffect(() => {
+    if (artifactRefInView){
+      setDeliverableSection(1);
+    }
+  }, [artifactRefInView])
+  const [ actionRef, actionRefInView] = useInView({
+    rootMargin: '0px 0px -45% 0px',
+    threshold: 0.25,
+    triggerOnce: true
+  });
+  useEffect(() => {
+    if (actionRefInView){
+      setDeliverableSection(2);
+    }
+  }, [actionRefInView])
 
   useEffect(() => {
-    console.log('initial');
     if( !router.asPath.includes(('#')) ) {
       setTimeout(() => {
         window.scrollTo(0, 0);
@@ -50,10 +49,18 @@ const About = () => {
     }
   }, []);
 
-
+  const style = { backgroundImage: `url('${require('images/background--generic.jpg?webp')}')` }
   return(
-    <main className={'About'}>
-      <section className={'banner'}>
+    <motion.main
+      className={'About'}
+      initial={{  opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+    >
+      <section
+        className={'banner'}
+        style={style}
+      >
         <div className={'section-content'}>
           <div>
             <h2>Radical innovation is rigorously imaginative, multidisciplinary in execution, and scrupulously reinvents itself.</h2>
@@ -96,9 +103,44 @@ const About = () => {
       </section>
 
 
+      <section className={'services'}>
+        <BorderButton
+          id={'services'}
+          content={<em>our Services</em>}
+          icon={<Icon icon={ICONS.FILE} theme={THEME.DARK} />}
+        />
+        <div className={'section-content'}>
+          <DividedContent
+            left={<h2>Future Offerings</h2>}
+            right={<>
+              <h4>
+                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
+                The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
+              </h4>
+              <StealthButton
+                label={'explore our labs'}
+                icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
+                link={ROUTES.LABS}
+              />
+            </>}
+          />
+        </div>
+      </section>
+
+
       <section className={'deliverables'}>
         <div className={'deliverables--container'}>
-          <div className={'deliverables--graphic'} id={`graphic-${calculateIntersection() || 0}`}/>
+          <div className={'deliverables--graphic'} >
+            { (deliverableSection === 0) &&
+            <Image src={'metaballs_analysis.png'} alt={'Analysis'}/>
+            }
+            { (deliverableSection === 1) &&
+            <Image src={'metaballs_artifact.png'} alt={'Artifact'}/>
+            }
+            { (deliverableSection === 2) &&
+            <Image src={'metaballs_action.jpg'} alt={'Action'}/>
+            }
+          </div>
           <div className={'deliverables--content'}>
             <div ref={analysisRef}>
               <h3>Analysis</h3>
@@ -198,7 +240,7 @@ const About = () => {
       {/*</section>*/}
 
       <Footer/>
-    </main>
+    </motion.main>
   )
 }
 
