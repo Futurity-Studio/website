@@ -9,6 +9,7 @@ const Teaser = ({label}) => {
     <div className={'Teaser'}>
       <motion.div
         initial={{ top: -150 }}
+        edit={{ top: -150 }}
         animate={{ top:  150 }}
         transition={{
           loop: Infinity,

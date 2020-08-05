@@ -25,7 +25,7 @@ class MyApp extends App {
         </Head>
         <Normalize/>
         <Menu loader={(router.route === '/')}/>
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </>

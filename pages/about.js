@@ -3,13 +3,16 @@ import { useRouter } from "next/router";
 import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image} from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
-import { motion } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer'
+import {animateInUp} from "../helpers/animation";
 
 
 const About = () => {
   const router = useRouter();
   const [ deliverableSection, setDeliverableSection ] = useState(0);
+  const [ methodologySection, setMethodologySection ] = useState(null);
+
   const [ analysisRef, analysisRefInView] = useInView({
     rootMargin: '0px 0px -45% 0px',
     threshold: 0.25,
@@ -49,6 +52,10 @@ const About = () => {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(methodologySection)
+  }, [methodologySection]);
+
   const style = { backgroundImage: `url('${require('images/background--generic.jpg?webp')}')` }
   return(
     <motion.main
@@ -63,59 +70,69 @@ const About = () => {
       >
         <div className={'section-content'}>
           <div>
-            <h2>Radical innovation is rigorously imaginative, multidisciplinary in execution, and scrupulously reinvents itself.</h2>
-            <h4>We bring this core belief to companies and teams wanting to discover the future.</h4>
+            <h2>
+              <span onMouseEnter={() => setMethodologySection(1)}>Build</span>&nbsp;
+              <span onMouseEnter={() => setMethodologySection(2)}>Better</span>&nbsp;
+              <span onMouseEnter={() => setMethodologySection(3)}>Futures</span>&nbsp;
+              <span onMouseEnter={() => setMethodologySection(4)}>Faster</span> <br />
+              with Futurity Studio</h2>
+
+            <AnimatePresence exitBeforeEnter>
+              {(!methodologySection) &&
+              <motion.h4 key={0} animate={"animate"} initial={"initial"} variants={animateInUp} exit={"initial"}>
+                We help innovation teams analyze, de-risk and develop opportunities via evidence-based future
+                building.
+              </motion.h4>
+              }
+              { (methodologySection === 1) &&
+              <motion.h4 key={1} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
+                <em>Build</em> (means don't just think). We build physical prototypes of devices, clothing, and even rooms, that take your understanding beyond designs, market analysis, code, and manifestos.
+              </motion.h4>
+              }
+              { (methodologySection === 2) &&
+              <motion.h4 key={2} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
+                <em>Better</em> (means impact, not just money). We help you calculate and maximize the total worth of an innovation, including not only financial, but also environmental, health, and social costs and benefits.
+              </motion.h4>
+              }
+              { (methodologySection === 3) &&
+              <motion.h4 key={3} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
+                <em>Futures</em> (means plural, not singular). We help you envision a spectrum of scenarios between simple utopia or dystopia, and create the roadmaps that lead to them.
+              </motion.h4>
+              }
+              { (methodologySection === 4) &&
+              <motion.h4 key={4} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
+                <em>Faster</em> (means fewer steps and fewer failures). We get you effectively from idea to market with our decades of experience as innovators and advisors.
+              </motion.h4>
+              }
+            </AnimatePresence>
+
           </div>
         </div>
         <Teaser label={'explore how'} />
       </section>
 
-
-
-      <section className={'methodology'}>
+      <section className={'services'}>
         <div className={'section-content'}>
-          <h4>
-            We believe the best approach to conduct research is through a deep dive into data... and from that data, remixing it with our own experimentation and analysis.
-            Futurity offers clients membership in our labs&mdash;a year-long cycle of using trend, participatory, and design research to build a better future through experimentation.
-          </h4>
+          <DividedContent
+            left={<div>
+              <p>We don't just write reports or design thinking activities. We embody them in functional, interactive artifacts that provoke thought and learning from your industry's users, consumers, and thought leaders. We bring you deep datasets and data science tools, better ideas from broader sources, and a network of world-class collaborators.</p>
+              <p>We've worked in dozens of corporate and non-commercial moonshot programs in many industries. We don't do incremental innovation. We help companies reach Sustainable Development Goals, create new markets, and execute strategies. Futures require new skills that no one company has, no matter how large or heavily invested it is in R&D.</p>
+            </div>}
+            right={<h2>We deal in Futures</h2>}
+          />
         </div>
         <BorderButton
-          id={'methodology'}
-          content={<em>our methodology</em>}
+          id={'services'}
+          content={<em>our Services</em>}
           icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
         />
         <div className={'section-content'}>
           <DividedContent
-            left={<h2>Future Offerings</h2>}
+            left={<h2>Future Labs</h2>}
             right={<>
               <h4>
-                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
-                The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
-              </h4>
-              <StealthButton
-                label={'explore our labs'}
-                icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
-                link={ROUTES.LABS}
-              />
-            </>}
-          />
-        </div>
-      </section>
-
-
-      <section className={'services'}>
-        <BorderButton
-          id={'services'}
-          content={<em>our Services</em>}
-          icon={<Icon icon={ICONS.FILE} theme={THEME.DARK} />}
-        />
-        <div className={'section-content'}>
-          <DividedContent
-            left={<h2>Future Offerings</h2>}
-            right={<>
-              <h4>
-                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions (6 each, per lab).
-                The topics of each are planned, but subject to change in response to member needs, new ideas and information, or other emergent forces.
+                Futurity offers clients membership in our labs—a year-long cycle of using trend, participatory, and design research to build a better future through experimentation.
+                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions.
               </h4>
               <StealthButton
                 label={'explore our labs'}
