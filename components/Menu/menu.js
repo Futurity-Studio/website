@@ -32,8 +32,9 @@ const menuHeaderAnimation_variants = {
 }
 
 
-const Menu = ({setLocked}) => {
+const Menu = ({setLocked, loader = false}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [wasLoader, setWasLoader] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isButtonHovering, setButtonHover] = useState(false);
   const router = useRouter();
@@ -52,6 +53,19 @@ const Menu = ({setLocked}) => {
       window.removeEventListener("scroll", scrollListener);
     };
   }, );
+
+  useEffect(() => {
+    if (loader && !wasLoader) { // first time
+      setIsOpen(true)
+    }
+  }, [loader, wasLoader])
+
+  const close = () => {
+    setIsOpen(false);
+    if (loader && !wasLoader) {
+      setWasLoader(true);
+    }
+  };
 
 
   const generateTopNavContent = () => { // todo handle children
@@ -72,7 +86,10 @@ const Menu = ({setLocked}) => {
           <li key={n.title}>
             <div>
               <h1 onClick={() => {
-                router.push(`${n.link}`).then(() => setIsOpen(false));
+                router.push(`${n.link}`).then(() => {
+                  setIsOpen(false);
+                  window.scrollTo(0,0);
+                });
               }}>
                 {n.title}
               </h1>
@@ -115,10 +132,11 @@ const Menu = ({setLocked}) => {
             <div
               className={'menu-button'}
               onClick={() => {
-                setIsOpen(!isOpen)
                 if (!isOpen) {
+                  setIsOpen(!isOpen)
                   setScrollPosition(0)
                 } else {
+                  close();
                   setScrollPosition(window.pageYOffset)
                 }
               }}
@@ -141,42 +159,42 @@ const Menu = ({setLocked}) => {
           </div>
         </motion.div>
 
-        <div className={'menu-body'}>
-          <nav className={'nav-top'}>
-            <ul>
-              { generateTopNavContent() }
-            </ul>
-            <div><h2>building better futures faster</h2></div>
-          </nav>
+          <div className={'menu-body'}>
+            <nav className={'nav-top'}>
+              <ul>
+                {generateTopNavContent()}
+              </ul>
+              <div><h2>Build Better Futures Faster</h2></div>
+            </nav>
 
-          <BorderButton
-            content={<em>get in touch</em>}
-            icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT} />}
-          />
+            <BorderButton
+              content={<em>get in touch</em>}
+              icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT}/>}
+            />
 
-          <nav className={'nav-bottom'}>
-            <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
-              <a target='_blank'>
-                <span><em>Inquiry@Futurity.Studio</em></span>
-              </a>
-            </Link>
-            <Link prefetch={false} href={'https://www.linkedin.com/company/futurity-studio/'}>
-              <a target='_blank'>
-                <Icon icon={ICONS.LINKEDIN} theme={THEME.LIGHT} />
-              </a>
-            </Link>
-            <Link prefetch={false} href={'https://twitter.com/FuturityStudio'}>
-              <a target='_blank'>
-                <Icon icon={ICONS.TWITTER} theme={THEME.LIGHT} />
-              </a>
-            </Link>
-            <Link prefetch={false} href={'https://www.youtube.com/channel/UC0QDU-sjWKesXRdNbhdKSgA'}>
-              <a target='_blank'>
-                <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT} />
-              </a>
-            </Link>
-          </nav>
-        </div>
+            <nav className={'nav-bottom'}>
+              <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
+                <a target='_blank'>
+                  <span><em>Inquiry@Futurity.Studio</em></span>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://www.linkedin.com/company/futurity-studio/'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.LINKEDIN} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://twitter.com/FuturityStudio'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.TWITTER} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://www.youtube.com/channel/UC0QDU-sjWKesXRdNbhdKSgA'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+            </nav>
+          </div>
       </div>
     </motion.div>
   )

@@ -16,7 +16,8 @@ export const ICONS = {
   LINKEDIN:'LINKEDIN',
   TWITTER: 'TWITTER',
   YOUTUBE: 'YOUTUBE',
-  GLOBE: 'GLOBE'
+  GLOBE: 'GLOBE',
+  FILE: 'FILE'
 };
 
 export const THEME = {

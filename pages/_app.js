@@ -4,14 +4,14 @@ import Head from 'next/head';
 import Normalize from "react-normalize";
 import { Menu } from "../components";
 
-import '../theme/theme.scss'
+import '../theme/theme.scss';
+import {AnimatePresence} from "framer-motion";
 
 class MyApp extends App {
   componentDidMount(){
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
-
 
   render(){
     const { Component, pageProps, router } = this.props;
@@ -24,8 +24,10 @@ class MyApp extends App {
           <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>
         <Normalize/>
-        <Menu/>
+        <Menu />
+        <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </>
     );
   }

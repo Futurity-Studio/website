@@ -4,7 +4,7 @@ const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smal
   return(
     <div className={`DividedContent ${smallLeft ? 'smallLeft' : ''} ${smallRight ? 'smallRight' : ''}`}>
       {left}
-      <div className={'--vr ' + ((hiddenBar) ? 'hidden' : 'no')}/>
+      <div className={'--vr ' + ((hiddenBar) ? 'hidden' : '')}/>
       <div>
         {right}
       </div>
