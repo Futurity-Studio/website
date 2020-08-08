@@ -1,6 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import { useRouter } from "next/router";
-import {DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image} from "../components";
+import {
+  DividedContent,
+  Footer,
+  ICONS,
+  Teaser,
+  THEME,
+  Icon,
+  BorderButton,
+  StealthButton,
+  Image,
+  WebpFormat
+} from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
 import {AnimatePresence, motion} from "framer-motion";
@@ -56,7 +67,13 @@ const About = () => {
     console.log(methodologySection)
   }, [methodologySection]);
 
-  const style = { backgroundImage: `url('${require('images/background--generic.jpg?webp')}')` }
+  const [background, setBackground] = useState(null)
+  useLayoutEffect(() => {
+    const asset = WebpFormat() ? require('images/background--generic.jpg') : require('images/background--generic.jpg?webp');
+    let background = { backgroundImage: `url('${asset}')`}
+    setBackground(background);
+  }, [])
+
   return(
     <motion.main
       className={'About'}
@@ -66,7 +83,7 @@ const About = () => {
     >
       <section
         className={'banner'}
-        style={style}
+        style={background}
       >
         <div className={'section-content'}>
           <div>
@@ -86,12 +103,12 @@ const About = () => {
               }
               { (methodologySection === 1) &&
               <motion.h4 key={1} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
-                <em>Build</em> (means don't just think). We build physical prototypes of devices, clothing, and even rooms, that take your understanding beyond designs, market analysis, code, and manifestos.
+                <em>Build</em> (means make, don't just think). We build physical prototypes of devices, clothing, and even rooms, that take your understanding beyond abstract designs, market analysis, code, and manifestos.
               </motion.h4>
               }
               { (methodologySection === 2) &&
               <motion.h4 key={2} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
-                <em>Better</em> (means impact, not just money). We help you calculate and maximize the total worth of an innovation, including not only financial, but also environmental, health, and social costs and benefits.
+                <em>Better</em> (means impact, not just money) (impact beyond economics). We help you calculate and maximize the total worth of an innovation, including not only financial, but also environmental, health, and social costs and benefits.
               </motion.h4>
               }
               { (methodologySection === 3) &&
@@ -115,8 +132,8 @@ const About = () => {
         <div className={'section-content'}>
           <DividedContent
             left={<div>
-              <p>We don't just write reports or design thinking activities. We embody them in functional, interactive artifacts that provoke thought and learning from your industry's users, consumers, and thought leaders. We bring you deep datasets and data science tools, better ideas from broader sources, and a network of world-class collaborators.</p>
-              <p>We've worked in dozens of corporate and non-commercial moonshot programs in many industries. We don't do incremental innovation. We help companies reach Sustainable Development Goals, create new markets, and execute strategies. Futures require new skills that no one company has, no matter how large or heavily invested it is in R&D.</p>
+              <p>We help you recognize and plan for existential threats and create entirely new markets, instead of incremental innovation, incremental revenue growth or product line extensions. We help companies reach Sustainable Development Goals, create new markets, and execute strategies. Futures require new skills that no one company has, no matter how large or heavily invested it is in R&D.</p>
+              <p>We don't just write reports or design thinking activities. We embody them in functional, interactive artifacts that provoke thought and learning from your industry's users, consumers, and thought leaders. We bring you deep datasets and data science tools, better ideas from broader sources, and a network of world-class collaborators. And we work with you and your team to design an organization and processes to build better futures faster.</p>
             </div>}
             right={<h2>We deal in Futures</h2>}
           />
@@ -239,6 +256,24 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className={'section-content'}>
+          <DividedContent
+            hiddenBar={true}
+            right={<div>
+              <p>We were born, lived in, and worked on three continents, and currently work with organizations in Europe, Asia, Africa, the Middle East, and North America. Last year we visited innovators, met with clients, and spoke at events in the US, UK, Spain, Germany, France, Sweden, Norway, Denmark, Saudi Arabia, Pakistan, Singapore, Australia, and China.</p>
+            </div>}
+            left={<h3>Global Experience</h3>}
+          />
+          <DividedContent
+            smallRight={true}
+            hiddenBar={true}
+            left={<div>
+              <p>We've worked in dozens of corporate and non-commercial moonshot programs in many industries. Corporate venture capitalists, product developers, and R&D teams at Adidas, BASF, BMW, IBM, Telefonica, the United Nations, and more than 150 other Fortune 500 global companies have been our clients. We have taught sustainability, innovation, design, and entrepreneurship to business and engineering students at Parsons School of Design, the Institute for Advanced Architecture of Catalonia, the University of California at Berkeley, Presidio Graduate School, and the International University of Monaco, and INSEEC.</p>
+            </div>}
+            right={<div />}
+          />
+
         </div>
 
       </section>

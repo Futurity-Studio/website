@@ -10,7 +10,6 @@ import { useWindowScroll } from "react-use";
 import {cubicBezier} from "../../helpers/animation";
 
 import "./menu.scss"
-import Landing from "./Landing";
 
 const menuContainerAnimation_variants = {
   open: {
@@ -62,7 +61,6 @@ const Menu = ({setLocked, loader = false}) => {
   }, [loader, wasLoader])
 
   const close = () => {
-    window.scrollTo(0,0);
     setIsOpen(false);
     if (loader && !wasLoader) {
       setWasLoader(true);
@@ -134,10 +132,11 @@ const Menu = ({setLocked, loader = false}) => {
             <div
               className={'menu-button'}
               onClick={() => {
-                setIsOpen(!isOpen)
                 if (!isOpen) {
+                  setIsOpen(!isOpen)
                   setScrollPosition(0)
                 } else {
+                  close();
                   setScrollPosition(window.pageYOffset)
                 }
               }}
@@ -160,17 +159,12 @@ const Menu = ({setLocked, loader = false}) => {
           </div>
         </motion.div>
 
-        {(loader && !wasLoader) ?
-          <Landing setParentClosed={() => {
-            close()
-          }} />
-          :
           <div className={'menu-body'}>
             <nav className={'nav-top'}>
               <ul>
                 {generateTopNavContent()}
               </ul>
-              <div><h2>building better futures faster</h2></div>
+              <div><h2>Build Better Futures Faster</h2></div>
             </nav>
 
             <BorderButton
@@ -201,7 +195,6 @@ const Menu = ({setLocked, loader = false}) => {
               </Link>
             </nav>
           </div>
-        }
       </div>
     </motion.div>
   )

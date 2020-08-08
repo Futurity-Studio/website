@@ -2,141 +2,7 @@
 @import "./_vendor_mixins";
 
 .Index{
-  .hero-banner {
-    position: relative;
-    padding: $main-padding;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
 
-    &#acommerce{
-      background: url("/assets/img/hero-banner--background.png") center center no-repeat;
-      background-size: cover;
-    }
-    &#foodturity{
-      background: url("/assets/img/background--foodturity.jpg") center center no-repeat;
-      background-size: cover;
-    }
-    &#neuiro{
-      background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
-      background-size: cover;
-    }
-
-    &--wrapper{
-      margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-
-      .hero-banner--blob{
-        cursor: pointer;
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-        justify-self: end;
-        align-self: end;
-        background: url("/assets/img/blob_diffusion.png") center no-repeat;
-        background-size: contain;
-        height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
-        min-height: 600px;
-        width: 60%;
-        @include media("<=tablet") {
-          transform: scale(2);
-        }
-      }
-      .hero-banner--content {
-        z-index: 1;
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-        justify-self: start;
-        align-self: center;
-        padding: $menu-closed-height $content-padding $content-padding calc((100vw - #{$main-width-max}) / 2);
-        height: 100%;
-        display: grid;
-        grid-template-rows: 1fr min-content 20vh;
-        grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 20);
-        @include media("<=tablet") {
-          grid-template-rows: 1fr min-content 10vh;
-          grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 10);
-        }
-        @include media("<=phone") {
-          grid-template-rows: 1fr min-content 1vh;
-          grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 1);
-        }
-        .project-description{
-          cursor: pointer;
-        }
-        h1 {
-          max-width: 20ch;
-          @include media("<=tablet") {
-            max-width: 50ch;
-          }
-        }
-      }
-    }
-
-    .content-nav{
-      width: 70px;
-      padding-top: $content-padding/4;
-      display: flex;
-      justify-content: space-between;
-      >div{
-        cursor: pointer;
-      }
-    }
-
-    .bottom-menu{
-      &--wrapper{
-        //  display: flex;
-        //  align-items: flex-end;
-        //  background: white;
-        //  margin: $content-padding/2 0;
-        //  nav{
-        //    display: grid;
-        //    grid-template-rows: 1fr;
-        //    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        //    align-items: center;
-        //  }
-        //}
-        //
-        //@include media("<=tablet"){
-        visibility: hidden;
-      }
-    }
-
-    //>div:last-of-type{
-    //  background-color: red;
-    //  display: flex;
-    //  height: $content-padding * 1.5;
-    //  position: absolute;
-    //  bottom: 0;
-    //  left: 0;
-    //  box-sizing: border-box;
-    //  padding-left: $main-padding;
-    //  margin-left: calc((100vw - #{$main-width-max}) / 2);
-    //  @include media("<=1280px") {
-    //    margin-left: 0 !important;
-    //    position: absolute;
-    //    bottom: 0;
-    //    left: 0;
-    //  }
-    //  .down-line{
-    //    @extend %vr;
-    //  }
-    //  em{
-    //    padding-left: 1rem;
-    //  }
-    //}
-  }
-  .tagline{
-    @include media("<=tablet"){
-      visibility: hidden;
-    }
-  }
 }
 
 .About{
@@ -232,6 +98,7 @@
       > div{
         height: 50vh;
         height: calc(var(--vh, 1vh) * 50);
+        max-width: 65ex;
         margin: $content-padding 0;
         display: flex;
         flex-direction: column;
@@ -353,6 +220,10 @@
 
 
     }
+    .section-content{
+      max-width: $main-width-max;
+      margin: $content-padding auto;
+    }
   }
 
   .methodology{
@@ -440,9 +311,6 @@
 
 
   .deliverables{
-    &--wrapper{
-
-    }
     &--container{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

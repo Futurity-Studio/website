@@ -5,6 +5,7 @@ import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, TH
 import {LabData, Links, ROUTES} from "../constants/";
 import '../theme/styles.scss';
 import Link from "next/link";
+import {motion} from "framer-motion";
 
 
 const scrollToRef = (ref) => {
@@ -268,7 +269,12 @@ const Labs = () => {
   }
 
   return(
-    <main className={'Labs'}>
+    <motion.main
+      className={'Labs'}
+      initial={{  opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+    >
       <section className={'Labs--overview'}>
         <div className={'section-content'}>
           <DividedContent
@@ -294,7 +300,7 @@ const Labs = () => {
         { generateLabs() }
       </div>
       <Footer/>
-    </main>
+    </motion.main>
   )
 }
 

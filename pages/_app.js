@@ -24,7 +24,7 @@ class MyApp extends App {
           <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>
         <Normalize/>
-        <Menu loader={(router.route === '/')}/>
+        <Menu />
         <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
         </AnimatePresence>

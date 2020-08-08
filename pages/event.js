@@ -11,6 +11,7 @@ const ICalLink = dynamic(
 )
 
 import '../theme/styles.scss';
+import {motion} from "framer-motion";
 
 function Event({pathname, query, asPath, id}){
   let param = id || 'concord'
@@ -38,7 +39,12 @@ function Event({pathname, query, asPath, id}){
   }
 
   return(
-    <main className={'Event'}>
+    <motion.main
+      className={'Event'}
+      initial={{  opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+    >
       <section className={'banner'} id={`background-${e.lab.toLowerCase()}`}>
         <div className={'section-content'}>
           <div className={'title'}>
@@ -76,7 +82,7 @@ function Event({pathname, query, asPath, id}){
       </section>
 
       <Footer/>
-    </main>
+    </motion.main>
   )
 }
 

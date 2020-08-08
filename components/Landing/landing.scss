@@ -8,9 +8,10 @@
   display: grid;
   align-items: center;
   justify-items: stretch;
-  color: #fff;
+  color: $font-color;
+  background-size: cover;
   .--vr{
-    background: #fff !important;
+    background: $font-color !important;
   }
   .buttonContainer{
     width: 100%;
@@ -31,7 +32,7 @@
     max-width: 65ex;
     line-height: 150%;
   }
-  h4:last-of-type{
+  p{
     text-align: right;
     width: 100%;
   }

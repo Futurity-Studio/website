@@ -9,7 +9,9 @@ import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
 import { StealthButton } from "./Button/Button";
 import Image from "./Image/Images";
-import Landing from "./Menu/Landing";
+import { WebpFormat } from "./Image/Images";
+import Landing from "./Landing/Landing";
+import FullSlideCard from "./Card/FullSlideCard";
 
 export {
   Menu,
@@ -23,5 +25,7 @@ export {
   BorderButton,
   StealthButton,
   Image,
-  Landing
+  Landing,
+  FullSlideCard,
+  WebpFormat
 }

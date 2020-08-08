@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { FeaturedArtifacts } from "../constants";
 import {DividedContent, Footer} from "../components";
 import Link from 'next/link';
-
+import { motion } from "framer-motion";
 
 import '../theme/styles.scss';
+
 
 function Deliverable({pathname, query, asPath, id}){
   let param = id || 'tomeato'
@@ -48,7 +49,12 @@ function Deliverable({pathname, query, asPath, id}){
   }
 
   return(
-    <main className={'Deliverable'}>
+    <motion.main
+      className={'Deliverable'}
+      initial={{  opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+    >
       <section className={'banner'} id={`background-${a.details.lab.title.toLowerCase()}`}>
         <div className={'section-content'}>
         <div className={'title'}>
@@ -86,7 +92,7 @@ function Deliverable({pathname, query, asPath, id}){
         </section>
 
       <Footer/>
-    </main>
+    </motion.main>
   )
 }
 
