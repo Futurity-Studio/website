@@ -32,6 +32,19 @@
     h4{
       height: 4ex;
     }
+    &--interactive{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      h2{
+        display: inline-block;
+        width: auto;
+        padding-right: 1ex;
+        &:last-of-type{
+          padding-right: 0;
+        }
+      }
+    }
   }
 
   .methodology{

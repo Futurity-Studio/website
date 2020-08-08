@@ -1,14 +1,14 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-import {DividedContent, Icon, ICONS, StealthButton, THEME, WebpFormat} from "../index";
+import {DividedContent, Icon, ICONS, StealthButton, THEME, removeWebpFormat} from "../index";
 
 import './landing.scss';
 
 const Landing = ({exploreClick}) => {
   const [background, setBackground] = useState(null)
-  useLayoutEffect(() => {
-    const asset = WebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
+  useEffect(() => {
+    const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);
   }, [])

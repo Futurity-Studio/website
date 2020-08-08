@@ -2,14 +2,15 @@
 @import "theme/vendor_mixins";
 
 .landing{
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   display: grid;
   align-items: center;
   justify-items: stretch;
   color: $font-color;
   background-size: cover;
+
   .--vr{
     background: $font-color !important;
   }
@@ -27,6 +28,12 @@
     svg{
       max-height: 175px;
     }
+    @include media("<=tablet") {
+      max-height: 100px;
+      svg{
+        max-height: 100px;
+      }
+    }
   }
   h4{
     max-width: 65ex;
@@ -39,7 +46,8 @@
   section{
     max-width: $main-width-max;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
+    padding: $section-padding/2 0;
     display: flex;
     flex-direction: column;
     align-items: center;

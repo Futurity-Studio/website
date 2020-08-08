@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-import {WebpFormat, Icon, ICONS, Image, THEME} from "..";
+import {removeWebpFormat, Icon, ICONS, Image, THEME} from "..";
 
 import "./Card.scss"
 
@@ -9,7 +9,7 @@ const FullSlideCard = ({content, nextSlide, prevSlide}) => {
   const router = useRouter();
   const [background, setBackground] = useState(null)
   useLayoutEffect(() => {
-    const asset = WebpFormat() ? require('images/'+ content.background) : require('images/'+ content.background +'?webp');
+    const asset = removeWebpFormat() ? require('images/'+ content.background) : require('images/'+ content.background +'?webp');
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);
   }, [])

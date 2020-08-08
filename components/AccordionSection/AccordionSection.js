@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {Icon, ICONS, StealthButton, THEME} from "..";
 
 import './AccordionSection.scss'

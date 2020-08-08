@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useRouter } from "next/router";
 import {
   DividedContent,
@@ -10,7 +10,7 @@ import {
   BorderButton,
   StealthButton,
   Image,
-  WebpFormat
+  removeWebpFormat
 } from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
@@ -63,13 +63,13 @@ const About = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(methodologySection)
-  }, [methodologySection]);
+  // useEffect(() => {
+  //   console.log(methodologySection)
+  // }, [methodologySection]);
 
   const [background, setBackground] = useState(null)
-  useLayoutEffect(() => {
-    const asset = WebpFormat() ? require('images/background--generic.jpg') : require('images/background--generic.jpg?webp');
+  useEffect(() => {
+    const asset = removeWebpFormat() ? require('images/background--generic.jpg') : require('images/background--generic.jpg?webp');
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);
   }, [])
@@ -87,12 +87,13 @@ const About = () => {
       >
         <div className={'section-content'}>
           <div>
-            <h2>
-              <span onMouseEnter={() => setMethodologySection(1)}>Build</span>&nbsp;
-              <span onMouseEnter={() => setMethodologySection(2)}>Better</span>&nbsp;
-              <span onMouseEnter={() => setMethodologySection(3)}>Futures</span>&nbsp;
-              <span onMouseEnter={() => setMethodologySection(4)}>Faster</span> <br />
-              with Futurity Studio</h2>
+            <div className={'banner--interactive'}>
+            <h2><span onMouseEnter={() => setMethodologySection(1)}>Build</span></h2>
+            <h2><span onMouseEnter={() => setMethodologySection(2)}>Better</span></h2>
+            <h2><span onMouseEnter={() => setMethodologySection(3)}>Futures</span></h2>
+            <h2><span onMouseEnter={() => setMethodologySection(4)}>Faster</span> </h2><br />
+            </div>
+            <h2>with Futurity Studio</h2>
 
             <AnimatePresence exitBeforeEnter>
               {(!methodologySection) &&

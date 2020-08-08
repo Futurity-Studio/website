@@ -1,19 +1,29 @@
-import React, {useLayoutEffect} from "react";
+import React, {useEffect, useState} from "react";
+import { isMobile } from 'react-device-detect';
 
 const Image = ({src, alt}) => {
-  let isSafari;
-  useLayoutEffect(() => {
-    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+  const [isSafari, setIsSafari] = useState(false)
+  const [isLoaded, setIsLoaded ] = useState(false)
+
+  useEffect(() => {
+    setIsSafari(removeWebpFormat());
+    setIsLoaded(true)
   }, [])
 
   return (
-      <img src={require(`images/${src}${isSafari ? '?webp' : ''}`)} alt={alt}/>
+    <>
+      { (isSafari) ?
+        <img src={require('images/' + src)} alt={alt}/>
+        :
+        <img src={require('images/' + src + '?webp')} alt={alt}/>
+      }
+    </>
   );
 }
 
-export const WebpFormat = () => {
+export const removeWebpFormat = () => {
   const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-  return (isSafari)
+  return (isSafari || isMobile)
 }
 
 export default Image;

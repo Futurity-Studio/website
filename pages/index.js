@@ -13,8 +13,8 @@ const Home = () => {
   const router = useRouter();
 
   useEffect( () => {
-    console.log('effect')
-    console.log(slide);
+    // console.log('effect')
+    // console.log(slide);
   }, [slide]);
 
   // useEffect( () => {
