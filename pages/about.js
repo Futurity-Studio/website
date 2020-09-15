@@ -1,17 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from "next/router";
-import {
-  DividedContent,
-  Footer,
-  ICONS,
-  Teaser,
-  THEME,
-  Icon,
-  BorderButton,
-  StealthButton,
-  Image,
-  removeWebpFormat
-} from "../components";
+import { DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image, removeWebpFormat } from "../components";
 import Link from "next/link";
 import {ROUTES} from "../constants";
 import {AnimatePresence, motion} from "framer-motion";

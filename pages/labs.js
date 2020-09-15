@@ -5,7 +5,7 @@ import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, TH
 import {LabData, Links, ROUTES} from "../constants/";
 import '../theme/styles.scss';
 import Link from "next/link";
-import {motion} from "framer-motion";
+import {motion, useElementScroll} from "framer-motion";
 
 
 const scrollToRef = (ref) => {
@@ -55,6 +55,11 @@ const Labs = () => {
 
 
 
+  const { scrollYProgress } = useElementScroll(labContainerRefs[0])
+
+
+
+
   /* did load */
   useEffect(() => {
     // getParam();
@@ -70,23 +75,23 @@ const Labs = () => {
   }, []);
 
   /* did update */
-  useEffect(() => {
-    // generic effect
-    const labParam = router.query.lab;
-    if ((labParam!= null) && (lab !== labParam)) {
-      // console.log(`setting param to ${labParam}`);
-      setLab(labParam);
-    }
-  }, );
+  // useEffect(() => {
+  //   // generic effect
+  //   const labParam = router.query.lab;
+  //   if ((labParam!= null) && (lab !== labParam)) {
+  //     // console.log(`setting param to ${labParam}`);
+  //     setLab(labParam);
+  //   }
+  // }, );
 
 
-  intersectionThresholds.forEach((_, i) => {
-    intersections.push(useIntersection(labContainerRefs[i], {
-      root: null,
-      rootMargin: "0px",
-      threshold: intersectionThresholds[i]
-    }));
-  })
+  // intersectionThresholds.forEach((_, i) => {
+  //   intersections.push(useIntersection(labContainerRefs[i], {
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: intersectionThresholds[i]
+  //   }));
+  // })
 
   // useEffect( () => {
   //
@@ -105,33 +110,31 @@ const Labs = () => {
   //   // scrollToRef(labContainerRefs[labNumber]);
   // }, [lab]);
 
-  useLayoutEffect(() => {
-    // console.log('layout labs');
-
-    if (!!lab) {
-      console.log('labs updating');
-      let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
-      let selection = [...selected];
-      selection[labNumber] = true;
-      // console.log(selection);
-      // setSelected(selection);
-
-
-      // let labElement = labContainerRefs[labNumber].current;
-      scrollToRef(labContainerRefs[labNumber]);
-
-    }
-  }, [lab])
+  // useLayoutEffect(() => {
+  //   // console.log('layout labs');
+  //
+  //   if (!!lab) {
+  //     console.log('labs updating');
+  //     let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
+  //     let selection = [...selected];
+  //     selection[labNumber] = true;
+  //     // console.log(selection);
+  //     // setSelected(selection);
+  //
+  //
+  //     // let labElement = labContainerRefs[labNumber].current;
+  //     scrollToRef(labContainerRefs[labNumber]);
+  //
+  //   }
+  // }, [lab])
 
 
 
 
 
   const generateLabs = () =>{
-    // console.log('generate ran');
-    // console.log(selected);
-    const labCard = LabData.map( (l, i) => {
 
+    const labCard = LabData.map( (l, i) => {
       const analysis = l.deliverable_analysis.map( (a) => (
           <div key={a.title} className={'deliverable'}>
             <em>{`Analysis No. ${a.number}`}</em>
@@ -163,6 +166,7 @@ const Labs = () => {
         // <div className={'lab'}>
         <AccordionSection
           key={l.title}
+
           open={selected[i]}
           id={l.title}
           toggle={(open) => {

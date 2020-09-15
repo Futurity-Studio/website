@@ -6,7 +6,9 @@
   src: url('/fonts/Helvetica Neue Bold.ttf');
   src: url('/fonts/Helvetica Neue.ttf');
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-rendering: optimizeLegibility;
