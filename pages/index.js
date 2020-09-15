@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useInterval } from "react-use";
-import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon, FullSlideCard, Landing} from "../components";
+import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon, Card, Landing} from "../components";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,7 +39,7 @@ const Home = () => {
 
   const generateSlide = (data, key) => {
     return(
-     <FullSlideCard key={key} content={data} nextSlide={nextSlide} prevSlide={prevSlide} />
+     <Card key={key} content={data} nextSlide={nextSlide} prevSlide={prevSlide} />
     )
   }
 

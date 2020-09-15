@@ -2,7 +2,7 @@
 
 .BoundaryLine{
   width: 100%;
-  &--line {
+  >div{
     height: $line-thickness;
     background-color: $line-color;
     width: 100%;

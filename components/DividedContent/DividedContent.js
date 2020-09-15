@@ -1,10 +1,15 @@
-import "./DividedContent.scss"
+import styles from "./DividedContent.module.scss"
+// todo -- check with BEM
 
 const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false}) => {
+  let className = styles.DividedContent;
+  className = (smallLeft && styles.smallLeft) || className
+  className = (smallRight && styles.smallRight) || className
+
   return(
-    <div className={`DividedContent ${smallLeft ? 'smallLeft' : ''} ${smallRight ? 'smallRight' : ''}`}>
+    <div className={className}>
       {left}
-      <div className={'--vr ' + ((hiddenBar) ? 'hidden' : '')}/>
+      <div className={`${styles.vr} + ${(hiddenBar) ? styles.hidden : ''}`}/>
       <div>
         {right}
       </div>

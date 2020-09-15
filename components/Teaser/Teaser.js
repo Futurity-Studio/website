@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import './Teaser.scss';
+import styles from './Teaser.module.scss';
 import {cubicBezier} from "../../helpers/animation";
 
 const Teaser = ({label}) => {
   return(
-    <div className={'Teaser'}>
+    <div className={styles.Teaser}>
       <motion.div
         initial={{ top: -150 }}
         edit={{ top: -150 }}
@@ -16,9 +16,9 @@ const Teaser = ({label}) => {
           easing: cubicBezier,
           duration: 1.5
         }}
-        className={'down-line--background'}
+        className={styles.downLineBackground}
       />
-      <div className={'down-line'}/><em>{label}</em>
+      <div className={styles.downLine}/><em>{label}</em>
     </div>
   )
 }

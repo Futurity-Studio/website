@@ -1,0 +1,9 @@
+@import "theme/_constants";
+
+.Button{
+  cursor: pointer;
+  @extend %labeled-icon;
+  &.link{
+    cursor: pointer;
+  }
+}

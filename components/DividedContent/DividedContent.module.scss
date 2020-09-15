@@ -4,16 +4,9 @@
 .DividedContent{
   display: grid;
   grid-template-columns: 275px 2px 1fr;
-  &.smallLeft{
-    grid-template-columns: 175px 2px 1fr;
-  }
-
-  &.smallRight{
-    grid-template-columns: 1fr 2px 275px;
-  }
+  align-items: center;
   grid-template-rows: 1fr;
   column-gap: 10%;
-
   @include media("<=tablet") {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto 1fr !important;
@@ -22,16 +15,21 @@
     }
   }
 
-  align-items: center;
+  .small-left{
+    @extend .DividedContent;
+    grid-template-columns: 175px 2px 1fr;
+  }
+  .small-right{
+    @extend .DividedContent;
+    grid-template-columns: 1fr 2px 275px;
+  }
 
-  .--vr{
+  .vr{
     @extend %vr;
   }
-  .--vr.hidden{
-    visibility: hidden;
-  }
 
-  div:last-of-type{
-    //padding-left: $content-padding;
+  .hidden{
+    @extend .vr;
+    visibility: hidden !important;
   }
 }

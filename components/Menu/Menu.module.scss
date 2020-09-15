@@ -1,7 +1,7 @@
 @import "theme/constants";
 @import "theme/vendor_mixins";
 
-.menu{
+.Menu{
   z-index: 9;
   position: fixed;
   top: 0;
@@ -10,10 +10,11 @@
   overflow: hidden;
   height: $menu-closed-height;
 
+
   &.open{
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
-    .menu-contents{
+    .contents{
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
       display: grid;
@@ -38,8 +39,7 @@
     }
   }
 
-
-  &-header{
+  .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,34 +65,6 @@
       font-weight: bold;
     }
 
-    .menu-button{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      position: relative;
-      cursor: pointer;
-
-      .icon{
-        height: 18px;
-        width: 18px;
-        min-height: 18px;
-        min-width: 18px;
-      }
-      em{
-        padding-left: 1rem;
-        width: 8ex;
-        @extend %helper-text;
-      }
-
-      &-background{
-        //min-width: 100%;
-        //min-height: 100%;
-        background-color: red;
-        position: relative;
-      }
-    }
-
     h4{
       font-weight: bold !important;
     }
@@ -114,6 +86,27 @@
     }
   }
 
+  .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+
+    .icon{
+      height: 18px;
+      width: 18px;
+      min-height: 18px;
+      min-width: 18px;
+    }
+    em{
+      padding-left: 1rem;
+      width: 8ex;
+      @extend %helper-text;
+    }
+  }
+
   &.close{
     .menu-body{
       background-color: red;
@@ -121,13 +114,10 @@
     }
   }
 
-  &-body{
-
+  .body{
     display: grid;
     grid-template-rows: auto min-content min-content;
-
-
-    .nav-top{
+    nav:first-of-type{
       padding: 1rem $main-padding 0;
       max-width: $main-width-max;
       margin: 0 auto;
@@ -195,10 +185,13 @@
         line-height: 150%;
       }
     }
+
+    // TODO -- remove this
     .border-button{
       padding: $content-padding/4 0;
     }
-    .nav-bottom{
+
+    nav:last-of-type{
       padding: $content-padding/4 $main-padding $content-padding/4;
       max-width: $main-width-max;
       margin: 0 auto;

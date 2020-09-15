@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Icon.scss';
+import styles from './Icon.module.scss';
 
 export const ICONS = {
   FILTER: 'FILTER',
@@ -471,43 +471,43 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
       default:
     }
 
-    let styles = '';
+    let additionalStyles = '';
 
     Object.values(THEME).forEach((v) => {
       if (v === theme) {
-        styles = `${theme}`;
+        additionalStyles = styles[theme];
       }
     });
 
     // default to dark theme
-    if (!styles) {
-      styles += 'dark';
+    if (!additionalStyles) {
+      additionalStyles += styles.dark;
     }
 
     Object.values(SIZE).forEach((v) => {
       if (v === size) {
-        styles += ` ${size}`;
+        additionalStyles += ` ${size}`;
       }
     });
 
     Object.values(TYPE).forEach((v) => {
       if (v === type) {
-        styles += ` ${type}`;
+        additionalStyles += ` ${type}`;
       }
     });
 
     if (progress) {
-      styles += ' progress';
+      additionalStyles += ' progress';
     }
 
     if (hide) {
-      styles += ' hide';
+      additionalStyles += ' hide';
     }
 
     if (url) {
       return (
         <a href={url.to}>
-          <div className={`icon ${styles}`}>
+          <div className={`${styles.Icon} ${additionalStyles}`}>
             {children}
             {svg}
           </div>
@@ -516,7 +516,7 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
     }
 
     return (
-      <div className={`icon ${styles}`} onClick={_onClick}>
+      <div className={`${styles.Icon} ${additionalStyles}`} onClick={_onClick}>
         {children}
         {svg}
       </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 
-import './Button.scss'
+import styles from './Button.module.scss'
+// todo -- check this import with the -- BEM styles
 
 
 export const StealthButton = ({label, icon, link, onClick, callback}) => {
@@ -9,7 +10,7 @@ export const StealthButton = ({label, icon, link, onClick, callback}) => {
 
   return(
     <div
-      className={`Button-Stealth ${(link) ? 'link' : ''}`}
+      className={`${styles.Button} ${(link) ? 'link' : ''}`}
       onClick={ () => {
         if (link){
           router.push(link).then( () => {

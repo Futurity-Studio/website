@@ -7,7 +7,6 @@ import {AnimatePresence, motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer'
 import {animateInUp} from "../helpers/animation";
 
-
 const About = () => {
   const router = useRouter();
   const [ deliverableSection, setDeliverableSection ] = useState(0);

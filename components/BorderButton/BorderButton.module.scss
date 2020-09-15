@@ -1,40 +1,41 @@
 @import "theme/_constants";
-.border-button{
+
+.BorderButton {
   padding: $content-padding*2 0;
   width: 100%;
   display: grid;
   grid-template-columns: calc( (100vw - #{$main-width-max}) / 2 ) auto 1fr;
   align-items: center;
-
   @include media("<=tablet") {
     padding: $content-padding*.5 0;
   }
-
-  .icon{
-    margin: 0 4px;
-  }
-
-  &--content {
-    @extend %labeled-icon;
-  }
-
-  &--button{
+  > div:nth-of-type(2){
     padding-left: $main-padding;
     padding-right: $main-padding / 2;
     display: inline-block;
   }
-  &--line{
+}
+.BorderButtonReverse{
+  @extend .BorderButton;
+  grid-template-columns: 1fr 30ch calc( (100vw - #{$main-width-max}) / 2 );
+  > div:nth-of-type(2){
+    padding-left: $main-padding / 2;
+    padding-right: $main-padding;
+  }
+}
+
+.darkRule{
     height: $line-thickness;
     background-color: $line-color;
     position: relative;
     top: 1px;
-  }
-
-  &.reverse{
-    grid-template-columns: 1fr 30ch calc( (100vw - #{$main-width-max}) / 2 );
-    .border-button--button{
-      padding-left: $main-padding / 2;
-      padding-right: $main-padding;
-    }
-  }
 }
+.lightRule{
+  @extend .darkRule;
+  background-color: #fff;
+}
+.content {
+  @extend %labeled-icon;
+  margin: 0 4px;
+}
+

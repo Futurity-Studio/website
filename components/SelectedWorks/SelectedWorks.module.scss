@@ -1,6 +1,6 @@
 @import "theme/_constants";
 
-.selected-works{
+.SelectedWorks{
   > div:last-of-type{
     padding-bottom: 0;
   }
@@ -9,8 +9,8 @@
   }
 }
 
-.work-banner{
-  &--content {
+.WorkBanner{
+  > div {
     max-width: $main-width-max;
     width: 100%;
     margin: 0 auto;

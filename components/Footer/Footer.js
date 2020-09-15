@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import {Icon, ICONS, THEME} from "..";
-import './footer.scss'
+import styles from './Footer.module.scss'
 
 const Footer = () => {
   return(
-    <section className={'footer'}>
+    <section className={styles.Footer}>
       <div className={'section-content'}>
         <div>
           <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
             <a target='_blank'>
               <h2>Eager to work with us?</h2>
-              <div className={'footer--cta'}>
+              <div className={styles.cta}>
                 <em>get in touch <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>
               </div>
             </a>

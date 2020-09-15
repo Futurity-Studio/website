@@ -1,7 +1,7 @@
 @import "theme/_constants";
 @import "theme/_vendor_mixins";
 
-.FullSlideCard {
+.Card {
   position: relative;
   padding: $main-padding;
   height: 100vh;
@@ -15,15 +15,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-
-  .content-wrapper {
+  >div{
     margin: 0 auto;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
-    .content-image {
+    .image {
       cursor: pointer;
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
@@ -68,10 +67,6 @@
         grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 1);
       }
 
-      .project-description {
-        cursor: pointer;
-      }
-
       h1 {
         max-width: 20ch;
         @include media("<=tablet") {
@@ -81,7 +76,7 @@
     }
   }
 
-  .content-nav {
+  nav{
     width: 70px;
     padding-top: $content-padding/4;
     display: flex;
@@ -96,5 +91,8 @@
     @include media("<=tablet") {
       visibility: hidden;
     }
+  }
+  .project-description {
+    cursor: pointer;
   }
 }

@@ -1,5 +1,5 @@
-import "./SelectedWorks.scss"
 import {DividedContent, ICONS, THEME, BorderButton, Icon} from "../index";
+import styles from "./SelectedWorks.module.scss"
 
 const works = [
   {type:'artifact', lab:'acommerce',
@@ -17,8 +17,8 @@ const SelectedWorks = () => {
   //todo setup pagination
   const generateWorkTiles = () =>{
     return(works.map((w) => (
-      <div className={'work-banner'} key={w.title}>
-        <div className={'work-banner--content'}>
+      <div className={styles.WorkBanner} key={w.title}>
+        <div>
           <div>
             <div><em>{`${w.type} - ${w.date}`}</em></div><div><em>{w.lab}</em></div>
           </div>
@@ -34,7 +34,7 @@ const SelectedWorks = () => {
 
 
   return(
-    <div className={'selected-works'}>
+    <div className={styles.SelectedWorks}>
       <div className={'section-content'}>
         <DividedContent
           leftHeader={

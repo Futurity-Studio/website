@@ -4,9 +4,6 @@ import {DividedContent, Footer} from "../components";
 import Link from 'next/link';
 import { motion } from "framer-motion";
 
-import '../theme/styles.scss';
-
-
 function Deliverable({pathname, query, asPath, id}){
   let param = id || 'tomeato'
   const a =  FeaturedArtifacts.find(a => a.key === param);

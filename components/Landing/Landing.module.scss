@@ -1,7 +1,6 @@
 @import "theme/constants";
-@import "theme/vendor_mixins";
 
-.landing{
+.Landing{
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
@@ -11,15 +10,6 @@
   color: $font-color;
   background-size: cover;
 
-  .--vr{
-    background: $font-color !important;
-  }
-  .buttonContainer{
-    width: 100%;
-    display: flex;
-    align-content: baseline;
-    justify-content: space-around;
-  }
   .logo{
     max-height: 175px;
     width: auto;
@@ -55,5 +45,11 @@
   }
   .copy{
     margin: $content-padding;
+  }
+  section >div:last-of-type{
+    width: 100%;
+    display: flex;
+    align-content: baseline;
+    justify-content: space-around;
   }
 }

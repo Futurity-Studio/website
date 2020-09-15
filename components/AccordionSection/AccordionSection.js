@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Icon, ICONS, StealthButton, THEME} from "..";
 
-import './AccordionSection.scss'
+import styles from './AccordionSection.module.scss'
 
 const AccordionSection = ({header, children, toggle, className, reference, open, id}) => {
   const [ isOpen, setIsOpen ] = useState(open);
@@ -29,7 +29,7 @@ const AccordionSection = ({header, children, toggle, className, reference, open,
 
   return(
     <section
-      className={`AccordionSection ${isOpen ? 'open' : 'closed'} ${className}` }
+      className={`${styles.AccordionSection} ${isOpen ? 'open' : 'closed'} ${className}` }
       ref={reference}
       id={id}
     >

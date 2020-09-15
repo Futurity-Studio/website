@@ -1,4 +1,6 @@
-@import 'theme/constants';
+@import "theme/constants";
+@import "theme/vendor_mixins";
+
 .AccordionSection{
   position: relative;
   &--header{
@@ -16,7 +18,7 @@
       max-width: 60ex;
     }
   }
-  &--button{
+  &--button-wrapper{
     position: absolute;
     bottom: $content-padding + 1rem;
     right: $section-padding;

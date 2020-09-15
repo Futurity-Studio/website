@@ -1,5 +1,5 @@
 import Menu from "./Menu/menu";
-import Footer from "./Footer/footer";
+import Footer from "./Footer/Footer";
 import DividedContent from "./DividedContent/DividedContent";
 import SelectedWorks from "./SelectedWorks/SelectedWorks";
 import { ICONS, THEME, SIZE, TYPE, Icon } from "./Icon/Icon";
@@ -11,13 +11,13 @@ import { StealthButton } from "./Button/Button";
 import Image from "./Image/Images";
 import { removeWebpFormat } from "./Image/Images";
 import Landing from "./Landing/Landing";
-import FullSlideCard from "./Card/FullSlideCard";
+import Card from "./Card/Card";
 
 export {
   Menu,
   Footer,
   DividedContent,
-  SelectedWorks,
+  // SelectedWorks,
   Teaser,
   AccordionSection,
   BoundaryLine,
@@ -26,6 +26,6 @@ export {
   StealthButton,
   Image,
   Landing,
-  FullSlideCard,
+  Card,
   removeWebpFormat
 }

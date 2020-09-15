@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-import {DividedContent, Icon, ICONS, StealthButton, THEME, removeWebpFormat} from "../index";
+import { Icon, ICONS, THEME, StealthButton, removeWebpFormat} from "../index";
 
-import './landing.scss';
+import styles from './Landing.module.scss';
 
 const Landing = ({exploreClick}) => {
   const [background, setBackground] = useState(null)
@@ -15,17 +15,15 @@ const Landing = ({exploreClick}) => {
 
   return(
     <motion.div
-      className={'landing'}
+      className={styles.Landing}
       style={background}
       initial={{  opacity: 0, transition:{ duration: .2, easings: "linear" } }}
       animate={{  opacity: 1, transition:{ duration: .2, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  duration: .2, easings: "linear" } }}
     >
       <section>
-        <div className={'identity'}>
-          <h3>We builds better futures faster.</h3>
-        </div>
-        <div className={'copy'}>
+        <h3>We builds better futures faster.</h3>
+        <div className={styles.copy}>
           <h4>
             We are a global research and design innovation studio working at the intersection of design, technology, social, and business innovation.
           </h4>
@@ -35,7 +33,7 @@ const Landing = ({exploreClick}) => {
           </h4>
           <br />
         </div>
-        <div className={'buttonContainer'}>
+        <div>
           <div>
             <StealthButton label={'View some examples'} onClick={exploreClick} />
           </div>

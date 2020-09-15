@@ -1,14 +1,14 @@
 @import "theme/vendor_mixins";
 @import "theme/constants";
 
-.footer{
-  .section-content{
+.Footer{
+  >div{
     display: grid;
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr;
     column-gap: 10%;
     align-items: center;
-    margin-bottom: $section-padding*.25;
+    margin-bottom: $section-padding*.25 !important;
 
     > div:last-of-type{
       display: flex;
@@ -38,7 +38,7 @@
     }
   }
 
-  &--cta{
+  .cta{
     display: flex;
     justify-content: flex-start;
     align-items: center;

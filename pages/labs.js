@@ -27,24 +27,6 @@ const Labs = () => {
   const headerRefs = [ useRef(null), useRef(null), useRef(null), useRef(null)];
 
 
-  // console.log(lab);
-  // console.log(labParam);
-  // // console.log(router.query);
-  // if ((lab == null) && (labParam != null) && (lab !== labParam)) {
-  //   setLab(labParam);
-  // }
-
-  const getParam = () => {
-    let section = null
-    let paramFound = router.asPath.includes("=")
-    if (router.asPath.includes("=")){
-      let idx = router.asPath.indexOf("=")
-      section = router.asPath.substr(idx+1)
-      // console.log(section)
-    }
-    return section;
-  }
-
   intersectionThresholds.forEach((_, i) => {
     intersections.push(useIntersection(labContainerRefs[i], {
       root: null,
@@ -52,6 +34,19 @@ const Labs = () => {
       threshold: intersectionThresholds[i]
     }));
   })
+
+
+  // console.log(lab);
+  // console.log(labParam);
+  // // console.log(router.query);
+  // if ((lab == null) && (labParam != null) && (lab !== labParam)) {
+  //   setLab(labParam);
+  // }
+
+  useEffect( _ => {
+    console.log(scrollYProgress);
+  }, );
+
 
 
 
