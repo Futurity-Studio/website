@@ -24,6 +24,15 @@
   }
 }
 
+.smallPadding{
+  @extend .BorderButton;
+  padding: $content-padding/8 0 !important;
+}
+.smallPaddingReverse{
+  @extend .BorderButtonReverse;
+  padding: $content-padding/8 0 !important;
+}
+
 .darkRule{
     height: $line-thickness;
     background-color: $line-color;

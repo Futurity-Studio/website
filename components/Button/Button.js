@@ -10,7 +10,7 @@ export const StealthButton = ({label, icon, link, onClick, callback}) => {
 
   return(
     <div
-      className={`${styles.Button} ${(link) ? 'link' : ''}`}
+      className={styles.Button}
       onClick={ () => {
         if (link){
           router.push(link).then( () => {

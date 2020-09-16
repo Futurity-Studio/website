@@ -156,43 +156,43 @@ const Menu = ({setLocked, loader = false}) => {
           </div>
         </motion.div>
 
-          <div className={styles.body}>
-            <nav>
-              <ul>
-                {generateTopNavContent()}
-              </ul>
-              <div><h2>Build Better Futures Faster</h2></div>
-            </nav>
+        <div className={styles.body}>
+          <nav>
+            <ul>
+              {generateTopNavContent()}
+            </ul>
+            <div><h2>Build Better Futures Faster</h2></div>
+          </nav>
 
-            <BorderButton
-              content={<em>get in touch</em>}
-              light={true}
-              icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT}/>}
-            />
+          <BorderButton
+            content={<em>get in touch</em>}
+            light={true}
+            icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT}/>}
+          />
 
-            <nav>
-              <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
-                <a target='_blank'>
-                  <span><em>Inquiry@Futurity.Studio</em></span>
-                </a>
-              </Link>
-              <Link prefetch={false} href={'https://www.linkedin.com/company/futurity-studio/'}>
-                <a target='_blank'>
-                  <Icon icon={ICONS.LINKEDIN} theme={THEME.LIGHT}/>
-                </a>
-              </Link>
-              <Link prefetch={false} href={'https://twitter.com/FuturityStudio'}>
-                <a target='_blank'>
-                  <Icon icon={ICONS.TWITTER} theme={THEME.LIGHT}/>
-                </a>
-              </Link>
-              <Link prefetch={false} href={'https://www.youtube.com/channel/UC0QDU-sjWKesXRdNbhdKSgA'}>
-                <a target='_blank'>
-                  <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT}/>
-                </a>
-              </Link>
-            </nav>
-          </div>
+          <nav>
+            <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
+              <a target='_blank'>
+                <span><em>Inquiry@Futurity.Studio</em></span>
+              </a>
+            </Link>
+            <Link prefetch={false} href={'https://www.linkedin.com/company/futurity-studio/'}>
+              <a target='_blank'>
+                <Icon icon={ICONS.LINKEDIN} theme={THEME.LIGHT}/>
+              </a>
+            </Link>
+            <Link prefetch={false} href={'https://twitter.com/FuturityStudio'}>
+              <a target='_blank'>
+                <Icon icon={ICONS.TWITTER} theme={THEME.LIGHT}/>
+              </a>
+            </Link>
+            <Link prefetch={false} href={'https://www.youtube.com/channel/UC0QDU-sjWKesXRdNbhdKSgA'}>
+              <a target='_blank'>
+                <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT}/>
+              </a>
+            </Link>
+          </nav>
+        </div>
       </div>
     </motion.div>
   )

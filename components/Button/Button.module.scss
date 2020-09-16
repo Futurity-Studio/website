@@ -3,7 +3,4 @@
 .Button{
   cursor: pointer;
   @extend %labeled-icon;
-  &.link{
-    cursor: pointer;
-  }
 }

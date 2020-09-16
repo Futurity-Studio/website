@@ -267,10 +267,6 @@
     }
   }
 
-  .border-button{
-    padding: $content-padding/8 0  !important;
-  }
-
   > section:last-of-type{
     margin-top: $content-padding/2;
   }
@@ -348,7 +344,7 @@
           max-width: 100%;
         }
         p {
-          word-wrap: break-spaces;
+          word-wrap: break-word;
           //background-color: red;
           max-width: 100%;
         }

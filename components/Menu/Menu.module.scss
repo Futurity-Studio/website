@@ -108,7 +108,7 @@
   }
 
   &.close{
-    .menu-body{
+    >div >div:last-of-type{
       background-color: red;
       visibility: hidden;
     }
@@ -184,11 +184,6 @@
         opacity: 0.25;
         line-height: 150%;
       }
-    }
-
-    // TODO -- remove this
-    .border-button{
-      padding: $content-padding/4 0;
     }
 
     nav:last-of-type{

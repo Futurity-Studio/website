@@ -3,10 +3,8 @@ import { useRouter } from "next/router";
 import { useIntersection } from "react-use";
 import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, THEME, BorderButton} from "../components";
 import {LabData, Links, ROUTES} from "../constants/";
-import '../theme/styles.scss';
 import Link from "next/link";
 import {motion, useElementScroll} from "framer-motion";
-
 
 const scrollToRef = (ref) => {
   window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
@@ -292,6 +290,7 @@ const Labs = () => {
         </div>
       </section>
       <BorderButton
+        smallPadding={true}
         content={<em>our labs</em>}
         icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
       />

@@ -120,6 +120,7 @@ const About = () => {
       <section className={'services'}>
         <div className={'section-content'}>
           <DividedContent
+            smallRight={true}
             left={<div>
               <p>We help you recognize and plan for existential threats and create entirely new markets, instead of incremental innovation, incremental revenue growth or product line extensions. We help companies reach Sustainable Development Goals, create new markets, and execute strategies. Futures require new skills that no one company has, no matter how large or heavily invested it is in R&D.</p>
               <p>We don't just write reports or design thinking activities. We embody them in functional, interactive artifacts that provoke thought and learning from your industry's users, consumers, and thought leaders. We bring you deep datasets and data science tools, better ideas from broader sources, and a network of world-class collaborators. And we work with you and your team to design an organization and processes to build better futures faster.</p>
