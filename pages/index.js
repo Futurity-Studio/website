@@ -32,7 +32,7 @@ const Home = () => {
   }, [slide]);
 
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);

@@ -6,17 +6,15 @@ import {Icon, ICONS, THEME, StealthButton, removeWebpFormat, TeaserHorizontal} f
 import styles from './Landing.module.scss';
 import {landingItems, landingContainer, landingItemsHeading} from "../../helpers/animation";
 
-const Landing = ({exploreClick}) => {
-  // const [background, setBackground] = useState(null)
-  const duration = 100;
 
+const Landing = ({exploreClick}) => {
+
+  const duration = 10;
   useEffect(() => {
-    // const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
-    // let background = { backgroundImage: `url('${asset}')`}
-    // setBackground(background);
     setTimeout(() => {
+      console.log('wee')
       exploreClick();
-    }, duration * 100)
+    }, duration * 1000)
   }, [])
 
   return(
@@ -38,7 +36,6 @@ const Landing = ({exploreClick}) => {
         }
       }}
       exit={{
-        // opacity: 0,
         transition: {
           duration: .1,
           delay: 1.5,

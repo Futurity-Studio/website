@@ -167,6 +167,7 @@ const Menu = ({setLocked, loader = false}) => {
           <BorderButton
             content={<em>get in touch</em>}
             light={true}
+            smallPadding={true}
             icon={<Icon icon={ICONS.MAIL} theme={THEME.LIGHT}/>}
           />
 

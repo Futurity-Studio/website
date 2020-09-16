@@ -69,9 +69,21 @@ const About = () => {
       animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
     >
-      <section
+      <motion.section
         className={'banner'}
         style={background}
+        initial={{
+          backgroundSize: '200%'
+        }}
+        animate={{
+          backgroundSize: '100%',
+          transition: {
+            duration: 15,
+            easings: "linear",
+            repeat: Infinity,
+            repeatType: "mirror"
+          }
+        }}
       >
         <div className={'section-content'} onMouseLeave={() =>  setMethodologySection(0)}>
           <div>
@@ -115,7 +127,7 @@ const About = () => {
           </div>
         </div>
         <Teaser label={'explore how'} />
-      </section>
+      </motion.section>
 
       <section className={'services'}>
         <div className={'section-content'}>

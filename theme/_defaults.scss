@@ -16,6 +16,7 @@ body{
   font-size: 100%;
   background-color: $page-background-color--light;
   color: $font-color;
+  overscroll-behavior: none;
   *, *:before, *:after {
     box-sizing: border-box;
   }
