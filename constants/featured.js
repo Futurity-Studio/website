@@ -1,6 +1,6 @@
 export const FeatureContent = [
   {
-    tag: 'Upcoming Event - 2020 - aCommerce Lab',
+    tag: 'aCommerce Lab',
     header:'Future Artifacts',
     short_desc: 'Designing for ubiquitous systems in aCommerce',
     type: 'acommerce',
@@ -10,7 +10,7 @@ export const FeatureContent = [
       text: 'view event information'
     }
   }, {
-    tag: 'Artifact - Q2 - 2020 - FoodTurity Lab',
+    tag: 'FoodTurity Lab',
     header:'Tomeato',
     short_desc: 'Polygenic Plantable Meals',
     type: 'foodturity',
@@ -20,7 +20,7 @@ export const FeatureContent = [
       text: 'explore the artifact'
     }
   }, {
-    tag: 'Artifact - Q2 - 2020 - aCommerce Lab',
+    tag: 'aCommerce Lab',
     header:'Transaction Membrane',
     short_desc: 'Home delivery with optimized supply chains.',
     type: 'acommerce',

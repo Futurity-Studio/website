@@ -7,19 +7,11 @@ import styles from "./Card.module.scss"
 
 const Card = ({content, nextSlide, prevSlide}) => {
   const router = useRouter();
-  const [background, setBackground] = useState(null)
-  useLayoutEffect(() => {
-    const asset = removeWebpFormat() ? require('images/'+ content.background) : require('images/'+ content.background +'?webp');
-    let background = { backgroundImage: `url('${asset}')`}
-    setBackground(background);
-  }, [])
 
   return(
     <motion.section
       className={styles.Card}
       id={content.type}
-      style={background}
-
       initial={{  opacity: 0, transition:{ duration: .2, easings: "linear" } }}
       animate={{  opacity: 1, transition:{ duration: .2, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  duration: .2, easings: "linear" } }}
@@ -33,7 +25,7 @@ const Card = ({content, nextSlide, prevSlide}) => {
 
         <div className={styles.content}>
           <div className={styles.tagline}>
-            <p><em>Building better</em>&nbsp;<span><em>aCommerce</em></span>&nbsp;<em>Futures Faster</em></p>
+            <h3>Building better futures faster</h3>
           </div>
           <div className={styles.projectDescription}>
             <div onClick={() => {

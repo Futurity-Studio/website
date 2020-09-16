@@ -3,7 +3,7 @@ import Footer from "./Footer/Footer";
 import DividedContent from "./DividedContent/DividedContent";
 import SelectedWorks from "./SelectedWorks/SelectedWorks";
 import { ICONS, THEME, SIZE, TYPE, Icon } from "./Icon/Icon";
-import Teaser from "./Teaser/Teaser";
+import { Teaser, TeaserHorizontal } from "./Teaser/Teaser";
 import AccordionSection from "./AccordionSection/AccordionSection";
 import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
@@ -19,6 +19,7 @@ export {
   DividedContent,
   // SelectedWorks,
   Teaser,
+  TeaserHorizontal,
   AccordionSection,
   BoundaryLine,
   ICONS, THEME, SIZE, TYPE, Icon,

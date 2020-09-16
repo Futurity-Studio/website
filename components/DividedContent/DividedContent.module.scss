@@ -24,6 +24,10 @@
   @extend .DividedContent;
   grid-template-columns: 1fr 2px 275px;
 }
+.medRight{
+  @extend .DividedContent;
+  grid-template-columns: 1fr 2px 305px;
+}
 
 .vr{
   @extend %vr;

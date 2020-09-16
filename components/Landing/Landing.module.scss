@@ -25,9 +25,13 @@
       }
     }
   }
+  h3{
+    margin: 0 $content-padding/2 !important;
+  }
   h4{
     max-width: 65ex;
     line-height: 150%;
+    margin: $content-padding/2 !important;
   }
   p{
     text-align: right;
@@ -42,9 +46,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 1000px;
   }
-  .copy{
-    margin: $content-padding;
+  section >div:first-of-type{
+    width: 100%;
   }
   section >div:last-of-type{
     width: 100%;

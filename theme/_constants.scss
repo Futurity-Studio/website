@@ -52,6 +52,11 @@ $line-color: #3a3a3a;
   width: $line-thickness;
   height: 100%;
 }
+%hr{
+  background-color: $menu-color;
+  height: $line-thickness;
+  width: 100%;
+}
 
 %labeled-icon{
   display: inline-grid;

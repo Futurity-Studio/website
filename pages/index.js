@@ -1,6 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useInterval } from "react-use";
-import {Menu, Footer, DividedContent, SelectedWorks, ICONS, THEME, Icon, Card, Landing} from "../components";
+import {
+  Menu,
+  Footer,
+  DividedContent,
+  SelectedWorks,
+  ICONS,
+  THEME,
+  Icon,
+  Card,
+  Landing,
+  removeWebpFormat
+} from "../components";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,10 +23,20 @@ const Home = () => {
   const [seconds, setSeconds] = useState(0);
   const router = useRouter();
 
+  const [background, setBackground] = useState(null)
+
+
   useEffect( () => {
     // console.log('effect')
     // console.log(slide);
   }, [slide]);
+
+
+  useLayoutEffect(() => {
+    const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
+    let background = { backgroundImage: `url('${asset}')`}
+    setBackground(background);
+  }, []);
 
   // useEffect( () => {
   //   setInterval(() => {
@@ -46,9 +67,26 @@ const Home = () => {
   return(
     <motion.main
       className={'Index'}
-      initial={{  opacity: 0, transition:{ delay: 2.5, duration: .25, easings: "linear" } }}
-      animate={{  opacity: 1, transition:{ duration: .25, easings: "linear" } }}
-      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      style={background}
+      initial={{
+        backgroundSize: '300%'
+      }}
+      animate={{
+        backgroundSize: '100%',
+        transition: {
+          duration: 15,
+          easings: "linear",
+          repeat: Infinity,
+          repeatType: "mirror"
+        }
+      }}
+      exit={{
+        opacity: 0,
+        transition:{
+          duration: .25,
+          easings: "linear"
+        }
+      }}
     >
       <AnimatePresence exitBeforeEnter>
         { (slide === 3) &&
