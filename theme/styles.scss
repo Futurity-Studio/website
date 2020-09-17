@@ -187,7 +187,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: stretch;
-      //padding-bottom: 0;
+      padding-bottom: 0;
 
       >div:first-of-type{
         width: 300px;
@@ -245,9 +245,25 @@
   .clients{
     margin-top: 0;
     &--list{
-      background: $page-background-color--dark;
-      height: 32rem;
-      width: 100%;
+      //background: orange;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+
+      @include media('<=500px'){
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      >div:nth-of-type(2){
+        padding: 3rem;
+      }
+    }
+    .st0 {
+      fill:#991d85
     }
   }
 }
