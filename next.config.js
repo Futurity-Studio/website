@@ -43,7 +43,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([
-  withSass,
   [ withOptimizedImages, {
     webpack(config){
       config.resolve.alias.images = path.join(__dirname, "images");
