@@ -1,5 +1,5 @@
 import {Footer, Image, Menu} from "../components";
-
+//
 const Events = () => {
   return(
     <main className={'events'}>
