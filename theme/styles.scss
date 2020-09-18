@@ -44,6 +44,13 @@
           padding-right: 0;
         }
       }
+
+      @include media("<=870px"){
+        h2:nth-of-type(2){
+          padding-right: 40%;
+        }
+      }
+
     }
   }
 
@@ -71,16 +78,20 @@
     &--container{
       display: grid;
       grid-template-columns: auto 400px;
-      align-items: center;
+      //align-items: center;
       margin-right: calc((100vw - #{$main-width-max}) / 2);
       align-items: start;
-      padding-right: $main-padding;
-      grid-column-gap: $content-padding;
+      grid-column-gap: $content-padding/2;
 
       @include media("<=1280px"){
+        margin-right: 0;
+      }
+
+      @include media("<=1024px"){
         display: flex;
         flex-direction: column-reverse;
         margin-right: initial !important;
+        grid-column-gap: $content-padding/2;
         > div:last-of-type {
           width: 100%;
           padding: 0 $main-padding $content-padding/4;
@@ -101,6 +112,7 @@
       overflow: hidden;
       display: flex;
       justify-content: center;
+      padding-right: $main-padding;
 
       img{
         height: 100%;
@@ -116,6 +128,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-right: $main-padding;
 
         @include media("<=1024px"){
           height: initial;
@@ -254,12 +267,12 @@
       @include media('<=500px'){
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr;
-        width: 300px;
+        width: 275px;
         margin: 0 auto;
       }
 
       >div:nth-of-type(2){
-        padding: 3rem;
+        padding: 4rem;
       }
     }
     .st0 {

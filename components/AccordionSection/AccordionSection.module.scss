@@ -4,7 +4,7 @@
 .AccordionSection {
   position: relative;
   > div:first-of-type {
-    padding: $content-padding 0;
+    padding: $content-padding/2 0;
     cursor: pointer;
     position: sticky;
     top: $menu-closed-height;

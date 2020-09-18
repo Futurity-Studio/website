@@ -69,13 +69,13 @@ const Home = () => {
       className={'Index'}
       style={background}
       initial={{
-        backgroundSize: '300%'
+        backgroundSize: '400% 400%'
       }}
       animate={{
-        backgroundSize: '100%',
+        backgroundSize: '100% 100%',
         transition: {
-          duration: 15,
-          easings: "linear",
+          duration: 20,
+          easings: "backInOut",
           repeat: Infinity,
           repeatType: "mirror"
         }

@@ -32,6 +32,9 @@
     max-width: 65ex;
     line-height: 150%;
     margin: $content-padding/2 !important;
+    &:first-of-type{
+      margin-bottom: 0 !important;
+    }
   }
   p{
     text-align: right;
@@ -48,7 +51,7 @@
     justify-content: center;
     max-width: 1000px;
   }
-  section >div:first-of-type{
+  section >div{
     width: 100%;
   }
   section >div:last-of-type{

@@ -25,7 +25,7 @@ const Card = ({content, nextSlide, prevSlide}) => {
 
         <div className={styles.content}>
           <div className={styles.tagline}>
-            <h3>Building better futures faster</h3>
+            <h3>{`Building better ${content.slogan} faster`}</h3>
           </div>
           <div className={styles.projectDescription}>
             <div onClick={() => {

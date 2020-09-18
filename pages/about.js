@@ -73,13 +73,13 @@ const About = () => {
         className={'banner'}
         style={background}
         initial={{
-          backgroundSize: '200%'
+          backgroundSize: "400% 400%",
         }}
         animate={{
-          backgroundSize: '100%',
+          backgroundSize: '100% 100%',
           transition: {
-            duration: 15,
-            easings: "linear",
+            duration: 12,
+            easings: "backInOut",
             repeat: Infinity,
             repeatType: "mirror"
           }
@@ -270,11 +270,11 @@ const About = () => {
         <div className={'section-content'}>
           <DividedContent
             hiddenBar={true}
-            smallLeft={true}
+            // smallLeft={true}
             right={<div>
               <p>We've worked in dozens of corporate and non-commercial moonshot programs in many industries. Corporate venture capitalists, product developers, and R&D teams at Adidas, BASF, BMW, IBM, Telefonica, the United Nations, and more than 150 other Fortune 500 global companies have been our clients. We have taught sustainability, innovation, design, and entrepreneurship to business and engineering students at Parsons School of Design, the Institute for Advanced Architecture of Catalonia, the University of California at Berkeley, Presidio Graduate School, and the International University of Monaco, and INSEEC.</p>
             </div>}
-            left={<h3>Global Experience</h3>}
+            left={<h2>Global Experience</h2>}
           />
           <div className={'clients--list'}>
 

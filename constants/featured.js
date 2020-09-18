@@ -5,6 +5,7 @@ export const FeatureContent = [
     short_desc: 'Designing for ubiquitous systems in aCommerce',
     type: 'acommerce',
     background: 'background--acommerce.jpg',
+    slogan: 'economies',
     button: {
       link: '/event?id=concord',
       text: 'view event information'
@@ -15,6 +16,7 @@ export const FeatureContent = [
     short_desc: 'Polygenic Plantable Meals',
     type: 'foodturity',
     background: 'background--foodturity.jpg',
+    slogan: 'foods',
     button: {
       link: '/deliverable?id=tomeato',
       text: 'explore the artifact'
@@ -25,6 +27,7 @@ export const FeatureContent = [
     short_desc: 'Home delivery with optimized supply chains.',
     type: 'acommerce',
     background: 'background--acommerce.jpg',
+    slogan: 'consumers',
     button: {
       link: '/deliverable?id=membrane',
       text: 'explore the artifact'
