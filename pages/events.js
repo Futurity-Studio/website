@@ -1,5 +1,4 @@
 import {Footer, Image, Menu} from "../components";
-import '../theme/styles.scss';
 
 const Events = () => {
   return(
