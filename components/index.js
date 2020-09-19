@@ -12,6 +12,7 @@ import Image from "./Image/Images";
 import { removeWebpFormat } from "./Image/Images";
 import Landing from "./Landing/Landing";
 import Card from "./Card/Card";
+import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
 
 export {
   Menu,
@@ -28,5 +29,6 @@ export {
   Image,
   Landing,
   Card,
-  removeWebpFormat
+  removeWebpFormat,
+  DeliverableSampler
 }

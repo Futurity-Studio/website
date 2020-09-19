@@ -69,7 +69,7 @@ const Home = () => {
       className={'Index'}
       style={background}
       initial={{
-        backgroundSize: '400% 400%'
+        backgroundSize: "400% 400%",
       }}
       animate={{
         backgroundSize: '100% 100%',

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FeaturedArtifacts } from "../constants";
-import {DividedContent, Footer} from "../components";
+import {DeliverableSampler, DividedContent, Footer, Image} from "../components";
 import Link from 'next/link';
 import { motion } from "framer-motion";
+
 
 function Deliverable({pathname, query, asPath, id}){
   let param = id || 'tomeato'
@@ -24,7 +25,7 @@ function Deliverable({pathname, query, asPath, id}){
             break;
           case 'list':
             special = (<ul>
-             {c.special.body.text.map((t,i) => <li key={i}><p>{t}</p></li>)}
+              {c.special.body.text.map((t,i) => <li key={i}><p>{t}</p></li>)}
             </ul>)
             break;
         }
@@ -45,6 +46,18 @@ function Deliverable({pathname, query, asPath, id}){
     })
   }
 
+  const generateDetails = (a) => {
+    return(
+      <div className={'details'}>
+        <em>Artifact Details:</em>
+        <p>{a.details.time}</p>
+        <Link href={a.details.lab.link}>
+          <a><p>{a.details.lab.title}</p></a>
+        </Link>
+      </div>
+    )
+  }
+
   return(
     <motion.main
       className={'Deliverable'}
@@ -52,41 +65,31 @@ function Deliverable({pathname, query, asPath, id}){
       animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
     >
-      <section className={'banner'} id={`background-${a.details.lab.title.toLowerCase()}`}>
+      <section className={'banner'}>
+        <Image alt={'tomeato'} src={'tomeato.gif'} />
         <div className={'section-content'}>
-        <div className={'title'}>
-          <h1>{a.title}</h1>
-        </div>
+          <DeliverableSampler content={{tag: a.details.lab.title, header: a.title, subHeader: a.subTitle}} />
         </div>
       </section>
       <section className={'overview'}>
         <div className={'section-content'}>
           <DividedContent
             smallLeft={true}
-            left={<div className={'details'}>
-              <p>{a.details.time}</p>
-              <Link href={a.details.lab.link}>
-                <a><p>{a.details.lab.title}</p></a>
-              </Link>
-              <p>{a.details.length}</p>
-              <Link prefetch={false} href={a.details.client.link}>
-                <a target={'_blank'}><p>Delivered for {a.details.client.title}</p></a>
-              </Link>
-            </div>}
+            left={ generateDetails(a) }
             right={<h4>{a.details.question}</h4>}
           />
         </div>
       </section>
 
-        {/*<section className={'media'}>*/}
+      {/*<section className={'media'}>*/}
 
-        {/*</section>*/}
+      {/*</section>*/}
 
-        <section className={'content'}>
-          <div className={'section-content'}>
-            {generateContent()}
-          </div>
-        </section>
+      <section className={'content'}>
+        <div className={'section-content'}>
+          {generateContent()}
+        </div>
+      </section>
 
       <Footer/>
     </motion.main>

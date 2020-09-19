@@ -10,7 +10,7 @@ const ICalLink = dynamic(
   { ssr: false }
 )
 
-import '../theme/styles.scss';
+// import '../theme/styles.scss';
 import {motion} from "framer-motion";
 
 function Event({pathname, query, asPath, id}){

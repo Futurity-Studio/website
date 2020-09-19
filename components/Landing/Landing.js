@@ -12,7 +12,6 @@ const Landing = ({exploreClick}) => {
   const duration = 10;
   useEffect(() => {
     setTimeout(() => {
-      console.log('wee')
       exploreClick();
     }, duration * 1000)
   }, [])

@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
           <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
             <a target='_blank'>
-              <h2>Eager to work with us?</h2>
+              <h2>Eager to learn more?</h2>
               <div className={styles.cta}>
                 <em>get in touch <Icon icon={ICONS.RIGHT} theme={THEME.DARK} /></em>
               </div>
