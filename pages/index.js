@@ -50,11 +50,9 @@ const Home = () => {
   // }, 4000);
 
   const nextSlide = () => {
-    console.log('next slide')
     setSlide((slide+1) % FeatureContent.length);
   }
   const prevSlide = () => {
-    console.log('prev slide')
     setSlide((slide+2) % FeatureContent.length );
   }
 
