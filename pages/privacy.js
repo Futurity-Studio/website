@@ -1,7 +1,6 @@
 import React from 'react';
 import {Footer, Menu} from "../components";
 
-import '../theme/styles.scss';
 
 const Privacy = () => {
   return(
