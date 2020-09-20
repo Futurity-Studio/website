@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { useRouter } from "next/router";
 import { DividedContent, Footer, ICONS, Teaser, THEME, Icon, BorderButton, StealthButton, Image, removeWebpFormat } from "../components";
 import Link from "next/link";
@@ -6,11 +6,14 @@ import {ROUTES} from "../constants";
 import {AnimatePresence, motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer'
 import {animateInUp} from "../helpers/animation";
+import {getAnchor, getParam, scrollToRef} from "../helpers/utils";
 
 const About = () => {
   const router = useRouter();
   const [ deliverableSection, setDeliverableSection ] = useState(0);
   const [ methodologySection, setMethodologySection ] = useState(null);
+
+  const anchors = {'methodology': useRef(null), 'team': useRef(null)};
 
   const [ analysisRef, analysisRefInView] = useInView({
     rootMargin: '0px 0px -45% 0px',
@@ -45,9 +48,14 @@ const About = () => {
 
   useEffect(() => {
     if( !router.asPath.includes(('#')) ) {
-      // setTimeout(() => {
-      //   window.scrollTo(0, 0);
-      // }, 500);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
+    } else {
+      let toAnchor = getAnchor(router);
+      if (toAnchor && anchors[toAnchor]) {
+        scrollToRef(anchors[toAnchor])
+      }
     }
   }, []);
 
@@ -164,7 +172,7 @@ const About = () => {
       </section>
 
 
-      <section className={'deliverables'}>
+      <section className={'deliverables'} ref={anchors['methodology']}>
         <div className={'deliverables--container'}>
           <div className={'deliverables--graphic'} >
             { (deliverableSection === 0) &&
@@ -215,7 +223,7 @@ const About = () => {
       </section>
 
 
-      <section className={'team'} id={'team'}>
+      <section className={'team'} ref={anchors['team']}>
         <div className={'team--container'}>
           <div className={'team--header'}>
             <div><h2>Our Team</h2>
