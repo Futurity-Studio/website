@@ -51,11 +51,11 @@ const Home = () => {
 
   const nextSlide = () => {
     console.log('next slide')
-    setSlide(Math.abs((slide+1) % FeatureContent.length ));
+    setSlide((slide+1) % FeatureContent.length);
   }
   const prevSlide = () => {
     console.log('prev slide')
-    setSlide(Math.abs((slide-1) % FeatureContent.length ));
+    setSlide((slide+2) % FeatureContent.length );
   }
 
   const generateSlide = (data, key) => {
@@ -90,7 +90,7 @@ const Home = () => {
     >
       <AnimatePresence exitBeforeEnter>
         { (slide === 3) &&
-         <Landing exploreClick={nextSlide} />
+         <Landing exploreClick={setSlide(0)} />
         }
         { (slide === 0) &&
           generateSlide( FeatureContent[0], 0 ) }

@@ -1,10 +1,10 @@
 export const FeatureContent = [
   {
     tag: 'aCommerce Lab',
-    header:'Future Artifacts',
-    subHeader: 'Designing for ubiquitous systems in aCommerce',
+    header:'Concord',
+    subHeader: 'Frictionless Kitchen of Tomorrow',
     type: 'acommerce',
-    background: 'background--acommerce.jpg',
+    image: 'all-modules.png',
     slogan: 'economies',
     button: {
       link: '/event?id=concord',
@@ -24,9 +24,9 @@ export const FeatureContent = [
   }, {
     tag: 'aCommerce Lab',
     header:'Transaction Membrane',
-    subHeader: 'Home delivery with optimized supply chains.',
+    subHeader: 'Ubiquitous Supply Chain Infrastructure',
     type: 'acommerce',
-    image: 'background--acommerce.jpg',
+    image: 'membraneConcord.png',
     slogan: 'consumers',
     button: {
       link: '/deliverable?id=membrane',

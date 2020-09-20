@@ -13,6 +13,7 @@ const Card = ({content, nextSlide, prevSlide}) => {
 
   useEffect(() => {
     parallaxObj = new Parallax(parallaxScene.current)
+    console.log(content);
   },[]);
 
   return(
