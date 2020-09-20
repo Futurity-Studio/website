@@ -1,4 +1,4 @@
-import Menu from "./Menu/menu";
+import Menu from "./Menu/Menu";
 import Footer from "./Footer/Footer";
 import DividedContent from "./DividedContent/DividedContent";
 import SelectedWorks from "./SelectedWorks/SelectedWorks";
