@@ -81,7 +81,7 @@ const Home = () => {
     >
       <AnimatePresence exitBeforeEnter>
         { (slide === 3) &&
-        <Landing exploreClick={() => { ssetSlide(0)} } />
+        <Landing exploreClick={() => { setSlide(0)} } />
 
         }
         { (slide === 0) &&
