@@ -15,7 +15,7 @@ export const FeatureContent = [
     header:'Tomeato',
     subHeader: 'Polygenic Plantable Meals',
     type: 'foodturity',
-    image: 'tomeato.gif',
+    image: 'tomeato-optimized.gif',
     slogan: 'foods',
     button: {
       link: '/deliverable?id=tomeato',

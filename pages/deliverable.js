@@ -66,7 +66,7 @@ function Deliverable({pathname, query, asPath, id}){
       exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
     >
       <section className={'banner'}>
-        <Image alt={'tomeato'} src={'tomeato.gif'} />
+        <Image alt={'tomeato'} src={'tomeato-optimized.gif'} />
         <div className={'section-content'}>
           <DeliverableSampler content={{tag: a.details.lab.title, header: a.title, subHeader: a.subTitle}} />
         </div>
