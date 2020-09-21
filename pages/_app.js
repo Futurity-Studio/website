@@ -3,9 +3,10 @@ import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
 import {Image, Menu} from "../components";
+import { isMobile } from 'react-device-detect';
+import {AnimatePresence} from "framer-motion";
 
 import '../theme/theme.scss';
-import {AnimatePresence} from "framer-motion";
 
 class MyApp extends App {
   componentDidMount(){
@@ -28,9 +29,11 @@ class MyApp extends App {
         <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
         </AnimatePresence>
-        <div className={'preload'}>
-          <Image src={'tomeato-optimized.gif'} alt={''}/>
-        </div>
+        { (!isMobile) &&
+          <div className={'preload'}>
+            <Image src={'tomeato-optimized.gif'} alt={''}/>
+          </div>
+        }
       </>
     );
   }
