@@ -30,10 +30,15 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        justify-content: space-evenly;
+        justify-content: space-around;
         p {
-          margin-left: 8px;
+          //margin-left: 8px;
         }
+      }
+    }
+    @include media("<=400px") {
+      > div:last-of-type{
+        justify-content: space-between;
       }
     }
   }

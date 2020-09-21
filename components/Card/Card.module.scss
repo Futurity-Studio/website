@@ -45,6 +45,9 @@
         object-fit: contain;
         max-width: 700px;
         max-height: 600px;
+        @include media("<=tablet") {
+          max-width: 150%;
+        }
       }
     }
 
@@ -60,6 +63,7 @@
       grid-template-rows: 1fr min-content 20vh;
       grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 20);
       @include media("<=tablet") {
+        color: #000 !important;
         grid-template-rows: 1fr min-content 10vh;
         grid-template-rows: 1fr min-content calc(var(--vh, 1vh) * 10);
       }
