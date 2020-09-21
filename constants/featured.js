@@ -13,7 +13,7 @@ export const FeatureContent = [
   }, {
     tag: 'FoodTurity Lab',
     header:'Tomeato',
-    subHeader: 'Polygenic Plantable Meals',
+    subHeader: 'Polygenomic Plantable Meals',
     type: 'foodturity',
     image: 'tomeato-optimized.gif',
     slogan: 'foods',
@@ -39,7 +39,7 @@ export const FeaturedArtifacts = [
   {
     key: 'tomeato',
     title: 'Tomeato',
-    subTitle: 'Polygenic Plantable Meals',
+    subTitle: 'Polygenomic Plantable Meals',
     details: {
       lab: {
         title: 'Foodturity Lab',
