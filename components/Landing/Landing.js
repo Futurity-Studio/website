@@ -9,7 +9,7 @@ import {landingItems, landingContainer, landingItemsHeading} from "../../helpers
 
 const Landing = ({exploreClick}) => {
 
-  const duration = 10;
+  const duration = 100;
   useEffect(() => {
     setTimeout(() => {
       exploreClick();

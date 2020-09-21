@@ -88,7 +88,7 @@ const Home = () => {
     >
       <AnimatePresence exitBeforeEnter>
         { (slide === 3) &&
-         <Landing exploreClick={setSlide(0)} />
+         <Landing exploreClick={() => setSlide(0)} />
         }
         { (slide === 0) &&
           generateSlide( FeatureContent[0], 0 ) }
