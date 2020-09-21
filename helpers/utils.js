@@ -20,5 +20,6 @@ export const getAnchor = (router) => {
 }
 
 export const scrollToRef = (ref) => {
-  window.scrollTo(0, ref.current.offsetTop, {top: 0, left: 100, behavior: 'smooth'})
+  const menuHeight = 80;
+  window.scrollTo(0, ref.current.offsetTop-menuHeight, {top: 0, left: 0, behavior: 'smooth'})
 }

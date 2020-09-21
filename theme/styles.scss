@@ -130,6 +130,7 @@
 
     &--content{
       > div{
+        min-height: 450px;
         height: 50vh;
         height: calc(var(--vh, 1vh) * 50);
         max-width: 65ex;

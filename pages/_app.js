@@ -14,6 +14,12 @@ class MyApp extends App {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
+  desktopPreLoader = () => {
+    return(
+      <Image src={'tomeato-optimized.gif'} alt={''}/>
+    )
+  }
+
   render(){
     const { Component, pageProps, router } = this.props;
     return(
@@ -27,13 +33,15 @@ class MyApp extends App {
         <Normalize/>
         <Menu />
         <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+          <Component {...pageProps} key={router.route} />
         </AnimatePresence>
-        { (!isMobile) &&
-          <div className={'preload'}>
-            <Image src={'tomeato-optimized.gif'} alt={''}/>
-          </div>
-        }
+
+        <div className={'preload'}>
+          { (!isMobile) &&
+          // USED FOR OPTIMIZATIONS
+          this.desktopPreLoader()
+          }
+        </div>
       </>
     );
   }

@@ -3,6 +3,7 @@ import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import {removeWebpFormat, Icon, ICONS, Image, THEME, DeliverableSampler} from "..";
 import Parallax from 'parallax-js';
+import { isMobile } from 'react-device-detect';
 
 import styles from "./Card.module.scss"
 
@@ -27,12 +28,17 @@ const Card = ({content, nextSlide, prevSlide}) => {
         <div
           className={styles.image}
            onClick={() => {
-             router.push('/about#methodology')
+             router.push(content.button.link)
            }}
           ref={parallaxScene}
         >
           <div data-depth="0.2">
-          <Image alt={'blob'} src={content.image} />
+
+            { !isMobile ?
+              <Image alt={'blob'} src={content.image}/>
+              :
+              <Image alt={'blob'} src={content.image}/>
+            }
           </div>
         </div>
 

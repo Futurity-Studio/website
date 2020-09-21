@@ -5,6 +5,7 @@ export const FeatureContent = [
     subHeader: 'Frictionless Kitchen of Tomorrow',
     type: 'acommerce',
     image: 'all-modules.png',
+    mobileImage: 'all-modules.png',
     slogan: 'economies',
     button: {
       link: '/event?id=concord',
@@ -16,6 +17,7 @@ export const FeatureContent = [
     subHeader: 'Polygenomic Plantable Meals',
     type: 'foodturity',
     image: 'tomeato-optimized.gif',
+    mobileImage: 'tomeato-optimizedSmall.gif',
     slogan: 'foods',
     button: {
       link: '/deliverable?id=tomeato',
@@ -26,7 +28,8 @@ export const FeatureContent = [
     header:'Transaction Membrane',
     subHeader: 'Ubiquitous Supply Chain Infrastructure',
     type: 'acommerce',
-    image: 'membraneConcord2.jpeg',
+    image: 'v4membraneCircle.png',
+    mobileImage: 'v4membraneCircle.png',
     slogan: 'consumers',
     button: {
       link: '/deliverable?id=membrane',
