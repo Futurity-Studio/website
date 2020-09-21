@@ -31,9 +31,6 @@
         flex-wrap: wrap;
         width: 100%;
         justify-content: space-around;
-        p {
-          //margin-left: 8px;
-        }
       }
     }
     @include media("<=400px") {

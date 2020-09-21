@@ -26,7 +26,7 @@ export const FeatureContent = [
     header:'Transaction Membrane',
     subHeader: 'Ubiquitous Supply Chain Infrastructure',
     type: 'acommerce',
-    image: 'membraneConcord.png',
+    image: 'membraneConcord2.jpeg',
     slogan: 'consumers',
     button: {
       link: '/deliverable?id=membrane',

@@ -22,32 +22,25 @@ const Home = () => {
   const [slide, setSlide] = useState(3);
   const [seconds, setSeconds] = useState(0);
   const router = useRouter();
-
+  const pageTimer = 7500;
+  let pageTimerInterval;
   const [background, setBackground] = useState(null)
 
-
   useEffect( () => {
-    // console.log('effect')
-    // console.log(slide);
   }, [slide]);
-
 
   useEffect(() => {
     const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);
+    window.scrollTo(0, 0);
   }, []);
 
-  // useEffect( () => {
-  //   setInterval(() => {
-  //     setSlide(Math.abs((slide+1) % featureContent.length ));
-  //   }, 2000);
-  // }, [])
-
-
-  // useInterval( () => {
-  //   setSlide(Math.abs((slide+1) % featureContent.length ));
-  // }, 4000);
+  const setPageTimerInterval = () => {
+    pageTimerInterval = setInterval(() => {
+      nextSlide();
+    }, pageTimer)
+  }
 
   const nextSlide = () => {
     setSlide((slide+1) % FeatureContent.length);
@@ -58,7 +51,7 @@ const Home = () => {
 
   const generateSlide = (data, key) => {
     return(
-     <Card key={key} content={data} nextSlide={nextSlide} prevSlide={prevSlide} />
+      <Card key={key} content={data} nextSlide={nextSlide} prevSlide={prevSlide} />
     )
   }
 
@@ -88,10 +81,11 @@ const Home = () => {
     >
       <AnimatePresence exitBeforeEnter>
         { (slide === 3) &&
-         <Landing exploreClick={() => setSlide(0)} />
+        <Landing exploreClick={() => { ssetSlide(0)} } />
+
         }
         { (slide === 0) &&
-          generateSlide( FeatureContent[0], 0 ) }
+        generateSlide( FeatureContent[0], 0 ) }
         }
         { (slide === 1) &&
         generateSlide( FeatureContent[1], 1 ) }

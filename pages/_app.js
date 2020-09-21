@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
-import { Menu } from "../components";
+import {Image, Menu} from "../components";
 
 import '../theme/theme.scss';
 import {AnimatePresence} from "framer-motion";
@@ -28,6 +28,9 @@ class MyApp extends App {
         <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
         </AnimatePresence>
+        <div className={'preload'}>
+          <Image src={'tomeato-optimized.gif'} alt={''}/>
+        </div>
       </>
     );
   }

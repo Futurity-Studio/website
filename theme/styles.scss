@@ -1,8 +1,12 @@
 @import "./_constants";
 @import "./_vendor_mixins";
 
-.Index{
 
+.preload{
+  display: none !important;
+}
+
+.Index{
 }
 
 .About{
