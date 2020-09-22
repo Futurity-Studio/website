@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { isMobile } from 'react-device-detect';
 
-const Image = ({src, alt}) => {
+const Image = ({src, alt, backup = null}) => {
   const [isSafari, setIsSafari] = useState(false)
   const [isLoaded, setIsLoaded ] = useState(false)
 

@@ -412,14 +412,29 @@
     img{
       width: 100%;
     }
+
     .section-content{
       padding-top: 25vh;
       color: #fff;
       mix-blend-mode: difference;
     }
+
+    @include media("<=tablet") {
+      height: 50vh;
+      height: calc(var(--vh, 1vh) * 50);
+      .section-content {
+        padding-top: 12vh;
+      }
+    }
+    @include media("<=500px") {
+      .section-content {
+        padding-top: 6vh;
+      }
+    }
+
   }
   .overview{
-    margin-top: $section-padding/2;
+    margin: $section-padding/4 0 0 0;
     .details{
       em{
         line-height: 2rem;
@@ -430,6 +445,7 @@
     }
   }
   .content{
+    margin-top: 0;
     &-block{
       margin: $section-padding 0;
       //max-width: 77ex;

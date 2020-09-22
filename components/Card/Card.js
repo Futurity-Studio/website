@@ -37,7 +37,7 @@ const Card = ({content, nextSlide, prevSlide}) => {
             { !isMobile ?
               <Image alt={'blob'} src={content.image}/>
               :
-              <Image alt={'blob'} src={content.image}/>
+              <Image alt={'blob'} src={content.mobileImage}/>
             }
           </div>
         </div>
