@@ -18,6 +18,7 @@ export const FeatureContent = [
     type: 'foodturity',
     image: 'tomeato-optimized.gif',
     mobileImage: 'tomeato-optimizedSmall.gif',
+    backupImage: 'tomeato-optimized.png',
     slogan: 'foods',
     button: {
       link: '/deliverable?id=tomeato',

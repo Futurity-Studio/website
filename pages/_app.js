@@ -14,11 +14,11 @@ class MyApp extends App {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
-  desktopPreLoader = () => {
-    return(
-      <Image src={'tomeato-optimized.gif'} alt={''}/>
-    )
-  }
+  // desktopPreLoader = () => {
+  //   return(
+  //     <Image src={'tomeato-optimized.gif'} alt={''}/>
+  //   )
+  // }
 
   render(){
     const { Component, pageProps, router } = this.props;
@@ -36,12 +36,12 @@ class MyApp extends App {
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
 
-        <div className={'preload'}>
-          { (!isMobile) &&
-          // USED FOR OPTIMIZATIONS
-          this.desktopPreLoader()
-          }
-        </div>
+        {/*<div className={'preload'}>*/}
+        {/*  { (!isMobile) &&*/}
+        {/*  // USED FOR OPTIMIZATIONS*/}
+        {/*  this.desktopPreLoader()*/}
+        {/*  }*/}
+        {/*</div>*/}
       </>
     );
   }
