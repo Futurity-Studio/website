@@ -8,10 +8,10 @@ import {landingItems, landingContainer, landingItemsHeading} from "../../helpers
 
 
 const Landing = ({exploreClick}) => {
-
+  let timeOut;
   const duration = 10;
   useEffect(() => {
-    setTimeout(() => {
+    timeOut = setTimeout(() => {
       exploreClick();
     }, duration * 1000)
   }, [])
@@ -67,7 +67,10 @@ const Landing = ({exploreClick}) => {
             <TeaserHorizontal
               duration={duration}
               label={
-                <StealthButton label={'View some examples'} onClick={exploreClick} />
+                <StealthButton label={'View some examples'} onClick={() => {
+                  clearInterval(timeOut);
+                  exploreClick();
+                }} />
               }
             />
 

@@ -38,8 +38,8 @@ function Deliverable({pathname, query, asPath, id}){
         <div key={i} className={'content-block'}>
           <h3>{c.header}</h3>
           <p>{c.content}</p>
-          <div className={'content-special'}>{special}</div>
-          <div className={'content-image'}>{img}</div>
+          { (special) &&  <div className={'content-special'}>{special}</div> }
+          { (img) && <div className={'content-image'}>{img}</div> }
         </div>
       );
     })
@@ -90,8 +90,8 @@ function Deliverable({pathname, query, asPath, id}){
         </div>
         <div className={'section-content'}>
           <DividedContent
-            smallRight={true}
-            left={
+            smallLeft={true}
+            right={
               <div>
                 <p>{deliverable.details.lab.desc}</p>
                 <StealthButton
@@ -101,7 +101,7 @@ function Deliverable({pathname, query, asPath, id}){
                 />
               </div>
             }
-            right={<h3>{deliverable.details.lab.title}</h3>}
+            left={<h3>{deliverable.details.lab.title}</h3>}
           />
         </div>
       </section>

@@ -32,10 +32,10 @@ export const FeatureContent = [
       },
       {
         header: 'The Solution in Detail',
-        content: "Concord is an intelligent virtual assistant that becomes your digital twin, knowing your plans, preferences, and purchases without sharing, selling, or storing that information with anyone but you.  It keeps your data on edge-based devices in your home, not on a server. Concorde agents coordinate anonymously with other owners in your region to create a distributed ledger of current and future demand. Concord is a series of interconnected modular kitchen appliances that fulfill every necessary kitchen function. These modules connect and work together to maximize the efficiency of products in and waste out."
+        content: "Concord is an intelligent virtual assistant that becomes your digital twin, knowing your plans, preferences, and purchases without sharing, selling, or storing that information with anyone but you. It keeps your data on edge-based devices in your home, not on a server. Concorde agents coordinate anonymously with other owners in your region to create a distributed ledger of current and future demand. Concord is a series of interconnected modular kitchen appliances that fulfill every necessary kitchen function. These modules connect and work together to maximize the efficiency of products in and waste out. Concord is an interface of a transaction membrane—an architecture exchange space where items enter or leave a dwelling."
       },
     ],
-    images: [ {src: 'all-modules2.png'} ]
+    images: [ {src: 'membraneUsage.jpeg'} ]
   },
   {
     tag: 'FoodTurity Lab',
