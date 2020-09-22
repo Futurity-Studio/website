@@ -11,8 +11,7 @@
     "bump": "$(npm bin)/bump --tag --commit"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "framer-motion": "^1.10.3",
+    "framer-motion": "^2.6.13",
     "image-trace-loader": "^1.0.2",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
@@ -23,6 +22,7 @@
     "next": "latest",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.1",
+    "next-pwa": "^3.1.4",
     "nextjs-sitemap-generator": "^1.0.0",
     "node-sass": "^4.14.1",
     "parallax-js": "^3.1.0",

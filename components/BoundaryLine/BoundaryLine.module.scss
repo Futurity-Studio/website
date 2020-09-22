@@ -1,0 +1,10 @@
+@import "theme/_constants";
+
+.BoundaryLine{
+  width: 100%;
+  >div{
+    height: $line-thickness;
+    background-color: $line-color;
+    width: 100%;
+  }
+}

@@ -3,10 +3,8 @@ import { useRouter } from "next/router";
 import { useIntersection } from "react-use";
 import {AccordionSection, DividedContent, Footer, Icon, StealthButton, ICONS, THEME, BorderButton} from "../components";
 import {LabData, Links, ROUTES} from "../constants/";
-import '../theme/styles.scss';
 import Link from "next/link";
-import {motion} from "framer-motion";
-
+import {motion, useElementScroll} from "framer-motion";
 
 const scrollToRef = (ref) => {
   window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
@@ -27,24 +25,6 @@ const Labs = () => {
   const headerRefs = [ useRef(null), useRef(null), useRef(null), useRef(null)];
 
 
-  // console.log(lab);
-  // console.log(labParam);
-  // // console.log(router.query);
-  // if ((lab == null) && (labParam != null) && (lab !== labParam)) {
-  //   setLab(labParam);
-  // }
-
-  const getParam = () => {
-    let section = null
-    let paramFound = router.asPath.includes("=")
-    if (router.asPath.includes("=")){
-      let idx = router.asPath.indexOf("=")
-      section = router.asPath.substr(idx+1)
-      // console.log(section)
-    }
-    return section;
-  }
-
   intersectionThresholds.forEach((_, i) => {
     intersections.push(useIntersection(labContainerRefs[i], {
       root: null,
@@ -52,6 +32,24 @@ const Labs = () => {
       threshold: intersectionThresholds[i]
     }));
   })
+
+
+  // console.log(lab);
+  // console.log(labParam);
+  // // console.log(router.query);
+  // if ((lab == null) && (labParam != null) && (lab !== labParam)) {
+  //   setLab(labParam);
+  // }
+
+  useEffect( _ => {
+    console.log(scrollYProgress);
+  }, );
+
+
+
+
+  const { scrollYProgress } = useElementScroll(labContainerRefs[0])
+
 
 
 
@@ -70,23 +68,23 @@ const Labs = () => {
   }, []);
 
   /* did update */
-  useEffect(() => {
-    // generic effect
-    const labParam = router.query.lab;
-    if ((labParam!= null) && (lab !== labParam)) {
-      // console.log(`setting param to ${labParam}`);
-      setLab(labParam);
-    }
-  }, );
+  // useEffect(() => {
+  //   // generic effect
+  //   const labParam = router.query.lab;
+  //   if ((labParam!= null) && (lab !== labParam)) {
+  //     // console.log(`setting param to ${labParam}`);
+  //     setLab(labParam);
+  //   }
+  // }, );
 
 
-  intersectionThresholds.forEach((_, i) => {
-    intersections.push(useIntersection(labContainerRefs[i], {
-      root: null,
-      rootMargin: "0px",
-      threshold: intersectionThresholds[i]
-    }));
-  })
+  // intersectionThresholds.forEach((_, i) => {
+  //   intersections.push(useIntersection(labContainerRefs[i], {
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: intersectionThresholds[i]
+  //   }));
+  // })
 
   // useEffect( () => {
   //
@@ -105,33 +103,31 @@ const Labs = () => {
   //   // scrollToRef(labContainerRefs[labNumber]);
   // }, [lab]);
 
-  useLayoutEffect(() => {
-    // console.log('layout labs');
-
-    if (!!lab) {
-      console.log('labs updating');
-      let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
-      let selection = [...selected];
-      selection[labNumber] = true;
-      // console.log(selection);
-      // setSelected(selection);
-
-
-      // let labElement = labContainerRefs[labNumber].current;
-      scrollToRef(labContainerRefs[labNumber]);
-
-    }
-  }, [lab])
+  // useLayoutEffect(() => {
+  //   // console.log('layout labs');
+  //
+  //   if (!!lab) {
+  //     console.log('labs updating');
+  //     let labNumber = Links.find((l) => (l.title === 'Labs')).children.findIndex((c) => c.link.includes(lab));
+  //     let selection = [...selected];
+  //     selection[labNumber] = true;
+  //     // console.log(selection);
+  //     // setSelected(selection);
+  //
+  //
+  //     // let labElement = labContainerRefs[labNumber].current;
+  //     scrollToRef(labContainerRefs[labNumber]);
+  //
+  //   }
+  // }, [lab])
 
 
 
 
 
   const generateLabs = () =>{
-    // console.log('generate ran');
-    // console.log(selected);
-    const labCard = LabData.map( (l, i) => {
 
+    const labCard = LabData.map( (l, i) => {
       const analysis = l.deliverable_analysis.map( (a) => (
           <div key={a.title} className={'deliverable'}>
             <em>{`Analysis No. ${a.number}`}</em>
@@ -163,6 +159,7 @@ const Labs = () => {
         // <div className={'lab'}>
         <AccordionSection
           key={l.title}
+
           open={selected[i]}
           id={l.title}
           toggle={(open) => {
@@ -293,6 +290,7 @@ const Labs = () => {
         </div>
       </section>
       <BorderButton
+        smallPadding={true}
         content={<em>our labs</em>}
         icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
       />

@@ -1,0 +1,64 @@
+@import "theme/constants";
+@import "theme/vendor_mixins";
+
+.AccordionSection {
+  position: relative;
+  > div:first-of-type {
+    padding: $content-padding/2 0;
+    cursor: pointer;
+    position: sticky;
+    top: $menu-closed-height;
+    z-index: 1;
+    @include media('<=tablet') {
+      padding: $content-padding/2 0;
+    }
+    p {
+      max-width: 60ex;
+    }
+  }
+}
+
+.closed{
+  &:hover{
+    div[lab="aCommerce"]{
+      background: url("/assets/img/background--acommerce.jpg") center center no-repeat;
+      background-size: cover;
+    }
+    div[lab="Foodturity"]{
+      background: url("/assets/img/background--foodturity.jpg") center center no-repeat;
+      background-size: cover;
+    }
+    div[lab="neUIro"]{
+      background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.open{
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  div[lab="aCommerce"]{
+    background: purple;
+    background: url("/assets/img/background--acommerce.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  div[lab="Foodturity"]{
+    background: url("/assets/img/background--foodturity.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  div[lab="neUIro"]{
+    background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.buttonWrapper{
+  position: absolute;
+  bottom: $content-padding + 1rem;
+  right: $section-padding;
+  @include media("<=tablet"){
+    bottom: 1.5rem;
+    left: 2rem;
+  }
+}

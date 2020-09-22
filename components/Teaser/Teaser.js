@@ -1,26 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-import './Teaser.scss';
+import styles from './Teaser.module.scss';
 import {cubicBezier} from "../../helpers/animation";
 
-const Teaser = ({label}) => {
+export const Teaser = ({label, onClick}) => {
   return(
-    <div className={'Teaser'}>
+    <div className={styles.Teaser}>
       <motion.div
         initial={{ top: -150 }}
-        edit={{ top: -150 }}
         animate={{ top:  150 }}
         transition={{
           loop: Infinity,
           easing: cubicBezier,
           duration: 1.5
         }}
-        className={'down-line--background'}
       />
-      <div className={'down-line'}/><em>{label}</em>
+      <div/>
+      <em onClick={onClick}>{label}</em>
     </div>
   )
 }
 
-export default Teaser;
+export const TeaserHorizontal = ({label, onClick, duration}) => {
+  return(
+    <div className={styles.TeaserHorizontal}>
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x:  175 }}
+        transition={{
+          easing: cubicBezier,
+          duration: duration
+        }}
+      />
+      <em onClick={onClick}>{label}</em>
+      <div/>
+    </div>
+  )
+}
+

@@ -1,8 +1,11 @@
 import React from 'react';
-import './BoundaryLine.scss'
+import styles from './BoundaryLine.module.scss'
 
 const BoundaryLine = () => {
-  return(<div className={'BoundaryLine'}><div className={'BoundaryLine--line'}/> </div>)
+  return(
+    <div className={styles.BoundaryLine}>
+      <div />
+    </div>)
 }
 
 export default BoundaryLine;

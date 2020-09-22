@@ -1,0 +1,50 @@
+@import "theme/_constants";
+
+.BorderButton {
+  padding: $content-padding*2 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: calc( (100vw - #{$main-width-max}) / 2 ) auto 1fr;
+  align-items: center;
+  @include media("<=tablet") {
+    padding: $content-padding*.5 0;
+  }
+  > div:nth-of-type(2){
+    padding-left: $main-padding;
+    padding-right: $main-padding / 2;
+    display: inline-block;
+  }
+}
+.BorderButtonReverse{
+  @extend .BorderButton;
+  grid-template-columns: 1fr 30ch calc( (100vw - #{$main-width-max}) / 2 );
+  > div:nth-of-type(2){
+    padding-left: $main-padding / 2;
+    padding-right: $main-padding;
+  }
+}
+
+.smallPadding{
+  @extend .BorderButton;
+  padding: $content-padding/8 0 !important;
+}
+.smallPaddingReverse{
+  @extend .BorderButtonReverse;
+  padding: $content-padding/8 0 !important;
+}
+
+.darkRule{
+    height: $line-thickness;
+    background-color: $line-color;
+    position: relative;
+    top: 1px;
+}
+.lightRule{
+  @extend .darkRule;
+  background-color: #fff;
+}
+.content {
+  @extend %labeled-icon;
+  margin: 0 4px;
+}
+

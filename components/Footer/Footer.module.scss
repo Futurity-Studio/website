@@ -1,0 +1,52 @@
+@import "theme/vendor_mixins";
+@import "theme/constants";
+
+.Footer{
+  >div{
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    grid-template-rows: 1fr;
+    column-gap: 10%;
+    align-items: center;
+    margin-bottom: $section-padding*.25 !important;
+
+    > div:last-of-type{
+      display: flex;
+      flex-direction: column;
+      p:first-of-type{
+        margin-bottom: 0;
+      }
+    }
+    @include media("<=tablet") {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+
+      h2{
+        max-width: 15ex;
+      }
+
+      > div:last-of-type{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+      }
+    }
+    @include media("<=400px") {
+      > div:last-of-type{
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .cta{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .icon{
+      position: relative;
+      top: 4px;
+    }
+  }
+}

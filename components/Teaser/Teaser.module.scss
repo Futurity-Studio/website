@@ -1,0 +1,59 @@
+@import "theme/constants";
+@import "theme/vendor_mixins";
+
+
+.Teaser {
+  display: flex;
+  height: $content-padding * 1.25;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-left: $main-padding;
+  margin-left: calc((100vw - #{$main-width-max}) / 2);
+  overflow: hidden;
+
+  @include media("<=1280px") {
+    margin-left: 0 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  @include media("<=tablet") {
+    height: $content-padding * 1;
+  }
+  >div:first-of-type {
+    @extend %vr;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    margin-left: $main-padding;
+    top: 0;
+  }
+  >div:last-of-type{
+    @extend %vr;
+  }
+  em{
+    padding-left: 1rem;
+  }
+}
+
+.TeaserHorizontal{
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+  >div:first-of-type {
+    @extend %hr;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+  }
+  >div:last-of-type{
+    @extend %hr;
+  }
+  em{
+    line-height: 2rem;
+  }
+}
+

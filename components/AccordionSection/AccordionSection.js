@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Icon, ICONS, StealthButton, THEME} from "..";
 
-import './AccordionSection.scss'
+import styles from './AccordionSection.module.scss'
 
 const AccordionSection = ({header, children, toggle, className, reference, open, id}) => {
   const [ isOpen, setIsOpen ] = useState(open);
@@ -29,16 +29,12 @@ const AccordionSection = ({header, children, toggle, className, reference, open,
 
   return(
     <section
-      className={`AccordionSection ${isOpen ? 'open' : 'closed'} ${className}` }
+      className={`${styles.AccordionSection} ${isOpen ? styles.open : styles.closed} ${className}` }
       ref={reference}
-      id={id}
     >
-      <div
-        className={'AccordionSection--header'}
-        onClick={() => { setIsOpen(!isOpen) }}
-      >
+      <div onClick={() => { setIsOpen(!isOpen) }} lab={id}>
         {header}
-        <div className={'AccordionSection--button'}>
+        <div className={styles.buttonWrapper}>
           <StealthButton
             label={'learn more'}
             icon={(isOpen) ?
@@ -50,7 +46,7 @@ const AccordionSection = ({header, children, toggle, className, reference, open,
         </div>
       </div>
       { isOpen && // todo - animate presence??
-        <div className={'AccordionSection--contents'}>
+        <div>
           <div className={'section-content'} ref={content}>
             {children}
           </div>

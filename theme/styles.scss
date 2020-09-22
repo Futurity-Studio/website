@@ -1,8 +1,12 @@
 @import "./_constants";
 @import "./_vendor_mixins";
 
-.Index{
 
+.preload{
+  display: none !important;
+}
+
+.Index{
 }
 
 .About{
@@ -44,6 +48,13 @@
           padding-right: 0;
         }
       }
+
+      @include media("<=870px"){
+        h2:nth-of-type(2){
+          padding-right: 40%;
+        }
+      }
+
     }
   }
 
@@ -70,17 +81,21 @@
     padding-top: 0;
     &--container{
       display: grid;
-      grid-template-columns: auto 400px;
-      align-items: center;
+      grid-template-columns: auto minmax(300px, 500px);
+      //align-items: center;
       margin-right: calc((100vw - #{$main-width-max}) / 2);
       align-items: start;
-      padding-right: $main-padding;
-      grid-column-gap: $content-padding;
+      grid-column-gap: $content-padding/2;
 
       @include media("<=1280px"){
+        margin-right: 0;
+      }
+
+      @include media("<=1024px"){
         display: flex;
         flex-direction: column-reverse;
         margin-right: initial !important;
+        grid-column-gap: $content-padding/2;
         > div:last-of-type {
           width: 100%;
           padding: 0 $main-padding $content-padding/4;
@@ -101,14 +116,21 @@
       overflow: hidden;
       display: flex;
       justify-content: center;
+      padding-right: $main-padding;
+      @include media("<=1024px"){
+        height: 30vh;
+        height: calc(var(--vh, 1vh) * 30);
+      }
 
       img{
-        height: 100%;
-        object-fit: contain;
+        width: 100%;
+        object-fit: cover;
       }
     }
+
     &--content{
       > div{
+        min-height: 450px;
         height: 50vh;
         height: calc(var(--vh, 1vh) * 50);
         max-width: 65ex;
@@ -116,9 +138,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-right: $main-padding;
 
         @include media("<=1024px"){
           height: initial;
+        }
+        @include media("<=tablet"){
+          min-height: 250px;
         }
 
         ul{
@@ -150,6 +176,7 @@
         margin-left: calc((100vw - #{$main-width-max}) / 2);
         padding-left: $main-padding;
         grid-column-gap: $content-padding;
+
         > div:last-of-type{
           @include fluid-height(8rem, 45vh, 32rem);
           width: 100%;
@@ -245,9 +272,25 @@
   .clients{
     margin-top: 0;
     &--list{
-      background: $page-background-color--dark;
-      height: 32rem;
-      width: 100%;
+      //background: orange;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+
+      @include media('<=500px'){
+        grid-template-rows: 175px 175fr 175fr;
+        grid-template-columns: 1fr;
+        width: 275px;
+        margin: 0 auto;
+      }
+
+      >div:nth-of-type(2){
+        padding: 4rem;
+      }
+    }
+    .st0 {
+      fill:#991d85
     }
   }
 }
@@ -265,10 +308,6 @@
     > div {
       width: 100%;
     }
-  }
-
-  .border-button{
-    padding: $content-padding/8 0  !important;
   }
 
   > section:last-of-type{
@@ -348,7 +387,7 @@
           max-width: 100%;
         }
         p {
-          word-wrap: break-spaces;
+          word-wrap: break-word;
           //background-color: red;
           max-width: 100%;
         }
@@ -359,27 +398,63 @@
 
 }
 
-.Deliverable, .Event{
+.Deliverable{
   .banner{
-    margin: $menu-closed-height 0 0;
-    .title{
-      max-width: $main-width-max;
-      //margin: auto 0;
-      padding: $content-padding 0;
+    padding: $menu-closed-height 0 0;
+    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: $section-padding / 4;
+    > * {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
     }
+    img{
+      width: 100%;
+    }
+
+    .section-content{
+      padding-top: 25vh;
+      color: #fff;
+      mix-blend-mode: difference;
+    }
+
+    @include media("<=tablet") {
+      height: 50vh;
+      height: calc(var(--vh, 1vh) * 50);
+      .section-content {
+        padding-top: 12vh;
+      }
+      margin-bottom: $section-padding/4;
+    }
+    @include media("<=500px") {
+      .section-content {
+        padding-top: 6vh;
+      }
+    }
+
   }
   .overview{
-    margin-top: $section-padding/2;
+    margin: $section-padding/4 0 0 0;
     .details{
+      em{
+        line-height: 2rem;
+      }
       p{
         margin: 8px 0;
       }
     }
   }
   .content{
+    margin-top: 0;
     &-block{
-      margin: $section-padding 0;
-      //max-width: 77ex;
+      margin: $section-padding/1.5 0;
+      @include media("<=tablet") {
+        margin: $section-padding/4 0;
+      }
     }
     &-special{
       margin: $section-padding/4 0;
@@ -390,11 +465,16 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      max-height: 700px;
+      max-height: 500px;
+      margin-top: 2rem;
       img{
-        flex: 1;
-        width: 100%;
+        max-width: 80%;
         height: auto;
+        object-fit: contain;
+
+        @include media("<=tablet") {
+          max-width: 100%;
+        }
       }
     }
     a{
@@ -448,11 +528,5 @@
   #background-neuiro{
     background: url("/assets/img/background--neuiro.jpg") center center no-repeat;
     background-size: cover;
-  }
-}
-.Event{
-  .content, .columned-content, .event-footer{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
 }

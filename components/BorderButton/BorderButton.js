@@ -1,23 +1,31 @@
-import './BorderButton.scss'
+import styles from './BorderButton.module.scss'
 
-const BorderButton = ({id, backwards = false, content, icon}) => {
+const BorderButton = ({id, backwards = false, content, icon, light, smallPadding = false}) => {
+
+  const generateClassName = () => {
+    if (!backwards){
+      return (smallPadding) ? styles.smallPadding : styles.BorderButton;
+    }else {
+      return (smallPadding) ? styles.smallPaddingReverse : styles.BorderButtonReverse;
+    }
+  }
 
   return( (!backwards) ?
-    <div className={'border-button'} id={(id || '')}>
+    <div className={generateClassName()} id={(id || '')}>
       <div />
-      <div className={'border-button--button'}>
-        <div className={'border-button--content'}>
+      <div>
+        <div className={styles.content}>
           { content }
           { icon }
         </div>
       </div>
-      <div className={'border-button--line'} />
+      <div className={`${light ? styles.lightRule : styles.darkRule}`}/>
     </div>
     :
-    <div className={'border-button reverse'}>
-      <div className={'border-button--line'} />
-      <div className={'border-button--button'}>
-        <div className={'border-button--content'}>
+      <div className={generateClassName()} id={(id || '')}>
+        <div className={`${light ? styles.lightRule : styles.darkRule}`}/>
+        <div>
+        <div className={styles.content}>
           { content }
           { icon }
         </div>

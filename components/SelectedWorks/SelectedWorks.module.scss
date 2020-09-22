@@ -1,0 +1,36 @@
+@import "theme/_constants";
+
+.SelectedWorks{
+  > div:last-of-type{
+    padding-bottom: 0;
+  }
+  h4{
+    margin-top: 0 !important;
+  }
+}
+
+.WorkBanner{
+  > div {
+    max-width: $main-width-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: $content-padding * 2 $main-padding;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    span {
+      display: none;
+    }
+  }
+  &:hover {
+    background-color: mediumturquoise;
+    span {
+      display: inline-block;
+    }
+  }
+}

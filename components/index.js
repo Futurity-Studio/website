@@ -1,9 +1,9 @@
-import Menu from "./Menu/menu";
-import Footer from "./Footer/footer";
+import Menu from "./Menu/Menu";
+import Footer from "./Footer/Footer";
 import DividedContent from "./DividedContent/DividedContent";
 import SelectedWorks from "./SelectedWorks/SelectedWorks";
 import { ICONS, THEME, SIZE, TYPE, Icon } from "./Icon/Icon";
-import Teaser from "./Teaser/Teaser";
+import { Teaser, TeaserHorizontal } from "./Teaser/Teaser";
 import AccordionSection from "./AccordionSection/AccordionSection";
 import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
@@ -11,14 +11,16 @@ import { StealthButton } from "./Button/Button";
 import Image from "./Image/Images";
 import { removeWebpFormat } from "./Image/Images";
 import Landing from "./Landing/Landing";
-import FullSlideCard from "./Card/FullSlideCard";
+import Card from "./Card/Card";
+import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
 
 export {
   Menu,
   Footer,
   DividedContent,
-  SelectedWorks,
+  // SelectedWorks,
   Teaser,
+  TeaserHorizontal,
   AccordionSection,
   BoundaryLine,
   ICONS, THEME, SIZE, TYPE, Icon,
@@ -26,6 +28,7 @@ export {
   StealthButton,
   Image,
   Landing,
-  FullSlideCard,
-  removeWebpFormat
+  Card,
+  removeWebpFormat,
+  DeliverableSampler
 }
