@@ -1,3 +1,12 @@
+# Todo
+- refactor home page with router to animate teaser to deliverable page
+- custom cursor
+- trash menu for top bar, add more content to footer, make it nice & chunky
+- animate labs better when scrolling
+- update labs content so show better actions
+- ++PWA
+- possibly move to CRA?! for users n auth n all
+
 # Example app using Netlify CMS
 
 [Netlify CMS](https://www.netlifycms.org/) is an open source content management system for your Git workflow that enables you to provide editors with a friendly UI and intuitive workflows. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.
