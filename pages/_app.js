@@ -16,7 +16,8 @@ class MyApp extends App {
 
   desktopPreLoader = () => {
     return(
-      <Image src={'tomeato-optimized.gif'} alt={''}/>
+      // <Image src={'tomeato-optimized.gif'} alt={''}/>
+      <div />
     )
   }
 
