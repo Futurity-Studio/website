@@ -51,7 +51,7 @@ const Home = () => {
       animate={{
         backgroundSize: '100% 100%',
         transition: {
-          duration: 20,
+          duration: 12,
           easings: "backInOut",
           repeat: Infinity,
           repeatType: "mirror"
