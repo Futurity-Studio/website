@@ -33,12 +33,12 @@ const Card = ({content, nextSlide, prevSlide}) => {
           ref={parallaxScene}
         >
           <div data-depth="0.2">
-
-            { !isMobile ?
-              <Image alt={'blob'} src={content.image}/>
-              :
-              <Image alt={'blob'} src={content.mobileImage}/>
-            }
+            <Image
+              alt={'deliverable object'}
+              src={content.image}
+              mobile={content.mobileImage || null}
+              backup={content.backupImage || null}
+            />
           </div>
         </div>
 

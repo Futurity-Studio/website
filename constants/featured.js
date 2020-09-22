@@ -5,7 +5,6 @@ export const FeatureContent = [
     subHeader: 'Frictionless Kitchen of Tomorrow',
     type: 'acommerce',
     image: 'all-modules.png',
-    mobileImage: 'all-modules.png',
     slogan: 'economies',
     button: {
       link: '/event?id=concord',
@@ -30,7 +29,6 @@ export const FeatureContent = [
     subHeader: 'Ubiquitous Supply Chain Infrastructure',
     type: 'acommerce',
     image: 'v4membraneCircle.png',
-    mobileImage: 'v4membraneCircle.png',
     slogan: 'consumers',
     button: {
       link: '/deliverable?id=membrane',
