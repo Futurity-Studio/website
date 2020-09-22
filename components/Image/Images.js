@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from "react";
 import { isMobile } from 'react-device-detect';
 
-const Image = ({src, alt, mobile= null, backup = null}) => {
+const Image = ({src, alt, mobile = null, backup = null}) => {
   const [isSpecial, setIsSpecial] = useState(false)
 
   useEffect(() => {
     setIsSpecial(removeWebpFormat());
   }, [])
 
-  const imageSource = (isMobile) ? mobile : src;
+
+  let imageSource = (isMobile && mobile) ? mobile : src;
+  imageSource = backup || imageSource;
 
   return (
     <>
-      { (isSpecial && !imageSource.includes('.gif')) ?
+      { (isSpecial && !imageSource.includes('gif')) ?
         <img src={require('images/' + imageSource)} alt={alt}/>
         :
         <img src={require('images/' + imageSource + '?webp')} alt={alt}/>

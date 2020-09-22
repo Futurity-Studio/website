@@ -2,8 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
-import {Image, Menu} from "../components";
-import { isMobile } from 'react-device-detect';
+import {Menu} from "../components";
 import {AnimatePresence} from "framer-motion";
 
 import '../theme/theme.scss';
@@ -13,12 +12,6 @@ class MyApp extends App {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
-
-  // desktopPreLoader = () => {
-  //   return(
-  //     <Image src={'tomeato-optimized.gif'} alt={''}/>
-  //   )
-  // }
 
   render(){
     const { Component, pageProps, router } = this.props;
@@ -35,13 +28,6 @@ class MyApp extends App {
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
-
-        {/*<div className={'preload'}>*/}
-        {/*  { (!isMobile) &&*/}
-        {/*  // USED FOR OPTIMIZATIONS*/}
-        {/*  this.desktopPreLoader()*/}
-        {/*  }*/}
-        {/*</div>*/}
       </>
     );
   }

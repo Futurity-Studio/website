@@ -36,8 +36,8 @@ const Card = ({content, nextSlide, prevSlide}) => {
             <Image
               alt={'deliverable object'}
               src={content.image}
-              mobile={content.mobileImage || null}
-              backup={content.backupImage || null}
+              mobile={content.mobileImage || false}
+              backup={content.backupImage || false}
             />
           </div>
         </div>
