@@ -53,6 +53,9 @@ function Deliverable({pathname, query, asPath, id}){
         <Link href={copy.details.lab.link}>
           <a><p>{copy.details.lab.title}</p></a>
         </Link>
+        { (copy.details.collab) &&
+        <p>{copy.details.collab}</p>
+        }
       </div>
     )
   }

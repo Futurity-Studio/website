@@ -20,8 +20,9 @@ export const FeatureContent = [
       lab: {
         title: 'aCommerce Lab',
         desc: 'Autonomous Commerce (aCommerce) is our name for the successor to PC-based electronic commerce and smartphone-based mobile commerce as intelligent agents begin to orchestrate our lives. We are developing frameworks to ensure that aCommerce not only benefits us as consumers, but enhances prosperity, the environment, our privacy, and the economy as a whole.',
-        link: '/labs?lab=aCommerce'
+        link: '/labs?lab=aCommerce',
       },
+      collab: 'W3}RD Collective',
       time: 'Q1 - 2020',
       shortDesc: 'Concord is the interface layer of a full-stack personal digital twin: a legal entity controlled by the user it represents, like an Amazon Alexa owned by you to recommend and automate purchases.'
     },
