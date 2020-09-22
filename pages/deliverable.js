@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { FeaturedArtifacts } from "../constants";
-import {DeliverableSampler, DividedContent, Footer, Image} from "../components";
+import {FeatureContent, ROUTES} from "../constants";
+import {DeliverableSampler, DividedContent, Footer, Icon, ICONS, Image, StealthButton, THEME} from "../components";
 import Link from 'next/link';
 import { motion } from "framer-motion";
 
 
 function Deliverable({pathname, query, asPath, id}){
   let param = id || 'tomeato'
-  const a =  FeaturedArtifacts.find(a => a.key === param);
+  const deliverable =  FeatureContent.find(a => a.key === param);
 
   const generateContent = () => {
-    return a.content.map( (c, i) => {
+    return deliverable.content.map( (c, i) => {
       let special = '';
       let img = '';
 
       if (Object.keys(c).includes('special')) {
-
         switch (c.special.type) {
           case 'quote':
             special = (<>
@@ -31,28 +30,28 @@ function Deliverable({pathname, query, asPath, id}){
         }
       }
 
-      if (a.images && a.images[i]){
-        img = <img src={a.images[i]} />
+      if (deliverable.images && deliverable.images[i]){
+        img = <Image src={deliverable.images[i].src} alt={deliverable.images[i].alt}/>
       }
 
       return (
         <div key={i} className={'content-block'}>
-          <h2>{c.header}</h2>
+          <h3>{c.header}</h3>
           <p>{c.content}</p>
           <div className={'content-special'}>{special}</div>
-          <div className={'content-image'}  >{img}</div>
+          <div className={'content-image'}>{img}</div>
         </div>
       );
     })
   }
 
-  const generateDetails = (a) => {
+  const generateDetails = (copy) => {
     return(
       <div className={'details'}>
         <em>Artifact Details:</em>
-        <p>{a.details.time}</p>
-        <Link href={a.details.lab.link}>
-          <a><p>{a.details.lab.title}</p></a>
+        <p>{copy.details.time}</p>
+        <Link href={copy.details.lab.link}>
+          <a><p>{copy.details.lab.title}</p></a>
         </Link>
       </div>
     )
@@ -61,36 +60,51 @@ function Deliverable({pathname, query, asPath, id}){
   return(
     <motion.main
       className={'Deliverable'}
-      initial={{  opacity: 0, transition:{  duration: .25, easings: "linear" } }}
-      animate={{  opacity: 1, transition:{  duration: .25, easings: "linear" } }}
-      exit={{     opacity: 0, transition:{  duration: .25, easings: "linear" } }}
+      initial={{opacity: 0, transition: {duration: .25, easings: "linear"}}}
+      animate={{opacity: 1, transition: {duration: .25, easings: "linear"}}}
+      exit={{opacity: 0, transition: {duration: .25, easings: "linear"}}}
     >
       <section className={'banner'}>
-        <Image alt={'tomeato'} src={'tomeato-optimized.gif'} />
+        <Image
+          alt={deliverable.banner.header}
+          src={deliverable.banner.image}
+          mobile={deliverable.banner.mobileImage || false}
+          backup={deliverable.banner.backupImage || false}
+        />
         <div className={'section-content'}>
-          <DeliverableSampler content={{tag: a.details.lab.title, header: a.title, subHeader: a.subTitle}} />
+          <DeliverableSampler content={{tag: deliverable.details.lab.title, header: deliverable.header, subHeader: deliverable.subHeader}}/>
         </div>
       </section>
       <section className={'overview'}>
         <div className={'section-content'}>
           <DividedContent
             smallLeft={true}
-            left={ generateDetails(a) }
-            right={<h4>{a.details.question}</h4>}
+            left={generateDetails(deliverable)}
+            right={<h4>{deliverable.details.shortDesc}</h4>}
           />
         </div>
       </section>
-
-      {/*<section className={'media'}>*/}
-
-      {/*</section>*/}
-
       <section className={'content'}>
         <div className={'section-content'}>
           {generateContent()}
         </div>
+        <div className={'section-content'}>
+          <DividedContent
+            smallRight={true}
+            left={
+              <div>
+                <p>{deliverable.details.lab.desc}</p>
+                <StealthButton
+                  label={'explore this lab'}
+                  icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
+                  link={deliverable.details.lab.link}
+                />
+              </div>
+            }
+            right={<h3>{deliverable.details.lab.title}</h3>}
+          />
+        </div>
       </section>
-
       <Footer/>
     </motion.main>
   )

@@ -2,90 +2,120 @@ export const FeatureContent = [
   {
     tag: 'aCommerce Lab',
     header:'Concord',
+    key:'concord',
     subHeader: 'Frictionless Kitchen of Tomorrow',
     type: 'acommerce',
-    image: 'all-modules.png',
+    teaser: {
+      image: 'all-modules.png',
+    },
+    banner: {
+      image: "modulesBanner.png"
+    },
     slogan: 'economies',
     button: {
-      link: '/event?id=concord',
+      link: '/deliverable?id=concord',
       text: 'view event information'
-    }
-  }, {
+    },
+    details: {
+      lab: {
+        title: 'aCommerce Lab',
+        desc: 'Autonomous Commerce (aCommerce) is our name for the successor to PC-based electronic commerce and smartphone-based mobile commerce as intelligent agents begin to orchestrate our lives. We are developing frameworks to ensure that aCommerce not only benefits us as consumers, but enhances prosperity, the environment, our privacy, and the economy as a whole.',
+        link: '/labs?lab=aCommerce'
+      },
+      time: 'Q1 - 2020',
+      shortDesc: 'Concord is the interface layer of a full-stack personal digital twin: a legal entity controlled by the user it represents, like an Amazon Alexa owned by you to recommend and automate purchases.'
+    },
+    content: [
+      {
+        header: 'Problems this Addresses',
+        content: "Today’s intelligent virtual assistants are rife with privacy and security problems; cloud-based storage of personal data; pushing products and services that benefit their platform, not the end-user; they drive consolidation of supply chains, damaging local economies. News and social media algorithms filter what you see, from whom, track your behavior to push advertising and information that benefit their sponsors, and nudge you into engagement—all of which leads to wasted hours on their platform."
+      },
+      {
+        header: 'The Solution in Detail',
+        content: "Concord is an intelligent virtual assistant that becomes your digital twin, knowing your plans, preferences, and purchases without sharing, selling, or storing that information with anyone but you.  It keeps your data on edge-based devices in your home, not on a server. Concorde agents coordinate anonymously with other owners in your region to create a distributed ledger of current and future demand. Concord is a series of interconnected modular kitchen appliances that fulfill every necessary kitchen function. These modules connect and work together to maximize the efficiency of products in and waste out."
+      },
+    ],
+    images: [ {src: 'all-modules2.png'} ]
+  },
+  {
     tag: 'FoodTurity Lab',
     header:'Tomeato',
+    key:'tomeato',
     subHeader: 'Polygenomic Plantable Meals',
     type: 'foodturity',
-    image: 'tomeato-optimized.gif',
-    mobileImage: 'tomeato-optimizedSmall.gif',
-    backupImage: 'tomeato-optimized.png',
+    teaser: {
+      image: 'tomeato-optimized.gif',
+      mobileImage: 'tomeato-optimizedSmall.gif',
+      backupImage: 'tomeato-optimized.png',
+    },
+    banner: {
+      image: 'tomeato-optimized.gif',
+      mobileImage: 'tomeato-optimizedSmall.gif',
+      backupImage: 'tomeato-optimized.png',
+    },
     slogan: 'foods',
     button: {
       link: '/deliverable?id=tomeato',
       text: 'explore the artifact'
-    }
-  }, {
-    tag: 'aCommerce Lab',
-    header:'Transaction Membrane',
-    subHeader: 'Ubiquitous Supply Chain Infrastructure',
-    type: 'acommerce',
-    image: 'v4membraneCircle.png',
-    slogan: 'consumers',
-    button: {
-      link: '/deliverable?id=membrane',
-      text: 'explore the artifact'
-    }
-  }
-];
-
-export const FeaturedArtifacts = [
-  {
-    key: 'tomeato',
-    title: 'Tomeato',
-    subTitle: 'Polygenomic Plantable Meals',
+    },
     details: {
       lab: {
         title: 'Foodturity Lab',
+        desc: 'Food has historically played, interwoven roles in nutrition, taste, healing, culture, economics, and ecology. Today, however, crises of starvation, obesity, water use, animal ethics, farm subsidies, and more are driving a massive revolution in the food system. We’re exploring how emerging food technologies—ranging from meal-delivery, to electronic lemonade, and even de-extinct in-vitro mammoth meat—can decouple and remix these different aspects of food.',
         link: '/labs?lab=foodturity'
       },
       time: 'Q1 - 2020',
-      question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque felis. Cras venenatis lorem non lorem posuere placerat. Phasellus ornare id orci aliquet semper. '
+      shortDesc: 'The tomeato is an intersection of plant-based protein, cell-based meats, and urban agroponics that come together to deliver nutritious, convenient, environmentally sustainable, and delicious meals.'
     },
     content: [
       {
-        header: 'What is it, why is it useful',
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque felis. Cras venenatis lorem non lorem posuere placerat. Phasellus ornare id orci aliquet semper. Nunc tempus malesuada tortor, et pulvinar lacus commodo id. Nulla libero mauris, interdum ac euismod vel, rhoncus eget nulla. Donec fringilla aliquam ipsum, vitae lacinia dolor porttitor at. Cras quis lacus sed velit ullamcorper gravida sit amet nec nibh. Nunc est quam, vestibulum eget pretium vitae, dictum in elit. Aenean rutrum urna a justo luctus, eget consectetur diam interdum. Sed quis velit sed risus auctor tristique. Aliquam quis fringilla risus, id tempus urna. Fusce sit amet fringilla felis, vitae maximus dui. Pellentesque nec leo non leo fringilla elementum ut quis nibh. Proin id dapibus dolor."
-        // special: {
-        //   type: 'quote',
-        //   body: {
-        //     text: "Rather than having to manufacture these devices using high-tech approaches, we could literally pick them off of a tree…. Nature provides us with a tremendous reservoir of structures in plants…. You can pick the structure you want.",
-        //     from: 'Human skin, brain and bone cells grown on plants offer path for tissue implants.  David Wahlberg | UW-Madison Stem Cell and Regenerative Medicine Center | March 29, 2017'
-        //   }
-        // }
+        header: 'Problems this Addresses',
+        content: "Scientists and startups are currently developing plant-based and cell-based protein to replace animal-derived meat, dairy, and other products. In addition to being healthier, this can significantly reduce the use of water, fertilizer, land, and energy and sparing the lives of billions of animals killed every year for human consumption. However, these substitutes are often more expensive, highly processed, and lack the taste and texture of the animal-based food."
       },
-      // {
-      //   header: 'Production',
-      //   content: "Plant-based meat alternatives and cellular agriculture (aka in-vitro, vegan, or “clean” meat) products have moved from lab to market in the last five years. Starting by studying the science of synthetic biology and startups pursuing these existing but immature technologies, we extrapolated how they might be combined in a future when they are mature products and need to differentiate themselves - a common pattern in innovation. To forecast this future, we looked at:",
-      //   special: {
-      //     type: 'list',
-      //     body: {
-      //       text: [
-      //         "Shortcomings of today’s technology. While today’s startups have been able to reproduce even complex flavors of animal-based meat, its texture remains difficult to replicate; plants have been proposed as a scaffold. The need for fetal bovine serum (FBS) to grow cells means that the products are not truly animal-free, but vegetal serum could provide an alternative. And an exciting promise - the ability to create novel combinations such as beef with healthy oils rich in omega-3s, for example - has not yet been realized; plant fats like olive oil could easily substitute.",
-      //         "Trends likely to persist or emerge. Convenience, health, novel flavors and sustainability are long-term trends in consumer preference, so we set out to address all four with the new offering. At the same time, vertical farming and in-home agriculture could take off."
-      //       ]
-      //     }
-      //   }
-      // },
       {
-        header: 'Connection to Lab',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque felis. Cras venenatis lorem non lorem posuere placerat. Phasellus ornare id orci aliquet semper. Nunc tempus malesuada tortor, et pulvinar lacus commodo id. Nulla libero mauris, interdum ac euismod vel, rhoncus eget nulla. Donec fringilla aliquam ipsum, vitae lacinia dolor porttitor at. Cras quis lacus sed velit ullamcorper gravida sit amet nec nibh. Nunc est quam, vestibulum eget pretium vitae, dictum in elit. Aenean rutrum urna a justo luctus, eget consectetur diam interdum. Sed quis velit sed risus auctor tristique. Aliquam quis fringilla risus, id tempus urna. Fusce sit amet fringilla felis, vitae maximus dui. Pellentesque nec leo non leo fringilla elementum ut quis nibh. Proin id dapibus dolor.',
+        header: 'The Solution in Detail',
+        content: 'Tomeato envisions a system in which cell-based meat is grown on a plant scaffold—a technique already used in regenerative medicine for growing new organs and tissues. The plant scaffold itself is inside a tomato, which has been genetically engineered or treated during its growth so that meat and other plants like garlic and basil, can grow inside. Furthermore, the tomeato can be grown in a controlled agroponic environment in or near the consumer’s home. Such systems are already being offered by consumer kitchen appliances companies like Miele, with its acquisition of Agrilution.',
       },
     ],
-    mainMedia: {
-      type: 'youtube',
-      link: 'sdfs'
-    },
-    images: [ '/assets/img/tomeato/1.jpeg']
+    images: [ {src: 'tomeatoScreenshot.jpg'} ]
   },
+  // {
+  //   tag: 'aCommerce Lab',
+  //   header:'Transaction Membrane',
+  //   key:'transactionmembrane',
+  //   subHeader: 'Ubiquitous Supply Chain Infrastructure',
+  //   type: 'acommerce',
+  //   teaser: {
+  //     image: 'v4membraneCircle.png',
+  //   },
+  //   banner: {
+  //     image: "membraneConcord2.jpeg"
+  //   },
+  //   slogan: 'consumers',
+  //   button: {
+  //     link: '/deliverable?id=membrane',
+  //     text: 'explore the artifact'
+  //   },
+  //   details: {
+  //     lab: {
+  //       title: 'aCommerce Lab',
+  //       desc: 'Autonomous Commerce (aCommerce) is our name for the successor to PC-based electronic commerce and smartphone-based mobile commerce as intelligent agents begin to orchestrate our lives. We are developing frameworks to ensure that aCommerce not only benefits us as consumers, but enhances prosperity, the environment, our privacy, and the economy as a whole.',
+  //       link: '/labs?lab=aCommerce'
+  //     },
+  //     time: 'Q1 - 2020',
+  //     shortDesc: 'The tomeato is an intersection of plant-based protein, cell-based meats, and urban agroponics that come together to deliver nutritious, convenient, environmentally sustainable, and delicious meals.'
+  //   },
+  //   content: [
+  //     {
+  //       header: 'Problems this Addresses',
+  //       content: "Scientists and startups are currently developing plant-based and cell-based protein to replace animal-derived meat, dairy, and other products. In addition to being healthier, this can significantly reduce the use of water, fertilizer, land, and energy and sparing the lives of billions of animals killed every year for human consumption. However, these substitutes are often more expensive, highly processed, and lack the taste and texture of the animal-based food."
+  //     },
+  //   ],
+  //   images: [ {src: 'tomeatoScreenshot.jpg'} ]
+  // },
+];
+
+export const FeaturedArtifacts = [
   {
     key: 'membrane',
     title: 'Transaction Membrane',

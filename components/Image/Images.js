@@ -10,7 +10,7 @@ const Image = ({src, alt, mobile = null, backup = null}) => {
 
 
   let imageSource = (isMobile && mobile) ? mobile : src;
-  imageSource = backup || imageSource;
+  imageSource = (isSpecial && mobile) ? backup : imageSource;
 
   return (
     <>

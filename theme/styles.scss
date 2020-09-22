@@ -447,7 +447,7 @@
   .content{
     margin-top: 0;
     &-block{
-      margin: $section-padding 0;
+      margin: $section-padding/2 0;
       //max-width: 77ex;
     }
     &-special{
@@ -459,11 +459,12 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      max-height: 700px;
+      max-height: 500px;
       img{
-        flex: 1;
-        width: 100%;
+        //flex: 1;
+        max-width: 100%;
         height: auto;
+        object-fit: contain;
       }
     }
     a{

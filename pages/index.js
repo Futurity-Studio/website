@@ -1,22 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { useInterval } from "react-use";
-import {
-  Menu,
-  Footer,
-  DividedContent,
-  SelectedWorks,
-  ICONS,
-  THEME,
-  Icon,
-  Card,
-  Landing,
-  removeWebpFormat
-} from "../components";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react';
+import { Card, Landing, removeWebpFormat } from "../components";
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { FeatureContent } from "../constants/featured";
+import { FeatureContent } from "../constants";
 
 const Home = () => {
   const [slide, setSlide] = useState(3);

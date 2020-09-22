@@ -35,9 +35,9 @@ const Card = ({content, nextSlide, prevSlide}) => {
           <div data-depth="0.2">
             <Image
               alt={'deliverable object'}
-              src={content.image}
-              mobile={content.mobileImage || false}
-              backup={content.backupImage || false}
+              src={content.teaser.image}
+              mobile={content.teaser.mobileImage || false}
+              backup={content.teaser.backupImage || false}
             />
           </div>
         </div>
