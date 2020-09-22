@@ -8,7 +8,7 @@ const Image = ({src, alt, mobile= null, backup = null}) => {
     setIsSpecial(removeWebpFormat());
   }, [])
 
-  const imageSource = mobile || src;
+  const imageSource = (isMobile) ? mobile : src;
 
   return (
     <>
