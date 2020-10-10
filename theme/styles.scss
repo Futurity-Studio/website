@@ -304,10 +304,16 @@
 
       .advisor{
         display: grid;
-        grid-template-columns: minmax(200px, 1fr) 5fr;
+        grid-template-columns: minmax(150px, 1fr) 5fr;
         grid-column-gap: 2rem;
         grid-template-rows: 1fr;
-        p{
+
+        @include media('<=750px') {
+          grid-template-columns: 1fr;
+          grid-template-rows: min-content min-content ;
+        }
+
+          p{
           max-width: 65ex;
         }
         margin: $content-padding/2;
