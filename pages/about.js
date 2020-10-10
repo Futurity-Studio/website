@@ -6,7 +6,8 @@ import {ROUTES} from "../constants";
 import {AnimatePresence, motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer'
 import {animateInUp} from "../helpers/animation";
-import {getAnchor, getParam, scrollToRef} from "../helpers/utils";
+import {getAnchor, getParam, openInNewTab, scrollToRef} from "../helpers/utils";
+import { Advisors } from "../constants/featured";
 
 const About = () => {
   const router = useRouter();
@@ -47,21 +48,18 @@ const About = () => {
   }, [actionRefInView])
 
   useEffect(() => {
-    if( !router.asPath.includes(('#')) ) {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 100);
-    } else {
-      let toAnchor = getAnchor(router);
-      if (toAnchor && anchors[toAnchor]) {
-        scrollToRef(anchors[toAnchor])
-      }
-    }
+    // if( !router.asPath.includes(('#')) ) {
+    //   setTimeout(() => {
+    //     window.scrollTo(0, 0);
+    //   }, 100);
+    // } else {
+    //   let toAnchor = getAnchor(router);
+    //   if (toAnchor && anchors[toAnchor]) {
+    //     scrollToRef(anchors[toAnchor])
+    //   }
+    // }
   }, []);
 
-  // useEffect(() => {
-  //   console.log(methodologySection)
-  // }, [methodologySection]);
 
   const [background, setBackground] = useState(null)
   useEffect(() => {
@@ -69,6 +67,24 @@ const About = () => {
     let background = { backgroundImage: `url('${asset}')`}
     setBackground(background);
   }, [])
+
+  const generateAdvisors = () => {
+    return(
+      Advisors.map((a,i) =>
+        <div key={i} className={'advisor'}>
+          <h4>{a.name}</h4>
+          <div>
+            <p>{a.bio}</p>
+            <StealthButton
+              icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
+              label={"explore more"}
+              onClick={() => openInNewTab(a.website)}
+            />
+          </div>
+        </div>
+      )
+    )
+  }
 
   return(
     <motion.main
@@ -171,7 +187,6 @@ const About = () => {
         </div>
       </section>
 
-
       <section className={'deliverables'} ref={anchors['methodology']}>
         <div className={'deliverables--container'}>
           <div className={'deliverables--graphic'} >
@@ -221,7 +236,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
 
       <section className={'team'} ref={anchors['team']}>
         <div className={'team--container'}>
@@ -390,6 +404,23 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <section className={'advisors'}>
+        <BorderButton
+          id={'Our Advisors'}
+          content={<em>Our Advisors</em>}
+          icon={<Icon icon={ICONS.THUNDER} theme={THEME.DARK} />}
+        />
+        <div className={'section-content'}>
+          <div className={'advisors--list'}>
+            {generateAdvisors()}
+          </div>
+        </div>
+      </section>
+
+
+
+
 
       <Footer/>
     </motion.main>

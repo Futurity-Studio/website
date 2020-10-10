@@ -219,7 +219,10 @@
       >div:first-of-type{
         width: 300px;
         margin: 0 $content-padding 0 0;
+        display: flex;
+        flex-direction: column;
         p {
+          flex-grow: 2;
           margin-bottom: 8px;
         }
       }
@@ -271,6 +274,7 @@
 
   .clients{
     margin-top: 0;
+    margin-bottom: 0;
     &--list{
       //background: orange;
       display: grid;
@@ -291,6 +295,23 @@
     }
     .st0 {
       fill:#991d85
+    }
+  }
+
+  .advisors{
+    margin-top: 0;
+    &--list{
+
+      .advisor{
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) 5fr;
+        grid-column-gap: 2rem;
+        grid-template-rows: 1fr;
+        p{
+          max-width: 65ex;
+        }
+        margin: $content-padding/2;
+      }
     }
   }
 }

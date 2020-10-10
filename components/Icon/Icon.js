@@ -17,7 +17,8 @@ export const ICONS = {
   TWITTER: 'TWITTER',
   YOUTUBE: 'YOUTUBE',
   GLOBE: 'GLOBE',
-  FILE: 'FILE'
+  FILE: 'FILE',
+  THUNDER: 'THUNDER'
 };
 
 export const THEME = {
@@ -361,6 +362,20 @@ const FILE = () => {
   );
 };
 
+const THUNDER = () => {
+  return(
+  <svg width={14} height={18} viewBox="0 0 14 18">
+    <defs>
+      <path
+        d="M5.618 2l-3 6H5a1 1 0 01.97 1.243L4.846 13.74 10.586 8H9a1 1 0 01-.894-1.447L10.382 2H5.618zm-1.899 8H1a1 1 0 01-.894-1.447l4-8A1 1 0 015 0h7a1 1 0 01.894 1.447L10.618 6H13c.89 0 1.337 1.077.707 1.707l-10 10c-.717.717-1.923.034-1.677-.95L3.72 10z"
+        id="THUNDER__a"
+      />
+    </defs>
+    <use fill="#05F" fillRule="nonzero" xlinkHref="#THUNDER__a" />
+  </svg>
+  );
+}
+
 const WAIVER = () => {
   return (
     <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
@@ -467,6 +482,9 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
         break;
       case ICONS.YOUTUBE:
         svg = YOUTUBE();
+        break;
+      case ICONS.THUNDER:
+        svg = THUNDER();
         break;
       default:
     }

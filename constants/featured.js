@@ -212,3 +212,24 @@ export const FeaturedEvent = [
     images: ['/assets/img/membrane/cold-lines.jpg']
   }
 ];
+
+export const Advisors =[
+  {
+    name: "Maurice Conti",
+    bio: "Deep tech authority, innovation executive, advisor, and international keynote speaker, Maurice has worked with corporations, startups, governments, and researchers to explore the things that will matter to us in the future, and to build the solutions to get us there.",
+    image: "",
+    website: "https://www.mauriceconti.com/"
+  },
+  {
+    name: "Gui Seiz",
+    bio: "Gui is an Award-winning design leader with a strong background in scaling businesses and developing high-performance teams through strategic design direction thoughtful craftsmanship, and a creative, collaborative, experimental mindset.",
+    image: "",
+    website: "https://seiz.design/"
+  },
+  {
+    name: "Pascal Finette",
+    bio: "Pascal is Co-Founder at be radical, EY’s wavespace Advisory Board Chair, SingularityU’s Chair for Entrepreneurship & Open Innovation, VC at BOLD Capital Partners. Previously he held leadership positions at Google.org, Mozilla, and eBay, built technology startups, launched a Venture Capital firm. He is the posse leader at TheHeretic.org, and is a general upstart when it comes to creating meaningful change.",
+    image: "",
+    website: "https://beradicalgroup.com/"
+  }
+]

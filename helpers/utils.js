@@ -23,3 +23,8 @@ export const scrollToRef = (ref) => {
   const menuHeight = 80;
   window.scrollTo(0, ref.current.offsetTop-menuHeight, {top: 0, left: 0, behavior: 'smooth'})
 }
+
+export const openInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null
+}
