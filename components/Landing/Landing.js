@@ -53,7 +53,7 @@ const Landing = ({exploreClick}) => {
         </motion.div>
         <motion.div variants={landingItems}>
           <h4>
-            We are a global research and design innovation studio working at the intersection of design, technology, social, and business innovation.
+            We are a global research and design ventures studio working at the intersection of design, technology, social, and business innovation.
           </h4>
         </motion.div>
         <motion.div variants={landingItems}>

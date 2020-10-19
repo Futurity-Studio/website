@@ -19,7 +19,7 @@ class MyApp extends App {
       <>
         <Head>
           <meta name="description" content="Futurity Studio—Building better futures faster."/>
-          <meta name="description" content="Futurity Studio Innovation Research and Design Studio."/>
+          <meta name="description" content="Futurity Studio Venture Studio - Innovation, Research and Design."/>
           <title>Futurity Studio</title>
           <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>
