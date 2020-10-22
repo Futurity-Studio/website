@@ -22,7 +22,10 @@ export const FeatureContent = [
         desc: 'Autonomous Commerce (aCommerce) is our name for the successor to PC-based electronic commerce and smartphone-based mobile commerce as intelligent agents begin to orchestrate our lives. We are developing frameworks to ensure that aCommerce not only benefits us as consumers, but enhances prosperity, the environment, our privacy, and the economy as a whole.',
         link: '/labs?lab=aCommerce',
       },
-      collab: 'W3}RD Collective',
+      collab: {
+        title: 'W3}RD Collective',
+        link: 'www.weird.fyi'
+      },
       time: 'Q1 - 2020',
       shortDesc: 'Concord is the interface layer of a full-stack personal digital twin: a legal entity controlled by the user it represents, like an Amazon Alexa owned by you to recommend and automate purchases.'
     },
@@ -33,7 +36,15 @@ export const FeatureContent = [
       },
       {
         header: 'The Solution in Detail',
-        content: "Concord is an intelligent virtual assistant that becomes your digital twin, knowing your plans, preferences, and purchases without sharing, selling, or storing that information with anyone but you. It keeps your data on edge-based devices in your home, not on a server. Concorde agents coordinate anonymously with other owners in your region to create a distributed ledger of current and future demand. Concord is a series of interconnected modular kitchen appliances that fulfill every necessary kitchen function. These modules connect and work together to maximize the efficiency of products in and waste out. Concord is an interface of a transaction membrane—an architecture exchange space where items enter or leave a dwelling."
+        content: "Concord is an intelligent virtual assistant that becomes your digital twin, knowing your plans, preferences, and purchases without sharing, selling, or storing that information with anyone but you. It keeps your data on edge-based devices in your home, not on a server. Concorde agents coordinate anonymously with other owners in your region to create a distributed ledger of current and future demand. Concord is a series of interconnected modular kitchen appliances that fulfill every necessary kitchen function. These modules connect and work together to maximize the efficiency of products in and waste out. Concord is an interface of a transaction membrane—an architecture exchange space where items enter or leave a dwelling.",
+        special: {
+          type: 'link',
+          body: 'With the help of the W3}RD Collective, this project accepted to be shown at both Milan and Dutch Design weeks.',
+          link: {
+            url: 'https://concord.weird.fyi/story',
+            text: 'Explore the project'
+          }
+        }
       },
     ],
     images: [ {src: 'membraneUsage.jpeg'} ]

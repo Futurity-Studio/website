@@ -27,6 +27,12 @@ function Deliverable({pathname, query, asPath, id}){
               {c.special.body.text.map((t,i) => <li key={i}><p>{t}</p></li>)}
             </ul>)
             break;
+          case 'link':
+            special = (<>
+              <p>{c.special.body}</p>
+              <a href={c.special.link.url} target="_blank">{c.special.link.text}</a>
+            </>)
+            break;
         }
       }
 
@@ -54,7 +60,9 @@ function Deliverable({pathname, query, asPath, id}){
           <a><p>{copy.details.lab.title}</p></a>
         </Link>
         { (copy.details.collab) &&
-        <p>{copy.details.collab}</p>
+        <a href={copy.details.collab.link} target="_blank">
+          <p>{copy.details.collab.title}</p>
+        </a>
         }
       </div>
     )
