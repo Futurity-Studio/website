@@ -24,7 +24,7 @@
   }
   >div:first-of-type {
     @extend %vr;
-    background-color: white;
+    background-color: $font-color;
     position: absolute;
     left: 0;
     margin-left: $main-padding;

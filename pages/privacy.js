@@ -1,11 +1,11 @@
 import React from 'react';
-import {Footer, Menu} from "../components";
+import {Footer, MenuOld} from "../components";
 
 
 const Privacy = () => {
   return(
     <main className={'labs'}>
-      <Menu/>
+      <MenuOld/>
       <section>
         <h1>Privacy & Cookie Stuff</h1>
       </section>

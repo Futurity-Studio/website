@@ -15,7 +15,6 @@ body{
   text-rendering: optimizeLegibility;
   font-weight: 300;
   font-size: 100%;
-  background-color: $page-background-color--light;
   color: $font-color;
   overscroll-behavior: none;
   *, *:before, *:after {
@@ -24,6 +23,7 @@ body{
 
 
   main {
+    background-color: $page-background-color--light;
     max-width: 100vw;
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);

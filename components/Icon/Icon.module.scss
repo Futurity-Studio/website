@@ -37,4 +37,20 @@
     }
   }
 
+  &.nav_mix{
+    background-color: #f7f7f7;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: #080808 !important;
+    }
+  }
+
 }

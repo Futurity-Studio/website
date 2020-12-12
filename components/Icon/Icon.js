@@ -18,7 +18,11 @@ export const ICONS = {
   YOUTUBE: 'YOUTUBE',
   GLOBE: 'GLOBE',
   FILE: 'FILE',
-  THUNDER: 'THUNDER'
+  THUNDER: 'THUNDER',
+
+  // new
+
+  ROCKET: 'ROCKET'
 };
 
 export const THEME = {
@@ -29,6 +33,9 @@ export const THEME = {
   GREEN: 'green',
   DARK: 'dark',
   TRANSPARENT: 'transparent',
+
+  //NEW below
+  NAV_MIX: 'nav_mix',
 };
 
 export const SIZE = {
@@ -41,6 +48,27 @@ export const TYPE = {
   LINK: 'lnk'
 };
 
+
+//Modulz
+const ROCKET = () => {
+  return (
+    <svg
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.854 3.854l.8-.8c.644-.645 1.775-1.092 2.898-1.253a5.342 5.342 0 011.504-.02c.443.066.714.196.84.323.127.126.257.397.323.84.064.427.059.95-.02 1.504-.16 1.123-.608 2.254-1.253 2.898L7.5 11.793l-1.146-1.146a.5.5 0 10-.708.707l1.5 1.5a.5.5 0 00.708 0l.547-.548 1.17 1.951a.5.5 0 00.783.097l2-2a.5.5 0 00.141-.425l-.465-3.252.624-.623c.855-.856 1.358-2.225 1.535-3.465.09-.627.1-1.25.019-1.794-.08-.528-.256-1.05-.604-1.399-.349-.348-.871-.525-1.4-.604a6.333 6.333 0 00-1.793.02C9.17.987 7.8 1.49 6.946 2.345l-.623.624-3.252-.465a.5.5 0 00-.425.141l-2 2a.5.5 0 00.097.783l1.95 1.17-.547.547a.5.5 0 000 .708l1.5 1.5a.5.5 0 10.708-.708L3.207 7.5l.647-.646 3-3zm3.245 9.34l-.97-1.617 2.017-2.016.324 2.262-1.37 1.37zM3.423 5.87l2.016-2.016-2.262-.324-1.37 1.37 1.616.97zm-1.07 4.484a.5.5 0 10-.707-.708l-1 1a.5.5 0 10.708.707l1-1zm1.5 1.5a.5.5 0 10-.707-.707l-2 2a.5.5 0 00.708.707l2-2zm1.5 1.5a.5.5 0 10-.707-.708l-1 1a.5.5 0 10.708.707l1-1zM8.526 5.45a.925.925 0 111.85 0 .925.925 0 01-1.85 0zm.925-1.775a1.775 1.775 0 100 3.55 1.775 1.775 0 000-3.55z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
+}
+
+
+//Wild
 const PLUS = () => {
   return(
     <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 15 15">
@@ -364,15 +392,15 @@ const FILE = () => {
 
 const THUNDER = () => {
   return(
-  <svg width={14} height={18} viewBox="0 0 14 18">
-    <defs>
-      <path
-        d="M5.618 2l-3 6H5a1 1 0 01.97 1.243L4.846 13.74 10.586 8H9a1 1 0 01-.894-1.447L10.382 2H5.618zm-1.899 8H1a1 1 0 01-.894-1.447l4-8A1 1 0 015 0h7a1 1 0 01.894 1.447L10.618 6H13c.89 0 1.337 1.077.707 1.707l-10 10c-.717.717-1.923.034-1.677-.95L3.72 10z"
-        id="THUNDER__a"
-      />
-    </defs>
-    <use fill="#05F" fillRule="nonzero" xlinkHref="#THUNDER__a" />
-  </svg>
+    <svg width={14} height={18} viewBox="0 0 14 18">
+      <defs>
+        <path
+          d="M5.618 2l-3 6H5a1 1 0 01.97 1.243L4.846 13.74 10.586 8H9a1 1 0 01-.894-1.447L10.382 2H5.618zm-1.899 8H1a1 1 0 01-.894-1.447l4-8A1 1 0 015 0h7a1 1 0 01.894 1.447L10.618 6H13c.89 0 1.337 1.077.707 1.707l-10 10c-.717.717-1.923.034-1.677-.95L3.72 10z"
+          id="THUNDER__a"
+        />
+      </defs>
+      <use fill="#05F" fillRule="nonzero" xlinkHref="#THUNDER__a" />
+    </svg>
   );
 }
 
@@ -429,116 +457,124 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
   // render() {
   //   const { icon, progress, theme, size, type, hide, url, children } = this.props;
 
-    let svg = <span>{'icon'}</span>;
+  let svg = <span>{'icon'}</span>;
 
-    switch (icon) {
-      case ICONS.MAP:
-        svg = MAP();
-        break;
-      case ICONS.FILTER:
-        svg = FILTER();
-        break;
-      case ICONS.RIGHT:
-        svg = RIGHT();
-        break;
-      case ICONS.RIGHT_CHEV:
-        svg = RIGHT_CHEV();
-        break;
-      case ICONS.LEFT_CHEV:
-        svg = LEFT_CHEV();
-        break;
-      case ICONS.CROSS:
-        svg = CROSS();
-        break;
-      case ICONS.PLUS:
-        svg = PLUS();
-        break;
-      case ICONS.BULB:
-        svg = BULB();
-        break;
-      case ICONS.MENU:
-        svg = MENU();
-        break;
-      case ICONS.GLOBE:
-        svg = GLOBE();
-        break;
-      case ICONS.FILE:
-        svg = FILE();
-        break;
-      case ICONS.WAIVER:
-        svg = WAIVER();
-        break;
-      case ICONS.MINUS:
-        svg = MINUS();
-        break;
-      case ICONS.LINKEDIN:
-        svg = LINKEDIN();
-        break;
-      case ICONS.TWITTER:
-        svg = TWITTER();
-        break;
-      case ICONS.MAIL:
-        svg = MAIL();
-        break;
-      case ICONS.YOUTUBE:
-        svg = YOUTUBE();
-        break;
-      case ICONS.THUNDER:
-        svg = THUNDER();
-        break;
-      default:
+  switch (icon) {
+    case ICONS.MAP:
+      svg = MAP();
+      break;
+    case ICONS.FILTER:
+      svg = FILTER();
+      break;
+    case ICONS.RIGHT:
+      svg = RIGHT();
+      break;
+    case ICONS.RIGHT_CHEV:
+      svg = RIGHT_CHEV();
+      break;
+    case ICONS.LEFT_CHEV:
+      svg = LEFT_CHEV();
+      break;
+    case ICONS.CROSS:
+      svg = CROSS();
+      break;
+    case ICONS.PLUS:
+      svg = PLUS();
+      break;
+    case ICONS.BULB:
+      svg = BULB();
+      break;
+    case ICONS.MENU:
+      svg = MENU();
+      break;
+    case ICONS.GLOBE:
+      svg = GLOBE();
+      break;
+    case ICONS.FILE:
+      svg = FILE();
+      break;
+    case ICONS.WAIVER:
+      svg = WAIVER();
+      break;
+    case ICONS.MINUS:
+      svg = MINUS();
+      break;
+    case ICONS.LINKEDIN:
+      svg = LINKEDIN();
+      break;
+    case ICONS.TWITTER:
+      svg = TWITTER();
+      break;
+    case ICONS.MAIL:
+      svg = MAIL();
+      break;
+    case ICONS.YOUTUBE:
+      svg = YOUTUBE();
+      break;
+    case ICONS.THUNDER:
+      svg = THUNDER();
+      break;
+
+    //NEW//
+
+
+    case ICONS.ROCKET:
+      svg = ROCKET();
+      break;
+
+    default:
+  }
+
+  let additionalStyles = '';
+
+  Object.values(THEME).forEach((v) => {
+    if (v === theme) {
+      additionalStyles = styles[theme];
     }
+  });
 
-    let additionalStyles = '';
+  // default to dark theme
+  if (!additionalStyles) {
+    additionalStyles += styles.dark;
+  }
 
-    Object.values(THEME).forEach((v) => {
-      if (v === theme) {
-        additionalStyles = styles[theme];
-      }
-    });
-
-    // default to dark theme
-    if (!additionalStyles) {
-      additionalStyles += styles.dark;
+  Object.values(SIZE).forEach((v) => {
+    if (v === size) {
+      additionalStyles += ` ${size}`;
     }
+  });
 
-    Object.values(SIZE).forEach((v) => {
-      if (v === size) {
-        additionalStyles += ` ${size}`;
-      }
-    });
-
-    Object.values(TYPE).forEach((v) => {
-      if (v === type) {
-        additionalStyles += ` ${type}`;
-      }
-    });
-
-    if (progress) {
-      additionalStyles += ' progress';
+  Object.values(TYPE).forEach((v) => {
+    if (v === type) {
+      additionalStyles += ` ${type}`;
     }
+  });
 
-    if (hide) {
-      additionalStyles += ' hide';
-    }
+  if (progress) {
+    additionalStyles += ' progress';
+  }
 
-    if (url) {
-      return (
-        <a href={url.to}>
-          <div className={`${styles.Icon} ${additionalStyles}`}>
-            {children}
-            {svg}
-          </div>
-        </a>
-      );
-    }
+  if (hide) {
+    additionalStyles += ' hide';
+  }
 
+  if (url) {
     return (
-      <div className={`${styles.Icon} ${additionalStyles}`} onClick={_onClick}>
-        {children}
-        {svg}
-      </div>
+      <a href={url.to}>
+        <div className={`${styles.Icon} ${additionalStyles}`}>
+          {children}
+          {svg}
+        </div>
+      </a>
     );
+  }
+
+  return (
+    <div className={`${styles.Icon} ${additionalStyles}`} onClick={_onClick}>
+      {children}
+      {svg}
+    </div>
+  );
   // }
 }
 
