@@ -232,15 +232,21 @@ export const Advisors =[
     website: "https://www.mauriceconti.com/"
   },
   {
+    name: "Pascal Finette",
+    bio: "Pascal is Co-Founder at be radical, EY’s wavespace Advisory Board Chair, SingularityU’s Chair for Entrepreneurship & Open Innovation, VC at BOLD Capital Partners. Previously he held leadership positions at Google.org, Mozilla, and eBay, built technology startups, launched a Venture Capital firm. He is the posse leader at TheHeretic.org, and is a general upstart when it comes to creating meaningful change.",
+    image: "",
+    website: "https://beradicalgroup.com/"
+  },
+  {
+    name: "Karolina Korth",
+    bio: "Karolina is Chief Digital Officer and Head of Strategy of South-West Europe region at Siemens Mobility. She is a trained psychologist and sociologist with passion for innovation and over 10 years of international experience in digital transformation, start-up collaborations and corporate innovation in the sector of digital health, smart cities and mobility. Karolina founded Health 2.0 Kuala Lumpur and the FeMale Voice of Mobility – a movement to empower women in male dominated industries. She speaks regularly at conferences targeting digital transformation and gives lectures at business schools and universities.",
+    image: "",
+    website: "https://www.linkedin.com/in/karolinakorth"
+  },
+  {
     name: "Gui Seiz",
     bio: "Gui is an Award-winning design leader with a strong background in scaling businesses and developing high-performance teams through strategic design direction thoughtful craftsmanship, and a creative, collaborative, experimental mindset.",
     image: "",
     website: "https://seiz.design/"
   },
-  {
-    name: "Pascal Finette",
-    bio: "Pascal is Co-Founder at be radical, EY’s wavespace Advisory Board Chair, SingularityU’s Chair for Entrepreneurship & Open Innovation, VC at BOLD Capital Partners. Previously he held leadership positions at Google.org, Mozilla, and eBay, built technology startups, launched a Venture Capital firm. He is the posse leader at TheHeretic.org, and is a general upstart when it comes to creating meaningful change.",
-    image: "",
-    website: "https://beradicalgroup.com/"
-  }
 ]

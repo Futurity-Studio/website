@@ -1,7 +1,7 @@
 import styles from "./DividedContent.module.scss"
 // todo -- check with BEM
 
-const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false}) => {
+const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false, medLeft}) => {
   const generateClassName = () => {
     let className;
     if (smallLeft){
@@ -10,6 +10,8 @@ const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smal
       return styles.smallRight;
     } else if (medRight){
       return styles.medRight;
+    } else if (medLeft){
+      return styles.medLeft;
     } else {
       return styles.DividedContent;
     }
