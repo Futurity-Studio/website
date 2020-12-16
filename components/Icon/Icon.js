@@ -22,7 +22,8 @@ export const ICONS = {
 
   // new
 
-  ROCKET: 'ROCKET'
+  ROCKET: 'ROCKET',
+  ARROW_RIGHT: 'ARROW_RIGHT'
 };
 
 export const THEME = {
@@ -36,6 +37,8 @@ export const THEME = {
 
   //NEW below
   NAV_MIX: 'nav_mix',
+  LINK_LIGHT:'link_light',
+
 };
 
 export const SIZE = {
@@ -66,6 +69,24 @@ const ROCKET = () => {
     </svg>
   )
 }
+
+const ARROW_RIGHT = () => {
+  return (
+    <svg
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.146 3.146a.5.5 0 01.708 0l4 4a.5.5 0 010 .708l-4 4a.5.5 0 01-.708-.708L11.293 8H2.5a.5.5 0 010-1h8.793L8.146 3.854a.5.5 0 010-.708z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
+}
+
 
 
 //Wild
@@ -157,11 +178,17 @@ const YOUTUBE = () => {
 
 const MAIL = () => {
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 18 12">
-      <defs>
-        <path id="icon-mail" d="M14.8 10l-3.2-3.91-1.95 1.67a1 1 0 01-1.3 0L6.4 6.09 3.2 10h11.6zM16 8.31V2.5a.5.5 0 00-.03-.16l-2.85 2.45L16 8.3zm-14 0l2.88-3.52-2.85-2.45A.5.5 0 002 2.5v5.8zM15.92 0c.1-.01.2 0 .3.02a1.97 1.97 0 011.53 1.01c.19.35.25.68.25 1.24v7.44c0 .56-.06.89-.25 1.24-.18.34-.45.6-.79.79a2.4 2.4 0 01-1.24.25H2.28c-.56 0-.89-.06-1.24-.25a1.9 1.9 0 01-.79-.79A2.4 2.4 0 010 9.72V2.28c0-.56.06-.89.25-1.24A1.9 1.9 0 011.78.03a5.9 5.9 0 01.5-.03H15.92zM4.7 2L9 5.68 13.3 2H4.7z"/>
-      </defs>
-      <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icon-mail"/>
+    <svg
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 2a1 1 0 00-1 1v9a1 1 0 001 1h13a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 1h13v.925a.448.448 0 00-.241.07L7.5 7.967 1.241 3.995A.448.448 0 001 3.925V3zm0 1.908V12h13V4.908L7.741 8.88a.45.45 0 01-.482 0L1 4.908z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   );
 };
@@ -505,9 +532,6 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
     case ICONS.TWITTER:
       svg = TWITTER();
       break;
-    case ICONS.MAIL:
-      svg = MAIL();
-      break;
     case ICONS.YOUTUBE:
       svg = YOUTUBE();
       break;
@@ -517,9 +541,14 @@ export const Icon = ({icon, progress, theme, size, type, hide, url, children, on
 
     //NEW//
 
-
+    case ICONS.MAIL:
+      svg = MAIL();
+      break;
     case ICONS.ROCKET:
       svg = ROCKET();
+      break;
+    case ICONS.ARROW_RIGHT:
+      svg = ARROW_RIGHT();
       break;
 
     default:

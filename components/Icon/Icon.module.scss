@@ -38,7 +38,7 @@
   }
 
   &.nav_mix{
-    background-color: #f7f7f7;
+    background-color: $icon-light;
     height: 40px;
     width: 40px;
     display: flex;
@@ -49,8 +49,28 @@
     mask,
     path,
     use {
-      fill: #080808 !important;
+      fill: $icon-dark !important;
     }
   }
+
+  &.link_light{
+    //background-color: $icon-dark;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    //border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-light !important;
+    }
+  }
+
+
+
+
 
 }

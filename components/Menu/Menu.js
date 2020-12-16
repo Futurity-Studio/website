@@ -4,14 +4,8 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion';
 
 import styles from "./Menu.module.scss"
-import { ROUTES } from '../../constants';
+import { ROUTES, LINKS } from '../../constants';
 import {Icon, ICONS, THEME} from "../index";
-
-const links =  [
-  {title: 'Services', link: ROUTES.SERVICES},
-  {title: 'Labs', link: ROUTES.LABS},
-  {title: 'The Studio', link: ROUTES.ABOUT}
-];
 
 const customVariant = {
   initial: {
@@ -46,7 +40,7 @@ const Menu = () => {
 
   const generateNav = () => {
     return(
-      links.map( (n, i) =>
+      LINKS.map( (n, i) =>
         // todo -- integrate the hover effect and the current effect
         <li
           key={n.title}
@@ -90,8 +84,8 @@ const Menu = () => {
         {generateNav()}
       </motion.ul>
       <motion.div variants={customChild}>
-        <Link href={'/'}>
-          <a>Contact <Icon icon={ICONS.ROCKET} theme={THEME.NAV_MIX} /></a>
+        <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
+          <a target="_blank">Contact <Icon icon={ICONS.ROCKET} theme={THEME.NAV_MIX} /></a>
         </Link>
       </motion.div>
     </motion.nav>

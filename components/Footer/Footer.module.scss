@@ -2,51 +2,67 @@
 @import "theme/constants";
 
 .Footer{
-  >div{
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-    grid-template-rows: 1fr;
-    column-gap: 10%;
-    align-items: center;
-    margin-bottom: $section-padding*.25 !important;
+  background-color: $page-background-color--dark;
+  color: $font-color--light;
+  padding: $section-padding*.5 0 !important;
+  h2, h3, em{
+    color: $font-color--light;
+  }
 
-    > div:last-of-type{
-      display: flex;
-      flex-direction: column;
-      p:first-of-type{
-        margin-bottom: 0;
-      }
-    }
-    @include media("<=tablet") {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
-
-      h2{
-        max-width: 15ex;
-      }
-
-      > div:last-of-type{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-around;
-      }
-    }
-    @include media("<=400px") {
-      > div:last-of-type{
-        justify-content: space-between;
-      }
+  .bottomNav{
+    background-color: $font-color--light;
+    background-clip: text;
+    -webkit-background-clip: text;
+    //color: transparent;
+    color: rgba(247,247,247,1);
+    background-size: 150% 150%;
+    //background-blend-mode: 'saturation';
+    h2{
+      color: inherit;
     }
   }
 
   .cta{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-column-gap: $content-padding/4;
     justify-content: flex-start;
     align-items: center;
-    .icon{
-      position: relative;
-      top: 4px;
+    //.icon{
+    //  position: relative;
+    //  top: 4px;
+    //}
+  }
+
+  >div{
+    > div:nth-of-type(1){
+      margin-bottom: $content-padding !important;
+    }
+    > div:nth-of-type(2){
+      >div:first-of-type {
+        display: grid;
+        grid-template-columns: auto min-content min-content min-content;
+        grid-column-gap: 1rem;
+        align-items: center;
+      }
+    }
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+    li{
+      cursor: pointer;
+      height: 100%;
+      display: grid;
+      align-items: center;
+      margin: $content-padding/6 0;
     }
   }
 }

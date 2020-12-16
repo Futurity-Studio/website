@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion';
 import { BorderButton, ICONS, THEME, Icon } from ".."
 
-import { ROUTES, Links } from '../../constants';
+import { ROUTES, LINKS } from '../../constants';
 
 import { useWindowScroll } from "react-use";
 import {cubicBezier} from "../../helpers/animation";
@@ -72,7 +72,7 @@ const MenuOld = ({setLocked, loader = false}) => {
 
   const generateTopNavContent = () => { // todo handle children
     return(
-      Links.map((n) => {
+      LINKS.map((n) => {
 
         let children = n.children.map(c =>
           <div

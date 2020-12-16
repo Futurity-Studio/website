@@ -3,6 +3,8 @@ import {ROUTES} from "./routes";
 export const LabData = [
   {
     title: 'aCommerce',
+    encoded: 'acommerce',
+    title_expanded: 'Autonomous Commerce',
     year:'2020',
     short_desc: 'Autonomous, intelligent agents and driverless delivery will reshape homes, work, and mobility',
     one_pager_link: 'https://drive.google.com/file/d/1VTP7z7WIee6Z0wpyYGZsp44LerfehN_a/view?usp=sharing',
@@ -34,6 +36,8 @@ export const LabData = [
   },
   {
     title: 'Foodturity',
+    encoded: 'foodturity',
+    title_expanded: 'Future of Food',
     year:'2020',
     short_desc: 'New technologies and tastes decoupling food’s nutritional, cultural, economic, and ecological roles',
     one_pager_link: 'https://drive.google.com/file/d/1vbrNzgzriK5FRK5DiYsJRayxRFhDqQ8D/view?usp=sharing',
@@ -65,6 +69,8 @@ export const LabData = [
   },
   {
     title: 'neUIro',
+    encoded: 'neuiro',
+    title_expanded: 'Emerging User Interface',
     year:'2020',
     short_desc: 'User experience from AR/VR to brain-computer interfaces',
     one_pager_link: 'https://drive.google.com/file/d/1AVQ1JkLJRtPECFwdiyazLFQocG__VsaR/view?usp=sharing',
@@ -99,9 +105,15 @@ export const LabData = [
 
 
 
-export const Links = [
-  // {title: 'Work', link: '/work', children: [] },
-  {title: 'About', link: ROUTES.ABOUT , children: [{title: 'Methodology', link: '#methodology'}, {title: 'Team', link: '#team'}] },
-  {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: '?lab=acommerce'}, {title: 'Foodturity', link: '?lab=foodturity'}, {title: 'neUIro', link: '?lab=neuiro'}] }
-  // {title: 'Events', link: ROUTES.EVENTS, children: [{title: 'Upcoming', link: '#acommerce'}] }
-]
+// export const Links = [
+//   // {title: 'Work', link: '/work', children: [] },
+//   {title: 'About', link: ROUTES.ABOUT , children: [{title: 'Methodology', link: '#methodology'}, {title: 'Team', link: '#team'}] },
+//   {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: '?lab=acommerce'}, {title: 'Foodturity', link: '?lab=foodturity'}, {title: 'neUIro', link: '?lab=neuiro'}] }
+//   // {title: 'Events', link: ROUTES.EVENTS, children: [{title: 'Upcoming', link: '#acommerce'}] }
+// ]
+
+export const LINKS =  [
+  {title: 'Services', link: ROUTES.SERVICES},
+  {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: ''}, {title: 'Foodturity', link: ''}, {title: 'NeUIro', link: ''}]},
+  {title: 'The Studio', link: ROUTES.ABOUT}
+];
