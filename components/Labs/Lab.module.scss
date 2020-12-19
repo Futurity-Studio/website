@@ -5,8 +5,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content auto 100px;
-  cursor: pointer;
-  border: $line-thickness solid $line-color;
+  //border: $line-thickness solid $line-color;
   em{
     margin: $content-padding/2 $content-padding/2 0;
   }
@@ -15,12 +14,19 @@
     &:first-of-type{
       margin-top: 0;
     }
-    &:last-of-type{
-      margin-bottom: 0;
+    &:nth-of-type(2){
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-color: rebeccapurple;
+      em{
+        margin: 0;
+      }
     }
   }
 
   h3 {
+    cursor: pointer;
     padding: $content-padding/2;
     background-size: 400% 200%;
     background-repeat: no-repeat;
@@ -41,7 +47,39 @@
 }
 
 
-
 .Details{
+  align-self: stretch;
+  margin-top: $content-padding/2;
+  table{
+    height: 100%;
 
+    border-collapse:collapse;
+    //border:1px solid $menu-inverse-color;
+
+    td{
+      //border:1px solid $menu-inverse-color;
+    }
+  }
+  thead th:nth-of-type(odd){
+    @extend %label;
+    text-align: right;
+    padding-right: .5rem;
+  }
+  thead th:nth-of-type(even){
+    font-weight: normal;
+    text-align: left;
+    width: 30%;
+  }
+  tbody td:nth-of-type(odd){
+    text-align: right;
+    padding-right: .5rem;
+
+  }
+  tbody td:nth-of-type(even){
+    text-align: left;
+    width: 30%;
+  }
+  p{
+    margin: 0;
+  }
 }

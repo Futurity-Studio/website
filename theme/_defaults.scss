@@ -57,12 +57,8 @@ h4{
 }
 
 em{
-  @include fluid-type(10px, 1vw, .8rem);
-  text-transform: uppercase;
-  text-decoration: none;
-  font-style: initial;
-  font-weight: bold;
-  letter-spacing: 1px;
+  @extend %label;
+
 }
 
 span, p{

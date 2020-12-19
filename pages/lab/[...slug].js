@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import {motion} from "framer-motion";
 import {LabDetails, LabThumbnail} from "../../components/Labs/Lab";
 import {LabData} from "../../constants";
 import {Footer} from "../../components";
 
-const Lab = () => {
-  const [lab, setLab] = useState('');
-  const router = useRouter()
-
-  useEffect(() => {
-    const slug = router.query.slug;
-    if (slug && length > 1 ){
-      const lab = LabData.find(l => router.query.slug[0])
-      if(lab){
-        setLab(lab)
-      } // else handle that 404
-    }
-  },[router.query.slug])
+const Lab = ({slug}) => {
+  const lab = LabData.find(l => l.encoded === slug[0])
 
   return (
     <motion.main
@@ -27,27 +15,31 @@ const Lab = () => {
       exit={{     opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
     >
       <section className={'Labs--details'}>
-        {/*<div className={'section-content'}>*/}
-          { router.query.slug && router.query.slug[0] &&
-            <>
+        {lab &&
+        <>
           <LabThumbnail
-            lab={LabData.find(lab => lab.encoded === router.query.slug[0])}
+            lab={lab}
             expanded={true}
             key={0}
+            altClass={true}
             forceClose={() => {}}
             closeSiblings={() => {}}
           />
           <LabDetails
-            lab={LabData.find(lab => lab.encoded === router.query.slug[0])}
+            lab={lab}
           />
-          </>
-          }
-        {/*</div>*/}
+        </>
+        }
       </section>
       <Footer/>
     </motion.main>
   )
 }
+
+Lab.getInitialProps = async ({ query }) => {
+  const { slug } = query;
+  return { slug };
+};
 
 
 export default Lab

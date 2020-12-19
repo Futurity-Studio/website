@@ -72,3 +72,12 @@ $line-color: #0e0e0e;
     top: -2px;
   }
 }
+
+%label{
+  @include fluid-type(10px, 1vw, .8rem);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: initial;
+  font-weight: bold;
+  letter-spacing: 1px;
+}

@@ -3,8 +3,9 @@ import { LabData } from "../../constants";
 import {motion} from "framer-motion";
 import styles from "./Lab.module.scss"
 import {removeWebpFormat} from "../Image/Images";
+import {Icon, ICONS} from "../index";
 
-export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
+export const LabThumbnail = ({lab, expanded, onClick, clicked, altClass}) => {
   const [open, setOpen] = useState(false);
   const [background, setBackground] = useState(null)
 
@@ -56,7 +57,8 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
       </div>
       { expanded &&
       <div>
-        prev next
+        <em>explore more</em>
+        // steal buttons here
       </div>
       }
     </motion.div>
@@ -68,9 +70,9 @@ export const LabDetails = ({lab}) => {
   const generateRow =() => {
     return lab.deliverable_analysis.map((_ , i) => (
       <tr key={i}>
-        <td>{lab.deliverable_analysis[i].title}</td>
+        <td><p>{lab.deliverable_analysis[i].title}</p></td>
         <td>{lab.deliverable_analysis[i].desc}</td>
-        <td>{lab.deliverable_artifacts[i].title}</td>
+        <td><p>{lab.deliverable_artifacts[i].title}</p></td>
         <td>{lab.deliverable_artifacts[i].desc}</td>
       </tr>
     ))
