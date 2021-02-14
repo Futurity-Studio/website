@@ -4,7 +4,7 @@ export const LabData = [
   {
     title: 'aCommerce',
     encoded: 'acommerce',
-    title_expanded: 'Autonomous Commerce',
+    title_long: 'Autonomous Commerce',
     year:'2020',
     short_desc: 'Autonomous, intelligent agents and driverless delivery will reshape homes, work, and mobility',
     one_pager_link: 'https://drive.google.com/file/d/1VTP7z7WIee6Z0wpyYGZsp44LerfehN_a/view?usp=sharing',
@@ -37,7 +37,7 @@ export const LabData = [
   {
     title: 'Foodturity',
     encoded: 'foodturity',
-    title_expanded: 'Future of Food',
+    title_long: 'Future of Food',
     year:'2020',
     short_desc: 'New technologies and tastes decoupling food’s nutritional, cultural, economic, and ecological roles',
     one_pager_link: 'https://drive.google.com/file/d/1vbrNzgzriK5FRK5DiYsJRayxRFhDqQ8D/view?usp=sharing',
@@ -70,7 +70,7 @@ export const LabData = [
   {
     title: 'neUIro',
     encoded: 'neuiro',
-    title_expanded: 'Emerging User Interface',
+    title_long: 'Emerging User Interface',
     year:'2020',
     short_desc: 'User experience from AR/VR to brain-computer interfaces',
     one_pager_link: 'https://drive.google.com/file/d/1AVQ1JkLJRtPECFwdiyazLFQocG__VsaR/view?usp=sharing',

@@ -4,22 +4,48 @@
 .Footer{
   background-color: $page-background-color--dark;
   color: $font-color--light;
-  padding: $section-padding*.5 0 !important;
+  padding: $section-padding/3 0 !important;
   h2, h3, em{
     color: $font-color--light;
   }
 
-  .bottomNav{
+  .navItemBasic{
     background-color: $font-color--light;
     background-clip: text;
     -webkit-background-clip: text;
     //color: transparent;
     color: rgba(247,247,247,1);
-    background-size: 150% 150%;
+    background-size: 100% 150%;
+    //background-position: bottom right;
     //background-blend-mode: 'saturation';
     h2{
       color: inherit;
+      white-space: nowrap;
     }
+  }
+
+  .navItemBasicContainer{
+    a div {
+      display: grid;
+      grid-template-rows: min-content min-content;
+      grid-template-columns: min-content auto;
+    }
+    em {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  .navArrow{
+    align-self: center;
+    margin: 0 $content-padding/4;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    color: rgba(247,247,247,1);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-position: bottom right;
   }
 
   .cta{

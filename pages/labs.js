@@ -11,6 +11,8 @@ const scrollToRef = (ref) => {
   window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
 }
 
+
+
 const Labs = () => {
   const [selectedLab, setSelectedLab] = useState(null)
   const [viewingDetails, setViewingDetails] = useState(false)

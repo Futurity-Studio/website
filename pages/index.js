@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FeatureContent } from "../constants";
 
 const Home = () => {
-  const [slide, setSlide] = useState(3);
+  const [slide, setSlide] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const router = useRouter();
   const pageTimer = 7500;
@@ -66,10 +66,10 @@ const Home = () => {
       }}
     >
       <AnimatePresence exitBeforeEnter>
-        { (slide === 3) &&
-        <Landing exploreClick={() => { setSlide(0)} } />
+        {/*{ (slide === 3) &&*/}
+        {/*<Landing exploreClick={() => { setSlide(0)} } />*/}
 
-        }
+        {/*}*/}
         { (slide === 0) &&
         generateSlide( FeatureContent[0], 0 ) }
         }

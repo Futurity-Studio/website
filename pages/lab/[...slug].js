@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {motion} from "framer-motion";
 import {LabDetails, LabThumbnail} from "../../components/Labs/Lab";
 import {LabData} from "../../constants";
 import {Footer} from "../../components";
+import { useWindowSize } from "react-use";
 
 const Lab = ({slug}) => {
   const lab = LabData.find(l => l.encoded === slug[0])
+  const {width, height} = useWindowSize();
+
+  useEffect(() => {
+    console.log('window stuff')
+    console.log(width)
+    console.log(height)
+  } )
 
   return (
     <motion.main
@@ -21,7 +29,6 @@ const Lab = ({slug}) => {
             lab={lab}
             expanded={true}
             key={0}
-            altClass={true}
             forceClose={() => {}}
             closeSiblings={() => {}}
           />

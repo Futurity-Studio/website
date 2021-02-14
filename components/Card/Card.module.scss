@@ -93,7 +93,6 @@
   }
 
   .tagline {
-
     @include media("<=tablet") {
       visibility: hidden;
     }

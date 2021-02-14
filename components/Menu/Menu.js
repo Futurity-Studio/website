@@ -45,14 +45,18 @@ const Menu = () => {
         <li
           key={n.title}
         >
-          <div>
             <Link href={n.link}>
-              <a>
-                <em>{`${i+1}.0`}</em><br />
+              <motion.a
+                initial={{
+                  backgroundColor: '#ff0000', backgroundPosition: '0 15rem', backgroundRepeat: 'no-repeat'
+                }}
+                whileHover={{
+                  backgroundPosition: '0 0'
+                }}>
+                <em>{`${i+1}.0`}</em>
                 <p>{n.title}</p>
-              </a>
+              </motion.a>
             </Link>
-          </div>
         </li>
       )
     )

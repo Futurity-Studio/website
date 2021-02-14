@@ -23,8 +23,9 @@
     svg,
     g,
     mask,
+    path,
     use {
-      fill: $icon-dark;
+      fill: $icon-dark !important;
     }
   }
 

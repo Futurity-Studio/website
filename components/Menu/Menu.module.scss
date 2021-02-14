@@ -55,6 +55,17 @@
       height: 100%;
       display: grid;
       align-items: center;
+      overflow: hidden;
+      //> div {
+      //  position: relative;
+      //  top: -9px;
+      //}
+      a {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
   p{
