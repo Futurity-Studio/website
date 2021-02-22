@@ -65,6 +65,34 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 0;
+          background-color: white;
+          // todo -- put this into another file
+          transition: height .1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+      }
+      a:hover{
+        &:after{
+          height: 8px;
+        }
+      }
+      a.active{
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 8px;
+          background-color: white;
+        }
       }
     }
   }

@@ -8,58 +8,14 @@ import { useInView } from 'react-intersection-observer'
 import {animateInUp} from "../helpers/animation";
 import {getAnchor, getParam, openInNewTab, scrollToRef} from "../helpers/utils";
 import { Advisors } from "../constants/featured";
+import {c, useWindowSize} from "react-use";
+
 
 const Services = () => {
   const router = useRouter();
   const [ deliverableSection, setDeliverableSection ] = useState(0);
   const [ methodologySection, setMethodologySection ] = useState(null);
-
-  const anchors = {'methodology': useRef(null), 'team': useRef(null)};
-
-  const [ analysisRef, analysisRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (analysisRefInView){
-      setDeliverableSection(0);
-    }
-  }, [analysisRefInView])
-  const [ artifactRef, artifactRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (artifactRefInView){
-      setDeliverableSection(1);
-    }
-  }, [artifactRefInView])
-  const [ actionRef, actionRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (actionRefInView){
-      setDeliverableSection(2);
-    }
-  }, [actionRefInView])
-
-  useEffect(() => {
-    // if( !router.asPath.includes(('#')) ) {
-    //   setTimeout(() => {
-    //     window.scrollTo(0, 0);
-    //   }, 100);
-    // } else {
-    //   let toAnchor = getAnchor(router);
-    //   if (toAnchor && anchors[toAnchor]) {
-    //     scrollToRef(anchors[toAnchor])
-    //   }
-    // }
-  }, []);
-
+  const size = useWindowSize();
 
   const [background, setBackground] = useState(null)
   useEffect(() => {
@@ -128,12 +84,12 @@ const Services = () => {
               }
               { (methodologySection === 1) &&
               <motion.h4 key={1} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
-                <em>Build</em> (means make, don't just think). We build physical prototypes of devices, clothing, and even rooms, that take your understanding beyond abstract designs, market analysis, code, and manifestos.
+                <em>Build</em> (means make, don't just think). We build physical prototypes or experiences that take your understanding beyond abstract designs, market analysis, and manifestos.
               </motion.h4>
               }
               { (methodologySection === 2) &&
               <motion.h4 key={2} animate={"animate"} initial={"initial"} variants={ animateInUp } exit={"initial"}>
-                <em>Better</em> (impact beyond economics). We help you calculate and maximize the total worth of an innovation, including not only financial, but also environmental, health, and social costs and benefits.
+                <em>Better</em> (impact beyond economics). We help you calculate and maximize the total worth of an innovation, not just financial, but environmental, health, and social costs/benefits too.
               </motion.h4>
               }
               { (methodologySection === 3) &&
@@ -158,8 +114,7 @@ const Services = () => {
           <DividedContent
             medRight={true}
             left={<div>
-              <p>We help you recognize and plan for existential threats and create entirely new markets, instead of incremental innovation, incremental revenue growth or product line extensions. We help companies reach Sustainable Development Goals, create new markets, and execute strategies. Futures require new skills that no one company has, no matter how large or heavily invested it is in R&D.</p>
-              <p>We don't just write reports or design thinking activities. We embody them in functional, interactive artifacts that provoke thought and learning from your industry's users, consumers, and thought leaders. We bring you deep datasets and data science tools, better ideas from broader sources, and a network of world-class collaborators. And we work with you and your team to design an organization and processes to build better futures faster.</p>
+              <h4>We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</h4>
             </div>}
             right={<h2>We deal in Futures</h2>}
           />
@@ -171,11 +126,42 @@ const Services = () => {
         />
         <div className={'section-content'}>
           <DividedContent
+            medLeft={ !!(size.width > 900)  }
+            left={<div>
+              <ul>
+                <li><h4>Innovation & Moonshot Consulting</h4></li>
+                <li><h4>Design & Futuring Workshops</h4></li>
+                <li><h4>Trend & Market Research</h4></li>
+                <li><h4>Research & Design Processes</h4></li>
+                <li><h4>Rapid Design Prototyping</h4></li>
+              </ul>
+            </div>}
+            right={
+              <div>
+                <h4>
+                  We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies.
+                  We don't just write reports or design thinking activities.
+                  Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.
+                </h4>
+              </div>
+            }
+          />
+        </div>
+      </section>
+
+      <section className={'offerings'}>
+        <BorderButton
+          backwards={true}
+          content={<em>our offerings</em>}
+          icon={<Icon icon={ICONS.WAIVER} theme={THEME.DARK} />}
+        />
+        <div className={'section-content'}>
+          <DividedContent
             left={<h2>Future Labs</h2>}
             right={<>
               <h4>
-                Futurity offers clients membership in our labs—a year-long cycle of using trend, participatory, and design research to build a better future through experimentation.
-                Lab members get three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions.
+                Our core offering is a year-long cycle of trend, participatory, and design research to build a better future through experimentation.
+                Subscribing to this full-service package gives lab members access to three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions.
               </h4>
               <StealthButton
                 label={'explore our labs'}
@@ -185,55 +171,257 @@ const Services = () => {
             </>}
           />
         </div>
-      </section>
-
-      <section className={'deliverables'} ref={anchors['methodology']}>
-        <div className={'deliverables--container'}>
-          <div className={'deliverables--graphic'} >
-            { (deliverableSection === 0) &&
-            <Image src={'metaballs_analysis.png'} alt={'Analysis'}/>
-            }
-            { (deliverableSection === 1) &&
-            <Image src={'metaballs_artifact.png'} alt={'Artifact'}/>
-            }
-            { (deliverableSection === 2) &&
-            <Image src={'metaballs_action.jpg'} alt={'Action'}/>
-            }
-          </div>
-          <div className={'deliverables--content'}>
-            <div ref={analysisRef}>
-              <h3>Analysis</h3>
-              <p>
-                We learn everything we can about an innovation space to build a conceptual understanding of how it interacts with our social, economic, and industry systems.
-              </p>
-              <ul>
-                <li><p>Examples include:</p></li>
-                <li><p>Timelines</p></li>
-                <li><p>Systems Maps</p></li>
-                <li><p>Forecasts</p></li>
-                <li><p>Scenarios</p></li>
-                <li><p>Reports (appx. 15-25 pages)</p></li>
-              </ul>
-            </div>
-            <div ref={artifactRef}>
-              <h3>Artifact</h3>
-              <p>
-                We use our data to prototype a narrative into reality. Artifacts are objects based on the interactions, inquiries, and provocations from our analysis.
-              </p>
-              <ul>
-                <li><p>Examples include:</p></li>
-                <li><p>Speculative physical products</p></li>
-                <li><p>Digital experiences</p></li>
-                <li><p>Interactive installations</p></li>
-              </ul>
-            </div>
-            <div ref={actionRef}>
-              <h3>Action</h3>
-              <p>
-                We pilot our better future-forecast now. Actions include interventions, panels discussions, ethnographic research, user questionnaires, co-creation design interventions all with the goal of testing the realized understanding of our lab against industry leaders, scientists, and individuals. These findings feed back into our analysis to support our future deliverables.
-              </p>
-            </div>
-          </div>
+        <div className={'section-content'}>
+          <svg
+            viewBox="0 0 1447 804"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="none" fillRule="evenodd">
+              <g transform="translate(299 .682)">
+                <circle
+                  stroke="#3A3A3A"
+                  strokeWidth={4}
+                  cx={483.5}
+                  cy={386.5}
+                  r={381.5}
+                />
+                <path
+                  d="M257 79.318c-57.267 44.223-116.128 71.357-176.583 81.403-25.83 4.292-52.636 5.578-80.417 3.86M257 693.318c-34.44-27.496-75.636-47.477-123.589-59.944C88.686 621.747 48.215 619.29 12 626.005"
+                  stroke="#3A3A3A"
+                  strokeWidth={4}
+                  strokeLinecap="square"
+                />
+                <path fill="#f7f7f7" d="M632 .318h363v158H632z" />
+                <text
+                  fontFamily="HelveticaNeue, Helvetica Neue"
+                  fontSize={24}
+                  fill="#222"
+                  transform="translate(632 .318)"
+                >
+                  <tspan x={13} y={80}>
+                    {"Analyze data to generate "}
+                  </tspan>
+                  <tspan x={13} y={108}>
+                    {"hypothetical future scenarios\u2013"}
+                  </tspan>
+                  <tspan x={13} y={136}>
+                    {"both desirable and undesirable"}
+                  </tspan>
+                </text>
+                <text
+                  fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                  fontSize={48}
+                  fontWeight="bold"
+                  fill="#222"
+                  transform="translate(632 .318)"
+                >
+                  <tspan x={11} y={47}>
+                    {"Analysis"}
+                  </tspan>
+                </text>
+                <path fill="#f7f7f7" d="M31 280.318h336v222H31z" />
+                <text
+                  fontFamily="HelveticaNeue, Helvetica Neue"
+                  fontSize={24}
+                  fill="#222"
+                  transform="translate(31 280.318)"
+                >
+                  <tspan x={9} y={87}>
+                    {"Test the hypothetical Artifact "}
+                  </tspan>
+                  <tspan x={9} y={115}>
+                    {"in the real world, measuring "}
+                  </tspan>
+                  <tspan x={9} y={143}>
+                    {"with observation, surveys, "}
+                  </tspan>
+                  <tspan x={9} y={171}>
+                    {"and ethnographic tools to "}
+                  </tspan>
+                  <tspan x={9} y={199}>
+                    {"get primary data"}
+                  </tspan>
+                </text>
+                <text
+                  fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                  fontSize={48}
+                  fontWeight="bold"
+                  fill="#222"
+                  transform="translate(31 280.318)"
+                >
+                  <tspan x={9} y={54}>
+                    {"Action"}
+                  </tspan>
+                </text>
+                <path fill="#f7f7f7" d="M626 625.318h325v177H626z" />
+                <text
+                  fontFamily="HelveticaNeue, Helvetica Neue"
+                  fontSize={24}
+                  fill="#222"
+                  transform="translate(626 625.318)"
+                >
+                  <tspan x={11} y={80}>
+                    {"Create an interactive "}
+                  </tspan>
+                  <tspan x={11} y={108}>
+                    {"embodiment of desired "}
+                  </tspan>
+                  <tspan x={11} y={136}>
+                    {"hypothetical scenario from "}
+                  </tspan>
+                  <tspan x={11} y={164}>
+                    {"the Analysis"}
+                  </tspan>
+                </text>
+                <text
+                  fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                  fontSize={48}
+                  fontWeight="bold"
+                  fill="#222"
+                  transform="translate(626 625.318)"
+                >
+                  <tspan x={11} y={47}>
+                    {"Artifact"}
+                  </tspan>
+                </text>
+                <path
+                  fill="#3A3A3A"
+                  d="M639.883 39.082l-19.237.983 8.168-16.747zM791.018 629.1l-17.323 8.422.975-18.608zM868.418 487.801l-4.636-18.696 17.999 4.823zM116.485 488.096l13.363 13.873-17.999 4.823zM5.71 627.63l13.873-13.363 4.822 17.998zM114.158 153.74l-13.962 13.575-4.918-18.352z"
+                />
+                <g>
+                  <path
+                    stroke="#3A3A3A"
+                    strokeWidth={4}
+                    strokeLinecap="square"
+                    d="M284.635 585.729L682.365 188"
+                  />
+                  <text
+                    transform="rotate(-45 399.729 133.103)"
+                    fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                    fontSize={24}
+                    fontWeight="bold"
+                    letterSpacing={2}
+                    fill="#222"
+                  >
+                    <tspan x={-3} y={364.865}>
+                      {"LEARN"}
+                    </tspan>
+                  </text>
+                  <text
+                    transform="rotate(-45 754.729 -176.897)"
+                    fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                    fontSize={24}
+                    fontWeight="bold"
+                    letterSpacing={2}
+                    fill="#222"
+                  >
+                    <tspan x={348} y={54.865}>
+                      {"INVENT"}
+                    </tspan>
+                  </text>
+                </g>
+                <g fill="#222" fontSize={24}>
+                  <text
+                    fontFamily="HelveticaNeue, Helvetica Neue"
+                    transform="translate(891 301.318)"
+                  >
+                    <tspan x={0} y={54}>
+                      {"Iterate the cycle six "}
+                    </tspan>
+                    <tspan x={0} y={82}>
+                      {"times, each time "}
+                    </tspan>
+                    <tspan x={0} y={110}>
+                      {"building on past "}
+                    </tspan>
+                    <tspan x={0} y={138}>
+                      {"findings and exploring "}
+                    </tspan>
+                    <tspan x={0} y={166}>
+                      {"new aspects in depth"}
+                    </tspan>
+                  </text>
+                  <text
+                    fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                    fontWeight="bold"
+                    letterSpacing={2}
+                    transform="translate(891 301.318)"
+                  >
+                    <tspan x={0} y={23}>
+                      {"ITERATE"}
+                    </tspan>
+                  </text>
+                </g>
+              </g>
+              <g fill="#222" fontSize={24}>
+                <text
+                  fontFamily="HelveticaNeue, Helvetica Neue"
+                  transform="translate(0 117)"
+                >
+                  <tspan x={0} y={54}>
+                    {"Initiate a new Lab with a "}
+                  </tspan>
+                  <tspan x={0} y={82}>
+                    {"problem/opportunity statement, "}
+                  </tspan>
+                  <tspan x={0} y={110}>
+                    {"and secondary data describing "}
+                  </tspan>
+                  <tspan x={0} y={138}>
+                    {"the state of the space today"}
+                  </tspan>
+                </text>
+                <text
+                  fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                  fontWeight="bold"
+                  letterSpacing={2}
+                  transform="translate(0 117)"
+                >
+                  <tspan x={0} y={23}>
+                    {"NEW LAB"}
+                  </tspan>
+                </text>
+              </g>
+              <g fill="#222" fontSize={24}>
+                <text
+                  fontFamily="HelveticaNeue, Helvetica Neue"
+                  transform="translate(44 605)"
+                >
+                  <tspan x={0} y={54}>
+                    {"By the end of the Lab, prime our "}
+                  </tspan>
+                  <tspan x={0} y={82}>
+                    {"members with the data, ideas, "}
+                  </tspan>
+                  <tspan x={0} y={110}>
+                    {"and ecosystem partners needed "}
+                  </tspan>
+                  <tspan x={0} y={138}>
+                    {"to make a better future happen "}
+                  </tspan>
+                  <tspan x={0} y={166}>
+                    {"faster"}
+                  </tspan>
+                </text>
+                <text
+                  fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                  fontWeight="bold"
+                  letterSpacing={2}
+                  transform="translate(44 605)"
+                >
+                  <tspan x={0} y={23}>
+                    {"END LAB"}
+                  </tspan>
+                </text>
+              </g>
+              <path
+                d="M1170.5 295.5c6.603 29.3 9.905 59.982 9.905 92.047s-3.302 61.382-9.905 87.953"
+                stroke="#3A3A3A"
+                strokeWidth={4}
+                strokeLinecap="square"
+              />
+            </g>
+          </svg>
         </div>
       </section>
 

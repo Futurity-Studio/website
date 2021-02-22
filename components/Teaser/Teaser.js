@@ -10,7 +10,7 @@ export const Teaser = ({label, onClick}) => {
         initial={{ top: -150 }}
         animate={{ top:  150 }}
         transition={{
-          loop: Infinity,
+          repeat: Infinity,
           easing: cubicBezier,
           duration: 1.5
         }}

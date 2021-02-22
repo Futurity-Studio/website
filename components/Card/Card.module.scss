@@ -57,7 +57,7 @@
       grid-row: 1 / span 1;
       justify-self: start;
       align-self: center;
-      padding: $menu-height $content-padding $content-padding calc((100vw - #{$main-width-max}) / 2);
+      padding: calc(#{$menu-height} + 2rem) $content-padding $content-padding calc((100vw - #{$main-width-max}) / 2);
       height: 100%;
       display: grid;
       grid-template-rows: 1fr min-content 20vh;

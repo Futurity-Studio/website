@@ -58,12 +58,8 @@
     }
   }
 
-  .methodology{
-    h4{
-      max-width: 55ex;
-    }
-  }
   .services{
+    margin-bottom: 0 !important;
     h4{
       max-width: 55ex;
     }
@@ -75,251 +71,265 @@
         grid-template-columns: 1fr 2px 305px;
       }
     }
-  }
-
-  .deliverables{
-    padding-top: 0;
-    &--container{
-      display: grid;
-      grid-template-columns: auto minmax(300px, 500px);
-      //align-items: center;
-      margin-right: calc((100vw - #{$main-width-max}) / 2);
-      align-items: start;
-      grid-column-gap: $content-padding/2;
-
-      @include media("<=1280px"){
-        margin-right: 0;
-      }
-
-      @include media("<=1024px"){
-        display: flex;
-        flex-direction: column-reverse;
-        margin-right: initial !important;
-        grid-column-gap: $content-padding/2;
-        > div:last-of-type {
-          width: 100%;
-          padding: 0 $main-padding $content-padding/4;
-        }
-      }
-      @include media("<=tablet"){
-        > div:last-of-type{
-          padding-bottom: 0;
-        }
-      }
-    }
-    &--graphic{
-      height: 60vh;
-      height: calc(var(--vh, 1vh) * 60);
-      width: 100%;
-      position: sticky;
-      top: 25%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      padding-right: $main-padding;
-      @include media("<=1024px"){
-        height: 30vh;
-        height: calc(var(--vh, 1vh) * 30);
-      }
-
-      img{
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &--content{
-      > div{
-        min-height: 450px;
-        height: 50vh;
-        height: calc(var(--vh, 1vh) * 50);
-        max-width: 65ex;
-        margin: $content-padding 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-right: $main-padding;
-
-        @include media("<=1024px"){
-          height: initial;
-        }
-        @include media("<=tablet"){
-          min-height: 250px;
-        }
-
-        ul{
-          margin: 0;
-          padding-left: 0;
-          list-style: none;
-
-          p {
-            margin: .5rem 0 .5rem 0;
-          }
-
-          li:not(:first-of-type){
-            p {
-              margin-left: 1rem;
-            }
-          }
-        }
-      }
+    ul{
+      list-style: none;
+      padding-left: 0;
     }
   }
 
-  .team{
-    margin-bottom: 0;
-    &--container{
-      .team--header{
-        display: grid;
-        grid-template-columns: 300px auto;
-        align-items: center;
-        margin-left: calc((100vw - #{$main-width-max}) / 2);
-        padding-left: $main-padding;
-        grid-column-gap: $content-padding;
-
-        > div:last-of-type{
-          @include fluid-height(8rem, 45vh, 32rem);
-          width: 100%;
-          min-height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          img{
-            width: 125%;
-            object-fit: cover;
-            object-position: 90% 50%;
-          }
-        }
-
-        @include media("<=1280px"){
-          display: block;
-          margin-left: initial !important;
-
-          > div:first-of-type{
-            padding-bottom: $content-padding/4;
-          }
-        }
-        @include media("<=tablet"){
-          > div:first-of-type{
-            padding: 0;
-          }
-        }
-      }
+  .offerings{
+    margin-top: 0 !important;
+    h4{
+      max-width: 55ex;
     }
-    &--content{
-      margin: 0 auto;
-      max-width: $main-width-max;
-      padding: $content-padding $main-padding;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      padding-bottom: 0;
-
-      >div:first-of-type{
-        width: 300px;
-        margin: 0 $content-padding 0 0;
-        display: flex;
-        flex-direction: column;
-        p {
-          flex-grow: 2;
-          margin-bottom: 8px;
-        }
-      }
-
-      .team--members{
-        flex-grow: 2;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-column-gap: $content-padding;
-        align-items: flex-end;
-        > div, a{
-          display: inline-flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-          em{
-            margin-top: 8px;
-          }
-        }
-
-        >div {
-          padding-top: 1.5rem;
-        }
-      }
-
-      @include media("<=1280px"){
-        padding: $content-padding/2 $main-padding;
-        .team--members>div{
-          padding: 1.5rem 0 .5rem;
-        }
-      }
-      @include media("<=tablet"){
-        padding: 0 $main-padding;
-        >p:first-of-type{
-          margin-top: 0;
-        }
-      }
-
-
-    }
-    .section-content{
-      max-width: $main-width-max;
-      margin: $content-padding auto;
+    .section-content:nth-of-type(2){
+      margin-bottom: $content-padding;
     }
   }
 
-  .methodology{
-  }
-
-  .clients{
-    margin-top: 0;
-    margin-bottom: 0;
-    &--list{
-      //background: orange;
-      display: grid;
-      align-items: center;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-
-      @include media('<=500px'){
-        grid-template-rows: 175px 175fr 175fr;
-        grid-template-columns: 1fr;
-        width: 275px;
-        margin: 0 auto;
-      }
-
-      >div:nth-of-type(2){
-        padding: 4rem;
-      }
-    }
-    .st0 {
-      fill:#991d85
-    }
-  }
-
-  .advisors{
-    margin-top: 0;
-    &--list{
-
-      .advisor{
-        display: grid;
-        grid-template-columns: minmax(150px, 1fr) 5fr;
-        grid-column-gap: 2rem;
-        grid-template-rows: 1fr;
-
-        @include media('<=750px') {
-          grid-template-columns: 1fr;
-          grid-template-rows: min-content min-content ;
-        }
-
-        p{
-          max-width: 65ex;
-        }
-        margin: $content-padding/2 0;
-      }
-    }
-  }
+  //.deliverables{
+  //  padding-top: 0;
+  //  &--container{
+  //    display: grid;
+  //    grid-template-columns: auto minmax(300px, 500px);
+  //    //align-items: center;
+  //    margin-right: calc((100vw - #{$main-width-max}) / 2);
+  //    align-items: start;
+  //    grid-column-gap: $content-padding/2;
+  //
+  //    @include media("<=1280px"){
+  //      margin-right: 0;
+  //    }
+  //
+  //    @include media("<=1024px"){
+  //      display: flex;
+  //      flex-direction: column-reverse;
+  //      margin-right: initial !important;
+  //      grid-column-gap: $content-padding/2;
+  //      > div:last-of-type {
+  //        width: 100%;
+  //        padding: 0 $main-padding $content-padding/4;
+  //      }
+  //    }
+  //    @include media("<=tablet"){
+  //      > div:last-of-type{
+  //        padding-bottom: 0;
+  //      }
+  //    }
+  //  }
+  //  &--graphic{
+  //    height: 60vh;
+  //    height: calc(var(--vh, 1vh) * 60);
+  //    width: 100%;
+  //    position: sticky;
+  //    top: 25%;
+  //    overflow: hidden;
+  //    display: flex;
+  //    justify-content: center;
+  //    padding-right: $main-padding;
+  //    @include media("<=1024px"){
+  //      height: 30vh;
+  //      height: calc(var(--vh, 1vh) * 30);
+  //    }
+  //
+  //    img{
+  //      width: 100%;
+  //      object-fit: cover;
+  //    }
+  //  }
+  //
+  //  &--content{
+  //    > div{
+  //      min-height: 450px;
+  //      height: 50vh;
+  //      height: calc(var(--vh, 1vh) * 50);
+  //      max-width: 65ex;
+  //      margin: $content-padding 0;
+  //      display: flex;
+  //      flex-direction: column;
+  //      justify-content: center;
+  //      padding-right: $main-padding;
+  //
+  //      @include media("<=1024px"){
+  //        height: initial;
+  //      }
+  //      @include media("<=tablet"){
+  //        min-height: 250px;
+  //      }
+  //
+  //      ul{
+  //        margin: 0;
+  //        padding-left: 0;
+  //        list-style: none;
+  //
+  //        p {
+  //          margin: .5rem 0 .5rem 0;
+  //        }
+  //
+  //        li:not(:first-of-type){
+  //          p {
+  //            margin-left: 1rem;
+  //          }
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+  //
+  //.team{
+  //  margin-bottom: 0;
+  //  &--container{
+  //    .team--header{
+  //      display: grid;
+  //      grid-template-columns: 300px auto;
+  //      align-items: center;
+  //      margin-left: calc((100vw - #{$main-width-max}) / 2);
+  //      padding-left: $main-padding;
+  //      grid-column-gap: $content-padding;
+  //
+  //      > div:last-of-type{
+  //        @include fluid-height(8rem, 45vh, 32rem);
+  //        width: 100%;
+  //        min-height: 100%;
+  //        display: flex;
+  //        align-items: center;
+  //        justify-content: center;
+  //        overflow: hidden;
+  //        img{
+  //          width: 125%;
+  //          object-fit: cover;
+  //          object-position: 90% 50%;
+  //        }
+  //      }
+  //
+  //      @include media("<=1280px"){
+  //        display: block;
+  //        margin-left: initial !important;
+  //
+  //        > div:first-of-type{
+  //          padding-bottom: $content-padding/4;
+  //        }
+  //      }
+  //      @include media("<=tablet"){
+  //        > div:first-of-type{
+  //          padding: 0;
+  //        }
+  //      }
+  //    }
+  //  }
+  //  &--content{
+  //    margin: 0 auto;
+  //    max-width: $main-width-max;
+  //    padding: $content-padding $main-padding;
+  //    display: flex;
+  //    flex-wrap: wrap;
+  //    align-items: stretch;
+  //    padding-bottom: 0;
+  //
+  //    >div:first-of-type{
+  //      width: 300px;
+  //      margin: 0 $content-padding 0 0;
+  //      display: flex;
+  //      flex-direction: column;
+  //      p {
+  //        flex-grow: 2;
+  //        margin-bottom: 8px;
+  //      }
+  //    }
+  //
+  //    .team--members{
+  //      flex-grow: 2;
+  //      display: grid;
+  //      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  //      grid-column-gap: $content-padding;
+  //      align-items: flex-end;
+  //      > div, a{
+  //        display: inline-flex;
+  //        flex-direction: column;
+  //        justify-content: space-between;
+  //        height: 100%;
+  //        em{
+  //          margin-top: 8px;
+  //        }
+  //      }
+  //
+  //      >div {
+  //        padding-top: 1.5rem;
+  //      }
+  //    }
+  //
+  //    @include media("<=1280px"){
+  //      padding: $content-padding/2 $main-padding;
+  //      .team--members>div{
+  //        padding: 1.5rem 0 .5rem;
+  //      }
+  //    }
+  //    @include media("<=tablet"){
+  //      padding: 0 $main-padding;
+  //      >p:first-of-type{
+  //        margin-top: 0;
+  //      }
+  //    }
+  //
+  //
+  //  }
+  //  .section-content{
+  //    max-width: $main-width-max;
+  //    margin: $content-padding auto;
+  //  }
+  //}
+  //
+  //.methodology{
+  //}
+  //
+  //.clients{
+  //  margin-top: 0;
+  //  margin-bottom: 0;
+  //  &--list{
+  //    //background: orange;
+  //    display: grid;
+  //    align-items: center;
+  //    grid-template-columns: 1fr 1fr 1fr;
+  //    grid-template-rows: 1fr;
+  //
+  //    @include media('<=500px'){
+  //      grid-template-rows: 175px 175fr 175fr;
+  //      grid-template-columns: 1fr;
+  //      width: 275px;
+  //      margin: 0 auto;
+  //    }
+  //
+  //    >div:nth-of-type(2){
+  //      padding: 4rem;
+  //    }
+  //  }
+  //  .st0 {
+  //    fill:#991d85
+  //  }
+  //}
+  //
+  //.advisors{
+  //  margin-top: 0;
+  //  &--list{
+  //
+  //    .advisor{
+  //      display: grid;
+  //      grid-template-columns: minmax(150px, 1fr) 5fr;
+  //      grid-column-gap: 2rem;
+  //      grid-template-rows: 1fr;
+  //
+  //      @include media('<=750px') {
+  //        grid-template-columns: 1fr;
+  //        grid-template-rows: min-content min-content ;
+  //      }
+  //
+  //      p{
+  //        max-width: 65ex;
+  //      }
+  //      margin: $content-padding/2 0;
+  //    }
+  //  }
+  //}
 }
 
 .About{
@@ -426,7 +436,6 @@
       margin: $content-padding auto;
     }
   }
-
 
   .clients{
     margin-top: 0;
@@ -680,107 +689,3 @@
     background-size: cover;
   }
 }
-
-
-//.Labs{
-//  &--overview{
-//    min-height: 30vh;
-//    min-height: calc(var(--vh, 1vh) * 30);
-//    display: flex;
-//    align-items: center;
-//    justify-content: center;
-//    padding-top: $menu-height;
-//    margin-bottom: $content-padding/2;
-//    //background: red;
-//    > div {
-//      width: 100%;
-//    }
-//  }
-//
-//  > section:last-of-type{
-//    margin-top: $content-padding/2;
-//  }
-//
-//  &--wrapper{
-//    //margin-top: $menu-closed-height;
-//    margin: $section-padding/4 0;
-//
-//    .lab{
-//      margin: $section-padding/2 0;
-//      @include media('<=tablet'){
-//        margin: $section-padding/4 0;
-//      }
-//      &--content{
-//        display: grid;
-//        //grid-template-columns: 300px 1fr;
-//        grid-template-columns: 1fr;
-//        grid-template-rows: 1fr;
-//        column-gap: 1rem;
-//        //padding-top: $content-padding/2;
-//
-//        position: relative;
-//      }
-//      &--body{
-//        //height: calc( 100vw - 291px - #{$menu-closed-height});
-//        //height: 400px;
-//        //overflow-y: scroll;
-//        padding-top: $content-padding;
-//        p {
-//          max-width: 55ex;
-//        }
-//      }
-//      &--menu{
-//        position: sticky;
-//        //top: 300px;
-//
-//        //background-color: red;
-//        top: calc(291px + #{$menu-height});
-//        //top: 700px;
-//        height: calc(100vh - (291px + 24px) - #{$menu-height} - #{$content-padding});
-//        //height: calc(var(--vh, 1vh) * 30);
-//        display: grid;
-//        grid-template-columns: 1fr;
-//        grid-template-rows: min-content min-content min-content 1fr min-content;
-//        p {
-//          margin: 0;
-//        }
-//      }
-//    }
-//  }
-//
-//
-//  .deliverables{
-//    &--container{
-//      display: grid;
-//      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-//      grid-row: auto;
-//      column-gap: 2rem;
-//      row-gap: 2rem;
-//      margin: $content-padding*2.5 0;
-//      @include media('<=tablet'){
-//        margin: $content-padding 0;
-//      }
-//
-//      &:last-of-type{
-//        margin-bottom: 0;
-//      }
-//
-//      .deliverable{
-//        display: flex;
-//        flex-direction: column;
-//        justify-content: stretch;
-//
-//        > * {
-//          max-width: 100%;
-//        }
-//        p {
-//          word-wrap: break-word;
-//          //background-color: red;
-//          max-width: 100%;
-//        }
-//      }
-//    }
-//  }
-//
-//
-//}

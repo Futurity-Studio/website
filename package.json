@@ -11,7 +11,7 @@
     "bump": "$(npm bin)/bump --tag --commit"
   },
   "dependencies": {
-    "framer-motion": "^2.6.13",
+    "framer-motion": "^3.0.0",
     "image-trace-loader": "^1.0.2",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",

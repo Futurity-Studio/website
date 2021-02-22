@@ -66,6 +66,7 @@ const Labs = () => {
                   label={'explore our methodology'}
                   icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
                   link={ROUTES.ABOUT}
+                  onClick={() => {}}
                 />
               </>
             }

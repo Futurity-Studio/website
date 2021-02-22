@@ -226,6 +226,12 @@ export const FeaturedEvent = [
 
 export const Advisors =[
   {
+    name: "Pae Wu",
+    bio: "Technology development strategist with expertise shaping investments in novel materials and devices, synthetic biology, neurotechnology, and bioelectronic medicine R&D to bring scientific advances to bear on national security challenges.",
+    image: "",
+    website: "https://www.linkedin.com/in/pae-wu/?originalSubdomain=es"
+  },
+  {
     name: "Maurice Conti",
     bio: "Deep tech authority, innovation executive, advisor, and international keynote speaker, Maurice has worked with corporations, startups, governments, and researchers to explore the things that will matter to us in the future, and to build the solutions to get us there.",
     image: "",
@@ -239,7 +245,7 @@ export const Advisors =[
   },
   {
     name: "Karolina Korth",
-    bio: "Karolina is Chief Digital Officer and Head of Strategy of South-West Europe region at Siemens Mobility. She is a trained psychologist and sociologist with passion for innovation and over 10 years of international experience in digital transformation, start-up collaborations and corporate innovation in the sector of digital health, smart cities and mobility. Karolina founded Health 2.0 Kuala Lumpur and the FeMale Voice of Mobility – a movement to empower women in male dominated industries. She speaks regularly at conferences targeting digital transformation and gives lectures at business schools and universities.",
+    bio: "Karolina is Chief Digital Officer and Head of Strategy of South-West Europe region at Siemens Mobility. She is a trained psychologist and sociologist with passion for innovation and over 10 years of international experience in digital transformation, start-up collaborations and corporate innovation in the sector of digital health, smart cities and mobility. Karolina founded Health 2.0 Kuala Lumpur and the FeMale Voice of Mobility – a movement to empower women in male dominated industries.",
     image: "",
     website: "https://www.linkedin.com/in/karolinakorth"
   },

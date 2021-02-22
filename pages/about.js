@@ -97,8 +97,8 @@ const About = () => {
       <section className={'team'} ref={anchors['team']}>
         <div className={'team--container'}>
           <div className={'team--header'}>
-            <div><h2>Our Studio</h2>
-              <p>Together we have 50+ years of experience in analysis, forecasting, design and development for startups, moonshot factories, and Fortune 500 companies.</p>
+            <div><h2>The Studio</h2>
+              <p>Together we have over 50 years of experience in analysis, forecasting, design and development for startups, moonshot factories, and Fortune 500 companies.</p>
             </div>
             <div className={'team--photo'}>
               <Image src={'team.png'} alt={'a team photo'} />

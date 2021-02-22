@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion';
@@ -35,8 +35,31 @@ const customChild = {
   },
 }
 
+const rocketAnimation = {
+  initial: {
+    y: 0,
+    x:0
+  },
+  hover: {
+    y:[0, 2, -1],
+    x:[0, -2, 1],
+    times: [0, .5, 1],
+    transition: {
+      duration: 1,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeIn",
+    }
+  }
+}
+
 const Menu = () => {
   const router = useRouter();
+
+
+  useEffect(() => {
+    console.log(router.asPath);
+  })
 
   const generateNav = () => {
     return(
@@ -46,16 +69,10 @@ const Menu = () => {
           key={n.title}
         >
             <Link href={n.link}>
-              <motion.a
-                initial={{
-                  backgroundColor: '#ff0000', backgroundPosition: '0 15rem', backgroundRepeat: 'no-repeat'
-                }}
-                whileHover={{
-                  backgroundPosition: '0 0'
-                }}>
+              <a className={(router.asPath === n.link) ? styles.active : ''}>
                 <em>{`${i+1}.0`}</em>
                 <p>{n.title}</p>
-              </motion.a>
+              </a>
             </Link>
         </li>
       )
@@ -87,9 +104,15 @@ const Menu = () => {
       <motion.ul variants={customChild}>
         {generateNav()}
       </motion.ul>
-      <motion.div variants={customChild}>
+      <motion.div variants={customChild} whileHover={"hover"}>
         <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
-          <a target="_blank">Contact <Icon icon={ICONS.ROCKET} theme={THEME.NAV_MIX} /></a>
+          <a target="_blank">Contact
+            <Icon
+              icon={ICONS.ROCKET}
+              theme={THEME.NAV_MIX}
+              iconHoverAnimation={rocketAnimation}
+            />
+          </a>
         </Link>
       </motion.div>
     </motion.nav>

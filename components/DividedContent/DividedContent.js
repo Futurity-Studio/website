@@ -1,20 +1,22 @@
 import styles from "./DividedContent.module.scss"
 // todo -- check with BEM
 
-const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false, medLeft}) => {
+const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false, medLeft=false}) => {
   const generateClassName = () => {
-    let className;
+    // console.log({
+    //   smallLeft, smallRight, medRight, medLeft
+    // })
+    let base = styles.DividedContent;
     if (smallLeft){
-      return styles.smallLeft;
+      base = styles.smallLeft;
     } else if (smallRight){
-      return styles.smallRight;
+      base = styles.smallRight;
     } else if (medRight){
-      return styles.medRight;
+      base = styles.medRight;
     } else if (medLeft){
-      return styles.medLeft;
-    } else {
-      return styles.DividedContent;
+      base = styles.medLeft;
     }
+    return base;
   }
 
   return(

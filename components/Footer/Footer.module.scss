@@ -4,7 +4,15 @@
 .Footer{
   background-color: $page-background-color--dark;
   color: $font-color--light;
-  padding: $section-padding/3 0 !important;
+  padding: $section-padding/3 0 2rem !important;
+
+
+  @include media("<=445px") {
+    padding: $section-padding/3 0 0 !important;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
   h2, h3, em{
     color: $font-color--light;
   }
@@ -21,7 +29,11 @@
     h2{
       color: inherit;
       white-space: nowrap;
+      @include media("<=950px") {
+        white-space: normal;
+      }
     }
+
   }
 
   .navItemBasicContainer{
@@ -35,7 +47,7 @@
     }
   }
 
-  .navArrow{
+  .navArrow, .contactMail{
     align-self: center;
     margin: 0 $content-padding/4;
     border-radius: 100%;
@@ -49,20 +61,30 @@
   }
 
   .cta{
-    display: grid;
-    grid-template-columns: auto min-content;
-    grid-column-gap: $content-padding/4;
-    justify-content: flex-start;
-    align-items: center;
-    //.icon{
-    //  position: relative;
-    //  top: 4px;
-    //}
+    > div {
+      h3 {
+        grid-column: 1/ span 3;
+      }
+      display: grid;
+      grid-template-columns: auto min-content;
+      grid-column-gap: $content-padding/4;
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      em {
+        z-index: 1;
+        mix-blend-mode: exclusion;
+      }
+    }
   }
 
   >div{
     > div:nth-of-type(1){
       margin-bottom: $content-padding !important;
+      @include media("<=768px") {
+        margin-bottom: $content-padding/2 !important;
+      }
     }
     > div:nth-of-type(2){
       >div:first-of-type {
@@ -87,8 +109,11 @@
       cursor: pointer;
       height: 100%;
       display: grid;
-      align-items: center;
+      align-items: start;
       margin: $content-padding/6 0;
     }
+    //@include media("<=768px") {
+    //  margin-top: $content-padding/2 !important;
+    //}
   }
 }
