@@ -63,9 +63,9 @@ const Labs = () => {
               <>
                 <h4>Labs are year long investigations, and experiments on a theme packaged for as a subscription service</h4>
                 <StealthButton
-                  label={'explore our methodology'}
+                  label={'explore our services'}
                   icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
-                  link={ROUTES.ABOUT}
+                  link={ROUTES.SERVICES}
                   onClick={() => {}}
                 />
               </>

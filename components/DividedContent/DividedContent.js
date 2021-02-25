@@ -3,9 +3,7 @@ import styles from "./DividedContent.module.scss"
 
 const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false, medLeft=false}) => {
   const generateClassName = () => {
-    // console.log({
-    //   smallLeft, smallRight, medRight, medLeft
-    // })
+    // something is up with this and i believe it needs to be coded like this or it will breakw
     let base = styles.DividedContent;
     if (smallLeft){
       base = styles.smallLeft;

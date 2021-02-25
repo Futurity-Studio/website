@@ -7,9 +7,8 @@ import React, {useEffect, useState, useRef} from "react";
 import {motion} from "framer-motion";
 import { useWindowSize } from "react-use";
 
-
 const Footer = () => {
-
+  const router = useRouter();
   const footerNavRefs = LINKS.map(_ => useRef(null));
   const size = useWindowSize();
 
@@ -30,12 +29,12 @@ const Footer = () => {
   }
   const growArrow = {
     initial: {
-      opacity: 0,
-      scale: .1
+      // opacity: 0,
+      // scale: .1
     },
     hover: {
-      scale: 1,
-      opacity: 1,
+      // scale: 1,
+      // opacity: 1,
       // backgroundColor: 'rgba(247,247,247,1)',
       transition: {
         duration: .10,
@@ -45,7 +44,7 @@ const Footer = () => {
   }
   const arrowLoc = {
     initial: {
-      y: 30
+      y: 40
     },
     hover: {
       y: 0,
@@ -96,7 +95,7 @@ const Footer = () => {
                 <Link href={n.link}>
                   <a>
                     <motion.div
-                      className={styles.navItemBasic}
+                      className={(router.asPath === n.link) ? styles.navItemBasicActive : styles.navItemBasic}
                       whileHover="hover"
                       initial="initial"
                       variants={navAnimations}
@@ -107,12 +106,12 @@ const Footer = () => {
                       <motion.div
                         className={styles.navArrow} variants={growArrow}
                         style={{
-                          backgroundImage: (background ? background.backgroundImage : null),
-                          backgroundSize: (footerNavRefs[i] && footerNavRefs[i].current ? `${footerNavRefs[i].current.offsetWidth}px ${footerNavRefs[i].current.offsetHeight}px` : '100% 100%')
+                          // backgroundImage: (background ? background.backgroundImage : null),
+                          // backgroundSize: (footerNavRefs[i] && footerNavRefs[i].current ? `${footerNavRefs[i].current.offsetWidth}px ${footerNavRefs[i].current.offsetHeight}px` : '100% 100%')
                         }}
                       >
                         <motion.div variants={arrowLoc}>
-                          <Icon icon={ICONS.ARROW_RIGHT} theme={THEME.DARK} />
+                          <Icon icon={ICONS.ARROW_RIGHT} theme={THEME.LINK_LIGHT} />
                         </motion.div>
                       </motion.div>
                     </motion.div>
@@ -138,16 +137,12 @@ const Footer = () => {
             <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
               <a target='_blank' className={styles.cta}>
                 <motion.div whileHover="hover" initial="initial">
-                  <h3>Eager to learn more?</h3>
-                  <em>contact us</em>
+                  <h3>Let's Future.</h3>
                   <motion.div
                     className={styles.contactMail} variants={growArrow}
-                    style={{
-                      backgroundImage: (background ? background.backgroundImage : null)
-                    }}
                   >
                     <motion.div variants={arrowLoc}>
-                      <Icon icon={ICONS.MAIL} theme={THEME.DARK} />
+                      <Icon icon={ICONS.MAIL} theme={THEME.LIGHT} />
                     </motion.div>
                   </motion.div>
                 </motion.div>
@@ -171,21 +166,22 @@ const Footer = () => {
           hiddenBar={true}
           right={
             <div>
-              <em>&nbsp;</em>
               <p><em>Building Better Futures Faster<br />Copyright &#169; Futurity Studio</em></p>
             </div>
           }
           left={
             <div>
-              <div>
-                <em>Find us at</em>
+              <div className={styles.location}>
                 <Link href={'https://g.page/MOB-BLN?share'} prefetch={false}>
                   <a target={"_blank"}>
-                    <p><em>Barcelona, Spain</em><br /><em>11 Carrer de Bailèn</em></p>
+                    <div>
+                      <Icon icon={ICONS.PIN} theme={THEME.NAV_MIX}/>
+                      <p><em>Barcelona, Spain</em><br /><em>11 Carrer de Bailèn</em></p>
+                    </div>
                   </a>
                 </Link>
               </div>
-              <Link prefetch={false} href={'https://www.linkedin.com/company/futurity-studio/'}>
+              <Link prefetch={false} href={'https://www.linkedin.com/company/FuturityStudio'}>
                 <a target='_blank'>
                   <Icon icon={ICONS.LINKEDIN} theme={THEME.LIGHT}/>
                 </a>
@@ -198,6 +194,21 @@ const Footer = () => {
               <Link prefetch={false} href={'https://www.youtube.com/channel/UC0QDU-sjWKesXRdNbhdKSgA'}>
                 <a target='_blank'>
                   <Icon icon={ICONS.YOUTUBE} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://www.facebook.com/FuturityStudio/'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.FACEBOOK} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://www.instagram.com/futurity.studio'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.INSTAGRAM} theme={THEME.LIGHT}/>
+                </a>
+              </Link>
+              <Link prefetch={false} href={'https://medium.com/@futuritystudio'}>
+                <a target='_blank'>
+                  <Icon icon={ICONS.MEDIUM} theme={THEME.LIGHT}/>
                 </a>
               </Link>
             </div>

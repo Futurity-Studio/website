@@ -16,6 +16,9 @@ export const ICONS = {
   MENU: 'MENU',
   LINKEDIN:'LINKEDIN',
   TWITTER: 'TWITTER',
+  FACEBOOK: 'FACEBOOK',
+  MEDIUM: 'MEDIUM',
+  INSTAGRAM: 'INSTAGRAM',
   YOUTUBE: 'YOUTUBE',
   GLOBE: 'GLOBE',
   FILE: 'FILE',
@@ -26,6 +29,7 @@ export const ICONS = {
   ROCKET: 'ROCKET',
   ARROW_RIGHT: 'ARROW_RIGHT',
   ARROW_LEFT: 'ARROW_LEFT',
+  PIN: 'PIN',
 };
 
 export const THEME = {
@@ -58,9 +62,9 @@ export const TYPE = {
 const ROCKET = (iconHoverAnimation) => {
   return (
     <motion.svg variants={iconHoverAnimation}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M6.854 3.854l.8-.8c.644-.645 1.775-1.092 2.898-1.253a5.342 5.342 0 011.504-.02c.443.066.714.196.84.323.127.126.257.397.323.84.064.427.059.95-.02 1.504-.16 1.123-.608 2.254-1.253 2.898L7.5 11.793l-1.146-1.146a.5.5 0 10-.708.707l1.5 1.5a.5.5 0 00.708 0l.547-.548 1.17 1.951a.5.5 0 00.783.097l2-2a.5.5 0 00.141-.425l-.465-3.252.624-.623c.855-.856 1.358-2.225 1.535-3.465.09-.627.1-1.25.019-1.794-.08-.528-.256-1.05-.604-1.399-.349-.348-.871-.525-1.4-.604a6.333 6.333 0 00-1.793.02C9.17.987 7.8 1.49 6.946 2.345l-.623.624-3.252-.465a.5.5 0 00-.425.141l-2 2a.5.5 0 00.097.783l1.95 1.17-.547.547a.5.5 0 000 .708l1.5 1.5a.5.5 0 10.708-.708L3.207 7.5l.647-.646 3-3zm3.245 9.34l-.97-1.617 2.017-2.016.324 2.262-1.37 1.37zM3.423 5.87l2.016-2.016-2.262-.324-1.37 1.37 1.616.97zm-1.07 4.484a.5.5 0 10-.707-.708l-1 1a.5.5 0 10.708.707l1-1zm1.5 1.5a.5.5 0 10-.707-.707l-2 2a.5.5 0 00.708.707l2-2zm1.5 1.5a.5.5 0 10-.707-.708l-1 1a.5.5 0 10.708.707l1-1zM8.526 5.45a.925.925 0 111.85 0 .925.925 0 01-1.85 0zm.925-1.775a1.775 1.775 0 100 3.55 1.775 1.775 0 000-3.55z"
@@ -75,9 +79,9 @@ const ROCKET = (iconHoverAnimation) => {
 const ARROW_RIGHT = (iconHoverAnimation) => {
   return (
     <motion.svg whileHover={iconHoverAnimation}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M8.146 3.146a.5.5 0 01.708 0l4 4a.5.5 0 010 .708l-4 4a.5.5 0 01-.708-.708L11.293 8H2.5a.5.5 0 010-1h8.793L8.146 3.854a.5.5 0 010-.708z"
@@ -92,17 +96,35 @@ const ARROW_RIGHT = (iconHoverAnimation) => {
 const ARROW_LEFT = (iconHoverAnimation) => {
   return (
     <motion.svg whileHover={iconHoverAnimation}
-      width={15}
-      height={15}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+                width={15}
+                height={15}
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M6.854 3.146a.5.5 0 010 .708L3.707 7H12.5a.5.5 0 010 1H3.707l3.147 3.146a.5.5 0 01-.708.708l-4-4a.5.5 0 010-.708l4-4a.5.5 0 01.708 0z"
         fill="currentColor"
         fillRule="evenodd"
         clipRule="evenodd"
+      />
+    </motion.svg>
+  )
+}
+
+const PIN = (iconHoverAnimation) => {
+  return (
+    <motion.svg whileHover={iconHoverAnimation}
+                width={15}
+                height={15}
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M6 3.5C6 2.67157 6.67157 2 7.5 2C8.32843 2 9 2.67157 9 3.5C9 4.32843 8.32843 5 7.5 5C6.67157 5 6 4.32843 6 3.5ZM8 5.94999C9.14112 5.71836 10 4.70948 10 3.5C10 2.11929 8.88071 1 7.5 1C6.11929 1 5 2.11929 5 3.5C5 4.70948 5.85888 5.71836 7 5.94999V13.5C7 13.7761 7.22386 14 7.5 14C7.77614 14 8 13.7761 8 13.5V5.94999Z"
+            fill="currentColor"
+            fillRule="evenodd"
+            clipRule="evenodd"
       />
     </motion.svg>
   )
@@ -186,6 +208,17 @@ const TWITTER = (iconHoverAnimation) => {
   );
 };
 
+const FACEBOOK = (iconHoverAnimation) => {
+  return(
+      <motion.svg whileHover={iconHoverAnimation} width="8" height="15" viewBox="0 0 8 15" xmlns="http://www.w3.org/2000/svg" >
+        <defs>
+          <path id="icon-facebook" d="M4.5 15H2.502a.5.5 0 01-.5-.5V8H.25A.25.25 0 010 7.75v-2.5A.25.25 0 01.25 5h1.752V3.52c0-1.122.336-2 1.008-2.632C3.64.296 4.84 0 5.89 0H7.5a.5.5 0 01.5.5v2a.5.5 0 01-.5.5H6c-.75 0-1 .25-1 1v1h2.705a.25.25 0 01.246.29l-.416 2.501A.25.25 0 017.288 8H5v6.5a.5.5 0 01-.5.5z"/>
+        </defs>
+        <use fill="#3A3A3A" fillRule="nonzero" xlinkHref="#icon-facebook"/>
+    </motion.svg>
+  );
+}
+
 const YOUTUBE = (iconHoverAnimation) => {
   return(
     <motion.svg whileHover={iconHoverAnimation} xmlns="http://www.w3.org/2000/svg" height="17" width="12" viewBox="0 0 17 12">
@@ -197,12 +230,35 @@ const YOUTUBE = (iconHoverAnimation) => {
   )
 }
 
+const INSTAGRAM = (iconHoverAnimation) => {
+  return(
+      <motion.svg whileHover={iconHoverAnimation} width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.59 0c2.23 0 3.037.232 3.852.668a4.543 4.543 0 011.89 1.89c.436.815.668 1.623.668 3.852v3.18c0 2.23-.232 3.037-.668 3.852a4.543 4.543 0 01-1.89 1.89c-.815.436-1.623.668-3.852.668H6.41c-2.23 0-3.037-.232-3.852-.668a4.543 4.543 0 01-1.89-1.89C.232 12.627 0 11.82 0 9.59V6.41c0-2.23.232-3.037.668-3.852a4.543 4.543 0 011.89-1.89C3.373.232 4.18 0 6.41 0h3.18zm.264 2H6.41c-1.73 0-2.312.112-2.909.431-.466.25-.82.604-1.07 1.07-.302.565-.419 1.117-.43 2.645L2 9.59c0 1.73.112 2.312.431 2.909.25.466.604.82 1.07 1.07.597.319 1.179.431 2.909.431h3.18c1.73 0 2.312-.112 2.909-.431.466-.25.82-.604 1.07-1.07.319-.597.431-1.179.431-2.909V6.41c0-1.73-.112-2.312-.431-2.909a2.544 2.544 0 00-1.07-1.07c-.565-.302-1.117-.419-2.645-.43zM8 5a3 3 0 110 6 3 3 0 010-6zm3.5-1.5a1 1 0 110 2 1 1 0 010-2z"
+              fill="##f7f7f7"
+              fillRule="nonzero"
+        />
+    </motion.svg>
+  )
+}
+
+const MEDIUM = (iconHoverAnimation) => {
+  return(
+    <motion.svg whileHover={iconHoverAnimation} width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fillRule="evenodd">
+          <path d="M16 1.96C16 .88 15.121 0 14.04 0H1.96C.88 0 0 .879 0 1.96v12.08C0 15.12.879 16 1.96 16h12.08c1.081 0 1.96-.879 1.96-1.96V1.96z"/>
+          <path d="M8.86 8c0 2.107-1.696 3.816-3.789 3.816S1.281 10.107 1.281 8c0-2.107 1.697-3.816 3.79-3.816S8.861 5.893 8.861 8zM13.018 8c0 1.984-.848 3.592-1.895 3.592-1.046 0-1.895-1.608-1.895-3.592s.849-3.592 1.895-3.592c1.047 0 1.895 1.608 1.895 3.592zM14.719 8c0 1.777-.299 3.218-.667 3.218-.368 0-.666-1.44-.666-3.218 0-1.777.298-3.218.666-3.218.368 0 .667 1.44.667 3.218z"
+                fill="#000"/>
+        </g>
+    </motion.svg>
+  )
+}
+
 const MAIL = (iconHoverAnimation) => {
   return(
     <motion.svg whileHover={iconHoverAnimation}
-      viewBox="0 0 15 14"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 15 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M1 2a1 1 0 00-1 1v9a1 1 0 001 1h13a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 1h13v.925a.448.448 0 00-.241.07L7.5 7.967 1.241 3.995A.448.448 0 001 3.925V3zm0 1.908V12h13V4.908L7.741 8.88a.45.45 0 01-.482 0L1 4.908z"
@@ -508,7 +564,7 @@ export const Icon = (
     iconHoverAnimation,
     containerHoverAnimation
   }
-  ) => {
+) => {
 
   const _onClick = () => {
     if (onClick) {
@@ -567,6 +623,15 @@ export const Icon = (
     case ICONS.TWITTER:
       svg = TWITTER(iconHoverAnimation);
       break;
+    case ICONS.FACEBOOK:
+      svg = FACEBOOK(iconHoverAnimation);
+      break;
+    case ICONS.MEDIUM:
+      svg = MEDIUM(iconHoverAnimation);
+      break;
+    case ICONS.INSTAGRAM:
+      svg = INSTAGRAM(iconHoverAnimation);
+      break;
     case ICONS.YOUTUBE:
       svg = YOUTUBE(iconHoverAnimation);
       break;
@@ -587,6 +652,9 @@ export const Icon = (
       break;
     case ICONS.ARROW_LEFT:
       svg = ARROW_LEFT(iconHoverAnimation);
+      break;
+    case ICONS.PIN:
+      svg = PIN(iconHoverAnimation);
       break;
 
     default:

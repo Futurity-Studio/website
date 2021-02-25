@@ -58,22 +58,18 @@
     }
   }
 
+  p {
+    max-width: 65ex;
+  }
+
   .services{
     margin-bottom: 0 !important;
     h4{
       max-width: 55ex;
     }
-    .section-content:first-of-type{
-      p {
-        max-width: 65ex;
-      }
-      .DividedContent{
-        grid-template-columns: 1fr 2px 305px;
-      }
-    }
     ul{
-      list-style: none;
-      padding-left: 0;
+      //list-style: none;
+      //padding-left: 0;
     }
   }
 
@@ -82,8 +78,11 @@
     h4{
       max-width: 55ex;
     }
-    .section-content:nth-of-type(2){
+    .section-content{
       margin-bottom: $content-padding;
+    }
+    .section-content:nth-of-type(3){
+      margin-top: $content-padding * 2;
     }
   }
 

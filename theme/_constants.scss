@@ -41,7 +41,7 @@ $line-color: #0e0e0e;
 
 %default-text{
   font-weight: 300;
-  @include fluid-type(18px, 2vw, 1.414rem);
+  @include fluid-type(18px, 1vw, 1.414rem);
 }
 
 %helper-text{

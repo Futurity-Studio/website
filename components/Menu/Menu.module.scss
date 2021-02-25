@@ -106,4 +106,15 @@
     align-items: center;
     justify-content: space-around;
   }
+
+  /* Mobile */
+  @include media("<=880px") {
+    top: .5rem !important;
+    height: calc(#{$menu-height} * .50) !important;
+    padding: 0 $main-padding / 2 !important;
+    //> div {
+    //  display: grid;
+    //  align-items: center;
+    //}
+  }
 }

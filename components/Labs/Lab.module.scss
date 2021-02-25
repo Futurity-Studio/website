@@ -29,8 +29,6 @@
       }
     }
   }
-
-
   h3 {
     padding: $content-padding/4 $content-padding/2;
     margin-bottom: 0 !important;
@@ -47,6 +45,14 @@
   &:hover{
     h3{
       background-position: 0 0 !important;
+    }
+  }
+  @include media("<=768px") {
+    em, div, h3{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
 }

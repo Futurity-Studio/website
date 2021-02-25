@@ -112,37 +112,32 @@ const Services = () => {
       <section className={'services'}>
         <div className={'section-content'}>
           <DividedContent
-            medRight={true}
-            left={<div>
-              <h4>We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</h4>
+            medLeft={ !!(size.width > 900)  }
+            right={<div>
+              <p>We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</p>
             </div>}
-            right={<h2>We deal in Futures</h2>}
+            left={<h2>We deal in Futures</h2>}
           />
         </div>
-        <BorderButton
-          id={'services'}
-          content={<em>our Services</em>}
-          icon={<Icon icon={ICONS.BULB} theme={THEME.DARK} />}
-        />
         <div className={'section-content'}>
           <DividedContent
             medLeft={ !!(size.width > 900)  }
             left={<div>
               <ul>
-                <li><h4>Innovation & Moonshot Consulting</h4></li>
-                <li><h4>Design & Futuring Workshops</h4></li>
-                <li><h4>Trend & Market Research</h4></li>
-                <li><h4>Research & Design Processes</h4></li>
-                <li><h4>Rapid Design Prototyping</h4></li>
+                <li><p>Innovation & Moonshot Consulting</p></li>
+                <li><p>Design & Futuring Workshops</p></li>
+                <li><p>Trend & Market Research</p></li>
+                <li><p>Research & Design Processes</p></li>
+                <li><p>Rapid Design Prototyping</p></li>
               </ul>
             </div>}
             right={
               <div>
-                <h4>
+                <p>
                   We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies.
                   We don't just write reports or design thinking activities.
                   Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.
-                </h4>
+                </p>
               </div>
             }
           />
@@ -157,12 +152,13 @@ const Services = () => {
         />
         <div className={'section-content'}>
           <DividedContent
+            medLeft={ !!(size.width > 900)  }
             left={<h2>Future Labs</h2>}
             right={<>
-              <h4>
+              <p>
                 Our core offering is a year-long cycle of trend, participatory, and design research to build a better future through experimentation.
                 Subscribing to this full-service package gives lab members access to three types of deliverables throughout the calendar year: Analyses, Artifacts, and Actions.
-              </h4>
+              </p>
               <StealthButton
                 label={'explore our labs'}
                 icon={<Icon icon={ICONS.RIGHT} theme={THEME.DARK} />}
