@@ -166,7 +166,7 @@ const Footer = () => {
           hiddenBar={true}
           right={
             <div>
-              <p><em>Building Better Futures Faster<br />Copyright &#169; Futurity Studio</em></p>
+              <p>Building Better Futures Faster<br />Copyright &#169; Futurity Studio</p>
             </div>
           }
           left={
@@ -176,7 +176,7 @@ const Footer = () => {
                   <a target={"_blank"}>
                     <div>
                       <Icon icon={ICONS.PIN} theme={THEME.NAV_MIX}/>
-                      <p><em>Barcelona, Spain</em><br /><em>11 Carrer de Bailèn</em></p>
+                      <p>Barcelona, Spain<br />11 Carrer de Bailèn</p>
                     </div>
                   </a>
                 </Link>

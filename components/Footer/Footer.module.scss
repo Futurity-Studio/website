@@ -7,13 +7,17 @@
   padding: $section-padding/3 0 2rem !important;
 
 
-  @include media("<=445px") {
+  @include media("<=500px") {
     padding: $section-padding/3 0 0 !important;
-    min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
+    //min-height: 100vh;
+    //min-height: calc(var(--vh, 1vh) * 100);
+
+      p {
+       font-size: 14px !important;
+      }
   }
 
-  h2, h3, em{
+  h2, h3, em, p{
     color: $font-color--light;
   }
 

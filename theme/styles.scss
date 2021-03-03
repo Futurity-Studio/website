@@ -558,35 +558,48 @@
 
 .Deliverable{
   .banner{
-    padding: $menu-height 0 0;
-    height: 60vh;
-    height: calc(var(--vh, 1vh) * 60);
+    height: 50vh;
+    height: calc(var(--vh, 1vh) * 50);
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    margin-bottom: $section-padding / 4;
+    grid-template-rows: 60vh;
+    grid-template-rows: calc(var(--vh, 1vh) * 60);
+    //margin-bottom: $section-padding / 4;
     > * {
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
     }
     img{
       width: 100%;
+      align-self: center;
     }
 
     .section-content{
-      padding-top: 25vh;
+      height: 100% !important;
+      display: flex;
+      padding: $content-padding/2;
+      align-items: center;
+      justify-content: flex-start;
       color: #fff;
       mix-blend-mode: difference;
     }
 
     @include media("<=tablet") {
-      height: 50vh;
-      height: calc(var(--vh, 1vh) * 50);
+      height: 60vh;
+      height: calc(var(--vh, 1vh) * 60);
+      grid-template-rows: 70vh;
+      grid-template-rows: calc(var(--vh, 1vh) * 70);
+
       .section-content {
-        padding-top: 12vh;
+        padding-bottom: 3rem;
       }
       margin-bottom: $section-padding/4;
+      img{
+        height: 100%;
+        width: auto;
+        align-self: center;
+      }
     }
     @include media("<=500px") {
       .section-content {

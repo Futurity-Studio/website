@@ -93,8 +93,8 @@
   }
 
   .tagline {
-    @include media("<=tablet") {
-      visibility: hidden;
+    h4{
+      max-width: 50ch;
     }
   }
 }

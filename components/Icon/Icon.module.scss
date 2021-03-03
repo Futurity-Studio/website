@@ -54,6 +54,22 @@
     }
   }
 
+  &.nav_mix_nude{
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-light !important;
+    }
+  }
+
   &.link_light{
     //background-color: $icon-dark;
     height: 40px;

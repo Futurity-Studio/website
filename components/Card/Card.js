@@ -45,6 +45,9 @@ const Card = ({content, nextSlide, prevSlide}) => {
         <div className={styles.content}>
           <div className={styles.tagline}>
             <h3>{`Building better ${content.slogan} faster`}</h3>
+            <h4>
+              We are a global research and design ventures studio working at the intersection of design, technology, social, and business innovation.
+            </h4>
           </div>
 
           <div>
