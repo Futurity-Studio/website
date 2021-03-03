@@ -6,7 +6,7 @@ import {Footer} from "../../components";
 import { useWindowSize } from "react-use";
 
 const Lab = ({slug}) => {
-  const lab = LabData.find(l => l.encoded === slug[0])
+  const lab = LabData.find(l => l.encoded === ((slug) ? slug[0] : null));
   const {width, height} = useWindowSize();
 
   useEffect(() => {
