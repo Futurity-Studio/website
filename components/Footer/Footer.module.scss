@@ -2,51 +2,144 @@
 @import "theme/constants";
 
 .Footer{
-  >div{
+  background-color: $page-background-color--dark;
+  color: $font-color--light;
+  padding: $section-padding/3 0 2rem !important;
+
+
+  @include media("<=500px") {
+    padding: $section-padding/3 0 0 !important;
+    //min-height: 100vh;
+    //min-height: calc(var(--vh, 1vh) * 100);
+
+      p {
+       font-size: 14px !important;
+      }
+  }
+
+  h2, h3, em, p{
+    color: $font-color--light;
+  }
+
+  .navItemBasic{
+    background-color: $font-color--light;
+    background-clip: text;
+    -webkit-background-clip: text;
+    //color: transparent;
+    color: rgba(247,247,247,1);
+    background-size: 100% 150%;
+    //background-position: bottom right;
+    //background-blend-mode: 'saturation';
+    h2{
+      color: inherit;
+      white-space: nowrap;
+      @include media("<=950px") {
+        white-space: normal;
+      }
+    }
+  }
+  .navItemBasicActive{
+    @extend .navItemBasic;
+    h2 {
+      color: $page-background-color--dark;
+      -webkit-text-stroke: 1px rgba(247,247,247,1);
+    }
+  }
+
+
+  .navItemBasicContainer{
+    a > div {
+      display: grid;
+      grid-template-rows: min-content min-content;
+      grid-template-columns: min-content auto;
+      align-items: center;
+    }
+    em {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  .navArrow, .contactMail{
+    align-self: center;
+    margin: 0 $content-padding/4;
+    height: 40px;
+    width: 40px;
+    color: rgba(247,247,247,1);
     display: grid;
-    grid-template-columns: 1fr .5fr;
-    grid-template-rows: 1fr;
-    column-gap: 10%;
-    align-items: center;
-    margin-bottom: $section-padding*.25 !important;
+    justify-content: center;
+    align-content: center;
+    background-position: bottom right;
+    overflow: hidden;
+  }
 
-    > div:last-of-type{
-      display: flex;
-      flex-direction: column;
-      p:first-of-type{
-        margin-bottom: 0;
-      }
-    }
-    @include media("<=tablet") {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
 
-      h2{
-        max-width: 15ex;
+  .cta{
+    > div {
+      @include media("<=768px") {
+        padding-bottom: $section-padding/8 !important;
       }
-
-      > div:last-of-type{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-around;
-      }
-    }
-    @include media("<=400px") {
-      > div:last-of-type{
-        justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto min-content;
+      grid-column-gap: $content-padding/4;
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      em {
+        z-index: 1;
+        mix-blend-mode: exclusion;
       }
     }
   }
 
-  .cta{
+  >div{
+    > div:nth-of-type(1){
+      margin-bottom: $content-padding !important;
+      @include media("<=768px") {
+        margin-bottom: $content-padding/2 !important;
+      }
+    }
+    > div:nth-of-type(2){
+      >div:first-of-type {
+        display: grid;
+        grid-template-columns: 1fr min-content min-content min-content min-content min-content min-content;
+        grid-template-rows: auto;
+        grid-column-gap: 1rem;
+        align-items: center;
+        @include media("<=500px") {
+          grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+        }
+      }
+    }
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    .icon{
-      position: relative;
-      top: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+    li{
+      cursor: pointer;
+      height: 100%;
+      display: grid;
+      align-items: start;
+      margin: $content-padding/6 0;
+    }
+  }
+
+  .location {
+    @include media("<=500px") {
+      grid-column: 1 / span 11 !important;
+    }
+    > a > div {
+      display: grid;
+      grid-template-columns: 50px auto;
+      grid-template-rows: 1fr;
+      align-items: center;
     }
   }
 }

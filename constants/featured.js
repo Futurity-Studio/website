@@ -226,10 +226,28 @@ export const FeaturedEvent = [
 
 export const Advisors =[
   {
+    name: "Pae Wu",
+    bio: "Technology development strategist with expertise shaping investments in novel materials and devices, synthetic biology, neurotechnology, and bioelectronic medicine R&D to bring scientific advances to bear on national security challenges.",
+    image: "",
+    website: "https://www.linkedin.com/in/pae-wu/?originalSubdomain=es"
+  },
+  {
     name: "Maurice Conti",
     bio: "Deep tech authority, innovation executive, advisor, and international keynote speaker, Maurice has worked with corporations, startups, governments, and researchers to explore the things that will matter to us in the future, and to build the solutions to get us there.",
     image: "",
     website: "https://www.mauriceconti.com/"
+  },
+  {
+    name: "Pascal Finette",
+    bio: "Pascal is Co-Founder at be radical, EY’s wavespace Advisory Board Chair, SingularityU’s Chair for Entrepreneurship & Open Innovation, VC at BOLD Capital Partners. Previously he held leadership positions at Google.org, Mozilla, and eBay, built technology startups, launched a Venture Capital firm. He is the posse leader at TheHeretic.org, and is a general upstart when it comes to creating meaningful change.",
+    image: "",
+    website: "https://beradicalgroup.com/"
+  },
+  {
+    name: "Karolina Korth",
+    bio: "Karolina is Chief Digital Officer and Head of Strategy of South-West Europe region at Siemens Mobility. She is a trained psychologist and sociologist with passion for innovation and over 10 years of international experience in digital transformation, start-up collaborations and corporate innovation in the sector of digital health, smart cities and mobility. Karolina founded Health 2.0 Kuala Lumpur and the FeMale Voice of Mobility – a movement to empower women in male dominated industries.",
+    image: "",
+    website: "https://www.linkedin.com/in/karolinakorth"
   },
   {
     name: "Gui Seiz",
@@ -237,10 +255,4 @@ export const Advisors =[
     image: "",
     website: "https://seiz.design/"
   },
-  {
-    name: "Pascal Finette",
-    bio: "Pascal is Co-Founder at be radical, EY’s wavespace Advisory Board Chair, SingularityU’s Chair for Entrepreneurship & Open Innovation, VC at BOLD Capital Partners. Previously he held leadership positions at Google.org, Mozilla, and eBay, built technology startups, launched a Venture Capital firm. He is the posse leader at TheHeretic.org, and is a general upstart when it comes to creating meaningful change.",
-    image: "",
-    website: "https://beradicalgroup.com/"
-  }
 ]

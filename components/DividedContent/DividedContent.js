@@ -1,18 +1,20 @@
 import styles from "./DividedContent.module.scss"
 // todo -- check with BEM
 
-const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false}) => {
+const DividedContent = ({left, right, hiddenBar = false, smallLeft = false, smallRight = false, medRight = false, medLeft=false}) => {
   const generateClassName = () => {
-    let className;
+    // something is up with this and i believe it needs to be coded like this or it will breakw
+    let base = styles.DividedContent;
     if (smallLeft){
-      return styles.smallLeft;
+      base = styles.smallLeft;
     } else if (smallRight){
-      return styles.smallRight;
+      base = styles.smallRight;
     } else if (medRight){
-      return styles.medRight;
-    } else {
-      return styles.DividedContent;
+      base = styles.medRight;
+    } else if (medLeft){
+      base = styles.medLeft;
     }
+    return base;
   }
 
   return(

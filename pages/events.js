@@ -1,4 +1,4 @@
-import {Footer, Image, Menu} from "../components";
+import {Footer, Image, MenuOld} from "../components";
 //
 const Events = () => {
   return(

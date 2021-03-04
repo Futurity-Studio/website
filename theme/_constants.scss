@@ -1,26 +1,28 @@
 @import "theme/vendor_mixins";
 
-$font-color: #3A3A3A;
-$font-color--light: #c7c7c7;
-$page-background-color--light:  #fff;
-$page-background-color--dark:  #3a3a3a;
 
-$menu-color: #3a3a3a;
-$menu-closed-height: 80px;
+$font-color: #090909;
+$font-color--light: #f7f7f7;
+$page-background-color--light:  #f7f7f7;
+$page-background-color--dark:  #131313;
+
+$menu-color: #fff;
+$menu-height: 82px;
+$menu-page-padding: 138px;
 $menu-inverse-color: #c7c7c7;
 
 $main-width-max: 1280px;
 $main-padding: 2rem;
 
-$icon-dark: #3A3A3A;
-$icon-light: #c7c7c7;
+$icon-dark: #080808;
+$icon-light: #f7f7f7;
 
 $section-padding: 12rem;
 $section-width: $main-width-max;
 $content-padding: 4rem;
 
 $line-thickness: 2px;
-$line-color: #3a3a3a;
+$line-color: #0e0e0e;
 
 @mixin fluid-type($min, $varible, $max){
   $clamp-size: #{'min(max(#{$varible}, #{$min}), #{$max})'};
@@ -39,7 +41,7 @@ $line-color: #3a3a3a;
 
 %default-text{
   font-weight: 300;
-  @include fluid-type(18px, 2vw, 1.414rem);
+  @include fluid-type(18px, 1vw, 1.414rem);
 }
 
 %helper-text{
@@ -49,7 +51,7 @@ $line-color: #3a3a3a;
 }
 
 %vr{
-  background-color: $menu-color;
+  background-color: $page-background-color--light;
   width: $line-thickness;
   height: 100%;
 }
@@ -69,4 +71,13 @@ $line-color: #3a3a3a;
     position: relative;
     top: -2px;
   }
+}
+
+%label{
+  @include fluid-type(10px, 1vw, .8rem);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: initial;
+  font-weight: bold;
+  letter-spacing: 1px;
 }

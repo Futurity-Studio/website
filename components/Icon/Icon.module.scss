@@ -23,8 +23,9 @@
     svg,
     g,
     mask,
+    path,
     use {
-      fill: $icon-dark;
+      fill: $icon-dark !important;
     }
   }
 
@@ -36,5 +37,57 @@
       fill: $icon-light;
     }
   }
+
+  &.nav_mix{
+    background-color: $icon-light;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-dark !important;
+    }
+  }
+
+  &.nav_mix_nude{
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-light !important;
+    }
+  }
+
+  &.link_light{
+    //background-color: $icon-dark;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    //border-radius: 50%;
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-light !important;
+    }
+  }
+
+
+
+
 
 }

@@ -101,7 +101,7 @@ function Deliverable({pathname, query, asPath, id}){
         </div>
         <div className={'section-content'}>
           <DividedContent
-            smallLeft={true}
+            medLeft={true}
             right={
               <div>
                 <p>{deliverable.details.lab.desc}</p>

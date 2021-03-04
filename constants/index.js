@@ -1,11 +1,11 @@
-import { LabData, Links } from "./labs";
+import { LabData, LINKS } from "./labs";
 import { ROUTES } from "./routes";
 import { FeaturedArtifacts, FeaturedEvent, FeatureContent } from "./featured";
 
 export{
   ROUTES,
   LabData,
-  Links,
+  LINKS,
   FeaturedArtifacts,
   FeaturedEvent,
   FeatureContent

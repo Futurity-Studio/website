@@ -1,0 +1,106 @@
+@import "theme/constants";
+@import "theme/vendor_mixins";
+
+.ThumbnailBase{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content auto min-content;
+  cursor: pointer;
+
+  em{
+    margin: $content-padding/2 $content-padding/2 0;
+  }
+  div{
+    margin: $content-padding/2 $content-padding/2 0;
+    &:first-of-type{
+      margin-top: 0;
+    }
+    &:nth-of-type(2){
+      display: grid;
+      grid-template-columns: min-content auto min-content;
+      grid-template-rows: min-content 1fr;
+      padding-bottom: 1rem;
+      a div {
+        margin: 0;
+      }
+      em{
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+  h3 {
+    padding: $content-padding/4 $content-padding/2;
+    margin-bottom: 0 !important;
+    background-size: 400% 200%;
+    background-repeat: no-repeat;
+
+    background-position: 0 15rem;
+    transition: background-position .25s ease-in-out;
+  }
+  h3:hover{
+    background-position: 0 0 !important;
+  }
+
+  &:hover{
+    h3{
+      background-position: 0 0 !important;
+    }
+  }
+  @include media("<=768px") {
+    em, div, h3{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.Expanded{
+  @extend .ThumbnailBase;
+  cursor: default;
+  h3{
+    background-position: 0 0 !important;
+  }
+}
+
+
+.Details{
+  align-self: stretch;
+  margin-top: $content-padding/2;
+  table{
+    margin-top: $content-padding/2;
+
+    border-collapse:collapse;
+    //border:1px solid $menu-inverse-color;
+
+    td{
+      //border:1px solid $menu-inverse-color;
+    }
+  }
+  thead th:nth-of-type(odd){
+    @extend %label;
+    text-align: right;
+    padding-right: .5rem;
+  }
+  thead th:nth-of-type(even){
+    font-weight: normal;
+    text-align: left;
+    min-width: 30%;
+  }
+  tbody td:nth-of-type(odd){
+    text-align: right;
+    padding-right: .5rem;
+  }
+  tbody td:nth-of-type(even){
+    text-align: left;
+    min-width: 30%;
+  }
+  tbody td{
+    padding: 4px;
+  }
+  p{
+    margin: 1/3rem;
+  }
+}

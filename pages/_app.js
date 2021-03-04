@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Normalize from "react-normalize";
-import {Menu} from "../components";
+import {Menu, MenuOld} from "../components";
 import {AnimatePresence} from "framer-motion";
 
 import '../theme/theme.scss';
@@ -24,7 +24,7 @@ class MyApp extends App {
           <link rel="icon" href="assets/img/favicon.ico"/>
         </Head>
         <Normalize/>
-        <Menu />
+        <Menu/>
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>

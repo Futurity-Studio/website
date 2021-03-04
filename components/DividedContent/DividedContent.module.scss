@@ -6,7 +6,7 @@
   grid-template-columns: 275px 2px 1fr;
   align-items: center;
   grid-template-rows: 1fr;
-  column-gap: 10%;
+  column-gap: $content-padding/2;
   @include media("<=tablet") {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto 1fr !important;
@@ -28,6 +28,12 @@
   @extend .DividedContent;
   grid-template-columns: 1fr 2px 305px;
 }
+.medLeft{
+  @extend .DividedContent;
+  grid-template-columns: 450px 2px 1fr;
+}
+
+
 
 .vr{
   @extend %vr;

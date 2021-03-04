@@ -5,7 +5,7 @@ import styles from './Button.module.scss'
 // todo -- check this import with the -- BEM styles
 
 
-export const StealthButton = ({label, icon, link, onClick, callback}) => {
+export const StealthButton = ({label, icon, link, externalLink, onClick, callback}) => {
   const router = useRouter();
 
   return(
@@ -16,7 +16,12 @@ export const StealthButton = ({label, icon, link, onClick, callback}) => {
           router.push(link).then( () => {
             if (callback){callback()}
           });
-        } else {
+        }
+        if (externalLink){
+          window.open(externalLink, '_blank')
+          if (callback){callback()}
+        }
+        else {
           onClick();
         }
       }}

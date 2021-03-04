@@ -1,7 +1,6 @@
 # Todo
 - refactor home page with router to animate teaser to deliverable page
 - custom cursor
-- trash menu for top bar, add more content to footer, make it nice & chunky
 - animate labs better when scrolling
 - update labs content so show better actions
 - ++PWA

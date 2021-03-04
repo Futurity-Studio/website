@@ -4,212 +4,193 @@
 .Menu{
   z-index: 9;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  height: $menu-height;
+
+  padding: 0 $main-padding;
+  border: $line-thickness solid $menu-color;
+  display: grid;
+  grid-template-columns: min-content auto 115px;
+  grid-template-rows: $menu-height auto;
+  align-items: center;
   overflow: hidden;
-  height: $menu-closed-height;
 
-
-  &.open{
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    .contents{
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
-      display: grid;
-      grid-template-rows: $menu-closed-height 1fr;
-    }
-
-    >div{
-      color: #fff;
-      h1,h2,h3,h4,p,a,em, {
-        //color: hsl(0,0,2);
-        color: #fff;
-        //mix-blend-mode: difference;
-      }
-      .border-button--line{
-        background-color: #fff;
-      }
-      path{
-        fill: #fff !important;
-        mix-blend-mode: initial !important;
-      }
-      //mix-blend-mode: difference;
-    }
+  section{
+    grid-column: 1 / span 3 ;
   }
 
-  .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    padding: 1rem $main-padding;
-    height: $menu-closed-height;
-    max-width: $main-width-max;
-    width: 100%;
-    margin: 0 auto;
-
-    > div:first-of-type{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-    span{
-      cursor: pointer;
-    }
-
-    em{
-      font-weight: bold;
-    }
-
-    h4{
-      font-weight: bold !important;
-    }
-
-    .logo {
-      width: auto;
-      padding-right: $content-padding / 2;
-      cursor: pointer;
-
-      svg {
-        height: auto;
-        width: 60px;
-
-
-        path {
-          fill: $menu-color;
-          //mix-blend-mode: difference;
-        }
-      }
-    }
+  * {
+    color: $menu-color !important;
   }
+  mix-blend-mode: exclusion;
 
-  .button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
+  .logoWrapper {
+    height: 100%;
     cursor: pointer;
 
-    .icon{
-      height: 18px;
-      width: 18px;
-      min-height: 18px;
-      min-width: 18px;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-column-gap: $main-padding;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: auto;
+      path {
+        fill: $menu-color;
+      }
     }
     em{
-      padding-left: 1rem;
-      width: 8ex;
-      @extend %helper-text;
+      font-weight: bold !important;
     }
   }
 
-  &.close{
-    >div >div:last-of-type{
-      background-color: red;
-      visibility: hidden;
-    }
-  }
-
-  .body{
+  ul{
+    list-style: none;
+    padding: 0 $main-padding*2;
+    margin: 0;
     display: grid;
-    grid-template-rows: auto min-content min-content;
-    nav:first-of-type{
-      padding: 1rem $main-padding 0;
-      max-width: $main-width-max;
-      margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    align-items: center;
+    height: 100%;
+    li{
+      cursor: pointer;
+      height: 100%;
       display: grid;
-      grid-template-columns: auto min-content;
       align-items: center;
-      width: 100%;
-      ul{
-        list-style: none;
-        padding: 0;
-        li{
-          padding: $content-padding/4 0;
-          cursor: pointer;
-
-          >div{
-            display: grid;
-            grid-template-columns: minmax(min-content, 300px) 1fr;
-            align-items: baseline;
-            grid-column-gap: $content-padding/2;
-
-            >div {
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-              grid-column-gap: $content-padding/4;
-            }
-          }
-        }
-      }
-      @include media("<1024px"){
-        h2{
-          display: none;
-        }
-      }
-
-      @include media("<=tablet") {
-        h2{
-          display: block;
-        }
-        ul{
-          display: grid;
-          grid-template-columns: repeat( auto-fill, minmax(200px,1fr));
-          li {
-            > div {
-              display: flex;
-            }
-          }
-
-
-          div{
-            display: none;
-          }
-
-        }
-      }
-
-      @include media("<=550px"){
-        li{
-          padding: $content-padding/6 0;
-
-        }
-      }
-
-        h2{
-        opacity: 0.25;
-        line-height: 150%;
-      }
-    }
-
-    nav:last-of-type{
-      padding: $content-padding/4 $main-padding $content-padding/4;
-      max-width: $main-width-max;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto min-content min-content min-content;
-      grid-gap: $content-padding/2;
-      @include media("<=525px") {
-        grid-gap: $content-padding/5;
-        grid-template-columns: auto min-content min-content min-content;
-        grid-template-rows: 2fr;
-      }
-
-        width: 100%;
-      .icon{
-        position: relative;
-        top: 3px;
-        width: 20px;
+      overflow: hidden;
+      //> div {
+      //  position: relative;
+      //  top: -9px;
+      //}
+      a {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 0;
+          background-color: white;
+          // todo -- put this into another file
+          transition: height .1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
       }
-      a{
-        text-decoration: underline !important;
+      a:hover{
+        &:after{
+          height: 8px;
+        }
+      }
+      a.active{
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 8px;
+          background-color: white;
+        }
       }
     }
+  }
+  p{
+    margin: 0;
+    @include fluid-type(16px, 2vw, 1.1rem);
+    color: $menu-color;
+  }
+
+  .contactButton{
+    @include media("<880px") {
+      display: none;
+    }
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  .mobileMenuButton{
+    @include media(">=880px") {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 3 / 4;
+    > div {
+      width: 20px !important;
+    }
+  }
+
+  .mobileMenuIcons{
+    padding: $content-padding/2 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    height: 100%;
+    justify-content: space-between;
+    a {
+      padding-left: .5rem;
+    }
+  }
+
+  .mobileMenuContent{
+    height: 100%;
+    grid-column: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    justify-content: space-around;
+    div:last-of-type{
+      padding-bottom: .5rem;
+    }
+    h2{
+      cursor: pointer;
+    }
+  }
+
+  .currentMobileMenuLink{
+    color: $page-background-color--dark !important;
+    -webkit-text-stroke: 1px rgba(247,247,247,1);
+  }
+
+  /* Mobile */
+  @include media("<=880px") {
+    top: .5rem !important;
+    height: calc(#{$menu-height} * .65);
+    padding: 0 $main-padding / 2 !important;
+    grid-template-columns: min-content auto 70px;
+    grid-template-rows: calc(#{$menu-height} * .65) auto;
+    ul {
+      display: none;
+    }
+    > div:first-of-type{
+      //background-color: chartreuse;
+      svg {
+        height: 25px;
+      }
+    }
+  }
+  @include media("<=580px") {
+    span em {
+      display: none;
+    }
+  }
+}
+
+.MenuHiddenMobileContents{
+  @extend .Menu;
+  > div:nth-of-type(4), > div:nth-of-type(5){
+    display: none;
   }
 }
