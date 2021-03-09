@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import {Card, Landing, removeWebpFormat, Icon, ICONS, THEME, DividedContent} from "../components";
+import React, { useState, useEffect, useRef } from 'react';
+import {Card, Landing, removeWebpFormat, Icon, ICONS, THEME, DividedContent, Footer} from "../components";
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { FeatureContent } from "../constants";
+import Typed from 'typed.js';
+
+const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
 const Home = () => {
   const [slide, setSlide] = useState(0);
@@ -11,6 +14,10 @@ const Home = () => {
   const pageTimer = 7500;
   let pageTimerInterval;
   const [background, setBackground] = useState(null)
+  const bannerBadFirst = useRef(null);
+  const bannerBadSecond = useRef(null);
+  let bannerBadFirstTyped;
+  let bannerBadSecondTyped;
 
   useEffect( () => {
   }, [slide]);
@@ -27,6 +34,42 @@ const Home = () => {
       nextSlide();
     }, pageTimer)
   }
+
+  useEffect(() => {
+    const options = {
+      strings:
+        shuffleArray(['financial','commercial','industrial','daily','everyday','ecological','environmental','mental','physical']),
+      typeSpeed: 100,
+      backSpeed: 50,
+      startDelay: 3000,
+      backDelay: 5000,
+      showCursor: false,
+      loop: true,
+      loopCount: Infinity,
+    };
+    bannerBadFirstTyped = new Typed(bannerBadFirst.current, options);
+    return(() => {
+      bannerBadFirstTyped.destroy();
+    })
+  }, [bannerBadFirst])
+
+  useEffect(() => {
+    const options = {
+      strings:
+        shuffleArray(['risky', 'complicated', 'uncertain']),
+      typeSpeed: 100,
+      backSpeed: 50,
+      startDelay: 3000,
+      backDelay: 5000,
+      showCursor: false,
+      loop: true,
+      loopCount: Infinity,
+    };
+    bannerBadSecondTyped = new Typed(bannerBadSecond.current, options);
+    return(() => {
+      bannerBadSecondTyped.destroy();
+    })
+  }, [bannerBadSecond])
 
   const nextSlide = () => {
     setSlide((slide+1) % FeatureContent.length);
@@ -56,11 +99,9 @@ const Home = () => {
   const bannerVariant = {
     initial: {
       opacity: 0,
-      y: 100,
     },
     animate: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: .12,
       }
@@ -88,34 +129,39 @@ const Home = () => {
             variants={bannerAnimation}
           >
             <motion.div><motion.h2 variants={bannerVariant}>
-                Our
-              </motion.h2>
+              Our
+            </motion.h2>
+            </motion.div>
+            <motion.div><motion.h2 variants={bannerVariant} ref={bannerBadFirst}>
+              certain
+            </motion.h2>
             </motion.div>
             <motion.div><motion.h2 variants={bannerVariant}>
-                Financial
-              </motion.h2>
+              futures
+            </motion.h2>
             </motion.div>
             <motion.div><motion.h2 variants={bannerVariant}>
-                Futures
-              </motion.h2>
+              are
+            </motion.h2>
             </motion.div>
-            <motion.div><motion.h2 variants={bannerVariant}>
-                are
-              </motion.h2>
-            </motion.div>
-            <motion.div><motion.h2 variants={bannerVariant}>
-                Fancy
-              </motion.h2>
+            <motion.div><motion.h2 variants={bannerVariant} ref={bannerBadSecond}>
+              no more
+            </motion.h2>
             </motion.div></motion.div>
 
-          <div>
-            <p>
+          <motion.div
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+            variants={bannerAnimation}
+          >
+            <h4>
               Futurity Studio is a research and design studio at the intersection of design, technology, social, and business innovation helping communities, and corporates build better futures faster.
-            </p>
-            <em>learn more
-              {/*<Icon icon={ICONS.ARROW_RIGHT} theme={THEME.LIGHT}/>*/}
+            </h4>
+            <em onClick={() => {router.push('/services')}}>learn more
+              <Icon icon={ICONS.ARROW_RIGHT} theme={THEME.LIGHT}/>
             </em>
-          </div>
+          </motion.div>
 
 
 
@@ -159,7 +205,9 @@ const Home = () => {
           }
         </AnimatePresence>
       </motion.div>
-    </motion.main>)
+      <Footer/>
+    </motion.main>
+  )
 }
 
 export default Home
