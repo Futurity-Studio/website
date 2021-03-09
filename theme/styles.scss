@@ -7,6 +7,37 @@
 }
 
 .Index{
+  .pre-banner{
+    background-color: $page-background-color--dark;
+    color: $font-color--light;
+    min-height: 50vh;
+    min-height: calc(var(--vh, 1vh) * 50);
+    padding-top: calc(#{$menu-height} + 2rem);
+    .section-content{
+      min-height: 50vh;
+      min-height: calc(var(--vh, 1vh) * 50);
+
+      display: grid;
+      grid-template-columns: .6fr .4fr;
+      column-gap: $content-padding/2;
+      align-content: center;
+    }
+
+    .bad-roller{
+      >div {
+        display: inline-block;
+        margin: 0 1ex;
+        overflow: hidden;
+      }
+      h2 {
+        margin: 0 !important;
+      }
+    }
+
+    p {
+      max-width: 55ex !important;
+    }
+  }
 }
 
 .Services{
