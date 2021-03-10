@@ -7,6 +7,61 @@
 }
 
 .Index{
+  .pre-banner{
+    background-color: $page-background-color--dark;
+    color: $font-color--light;
+    min-height: 50vh;
+    min-height: calc(var(--vh, 1vh) * 50);
+    padding-top: calc(#{$menu-height} + 2rem);
+    .section-content{
+      min-height: 50vh;
+      min-height: calc(var(--vh, 1vh) * 50);
+
+      display: grid;
+      grid-template-columns: .6fr .4fr;
+      grid-template-rows: 1fr;
+      column-gap: $content-padding/2;
+      align-content: center;
+      > div {
+        align-self: center;
+      }
+      em {
+        cursor: pointer;
+        >div {
+          position: relative;
+          top: 4px;
+          right: -4px;
+        }
+      }
+
+      @include media("<=880px") {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content auto;
+        column-gap: $content-padding/2;
+        justify-content: center;
+      }
+    }
+    .bad-roller{
+      align-self: center;
+      >div {
+        display: inline-block;
+        margin: 0 1ex;
+        overflow: hidden;
+      }
+      h2 {
+        margin: 0 !important;
+      }
+    }
+
+    p {
+      max-width: 55ex !important;
+    }
+  }
+  section{
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
 }
 
 .Services{
