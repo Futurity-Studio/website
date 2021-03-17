@@ -7,14 +7,24 @@
 }
 
 @font-face {
-    font-family: "Helvetica Neue";
-    src: url('Helvetica Neue.ttf');
-    font-weight: normal;
+    font-family: "HelveticaNeue";
+    src: url('Helvetica Neue Bold.ttf') format("truetype");
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "HelveticaNeue";
-    src: url('Helvetica Neue Bold.ttf');
-    font-weight: bold;
+    src: url('Helvetica Neue Medium.ttf') format("truetype");
+    font-weight: 500;
     font-style: normal;
+}
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url('Helvetica Neue.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "HelveticaNeue-Light";
+    src: url('HelveticaNeue Light.ttf') format("truetype");
 }

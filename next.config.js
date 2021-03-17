@@ -20,12 +20,12 @@ const nextConfig = {
   //   configuration.resolve.alias.images = path.join(__dirname, "images");
   //   return configuration
   },
-  async exportPathMap(defaultPathMap) {
-    return {
-      ...defaultPathMap,
-      // ...getPathsForPosts(),
-    }
-  },
+  // async exportPathMap(defaultPathMap) {
+  //   return {
+  //     ...defaultPathMap,
+  //     // ...getPathsForPosts(),
+  //   }
+  // },
 };
 
 module.exports = withPlugins([
