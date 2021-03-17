@@ -1,26 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {Card, Landing, removeWebpFormat, Icon, ICONS, THEME, DividedContent, Footer} from "../components";
+import {Card, removeWebpFormat, Icon, ICONS, THEME, Footer} from "../components";
 import {useRouter} from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { FeatureContent } from "../constants";
 import Typed from 'typed.js';
 
+import { indexBannerContainer } from "../helpers/animation";
+
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
 const Home = () => {
   const [slide, setSlide] = useState(0);
-  const [seconds, setSeconds] = useState(0);
   const router = useRouter();
-  const pageTimer = 7500;
-  let pageTimerInterval;
   const [background, setBackground] = useState(null)
   const bannerBadFirst = useRef(null);
   const bannerBadSecond = useRef(null);
   let bannerBadFirstTyped;
   let bannerBadSecondTyped;
-
-  useEffect( () => {
-  }, [slide]);
 
   useEffect(() => {
     const asset = removeWebpFormat() ? require('images/background--landing.jpg') : require('images/background--landing.jpg?webp');
@@ -28,12 +24,6 @@ const Home = () => {
     setBackground(background);
     window.scrollTo(0, 0);
   }, []);
-
-  const setPageTimerInterval = () => {
-    pageTimerInterval = setInterval(() => {
-      nextSlide();
-    }, pageTimer)
-  }
 
   useEffect(() => {
     const options = {
@@ -78,24 +68,6 @@ const Home = () => {
     setSlide((slide+2) % FeatureContent.length );
   }
 
-  const bannerAnimation = {
-    initial:{
-      opacity: 0
-    },
-    animate:{
-      opacity: 1,
-      transition: {
-        duration: .25,
-        delay: .5,
-        staggerChildren: .2,
-        ease: 'easeInOut',
-      }
-    },
-    exit:{
-      opacity: 0
-    }
-  }
-
   const bannerVariant = {
     initial: {
       opacity: 0,
@@ -126,7 +98,7 @@ const Home = () => {
             initial={"initial"}
             animate={"animate"}
             exit={"exit"}
-            variants={bannerAnimation}
+            variants={indexBannerContainer}
           >
             <motion.div><motion.h2 variants={bannerVariant}>
               Our
@@ -153,7 +125,7 @@ const Home = () => {
             initial={"initial"}
             animate={"animate"}
             exit={"exit"}
-            variants={bannerAnimation}
+            variants={indexBannerContainer}
           >
             <h4>
               Futurity Studio is a research and design studio at the intersection of design, technology, social, and business innovation helping communities, and corporates build better futures faster.

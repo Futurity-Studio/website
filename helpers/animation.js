@@ -1,4 +1,26 @@
 export const cubicBezier = [0.61, 1, 0.88, 1];
+const easeF = 'easeInOut';
+
+// ~~ index ~~
+export const indexBannerContainer = {
+  initial:{
+    opacity: 0
+  },
+  animate:{
+    opacity: 1,
+    transition: {
+      duration: .25,
+      delay: .5,
+      staggerChildren: .2,
+      ease: 'easeInOut',
+    }
+  },
+  exit:{
+    opacity: 0
+  }
+}
+
+// ~~~~~~
 
 export const staggerContent ={
   animate: {
