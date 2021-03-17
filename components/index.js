@@ -1,4 +1,3 @@
-import MenuOld  from "./Menu/MenuOld";
 import Menu from "./Menu/Menu"
 import Footer from "./Footer/Footer";
 import DividedContent from "./DividedContent/DividedContent";
@@ -16,7 +15,6 @@ import Card from "./Card/Card";
 import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
 
 export {
-  MenuOld,
   Menu,
   Footer,
   DividedContent,
