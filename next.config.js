@@ -9,20 +9,6 @@ const sitemap = require('nextjs-sitemap-generator');
 
 // do this for SEO - https://snipcart.com/blog/react-seo-nextjs-tutorial
 
-const getPathsForPosts = () => {
-  fs.readdirSync(blogPostsFolder).reduce((acc, blogName) => {
-    const trimmedName = blogName.substring(0, blogName.length - 3)
-    return Object.assign(acc, {
-      [`/blog/post/${trimmedName}`]: {
-        page: '/blog/post/[slug]',
-        query: {
-          slug: trimmedName,
-        },
-      },
-    })
-  }, {})
-};
-
 
 const nextConfig = {
   distDir: 'build',
