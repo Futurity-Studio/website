@@ -20,7 +20,7 @@ export const indexBannerContainer = {
   }
 }
 
-// ~~~~~~
+// ~~~~~~~
 
 export const staggerContent ={
   animate: {
