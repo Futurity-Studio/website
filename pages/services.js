@@ -168,31 +168,35 @@ const Services = () => {
           />
         </div>
         <div className={'section-content'}>
+
+
           <svg
-            viewBox="0 0 1447 804"
+            width={1447}
+            height={802}
+            viewBox="0 0 1447 802"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g fill="none" fillRule="evenodd">
-              <g transform="translate(299 .682)">
+              <g transform="translate(299)">
                 <circle
                   stroke="#3A3A3A"
                   strokeWidth={4}
                   cx={483.5}
-                  cy={386.5}
+                  cy={386.182}
                   r={381.5}
                 />
                 <path
-                  d="M257 79.318c-57.267 44.223-116.128 71.357-176.583 81.403-25.83 4.292-52.636 5.578-80.417 3.86M257 693.318c-34.44-27.496-75.636-47.477-123.589-59.944C88.686 621.747 48.215 619.29 12 626.005"
+                  d="M257 79c-57.267 44.223-116.128 71.358-176.583 81.403-25.83 4.292-52.636 5.579-80.417 3.86M257 693c-34.44-27.496-75.636-47.477-123.589-59.943-44.725-11.628-85.196-14.085-121.411-7.37"
                   stroke="#3A3A3A"
                   strokeWidth={4}
                   strokeLinecap="square"
                 />
-                <path fill="#f7f7f7" d="M632 .318h363v158H632z" />
+                <path fill="#f7f7f7" d="M632 0h363v158H632z" />
                 <text
                   fontFamily="HelveticaNeue, Helvetica Neue"
                   fontSize={24}
                   fill="#222"
-                  transform="translate(632 .318)"
+                  transform="translate(632)"
                 >
                   <tspan x={13} y={80}>
                     {"Analyze data to generate "}
@@ -209,18 +213,18 @@ const Services = () => {
                   fontSize={48}
                   fontWeight="bold"
                   fill="#222"
-                  transform="translate(632 .318)"
+                  transform="translate(632)"
                 >
                   <tspan x={11} y={47}>
                     {"Analysis"}
                   </tspan>
                 </text>
-                <path fill="#f7f7f7" d="M31 280.318h336v222H31z" />
+                <path fill="#f7f7f7" d="M31 280h336v222H31z" />
                 <text
                   fontFamily="HelveticaNeue, Helvetica Neue"
                   fontSize={24}
                   fill="#222"
-                  transform="translate(31 280.318)"
+                  transform="translate(31 280)"
                 >
                   <tspan x={9} y={87}>
                     {"Test the hypothetical Artifact "}
@@ -243,18 +247,18 @@ const Services = () => {
                   fontSize={48}
                   fontWeight="bold"
                   fill="#222"
-                  transform="translate(31 280.318)"
+                  transform="translate(31 280)"
                 >
                   <tspan x={9} y={54}>
                     {"Action"}
                   </tspan>
                 </text>
-                <path fill="#f7f7f7" d="M626 625.318h325v177H626z" />
+                <path fill="#f7f7f7" d="M626 625h325v177H626z" />
                 <text
                   fontFamily="HelveticaNeue, Helvetica Neue"
                   fontSize={24}
                   fill="#222"
-                  transform="translate(626 625.318)"
+                  transform="translate(626 625)"
                 >
                   <tspan x={11} y={80}>
                     {"Create an interactive "}
@@ -274,7 +278,7 @@ const Services = () => {
                   fontSize={48}
                   fontWeight="bold"
                   fill="#222"
-                  transform="translate(626 625.318)"
+                  transform="translate(626 625)"
                 >
                   <tspan x={11} y={47}>
                     {"Artifact"}
@@ -282,36 +286,51 @@ const Services = () => {
                 </text>
                 <path
                   fill="#3A3A3A"
-                  d="M639.883 39.082l-19.237.983 8.168-16.747zM791.018 629.1l-17.323 8.422.975-18.608zM868.418 487.801l-4.636-18.696 17.999 4.823zM116.485 488.096l13.363 13.873-17.999 4.823zM5.71 627.63l13.873-13.363 4.822 17.998zM114.158 153.74l-13.962 13.575-4.918-18.352z"
+                  d="M639.883 38.764l-19.237.984L628.814 23zM791.018 628.782l-17.323 8.422.975-18.608zM868.418 487.483l-4.636-18.695 17.999 4.822zM116.485 487.779l13.363 13.873-17.999 4.822zM5.71 627.312l13.873-13.363 4.822 17.999zM114.158 153.421l-13.962 13.577-4.918-18.353z"
                 />
                 <g>
                   <path
                     stroke="#3A3A3A"
                     strokeWidth={4}
                     strokeLinecap="square"
-                    d="M284.635 585.729L682.365 188"
+                    d="M284.636 585.411l397.729-397.729"
                   />
                   <text
-                    transform="rotate(-45 399.729 133.103)"
+                    transform="rotate(-45 399.795 131.946)"
                     fontFamily="HelveticaNeue-Bold, Helvetica Neue"
                     fontSize={24}
                     fontWeight="bold"
                     letterSpacing={2}
                     fill="#222"
                   >
-                    <tspan x={-3} y={364.865}>
+                    <tspan x={-3.574} y={364.255}>
                       {"LEARN"}
                     </tspan>
                   </text>
                   <text
-                    transform="rotate(-45 754.729 -176.897)"
+                    transform="rotate(-45 600.767 -48.57)"
                     fontFamily="HelveticaNeue-Bold, Helvetica Neue"
                     fontSize={24}
                     fontWeight="bold"
                     letterSpacing={2}
                     fill="#222"
                   >
-                    <tspan x={348} y={54.865}>
+                    <tspan x={141.899} y={165.738}>
+                      {"SYNTHESIZING"}
+                    </tspan>
+                    <tspan x={141.899} y={197.738}>
+                      {"FUTURES"}
+                    </tspan>
+                  </text>
+                  <text
+                    transform="rotate(-45 754.795 -178.054)"
+                    fontFamily="HelveticaNeue-Bold, Helvetica Neue"
+                    fontSize={24}
+                    fontWeight="bold"
+                    letterSpacing={2}
+                    fill="#222"
+                  >
+                    <tspan x={347.426} y={54.255}>
                       {"INVENT"}
                     </tspan>
                   </text>
@@ -319,7 +338,7 @@ const Services = () => {
                 <g fill="#222" fontSize={24}>
                   <text
                     fontFamily="HelveticaNeue, Helvetica Neue"
-                    transform="translate(891 301.318)"
+                    transform="translate(891 301)"
                   >
                     <tspan x={0} y={54}>
                       {"Iterate the cycle six "}
@@ -341,7 +360,7 @@ const Services = () => {
                     fontFamily="HelveticaNeue-Bold, Helvetica Neue"
                     fontWeight="bold"
                     letterSpacing={2}
-                    transform="translate(891 301.318)"
+                    transform="translate(891 301)"
                   >
                     <tspan x={0} y={23}>
                       {"ITERATE"}
@@ -352,7 +371,7 @@ const Services = () => {
               <g fill="#222" fontSize={24}>
                 <text
                   fontFamily="HelveticaNeue, Helvetica Neue"
-                  transform="translate(0 117)"
+                  transform="translate(0 116)"
                 >
                   <tspan x={0} y={54}>
                     {"Initiate a new Lab with a "}
@@ -371,7 +390,7 @@ const Services = () => {
                   fontFamily="HelveticaNeue-Bold, Helvetica Neue"
                   fontWeight="bold"
                   letterSpacing={2}
-                  transform="translate(0 117)"
+                  transform="translate(0 116)"
                 >
                   <tspan x={0} y={23}>
                     {"NEW LAB"}
@@ -381,7 +400,7 @@ const Services = () => {
               <g fill="#222" fontSize={24}>
                 <text
                   fontFamily="HelveticaNeue, Helvetica Neue"
-                  transform="translate(44 605)"
+                  transform="translate(44 604)"
                 >
                   <tspan x={0} y={54}>
                     {"By the end of the Lab, prime our "}
@@ -403,7 +422,7 @@ const Services = () => {
                   fontFamily="HelveticaNeue-Bold, Helvetica Neue"
                   fontWeight="bold"
                   letterSpacing={2}
-                  transform="translate(44 605)"
+                  transform="translate(44 604)"
                 >
                   <tspan x={0} y={23}>
                     {"END LAB"}
@@ -411,13 +430,15 @@ const Services = () => {
                 </text>
               </g>
               <path
-                d="M1170.5 295.5c6.603 29.3 9.905 59.982 9.905 92.047s-3.302 61.382-9.905 87.953"
+                d="M1170.5 294.5c6.603 29.3 9.905 59.982 9.905 92.047s-3.302 61.382-9.905 87.953"
                 stroke="#3A3A3A"
                 strokeWidth={4}
                 strokeLinecap="square"
               />
             </g>
           </svg>
+
+
         </div>
       </section>
 
