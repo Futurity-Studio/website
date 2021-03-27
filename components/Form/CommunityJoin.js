@@ -23,7 +23,7 @@ const CommunityJoin = ({}) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "community": event.target.getAttribute("email"),
-        ...name
+        ...email
       })
     }).then(() => console.log('success')).catch(error => alert(error))
   }
