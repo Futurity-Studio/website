@@ -10,8 +10,26 @@ const CommunityJoin = ({}) => {
     return re.test(String(email).toLowerCase());
   }
 
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "community": event.target.getAttribute("email"),
+        ...name
+      })
+    }).then(() => console.log('success')).catch(error => alert(error))
+  }
+
   return(
-    <form className={styles.Form} name="community" method="POST" data-netlify="true">
+    <form className={styles.Form} name="community" method="POST" data-netlify="true" onSubmit={handleSubmit}>
       <label htmlFor="email"><h4>More coming soon.<br /> Stay in touch for more updates!</h4></label>
       <input
         type="email"
