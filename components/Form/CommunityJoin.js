@@ -11,7 +11,7 @@ const CommunityJoin = ({}) => {
   }
 
   return(
-    <form className={styles.Form} name="community" netlify>
+    <form className={styles.Form} name="community" method="POST" data-netlify="true">
       <label htmlFor="email"><h4>More coming soon.<br /> Stay in touch for more updates!</h4></label>
       <input
         type="email"
