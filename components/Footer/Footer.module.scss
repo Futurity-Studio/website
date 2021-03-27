@@ -32,7 +32,7 @@
     //background-blend-mode: 'saturation';
     h2{
       color: inherit;
-      white-space: nowrap;
+      white-space: normal;
       @include media("<=950px") {
         white-space: normal;
       }

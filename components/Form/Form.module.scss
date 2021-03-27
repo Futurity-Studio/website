@@ -1,0 +1,18 @@
+@import "theme/constants";
+
+.Form{
+  input{
+      @extend %default-text;
+    font-weight: 300;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    &:focus {
+      outline: none;
+    }
+  }
+  button{
+    border: none;
+    background: none;
+  }
+}

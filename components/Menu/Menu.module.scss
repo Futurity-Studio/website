@@ -54,7 +54,7 @@
     padding: 0 $main-padding*2;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     align-items: center;
     height: 100%;
     li{
@@ -63,10 +63,6 @@
       display: grid;
       align-items: center;
       overflow: hidden;
-      //> div {
-      //  position: relative;
-      //  top: -9px;
-      //}
       a {
         height: 100%;
         display: flex;
@@ -100,6 +96,9 @@
           height: 8px;
           background-color: white;
         }
+      }
+      &:last-of-type{
+        width: 125px;
       }
     }
   }

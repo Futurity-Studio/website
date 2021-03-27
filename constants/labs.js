@@ -115,5 +115,6 @@ export const LabData = [
 export const LINKS =  [
   {title: 'Services', link: ROUTES.SERVICES},
   {title: 'Labs', link: ROUTES.LABS, children: [{title: 'aCommerce', link: ''}, {title: 'Foodturity', link: ''}, {title: 'NeUIro', link: ''}]},
-  {title: 'The Studio', link: ROUTES.ABOUT}
+  {title: 'The Studio', link: ROUTES.ABOUT},
+  {title: 'Synthesizing Futures', link: ROUTES.SYNTHFUTURES},
 ];
