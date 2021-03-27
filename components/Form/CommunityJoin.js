@@ -25,7 +25,7 @@ const CommunityJoin = ({}) => {
         "community": event.target.getAttribute("email"),
         ...email
       })
-    }).then(() => console.log('success')).catch(error => alert(error))
+    }).then(() => console.log('success')).catch(error => console.log(error))
   }
 
   return(
