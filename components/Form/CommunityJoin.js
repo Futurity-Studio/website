@@ -34,7 +34,8 @@ const CommunityJoin = ({}) => {
   }
 
   return(
-    <form className={styles.Form} name="community" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+    <form className={styles.Form} name="community" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="community" />
       <label htmlFor="email">
         {(submitted) ?
           <h4>Email Submitted!</h4>
