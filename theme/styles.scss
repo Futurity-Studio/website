@@ -530,8 +530,8 @@
     }
     .foreground{
       display: grid;
-      grid: 1fr / .6fr .4fr;
-      > div:first-of-type{
+      grid: 1fr / .65fr .35fr;
+        > div:first-of-type{
         display: grid;
         grid: .6fr .4fr / 1fr;
         > *:nth-of-type(1){
@@ -548,19 +548,10 @@
           align-self: self-end;
         }
       }
-      //input{
-      //  @extend %default-text;
-      //  background: transparent;
-      //  border: none;
-      //  border-bottom: 2px solid black;
-      //  &:focus {
-      //    outline: none;
-      //  }
-      //}
-      //button{
-      //  border: none;
-      //  background: none;
-      //}
+
+      @include media("<=1024px"){
+        grid: .6fr .4fr / 1fr;
+      }
     }
     .background{
 
