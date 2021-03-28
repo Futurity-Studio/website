@@ -1,6 +1,9 @@
 import React  from 'react';
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
 import {CommunityJoin, Footer, Icon, ICONS, THEME} from "../components";
+import { cross } from "../constants/lottie";
+import BackgroundWide from "../components/Icon/BackgroundWide";
 
 const Synthesizingfutures = () => {
 
@@ -13,7 +16,8 @@ const Synthesizingfutures = () => {
     >
       <section className={'banner'}>
         <div className={'background'}>
-
+          <BackgroundWide />
+          <BackgroundWide />
         </div>
         <div className={'foreground section-content'}>
           <div>
@@ -21,18 +25,9 @@ const Synthesizingfutures = () => {
             <h1>Futures</h1>
           </div>
           <div>
-            {/*todo -- possibly move form to another component */}
-            {/*<form name="community" netlify>*/}
-            {/*  <label htmlFor="email"><h4>More coming soon.<br /> Stay in touch for more updates!</h4></label>*/}
-            {/*  <input type="email" id="email" name="email" placeholder={'Your Email Here'} required />*/}
-            {/*  <button type="submit">*/}
-            {/*    <Icon icon={ICONS.ARROW_RIGHT} theme={THEME.DISABLED}/>*/}
-            {/*  </button>*/}
-            {/*</form>*/}
             <CommunityJoin />
-            <h3>Building Better Futures Faster</h3>
+            <h3>A Playbook for Building Better Futures Faster</h3>
           </div>
-
         </div>
       </section>
       <Footer />
