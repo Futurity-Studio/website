@@ -13,6 +13,7 @@ import { removeWebpFormat } from "./Image/Images";
 import Landing from "./Landing/Landing";
 import Card from "./Card/Card";
 import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
+import CommunityJoin from "./Form/CommunityJoin";
 
 export {
   Menu,
@@ -30,5 +31,6 @@ export {
   Landing,
   Card,
   removeWebpFormat,
-  DeliverableSampler
+  DeliverableSampler,
+  CommunityJoin,
 }

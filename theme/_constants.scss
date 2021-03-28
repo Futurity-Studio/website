@@ -38,7 +38,6 @@ $line-color: #0e0e0e;
   height: $clampped !important;
 }
 
-
 %default-text{
   font-weight: 300;
   @include fluid-type(18px, 1vw, 1.414rem);

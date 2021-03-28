@@ -1,0 +1,24 @@
+@import "theme/constants";
+
+.Form{
+  background: $page-background-color--light;
+  input{
+      @extend %default-text;
+    font-weight: 300;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 200px;
+    border-radius: 0;
+    background: $page-background-color--light;
+    padding: 1rem .5rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  button{
+    border: none;
+    background: none;
+    background: $page-background-color--light;
+  }
+}

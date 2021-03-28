@@ -29,6 +29,17 @@
     }
   }
 
+  &.disabled {
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-dark !important;
+      opacity: 0.5;
+    }
+  }
+
   &.light {
     svg,
     g,
