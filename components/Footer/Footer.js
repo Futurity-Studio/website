@@ -11,6 +11,7 @@ const Footer = () => {
   const router = useRouter();
   const footerNavRefs = LINKS.map(_ => useRef(null));
   const size = useWindowSize();
+  const breakpoint = 1024;
 
   const navAnimations = {
     initial: {
@@ -131,7 +132,7 @@ const Footer = () => {
       <div className={'section-content'}>
 
         <DividedContent
-          medLeft={size.width >= 900}
+          medLeft={size.width >= breakpoint}
           hiddenBar={true}
           left={<div>
             <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>

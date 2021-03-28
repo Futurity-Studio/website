@@ -4,6 +4,7 @@ import styles from './Form.module.scss'
 
 const CommunityJoin = ({}) => {
   const [email,setEmail] = useState('')
+  const [submitted,setSubmitted] = useState(false)
 
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -16,28 +17,41 @@ const CommunityJoin = ({}) => {
       .join("&")
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "community": event.target.getAttribute("email"),
+        "community": e.target.getAttribute("email"),
         ...email
       })
-    }).then(() => console.log('success')).catch(error => console.log(error))
+    }).then(() => {
+      console.log('success');
+      setSubmitted(true);
+      setEmail('');
+    }).catch(error => console.log(error))
   }
 
   return(
     <form className={styles.Form} name="community" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-      <label htmlFor="email"><h4>More coming soon.<br /> Stay in touch for more updates!</h4></label>
+      <label htmlFor="email">
+        {(submitted) ?
+          <h4>Email Submitted!</h4>
+          :
+          <h4>More coming soon.<br />Stay in touch for more updates!</h4>
+        }
+      </label>
       <input
         type="email"
         id="email"
         name="email"
         placeholder={'Your Email Here'}
-        value={email || null}
-        onChange={(e) => {setEmail(e.target.value)}}
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value)
+          setSubmitted(false)
+        }}
         required
       />
       <button

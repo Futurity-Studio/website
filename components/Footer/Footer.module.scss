@@ -1,6 +1,8 @@
 @import "theme/vendor_mixins";
 @import "theme/constants";
 
+$breakpoint: 1024px;
+
 .Footer{
   background-color: $page-background-color--dark;
   color: $font-color--light;
@@ -75,7 +77,7 @@
 
   .cta{
     > div {
-      @include media("<=768px") {
+      @include media("<=#{$breakpoint}") {
         padding-bottom: $section-padding/8 !important;
       }
       display: grid;
@@ -95,7 +97,7 @@
   >div{
     > div:nth-of-type(1){
       margin-bottom: $content-padding !important;
-      @include media("<=768px") {
+      @include media("<=#{$breakpoint}") {
         margin-bottom: $content-padding/2 !important;
       }
     }
