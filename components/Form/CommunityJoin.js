@@ -61,7 +61,7 @@ const CommunityJoin = ({}) => {
       >
         <Icon
           icon={ICONS.ARROW_RIGHT}
-          theme={ (validateEmail(email)) ? THEME.DARK: THEME.DISABLED }
+          theme={ (validateEmail(email)) ? THEME.NAV_MIX: THEME.NAV_MIX_NUDE }
         />
       </button>
     </form>

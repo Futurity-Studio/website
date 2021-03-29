@@ -1,16 +1,19 @@
 @import "theme/constants";
 
 .Form{
-  background: $page-background-color--light;
+  background: $page-background-color--dark;
+  color: $page-background-color--light;
+  padding: 0 .5rem;
   input{
-      @extend %default-text;
+    @extend %default-text;
+    color: $page-background-color--light;
     font-weight: 300;
     background: transparent;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $page-background-color--light;;
     width: 200px;
     border-radius: 0;
-    background: $page-background-color--light;
+    background: $page-background-color--dark;
     padding: 1rem .5rem;
     &:focus {
       outline: none;
@@ -19,6 +22,6 @@
   button{
     border: none;
     background: none;
-    background: $page-background-color--light;
+    background: $page-background-color--dark;
   }
 }
