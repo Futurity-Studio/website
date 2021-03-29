@@ -18,6 +18,7 @@ const Synthesizingfutures = () => {
         <div className={'background'}>
           <BackgroundWide />
           <BackgroundWide />
+          <BackgroundWide />
         </div>
         <div className={'foreground section-content'}>
           <div>
