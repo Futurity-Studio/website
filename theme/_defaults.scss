@@ -21,6 +21,14 @@ body{
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
   }
+
+  // 404
+  >div >div >div >div{
+    min-height: 100%;
+    display: inline-flex !important;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 h1{

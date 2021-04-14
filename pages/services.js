@@ -129,6 +129,7 @@ const Services = () => {
                 <li><p>Trend & Market Research</p></li>
                 <li><p>Research & Design Processes</p></li>
                 <li><p>Rapid Design Prototyping</p></li>
+                <li><p>Futuring Methodology Training</p></li>
               </ul>
             </div>}
             right={

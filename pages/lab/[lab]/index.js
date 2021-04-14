@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {motion} from "framer-motion";
-import {LabDetails, LabThumbnail} from "../../components/Labs/Lab";
-import {LabData} from "../../constants";
-import {Footer} from "../../components";
+import {LabDetails, LabThumbnail} from "../../../components/Labs/Lab";
+import {LabData} from "../../../constants";
+import {Footer} from "../../../components";
 import { useWindowSize } from "react-use";
+import { useRouter } from "next/router";
 
-const Lab = ({ lab }) => {
-  // const lab = LabData.find(l => l.encoded === ((slug) ? slug[0] : null));
+const Index = ({ lab }) => {
+  // const router = useRouter();
+  // const { lab } = router.query
   const {width, height} = useWindowSize();
 
   useEffect(() => {
@@ -43,18 +45,9 @@ const Lab = ({ lab }) => {
   )
 }
 
-// Lab.getInitialProps = async ({ query }) => {
-//   const { slug } = query;
-//   return { slug };
-// };
-
 export async function getStaticProps(context) {
-  // const { lab } = context.params;
-  console.log(context)
-
-  // const lab = LabData.find(l => l.encoded === ((slug) ? slug[0] : null));
-  console.log(context.params.lab)
-  // return { props: { lab:  LabData.find(l => l.encoded === ((slug) ? slug[0] : null))} };
+  // console.log(context)
+  // console.log(context.params.lab)
   return {
     props: {
       lab:  LabData.find(l => l.encoded === context.params.lab)
@@ -69,4 +62,4 @@ export async function getStaticPaths() {
 }
 
 
-export default Lab
+export default Index
