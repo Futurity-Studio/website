@@ -11,11 +11,11 @@ const Index = ({ lab }) => {
   // const { lab } = router.query
   const {width, height} = useWindowSize();
 
-  useEffect(() => {
-    console.log('window stuff')
-    console.log(width)
-    console.log(height)
-  } )
+  // useEffect(() => {
+  //   console.log('window stuff')
+  //   console.log(width)
+  //   console.log(height)
+  // } )
 
   return (
     <motion.main

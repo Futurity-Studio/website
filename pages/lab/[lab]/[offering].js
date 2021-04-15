@@ -1,24 +1,61 @@
-import {useRouter} from 'next/router'
-import {LabData} from "../../../constants";
 import {apiRunnerLabOfferings} from "../../../helpers/api";
+import {DividedContent, Footer, Icon, ICONS, Image, OfferingButton, THEME} from "../../../components";
+import {motion} from "framer-motion";
+import React from "react";
+import {LabData} from "../../../constants";
+import {LabThumbnail} from "../../../components/Labs/Lab";
+import {useRouter} from "next/router";
 
 const Offering = ({offering}) => {
-  const router = useRouter()
+  const router = useRouter();
   console.log({offering})
-  const { id, comment } = router.query
+  const lab = LabData.find(l => l.encoded === offering.lab.toLowerCase())
 
   return (
-    <>
-      <h1>Post: {id}</h1>
-      <h1>Comment: {comment}</h1>
-    </>
+    <motion.main
+      className={'Offering'}
+      initial={{  opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
+      animate={{  opacity: 1, transition:{  delay: .25, duration: .25, easings: "linear" } }}
+      exit={{     opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
+    >
+      <section className={'Offering--details'}>
+        <div className={'Offering--thumbnail'}>
+          <div>
+            <em>{offering.codedName}</em>
+            <h2>{offering.name}</h2>
+          </div>
+          <div>
+            <div>
+              <em>{`${offering.contentType} Description`}</em>
+              <p>{offering.descLong}</p>
+              <em>{`${offering.contentType} Contents`}</em>
+              <p>{offering.descContents}</p>
+            </div>
+            <OfferingButton
+              externalLink={offering.storeLink}
+              label={`View in store`}
+              icon={<Icon icon={ICONS.ARROW_RIGHT} theme={THEME.TRANSPARENT} />}
+              lab={offering.lab.toLowerCase()}
+            />
+          </div>
+          <div>
+            <Image src={offering.photoFile} alt={offering.name} />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className={'section-content'}>
+          <LabThumbnail
+            lab={lab}
+            onClick={() => {
+              router.push(`/lab/${lab.encoded}`)
+            }}
+          />
+        </div>
+      </section>
+      <Footer />
+    </motion.main>
   )
-}
-
-const testData = {
-  acommerce: ['that', 'that1'],
-  foodturity: ['thattt', 't', 'd','g'],
-  neuiro: ['this', 'this1','this3']
 }
 
 export async function getStaticProps(context) {
@@ -40,8 +77,7 @@ export async function getStaticPaths() {
       offering:encodeURI(o.name.replace(/ /g,'').replace(/\//g,''))
     },
   }))
-  console.log(paths)
   return { paths, fallback: false }
 }
 
-export default Offering
+export default Offering;

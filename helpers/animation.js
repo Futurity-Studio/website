@@ -67,9 +67,9 @@ export const landingContainer = {
 }
 
 export const landingItems = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
 }
 
 // Todo finish this!
@@ -81,3 +81,14 @@ export const landingItemsHeading = {
     top: 10,
   },
 }
+
+
+export const thumbnailBackgroundSize = {
+  backgroundSize: '100% 150%',
+  transition: {
+    duration: 6,
+    easings: "backInOut",
+    repeat: Infinity,
+    repeatType: "mirror"
+  }
+};

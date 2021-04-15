@@ -6,6 +6,7 @@ import {removeWebpFormat} from "../Image/Images";
 import {Icon, ICONS, StealthButton, THEME} from "../index";
 import Link from "next/link";
 import { useWindowSize } from "react-use";
+import {thumbnailBackgroundSize} from "../../helpers/animation";
 
 export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
   const [open, setOpen] = useState(false);
@@ -49,15 +50,7 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
       <em>{lab.title_long}</em>
       <motion.h3
         style={background}
-        animate={{
-          backgroundSize: '100% 150%',
-          transition: {
-            duration: 6,
-            easings: "backInOut",
-            repeat: Infinity,
-            repeatType: "mirror"
-          }
-        }}
+        animate={thumbnailBackgroundSize}
       >
         {lab.title}
       </motion.h3>

@@ -48,7 +48,7 @@ export async function apiRunnerLabOfferings() {
     tableData.shift()
     return tableData.map(data =>
       ({
-          'codeName': data[0] || "",
+          'codedName': data[0] || "",
           'contentType': data[1] || "",
           'lab': data[2] || "",
           'name': data[3] || "",
@@ -56,6 +56,8 @@ export async function apiRunnerLabOfferings() {
           'descContents': data[5] || "",
           'features': data[6] || "",
           'photoLink': data[7] || "",
+          'photoFile': data[8] || "",
+          'storeLink': data[9] || "http://www.futurity.studio",
         })
       )
   } catch (err) {
