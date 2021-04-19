@@ -1,14 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { LabData } from "../../constants";
 import {motion} from "framer-motion";
 import styles from "./Lab.module.scss"
 import {removeWebpFormat} from "../Image/Images";
 import {Icon, ICONS, StealthButton, THEME} from "../index";
 import Link from "next/link";
-import { useWindowSize } from "react-use";
+import {useIntersection, useWindowSize} from "react-use";
 import {thumbnailBackgroundSize} from "../../helpers/animation";
+import {useRouter} from "next/router";
 
 export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
+  const route = useRouter();
   const [open, setOpen] = useState(false);
   const [background, setBackground] = useState(null)
 
@@ -39,7 +41,7 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
     }
   }
 
-  // todo -- chck if navigating between labs throws errors when page is proper built
+  // todo -- check if navigating between labs throws errors when page is proper built
   return (
     <motion.div
       className={(expanded) ? styles.Expanded : styles.ThumbnailBase}
@@ -72,81 +74,132 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
   )
 }
 
-export const LabDetails = ({lab}) => {
-  const {width, height} = useWindowSize();
+export const LabDetails = ({lab, offerings}) => {
+  const router = useRouter();
+  const labDescStruct = [
+    {
+      name: 'analysis',
+      desc: 'In-depth examinations of data-driven reports related to the topic of interest.'
+    },
+    {
+      name: 'artifact',
+      desc: 'Products or experiences designed from the interactions, inquiries, and provocations of our analysis.'
+    },
+    {
+      name: 'action',
+      desc: 'Primary research and insights findings from direct consumer groups or industry leaders.'
+    },
+  ];
+  const sortedOfferings = labDescStruct.map((s, i) => {
+    return ({
+      name: s.name,
+      offerings: offerings.sort( () => .5 - Math.random() )
+        .filter(o => o.contentType.toLowerCase() === s.name)
+        .sort((a, b) => {
+          return a.codedName.split(".")[2] - b.codedName.split(".")[2];
+        })
+    })
+  })
+  const [currentOfferingType, setCurrentOfferingType] = useState(0);
+  const offeringScroller = useRef(null)
+  const sectionRefs = [useRef(null), useRef(null), useRef(null)]
+  const analysisIntersection = useIntersection(sectionRefs[0], {
+    root: offeringScroller.current,
+    rootMargin: '0px',
+    threshold: .1
+  });
+  const artifactIntersection = useIntersection(sectionRefs[1], {
+    root: offeringScroller.current,
+    rootMargin: '0px',
+    threshold: .5
+  });
+  const actionIntersection = useIntersection(sectionRefs[2], {
+    root: offeringScroller.current,
+    rootMargin: '0px',
+    threshold: .9
+  });
 
-  const generateFullTable =() => {
-    return lab.deliverable_analysis.map((_ , i) => (
-      <tr key={i}>
-        <td><p>{lab.deliverable_analysis[i].title}</p></td>
-        <td>{lab.deliverable_analysis[i].desc}</td>
-        <td><p>{lab.deliverable_artifacts[i].title}</p></td>
-        <td>{lab.deliverable_artifacts[i].desc}</td>
-      </tr>
+  useEffect(() => {
+    if (analysisIntersection && artifactIntersection && actionIntersection) {
+      // console.log(analysisIntersection.intersectionRatio || 'none')
+      // console.log(analysisIntersection.isIntersecting || 'none')
+      // console.log(artifactIntersection.intersectionRatio || 'none')
+      // console.log(artifactIntersection.isIntersecting || 'none')
+      // console.log(actionIntersection.intersectionRatio || 'none')
+      // console.log(actionIntersection.isIntersecting || 'none')
+      if (analysisIntersection.isIntersecting){
+        setCurrentOfferingType(0)
+      } else if (actionIntersection.isIntersecting){
+        setCurrentOfferingType(2)
+      } else if (artifactIntersection.isIntersecting){
+        setCurrentOfferingType(1)
+      }
+    }
+  }, [analysisIntersection, artifactIntersection, actionIntersection])
+
+  const generateOfferings = () => {
+    return sortedOfferings.map((i, j) => (
+      i.offerings.map((o, k) => (
+        <div
+          key={o.codedName}
+          className={styles.OfferingCard}
+          ref={(k===0) ? sectionRefs[j] : null}
+        >
+          <em>{o.codedName}</em>
+          <div
+            onClick={() => {
+              router.push(`/lab/${lab.encoded}/${encodeURI(o.name.replace(/ /g,'').replace(/\//g,''))}`)
+            }}
+          >
+            <h4>{o.name}</h4>
+            <Icon icon={ICONS.ARROW_RIGHT} theme={THEME.DARK} />
+          </div>
+        </div>
+      ))
     ))
   }
-  const generateAnalysisTable =() => {
-    return lab.deliverable_analysis.map((_ , i) => (
-      <tr key={i}>
-        <td><p>{lab.deliverable_analysis[i].title}</p></td>
-        <td>{lab.deliverable_analysis[i].desc}</td>
-      </tr>
-    ))
-  }
-  const generateArtifactTable =() => {
-    return lab.deliverable_analysis.map((_ , i) => (
-      <tr key={i}>
-        <td><p>{lab.deliverable_artifacts[i].title}</p></td>
-        <td>{lab.deliverable_artifacts[i].desc}</td>
-      </tr>
+
+
+  const generatedCategories = () => {
+    return labDescStruct.map((i, j) => (
+      <motion.div
+        key={`${j}`}
+        initial={{ opacity: 0.5}}
+        animate={(currentOfferingType === j) ? "current" : "closed"}
+        variants={{
+          current: { opacity: 1.0},
+          closed:{ opacity: 0.5}
+        }}
+        onClick={() => {
+          if (offeringScroller && sectionRefs[j] && offeringScroller.current && sectionRefs[j].current){
+            const elemTop = sectionRefs[j].current.offsetTop
+            const contTop = offeringScroller.current.offsetTop
+            const scrollTo = elemTop-contTop;
+            offeringScroller.current.scroll(0,scrollTo);
+          }
+        }}
+      >
+        <em>{i.name}</em>
+        <p>{i.desc}</p>
+      </motion.div>
     ))
   }
 
 
   return(
     <div className={styles.Details}>
-      { (width && width <= 650) ?
-        <>
-          <table>
-            <thead>
-            <tr>
-              <th>analysis</th>
-              <th>In-depth examinations and reports of the topic of interest.</th>
-            </tr>
-            </thead>
-            <tbody>
-            {generateAnalysisTable()}
-            </tbody>
-          </table>
-          <table>
-            <thead>
-            <tr>
-              <th>artifact</th>
-              <th>Design objects based on the interactions, inquiries, and provocations from our analysis.</th>
-            </tr>
-            </thead>
-            <tbody>
-            {generateArtifactTable()}
-            </tbody>
-          </table>
-        </>
-        :
-        <table>
-          <thead>
-          <tr>
-            <th>analysis</th>
-            <th>In-depth examinations and reports of the topic of interest.</th>
-            <th>artifact</th>
-            <th>Design objects based on the interactions, inquiries, and provocations from our analysis.</th>
-          </tr>
-          </thead>
-          <tbody>
-          {generateFullTable()}
-          </tbody>
-        </table>
-      }
+      <div>
+        <div>
+          { generatedCategories() }
+        </div>
+        <div ref={offeringScroller}>
+          { generateOfferings() }
+        </div>
+      </div>
 
     </div>
   )
 }
+
+
 

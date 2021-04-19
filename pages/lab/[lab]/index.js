@@ -5,8 +5,10 @@ import {LabData} from "../../../constants";
 import {Footer} from "../../../components";
 import { useWindowSize } from "react-use";
 import { useRouter } from "next/router";
+import {apiRunnerLabOfferings} from "../../../helpers/api";
 
-const Index = ({ lab }) => {
+
+const Index = ({ lab, offerings }) => {
   // const router = useRouter();
   // const { lab } = router.query
   const {width, height} = useWindowSize();
@@ -16,7 +18,8 @@ const Index = ({ lab }) => {
   //   console.log(width)
   //   console.log(height)
   // } )
-
+  //
+  // const offeringData = apiRunnerLabOfferings();
   return (
     <motion.main
       className={'Labs'}
@@ -36,6 +39,7 @@ const Index = ({ lab }) => {
           />
           <LabDetails
             lab={lab}
+            offerings={offerings}
           />
         </>
         }
@@ -46,11 +50,14 @@ const Index = ({ lab }) => {
 }
 
 export async function getStaticProps(context) {
-  // console.log(context)
-  // console.log(context.params.lab)
+  const lab = LabData.find(l => l.encoded === context.params.lab);
+  const offeringData = await apiRunnerLabOfferings();
+  let offerings = offeringData.filter(o => o.lab.toLowerCase() === lab.encoded);
+
   return {
     props: {
-      lab:  LabData.find(l => l.encoded === context.params.lab)
+      lab,
+      offerings
     },
   }
 }
