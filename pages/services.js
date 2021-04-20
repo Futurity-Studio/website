@@ -15,6 +15,7 @@ const Services = () => {
   const router = useRouter();
   const [ deliverableSection, setDeliverableSection ] = useState(0);
   const [ methodologySection, setMethodologySection ] = useState(null);
+  const services = useRef(null)
   const size = useWindowSize();
 
   const [background, setBackground] = useState(null)
@@ -106,42 +107,49 @@ const Services = () => {
 
           </div>
         </div>
-        <Teaser label={'explore how'} />
+        <Teaser
+          label={'explore how'}
+          onClick={() => (window.scrollTo({top: services.current.offsetTop - (82+ 64), behavior: 'smooth'})) }
+        />
       </motion.section>
 
       <section className={'services'}>
-        <div className={'section-content'}>
-          <DividedContent
-            medLeft={ !!(size.width > 900)  }
-            right={<div>
-              <p>We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</p>
-            </div>}
-            left={<h2>We deal in Futures</h2>}
-          />
-        </div>
-        <div className={'section-content'}>
-          <DividedContent
-            medLeft={ !!(size.width > 900)  }
-            left={<div>
-              <ul>
-                <li><p>Innovation & Moonshot Consulting</p></li>
-                <li><p>Design & Futuring Workshops</p></li>
-                <li><p>Trend & Market Research</p></li>
-                <li><p>Research & Design Processes</p></li>
-                <li><p>Rapid Design Prototyping</p></li>
-                <li><p>Futuring Methodology Training</p></li>
-              </ul>
-            </div>}
-            right={
-              <div>
-                <p>
-                  We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies.
-                  We don't just write reports or design thinking activities.
-                  Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.
-                </p>
-              </div>
-            }
-          />
+        <div className={'section-content'} ref={services}>
+          <div>
+            <em>services</em>
+            <h2>We deal in Futures and Future Literacy</h2>
+          </div>
+          <p>We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies. We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</p>
+          <div className={'services--content'}>
+          <div>
+            <em>Training For Futures</em>
+            <h3>Processes</h3>
+            <ul>
+              <li><p>Individual & Corporate Methodology Training</p></li>
+              <li><p>Research & Design Processes</p></li>
+              <li><p>Design & Futuring Workshops</p></li>
+            </ul>
+          </div>
+          <div>
+            <em>Establishing Futures</em>
+            <h3>Infrastructure</h3>
+            <ul>
+              <li><p>Innovation & Moonshot Consulting</p></li>
+              <li><p>Custom Research Verticals</p></li>
+            </ul>
+          </div>
+          <div>
+            <em>Exploring Futures</em>
+            <h3>Content</h3>
+            <ul>
+              <li><p>Syndicated Research Verticals</p></li>
+              <li><p>Trend & Market Research</p></li>
+              <li><p>Future Design Prototyping</p></li>
+              <li><p>Focus Groups & Industry Leader Seminars</p></li>
+            </ul>
+          </div>
+          </div>
+
         </div>
       </section>
 
@@ -172,8 +180,8 @@ const Services = () => {
 
 
           <svg
-            width={1447}
-            height={802}
+            // width={1447}
+            // height={802}
             viewBox="0 0 1447 802"
             xmlns="http://www.w3.org/2000/svg"
           >

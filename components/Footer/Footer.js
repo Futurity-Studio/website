@@ -50,7 +50,6 @@ const Footer = () => {
     hover: {
       y: 0,
       transition: {
-        delay: .1,
         duration: .1,
         easings: "backInOut",
       }
@@ -138,7 +137,7 @@ const Footer = () => {
             <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
               <a target='_blank' className={styles.cta}>
                 <motion.div whileHover="hover" initial="initial">
-                  <h3>Let's Future.</h3>
+                  <h3>Let's Build Better Futures.</h3>
                   <motion.div
                     className={styles.contactMail} variants={growArrow}
                   >

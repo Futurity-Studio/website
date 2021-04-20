@@ -122,9 +122,18 @@
     h4{
       max-width: 55ex;
     }
-    ul{
+    &--content{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > div {
+        margin-top: $content-padding/2;
+      }
+    }
+    ul {
       //list-style: none;
-      //padding-left: 0;
+      padding-left: 1.5rem;
     }
   }
 

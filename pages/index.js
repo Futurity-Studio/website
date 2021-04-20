@@ -28,7 +28,7 @@ const Home = () => {
   useEffect(() => {
     const options = {
       strings:
-        shuffleArray(['financial','commercial','industrial','daily','everyday','ecological','environmental','mental','physical']),
+        shuffleArray(['financial','commercial','industrial','daily','everyday','ecological','environmental','mental','physical','automated','trans-human','consumer','gastronomy','social','shared']),
       typeSpeed: 100,
       backSpeed: 50,
       startDelay: 3000,
@@ -46,7 +46,7 @@ const Home = () => {
   useEffect(() => {
     const options = {
       strings:
-        shuffleArray(['risky', 'complicated', 'uncertain']),
+        shuffleArray(['risky','complicated','uncertain','convoluted','controversial','unjust','unsustainable']),
       typeSpeed: 100,
       backSpeed: 50,
       startDelay: 3000,

@@ -41,7 +41,6 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
     }
   }
 
-  // todo -- check if navigating between labs throws errors when page is proper built
   return (
     <motion.div
       className={(expanded) ? styles.Expanded : styles.ThumbnailBase}
@@ -64,7 +63,7 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
         <Link href={`/lab/${encodeURIComponent(prevPage.encoded)}`}>
           <a><Icon icon={ICONS.ARROW_LEFT} theme={THEME.TRANSPARENT}/></a>
         </Link>
-        <StealthButton label={'Download Overview'} externalLink={lab.one_pager_link}/>
+        <StealthButton label={'Download Overview (PDF)'} externalLink={lab.one_pager_link}/>
         <Link href={`/lab/${encodeURIComponent(nextPage.encoded)}`}>
           <a><Icon icon={ICONS.ARROW_RIGHT} theme={THEME.TRANSPARENT}/></a>
         </Link>
@@ -99,10 +98,10 @@ export const LabDetails = ({lab, offerings}) => {
           return a.codedName.split(".")[2] - b.codedName.split(".")[2];
         })
     })
-  })
+  }).filter(s => s.offerings.length > 0)
   const [currentOfferingType, setCurrentOfferingType] = useState(0);
   const offeringScroller = useRef(null)
-  const sectionRefs = [useRef(null), useRef(null), useRef(null)]
+  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
   const analysisIntersection = useIntersection(sectionRefs[0], {
     root: offeringScroller.current,
     rootMargin: '0px',
@@ -118,6 +117,9 @@ export const LabDetails = ({lab, offerings}) => {
     rootMargin: '0px',
     threshold: .9
   });
+
+  console.log(sortedOfferings)
+  console.log(sectionRefs)
 
   useEffect(() => {
     if (analysisIntersection && artifactIntersection && actionIntersection) {
@@ -161,14 +163,14 @@ export const LabDetails = ({lab, offerings}) => {
 
 
   const generatedCategories = () => {
-    return labDescStruct.map((i, j) => (
+    return sortedOfferings.map((i, j) => (
       <motion.div
         key={`${j}`}
         initial={{ opacity: 0.5}}
         animate={(currentOfferingType === j) ? "current" : "closed"}
         variants={{
           current: { opacity: 1.0},
-          closed:{ opacity: 0.5}
+          closed:{ opacity: 0.5, transition: { duration: .25}}
         }}
         onClick={() => {
           if (offeringScroller && sectionRefs[j] && offeringScroller.current && sectionRefs[j].current){
@@ -180,7 +182,7 @@ export const LabDetails = ({lab, offerings}) => {
         }}
       >
         <em>{i.name}</em>
-        <p>{i.desc}</p>
+        <p>{labDescStruct[j].desc}</p>
       </motion.div>
     ))
   }
