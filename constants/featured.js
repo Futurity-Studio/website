@@ -255,4 +255,11 @@ export const Advisors =[
     image: "",
     website: "https://seiz.design/"
   },
+  {
+    name: "Ivan Bofarull",
+    bio: "Ivan is Chief Innovation Officer at Esade, where he also teaches and designs disruptive innovation programs for corporate clients. In the last few years, he has also taught moonshot innovations to established companies and startup founders in Silicon Valley in collaboration with Singularity University. During the previous four years, he collaborated with elBulli Foundation as a co-lead of Esade’s Challenge for Business Innovation. From 2011 to 2016, Ivan was an advisor for global strategy at Georgetown University’s business school, in a full-time position first, and later on as a visiting advisor.",
+    image: "",
+    website: "https://www.linkedin.com/in/ivanbofarull/"
+  },
+
 ]
