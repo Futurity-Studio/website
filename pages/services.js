@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer'
 import {animateInUp} from "../helpers/animation";
 import {getAnchor, getParam, openInNewTab, scrollToRef} from "../helpers/utils";
 import { Advisors } from "../constants/featured";
-import {c, useWindowSize} from "react-use";
+import {useWindowSize} from "react-use";
 
 
 const Services = () => {
