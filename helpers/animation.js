@@ -92,3 +92,20 @@ export const thumbnailBackgroundSize = {
     repeatType: "mirror"
   }
 };
+
+export const chatBubble = {
+  initial: {
+    y: 0,
+    x:0
+  },
+  hover: {
+    scale:[1, 1.1, .9],
+    times: [0, .5, 1],
+    transition: {
+      duration: 1,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeIn",
+    }
+  }
+}

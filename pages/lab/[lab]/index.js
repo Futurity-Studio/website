@@ -5,7 +5,7 @@ import {LabData} from "../../../constants";
 import {Footer} from "../../../components";
 import { useWindowSize } from "react-use";
 import { useRouter } from "next/router";
-import {apiRunnerLabOfferings} from "../../../helpers/api";
+import {apiRunnerLabOfferings, defaultOffering, mapOfferingData} from "../../../helpers/api";
 
 
 const Index = ({ lab, offerings }) => {
@@ -51,7 +51,14 @@ const Index = ({ lab, offerings }) => {
 
 export async function getStaticProps(context) {
   const lab = LabData.find(l => l.encoded === context.params.lab);
-  const offeringData = await apiRunnerLabOfferings();
+  const response = await apiRunnerLabOfferings();
+
+  let offeringData;
+  if (!response.data) {
+    offeringData = defaultOffering;
+  } else {
+    offeringData = mapOfferingData(response.data.values)
+  }
   let offerings = offeringData.filter(o => o.lab.toLowerCase() === lab.encoded);
 
   return {
@@ -61,11 +68,13 @@ export async function getStaticProps(context) {
     },
   }
 }
+
+
 export async function getStaticPaths() {
   const paths = LabData.map(l => ({
     params: { lab: l.encoded },
   }))
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 

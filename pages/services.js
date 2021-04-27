@@ -119,35 +119,55 @@ const Services = () => {
             <em>services</em>
             <h2>We deal in Futures and Future Literacy</h2>
           </div>
-          <p>We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies. We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</p>
+
+          <DividedContent
+            smallRight={true}
+            left={<p>We help companies recognize & plan existential threats and emerging markets. We help companies achieve sustainable development goals, emerging market fit, and novel business strategies. We don't just write reports or design thinking activities. Our future synthesis approach culminates with an embodiment of data science, experimentation, and forecasting into a narrative artifact, product, or experience to help your team realize a better future faster.</p>}
+            right={
+              <div>
+                <svg
+                  width={46*3.5}
+                  height={43*3.5}
+                  viewBox="0 0 46 43"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M35.127 29.582l-2.92-5.058 9.82-17.014 2.92 5.059-9.82 17.013zM4.749 25.008h5.845l9.82 17.016h-5.846l-9.82-17.016zM4.259.978H23.9l-2.924 5.064H1.336L4.26.977zm26.863 11.539L28.2 17.581 21.823 6.53l2.921-5.063 6.378 11.049zm-9.693 17.556l-2.978-5.065h12.906l2.923 5.065H21.429zM10.986 13.225h5.845L10.594 24.03H4.749l6.237-10.805zm9.989-6.205l6.377 11.05h-5.97l-3.284-5.581a.488.488 0 00-.421-.242h-6.975a.49.49 0 00-.424.245l-2.891 5.01L1.337 7.02h19.638zm-9.534 17.5l6.24-10.813 2.852 4.852-3.358 5.713a.487.487 0 000 .494l3.551 6.043c.088.149.25.241.422.241h6.163l-6.052 10.483-9.818-17.013zm29.738-17.5l-9.818 17.01h-12.91l2.93-4.982H28.2a.49.49 0 00.424-.245l3.487-6.042a.488.488 0 000-.488L29.08 7.02h12.1zm4.755 5.305L42.45 6.287a.49.49 0 00-.424-.245H28.515L25.169.246A.49.49 0 0024.745 0H3.976a.49.49 0 00-.424.246L.065 6.287a.49.49 0 000 .488l6.757 11.707-3.344 5.793a.49.49 0 000 .488l10.384 17.993a.49.49 0 00.424.244h6.974a.492.492 0 00.424-.244L28.44 31.05h6.687a.49.49 0 00.424-.245l10.383-17.992a.485.485 0 000-.488z"
+                    fill="#020303"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            }
+          />
           <div className={'services--content'}>
-          <div>
-            <em>Training For Futures</em>
-            <h3>Processes</h3>
-            <ul>
-              <li><p>Individual & Corporate Methodology Training</p></li>
-              <li><p>Research & Design Processes</p></li>
-              <li><p>Design & Futuring Workshops</p></li>
-            </ul>
-          </div>
-          <div>
-            <em>Establishing Futures</em>
-            <h3>Infrastructure</h3>
-            <ul>
-              <li><p>Innovation & Moonshot Consulting</p></li>
-              <li><p>Custom Research Verticals</p></li>
-            </ul>
-          </div>
-          <div>
-            <em>Exploring Futures</em>
-            <h3>Content</h3>
-            <ul>
-              <li><p>Syndicated Research Verticals</p></li>
-              <li><p>Trend & Market Research</p></li>
-              <li><p>Future Design Prototyping</p></li>
-              <li><p>Focus Groups & Industry Leader Seminars</p></li>
-            </ul>
-          </div>
+            <div>
+              <em>Training For Futures</em>
+              <h3>Processes</h3>
+              <ul>
+                <li><p>Individual & Corporate Methodology Training</p></li>
+                <li><p>Research & Design Processes</p></li>
+                <li><p>Design & Futuring Workshops</p></li>
+              </ul>
+            </div>
+            <div>
+              <em>Establishing Futures</em>
+              <h3>Infrastructure</h3>
+              <ul>
+                <li><p>Innovation & Moonshot Consulting</p></li>
+                <li><p>Custom Research Verticals</p></li>
+              </ul>
+            </div>
+            <div>
+              <em>Exploring Futures</em>
+              <h3>Content</h3>
+              <ul>
+                <li><p>Syndicated Research Verticals</p></li>
+                <li><p>Trend & Market Research</p></li>
+                <li><p>Future Design Prototyping</p></li>
+                <li><p>Focus Groups & Industry Leader Seminars</p></li>
+              </ul>
+            </div>
           </div>
 
         </div>
@@ -162,7 +182,7 @@ const Services = () => {
         <div className={'section-content'}>
           <DividedContent
             medLeft={ !!(size.width > 900)  }
-            left={<h2>Future Labs</h2>}
+            left={<div><em>Content</em><h2>Future Labs</h2></div>}
             right={<>
               <p>
                 Our core offering is a year-long cycle of trend, participatory, and design research to build a better future through experimentation.

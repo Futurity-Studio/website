@@ -8,6 +8,7 @@ import Link from "next/link";
 import {useIntersection, useWindowSize} from "react-use";
 import {thumbnailBackgroundSize} from "../../helpers/animation";
 import {useRouter} from "next/router";
+import { chatBubble } from "../../helpers/animation";
 
 export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
   const route = useRouter();
@@ -41,6 +42,8 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
     }
   }
 
+  // todo -- add button target
+
   return (
     <motion.div
       className={(expanded) ? styles.Expanded : styles.ThumbnailBase}
@@ -59,15 +62,25 @@ export const LabThumbnail = ({lab, expanded, onClick, clicked}) => {
         <p>{lab.desc}</p>
       </div>
       {expanded &&
-      <div>
-        <Link href={`/lab/${encodeURIComponent(prevPage.encoded)}`}>
-          <a><Icon icon={ICONS.ARROW_LEFT} theme={THEME.TRANSPARENT}/></a>
-        </Link>
-        <StealthButton label={'Download Overview (PDF)'} externalLink={lab.one_pager_link}/>
-        <Link href={`/lab/${encodeURIComponent(nextPage.encoded)}`}>
-          <a><Icon icon={ICONS.ARROW_RIGHT} theme={THEME.TRANSPARENT}/></a>
-        </Link>
-      </div>
+      <>
+        <div
+        >
+          <p>Subscribing to this lab grants access to <em>all Analyses, Artifacts, and Actions</em>. Contact us for a subscription</p>
+          <Icon
+            icon={ICONS.CHAT_BUBBLE}
+            theme={THEME.DARK}
+          />
+        </div>
+        <div>
+          <Link href={`/lab/${encodeURIComponent(prevPage.encoded)}`}>
+            <a><Icon icon={ICONS.ARROW_LEFT} theme={THEME.TRANSPARENT}/></a>
+          </Link>
+          <StealthButton label={'Download Overview (PDF)'} externalLink={lab.one_pager_link}/>
+          <Link href={`/lab/${encodeURIComponent(nextPage.encoded)}`}>
+            <a><Icon icon={ICONS.ARROW_RIGHT} theme={THEME.TRANSPARENT}/></a>
+          </Link>
+        </div>
+      </>
       }
     </motion.div>
   )
@@ -118,8 +131,8 @@ export const LabDetails = ({lab, offerings}) => {
     threshold: .9
   });
 
-  console.log(sortedOfferings)
-  console.log(sectionRefs)
+  // console.log(sortedOfferings)
+  // console.log(sectionRefs)
 
   useEffect(() => {
     if (analysisIntersection && artifactIntersection && actionIntersection) {

@@ -30,6 +30,7 @@ export const ICONS = {
   ARROW_RIGHT: 'ARROW_RIGHT',
   ARROW_LEFT: 'ARROW_LEFT',
   PIN: 'PIN',
+  CHAT_BUBBLE: 'CHAT_BUBBLE',
 };
 
 export const THEME = {
@@ -105,6 +106,25 @@ const ARROW_LEFT = (iconHoverAnimation) => {
     >
       <path
         d="M6.854 3.146a.5.5 0 010 .708L3.707 7H12.5a.5.5 0 010 1H3.707l3.147 3.146a.5.5 0 01-.708.708l-4-4a.5.5 0 010-.708l4-4a.5.5 0 01.708 0z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </motion.svg>
+  )
+}
+
+const CHAT_BUBBLE = (iconHoverAnimation) => {
+  return (
+    <motion.svg whileHover={iconHoverAnimation}
+                width={15}
+                height={15}
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.5 3h-10A1.5 1.5 0 001 4.5v5A1.5 1.5 0 002.5 11h5a.5.5 0 01.354.146L10 13.293V11.5a.5.5 0 01.5-.5h2A1.5 1.5 0 0014 9.5v-5A1.5 1.5 0 0012.5 3zm-10-1h10A2.5 2.5 0 0115 4.5v5a2.5 2.5 0 01-2.5 2.5H11v2.5a.5.5 0 01-.854.354L7.293 12H2.5A2.5 2.5 0 010 9.5v-5A2.5 2.5 0 012.5 2z"
         fill="currentColor"
         fillRule="evenodd"
         clipRule="evenodd"
@@ -652,6 +672,9 @@ export const Icon = (
       break;
     case ICONS.PIN:
       svg = PIN(iconHoverAnimation);
+      break;
+    case ICONS.CHAT_BUBBLE:
+      svg = CHAT_BUBBLE(iconHoverAnimation);
       break;
 
     default:

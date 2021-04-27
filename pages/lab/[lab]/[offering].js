@@ -1,4 +1,4 @@
-import {apiRunnerLabOfferings} from "../../../helpers/api";
+import {apiRunnerLabOfferings, defaultOffering, mapOfferingData} from "../../../helpers/api";
 import {DividedContent, Footer, Icon, ICONS, Image, OfferingButton, THEME} from "../../../components";
 import {motion} from "framer-motion";
 import React from "react";
@@ -8,7 +8,7 @@ import {useRouter} from "next/router";
 
 const Offering = ({offering}) => {
   const router = useRouter();
-  console.log({offering})
+  // console.log({offering})
   const lab = LabData.find(l => l.encoded === offering.lab.toLowerCase())
 
   return (
@@ -39,7 +39,9 @@ const Offering = ({offering}) => {
             />
           </div>
           <div>
-            <Image src={offering.photoFile} alt={offering.name} />
+            {
+              <Image src={offering.photoFile} alt={offering.name}/>
+            }
           </div>
         </div>
       </section>
@@ -59,25 +61,36 @@ const Offering = ({offering}) => {
 }
 
 export async function getStaticProps(context) {
-  const offeringData = await apiRunnerLabOfferings();
-  // console.log(context.params.offering)
+  const response = await apiRunnerLabOfferings();
+  let offeringData;
+  if (response.data) {
+    offeringData = mapOfferingData(response.data.values)
+  } else {
+    offeringData = [defaultOffering]
+  }
+  const offering = offeringData.find(o => (encodeURI(o.name.replace(/ /g,'').replace(/\//g,'').replace(/:/g,'')) === context.params.offering));
   return {
     props: {
-      offering:  offeringData.find(o => (
-        encodeURI(o.name.replace(/ /g,'').replace(/\//g,'')) === context.params.offering)
-      )
+      offering:  offering
     },
+    revalidate: 1
   }
 }
 export async function getStaticPaths() {
-  const offeringData = await apiRunnerLabOfferings();
+  const response = await apiRunnerLabOfferings();
+  if (!response.data) {
+    return {
+      notFound: true,
+    }
+  }
+  const offeringData = mapOfferingData(response.data.values)
   const paths = offeringData.map(o => ({
     params: {
       lab: o.lab.toLowerCase(),
-      offering:encodeURI(o.name.replace(/ /g,'').replace(/\//g,''))
-    },
-  }))
-  return { paths, fallback: false }
+      offering:encodeURI(o.name.replace(/ /g,'').replace(/\//g,'').replace(/:/g,''))
+    }})
+  )
+  return { paths, fallback: true }
 }
 
 export default Offering;

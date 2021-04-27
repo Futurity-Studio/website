@@ -14,6 +14,7 @@ import Landing from "./Landing/Landing";
 import Card from "./Card/Card";
 import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
 import CommunityJoin from "./Form/CommunityJoin";
+import Idea from "./Idea/Idea";
 
 export {
   Menu,
@@ -34,4 +35,5 @@ export {
   removeWebpFormat,
   DeliverableSampler,
   CommunityJoin,
+  Idea
 }

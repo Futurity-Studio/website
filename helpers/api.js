@@ -1,28 +1,20 @@
 import { google } from "googleapis";
 //https://andreaskeller.name/blog/nextjs-google-sheets-cms
 
-export const defaultCard = {
-  'index': "0",
-  'deck': "none",
-  'suit': "none",
-  'card': "0",
-  'nameUrl': "",
-  'nameNatural': "FS Cards",
-  'descShort': "Short Description",
-  'iconUrl': "Logo",
-  'qrUrl': "",
-  'pipUrl': "",
-  'descLong': "Body Text **here**",
-  'redirectOption': "",
-  'deckCode': "0",
-  'suitCode': "0",
-  'cardCode': "0",
-  'context': "",
-  'path': "",
-  'keywords': "",
-  'relatedCards': "",
-}
+// OFFERINGS
 
+export const defaultOffering = {
+  'codedName': "",
+  'contentType': "",
+  'lab': "",
+  'name': "",
+  'descLong': "",
+  'descContents': "",
+  'features': "",
+  'photoLink': "",
+  'photoFile': "",
+  'storeLink': "http://www.futurity.studio",
+}
 export async function apiRunnerLabOfferings() {
   try {
     const scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
@@ -42,26 +34,74 @@ export async function apiRunnerLabOfferings() {
     });
 
     // console.log(response)
-    let tableData = response.data.values;
+    // let tableData = response.data.values;
     // console.log(tableData)
 
-    tableData.shift()
-    return tableData.map(data =>
-      ({
-          'codedName': data[0] || "",
-          'contentType': data[1] || "",
-          'lab': data[2] || "",
-          'name': data[3] || "",
-          'descLong': data[4] || "",
-          'descContents': data[5] || "",
-          'features': data[6] || "",
-          'photoLink': data[7] || "",
-          'photoFile': data[8] || "",
-          'storeLink': data[9] || "http://www.futurity.studio",
-        })
-      )
+    return(response);
   } catch (err) {
     console.log(err);
   }
   return [];
 }
+export const mapOfferingData = (tableData) => {
+  tableData.shift()
+  return tableData.map(data =>
+  {
+      const buildOffering = {}
+      Object.keys(defaultOffering).forEach((key,index) => {
+        let temp = {};
+        temp[key] = (data[index]) ? data[index] : defaultOffering[key];
+        Object.assign(buildOffering, temp)
+        })
+      return buildOffering;
+  })
+};
+
+// TODO -- rename events to ideas once csv is set
+// EVENTS
+export const defaultEvent = {
+  "date": "",
+  "speaker": "",
+  "format": "",
+  "location": "",
+  "lab": "",
+  "title": "",
+  "descLong": "",
+  "host": "",
+  "hostLink": "",
+  "coPanelists": "",
+}
+export async function apiRunnerIdeas() {
+  try {
+    const scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+    const jwt = new google.auth.JWT(
+      process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+      null,
+      process.env.GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, "\n"),
+      scopes
+    );
+
+    const sheets = google.sheets({ version: "v4", auth: jwt });
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: process.env.SPREADSHEET_ID,
+      range: "events"
+    });
+    return(response);
+  } catch (err) {
+    console.log(err);
+  }
+  return [];
+}
+export const mapIdeaData = (tableData) => {
+  tableData.shift()
+  return tableData.map(data =>
+  {
+    const buildEvent = {}
+    Object.keys(defaultEvent).forEach((key,index) => {
+      let temp = {};
+      temp[key] = (data[index]) ? data[index] : defaultEvent[key];
+      Object.assign(buildEvent, temp)
+    })
+    return buildEvent;
+  })
+};

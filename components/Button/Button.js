@@ -19,7 +19,7 @@ export const StealthButton = ({label, icon, link, externalLink, onClick, callbac
             if (callback){callback()}
           });
         }
-        if (externalLink){
+        else if (externalLink){
           window.open(externalLink, '_blank')
           if (callback){callback()}
         }

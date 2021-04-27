@@ -122,6 +122,14 @@
     h4{
       max-width: 55ex;
     }
+    > div >div:nth-of-type(2) {
+      margin: $content-padding/2 0;
+      >div:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
     &--content{
       display: flex;
       flex-direction: row;
@@ -554,7 +562,6 @@
     }
   }
 
-
   #background-acommerce{
     background: url("/assets/img/background--acommerce.jpg") center center no-repeat;
     background-size: cover;
@@ -620,6 +627,34 @@
     .background{
       padding-top: $menu-page-padding;
       overflow: hidden;
+    }
+  }
+}
+
+.Ideas {
+  section:first-of-type {
+    padding-top: $menu-page-padding;
+  }
+  &--container{
+    display: grid;
+    grid: 1fr / 1fr 1fr
+  }
+  .details {
+    position: sticky;
+    top: $menu-page-padding + 12px;
+    p {
+      max-width: 55ex !important;
+    }
+    >div:first-of-type >div{
+      display: grid;
+      grid: 1fr / 1fr 1fr 1fr;
+    }
+  }
+  .content{
+    .cubit{
+      height: 120px;
+      background-color: red;
+      width: 100px
     }
   }
 }

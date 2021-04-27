@@ -4,18 +4,35 @@
 .ThumbnailBase{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content auto min-content;
+  grid-template-rows: min-content min-content 1fr auto min-content;
   cursor: pointer;
 
   em{
     margin: $content-padding/2 $content-padding/2 0;
   }
-  div{
+  > div{
     margin: $content-padding/2 $content-padding/2 0;
     &:first-of-type{
       margin-top: 0;
     }
     &:nth-of-type(2){
+      margin-top: 0 !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      em{
+        margin: 0!important;
+        font-weight: bold;
+      }
+      >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: .2rem;
+      }
+    }
+    &:nth-of-type(3){
       display: grid;
       grid-template-columns: min-content auto min-content;
       grid-template-rows: min-content 1fr;
