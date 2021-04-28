@@ -637,11 +637,17 @@
   }
   &--container{
     display: grid;
-    grid: 1fr / 1fr 1fr
+    grid: 1fr / 1fr 1fr;
+    grid-column-gap: $content-padding/2;
+
+    @include media("<=880px"){
+      grid: auto 1fr / 1fr;
+    }
   }
   .details {
     position: sticky;
     top: $menu-page-padding + 12px;
+    padding-bottom: $content-padding;
     p {
       max-width: 55ex !important;
     }

@@ -31,9 +31,11 @@ const Ideas = ({ideas}) => {
                   <h1>Future Ideas</h1>
                   <div><em>Events</em><em>Podcasts</em><em>Blogs</em></div>
                 </div>
-                <p>We are constantly seeking out opportunities to speak about what we are working on, to have a forum to think about the future of industry, society, technology, culture, and design, and to challenge our ideas and assumptions. Explore our events, podcasts, and blog posts here. If you find anything intriguing or might want to invite us to a conversation, do not hesitate to reach out to us.</p>
+                <p>
+                  At Futurity Studio, we are constantly seeking opportunities to communicate our ideas. We value a forum to think and challenge our assumptions about the future of industry, society, technology, and design. Explore our events, podcasts, and blog posts. If you find anything intriguing or might want to invite us into your conversation, do not hesitate to contact us.
+                </p>
                 <StealthButton
-                  label={'Contact Us about our Ideas'}
+                  label={'Contact Us about our content'}
                   onClick={() => (window.open('mailto:inquiry@futurity.studio', "") )}
                   icon={<Icon icon={ICONS.CHAT_BUBBLE} theme={THEME.DARK} />}
                 />
