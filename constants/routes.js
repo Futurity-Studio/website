@@ -4,5 +4,6 @@ export const ROUTES = {
   EVENTS: '/events',
   LABS: '/labs',
   SERVICES: '/services',
-  SYNTHFUTURES: '/synthesizingfutures'
+  SYNTHFUTURES: '/synthesizingfutures',
+  IDEAS: '/ideas'
 };

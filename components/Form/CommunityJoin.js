@@ -11,27 +11,28 @@ const CommunityJoin = ({}) => {
     return re.test(String(email).toLowerCase());
   }
 
-  function encode(data) {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
+  //
+  // function encode(data) {
+  //   return Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //     .join("&")
+  // }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "community": e.target.getAttribute("email"),
-        ...email
-      })
-    }).then(() => {
-      console.log('success');
-      setSubmitted(true);
-      setEmail('');
-    }).catch(error => console.log(error))
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: encode({
+  //       "community": e.target.getAttribute("email"),
+  //       ...email
+  //     })
+  //   }).then(() => {
+  //     console.log('success');
+  //     setSubmitted(true);
+  //     setEmail('');
+  //   }).catch(error => console.log(error))
+  // }
 
   return(
     <form className={styles.Form} name="community" method="POST" data-netlify="true">

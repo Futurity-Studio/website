@@ -44,3 +44,28 @@
     }
   }
 }
+
+$corner-radius: .5rem;
+
+.EmButtonDefault{
+  display: grid;
+  grid: 1fr / min-content min-content;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 1ex;
+  min-width: initial !important;
+  border: $line-thickness solid $page-background-color--dark;
+  border-radius: $corner-radius;
+  background: transparent;
+  > em {
+    white-space: nowrap;
+    position: relative;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.EmButtonActive{
+
+}

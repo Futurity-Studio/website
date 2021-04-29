@@ -7,7 +7,7 @@ import { Teaser, TeaserHorizontal } from "./Teaser/Teaser";
 import AccordionSection from "./AccordionSection/AccordionSection";
 import BoundaryLine from "./BoundaryLine/BoundaryLine";
 import BorderButton from "./BorderButton/BorderButton";
-import { StealthButton, OfferingButton } from "./Button/Button";
+import { StealthButton, OfferingButton, EmButton } from "./Button/Button";
 import Image from "./Image/Images";
 import { removeWebpFormat } from "./Image/Images";
 import Landing from "./Landing/Landing";
@@ -35,5 +35,6 @@ export {
   removeWebpFormat,
   DeliverableSampler,
   CommunityJoin,
-  Idea
+  Idea,
+  EmButton,
 }
