@@ -1,11 +1,30 @@
-import React  from 'react';
-import { motion } from "framer-motion";
+import React, {useEffect, useRef, useState} from 'react';
+import {motion, useViewportScroll, useTransform, transform} from "framer-motion";
+import Link from 'next/link';
 import Lottie from "lottie-react";
-import {CommunityJoin, EmButton, Footer, Icon, ICONS, THEME} from "../components";
+import {CommunityJoin, EmButton, Footer, Icon, ICONS, StealthButton, THEME} from "../components";
 import { cross } from "../constants/lottie";
 import BackgroundWide from "../components/Icon/BackgroundWide";
+import {scrollToRef} from "../helpers/utils";
 
 const Synthesizingfutures = () => {
+  const [currentModule, setCurrentModule] = useState(1);
+  const refDetails = useRef();
+  const refOverview = useRef();
+  const { scrollY } = useViewportScroll();
+  let inputRangeOrigin = (refOverview.current) ? refOverview.current.offsetTop - refOverview.current.offsetHeight : 1080*.5;
+  console.log(inputRangeOrigin)
+  let gap = 150;
+  useEffect(() => {
+    gap = window.innerHeight * .125;
+  }, [])
+  console.log(gap);
+
+  let y1 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap    ], [gap, 0]);
+  let y2 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+ 50], [gap+ 50, 0]);
+  let y3 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+100], [gap+ 100, 0]);
+  let y4 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+150], [gap+ 150, 0]);
+  let y5 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+250], [gap+ 200, 0]);
 
   return(
     <motion.main
@@ -39,55 +58,48 @@ const Synthesizingfutures = () => {
           <div />
         </div>
       </section>
-      <section className={'overview'}>
+      <section className={'overview'} ref={refOverview}>
         <div className={'section-content'}>
 
           <div>
             <h2>Four Step Futures Synthesis</h2>
           </div>
-          <div>
+          <motion.div style={{y: y1}}>
             <h4>01_a map_</h4>
             <h3>Mapping Futures Landscape</h3>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div style={{y: y2}}>
             <h4>02_a story_</h4>
             <h3>Building Futures World</h3>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div style={{y: y3}}>
             <h4>03_an object_</h4>
             <h3>Making Future Artifact</h3>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div style={{y: y4}}>
             <h4>04_a plan_</h4>
             <h3>Forming Roadmap and Backcasting</h3>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div style={{y: y5}}>
             <div>
-            <em>Build a full set of capabilities</em>
-            <h4>
-              Your team will come away with a fully-rounded set of skills from business, engineering, and design - all critical to ongoing success and growth
-            </h4>
+              <em>Build a full set of capabilities</em>
+              <h4>
+                Your team will come away with a fully-rounded set of skills from business, engineering, and design - all critical to ongoing success and growth
+              </h4>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
       <section className={'modules'}>
         <div className={'section-content'}>
-          <div>
-            <em>Modules 1 / 4</em>
-            <em>Skip to workshop details</em>
-            <em>Skip to Upcoming cohorts</em>
-            <EmButton
-              label={'workshop types'}
-              icon={<Icon icon={ICONS.INFO} theme={THEME.DARK} />}
-              toggle={false}
-              />
-            <EmButton
-              label={'Upcoming Cohorts'}
-              icon={<Icon icon={ICONS.INFO} theme={THEME.DARK} />}
-              toggle={false}
-            />
+          <div className={'skip'}>
+            {/*<em>Modules {currentModule} / 4</em>*/}
+            <div>
+              <StealthButton icon={<Icon icon={ICONS.DOUBLE_DOWN} theme={THEME.DARK} />} label={'Skip to'} />
+              <EmButton label={'workshop offerings'} icon={<Icon icon={ICONS.INFO} theme={THEME.DARK} />} toggle={false} onClick={() => scrollToRef(refDetails, true)}/>
+              {/*<EmButton label={'Upcoming Cohorts'} icon={<Icon icon={ICONS.CALENDAR} theme={THEME.DARK} />} toggle={false}/>*/}
+            </div>
           </div>
           <div>
             <div>
@@ -124,6 +136,88 @@ const Synthesizingfutures = () => {
         </div>
 
       </section>
+      <section className={'details'} ref={refDetails}>
+        <div className={'section-content'}>
+          <div>
+            <h4><em>Full Version:</em></h4>
+            <p>
+              Each module is <em>1 day</em> in duration and programmed for a full week sprint, with day 5 dedicated to sharing results and presentation.
+              The workshop is designed as a practical hands-on start-to-finish guide in synthesizing futures.
+              Ideal in using existing projects that require future visions and future making, focus on ideating for future products, services, business models and scenarios.
+            </p>
+            <h4><em>Takeaways:</em></h4>
+            <ol>
+              <li><p>Training, inspiration, and practice in key innovation tools that will help you your team develop new products, services, programs, or policies</p></li>
+              <li><p>Structured scenarios, stories, roadmaps and other materials suitable for strategic planning</p></li>
+              <li><p>One or more rapid prototypes ready to feed into new product development</p></li>
+              <li><p>A library of data, ideas, and explorations about the technologies, industries, and markets you serve</p></li>
+              <li><p>Process materials and documentation that you can use and reuse in future sessions</p></li>
+            </ol>
+          </div>
+          <div>
+            <h4><em>Compressed version:</em></h4>
+            <p>
+              Each module is <em>4 hours</em> in duration and can be programmed back to back for a full 2 day long workshop.
+              The workshop is designed as a demo to get an idea of the potential of the methodology.
+              Ideal for showcasing method to project/team managers to expand team capacity and clients vision.
+            </p>
+            <h4><em>Takeaways:</em></h4>
+            <ol>
+              <li><p>An understanding of why it’s important to build better futures faster</p></li>
+              <li><p>Practical innovation tools that will help you to develop new products, services, programs, or policies</p></li>
+              <li><p>A “lite” prototype, story, and plan</p></li>
+              <li><p>Insight into the tools and how to use them successfully</p></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      {/*<section className={'cohorts'}>*/}
+      {/*  <div className={'section-content'}>*/}
+      {/*    <div>*/}
+      {/*      <p>*/}
+      {/*        Synthesizing Futures is a 4-week long interactive experience designed for professionals to upskill their foresight, future literacy, and future making capabilities. Participants can start with an idea, a problem, or just an area of curiosity; and finish with a detailed understanding of its causes and consequences, a narrative and conceptual prototype of a future product (or business model, policy, service…), and a roadmap to reach the future space.*/}
+      {/*      <br /><br />*/}
+      {/*        The workshop includes:*/}
+      {/*      </p>*/}
+      {/*      <ul>*/}
+      {/*        <li><p>Four interactive hands-on live online learning and making sessions</p></li>*/}
+      {/*        <li><p>A step-by-step printable playbook on Synthesizing Futures</p></li>*/}
+      {/*        <li><p>Digital tools, data, and frameworks useful for professional projects or personal development</p></li>*/}
+      {/*        <li><p>Discord channel to connect with the Synthesizing Futures community</p></li>*/}
+      {/*        <li><p>Video Recordings of the live sessions</p></li>*/}
+      {/*        <li><p>Access to the pre-recording of the Synthesizing Futures Domestika Course</p></li>*/}
+      {/*      </ul>*/}
+      {/*    </div>*/}
+      {/*    <div>*/}
+      {/*      <em>1st Cohort 2021</em>*/}
+      {/*      <h4>*/}
+      {/*        June 1st - June 29th*/}
+      {/*        Cost 1200 Euros (€)*/}
+      {/*      </h4>*/}
+      {/*      <p>We offer scholarships to people in need, POC, and other underrepresented people </p>*/}
+      {/*      <em>Instructors:</em>*/}
+      {/*      <Link href={'https://www.linkedin.com/in/ceciliatham/'}><a target="_blank"><p>Cecilia Tham</p></a></Link>*/}
+      {/*      <Link href={'https://www.linkedin.com/in/markbunger/'}><a target="_blank"><p>Mark Bünger</p></a></Link>*/}
+      {/*      <br />*/}
+      {/*      <p>What you will learn:</p>*/}
+      {/*      <ol>*/}
+      {/*        <li><p>the framework for gathering insights and finding relevant starting points for your exploration in futures landscapes</p></li>*/}
+      {/*        <li><p>to use the futures wheel for structured brainstorming to consider promises, risks, and consequences of emerging technical and social innovations</p></li>*/}
+      {/*        <li><p>how to use future cones and plan for different horizons</p></li>*/}
+      {/*        <li><p>world-building techniques to contextualize and communicate your vision</p></li>*/}
+      {/*        <li><p>how to write a story arc to build a (future) user journey map, identify their (future) pain points and narrate their triumph (or loss)</p></li>*/}
+      {/*        <li><p>to design, prototype and iterate a solution for your (future) users</p></li>*/}
+      {/*        <li><p>to create multiple roadmaps to your solution and a work plan to make it real</p></li>*/}
+      {/*      </ol>*/}
+      {/*      <p>*/}
+      {/*        Who is this for:*/}
+      {/*        <br />*/}
+      {/*        Synthesizing Futures is designed for professional analysts, forecasters, product designers, and leaders of innovation teams and organizations. It will equip you and your team with future literacy and future making capabilities to not only tackle uncertainties, but to proactively build and design futures that are resilient, sustainable and visionary.*/}
+      {/*      </p>*/}
+
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
       <Footer />
     </motion.main>
   )

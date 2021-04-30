@@ -72,11 +72,16 @@ export const OfferingButton = ({label, icon, link, externalLink, callback, onCli
   )
 }
 
-export const EmButton = ({toggle, label, icon}) => {
+export const EmButton = ({toggle, label, icon, onClick}) => {
   return(
-    // <div className={(toggle) ? styles.EmButtonActive : styles.EmButtonActive}>
-    <button className={styles.EmButtonDefault} >
-    {icon}
+    <button
+      className={(toggle) ? styles.EmButtonActive : styles.EmButtonDefault}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+    >
+      {icon}
       <em>{label}</em>
     </button>
   )

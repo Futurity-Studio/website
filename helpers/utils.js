@@ -19,9 +19,12 @@ export const getAnchor = (router) => {
   return section;
 }
 
-export const scrollToRef = (ref) => {
-  const menuHeight = 80;
-  window.scrollTo(0, ref.current.offsetTop-menuHeight, {top: 0, left: 0, behavior: 'smooth'})
+export const scrollToRef = (ref, center = false) => {
+  let paddingHeight = 138; // menuHeight from _constants.scss
+  if (center){
+    paddingHeight = window.innerHeight/2 - ref.current.offsetHeight/2;
+  }
+  window.scrollTo(0, ref.current.offsetTop-paddingHeight, {top: 0, left: 0, behavior: 'smooth'})
 }
 
 export const openInNewTab = (url) => {
