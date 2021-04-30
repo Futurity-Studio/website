@@ -81,5 +81,22 @@ $corner-radius: .5rem;
   }
 }
 .EmButtonActive{
+  @extend .EmButtonDefault;
+  background-size: 400% 200%;
+  background-repeat: no-repeat !important;
+  background-position: 0 0;
+  transition: background-position, border-width .25s ease-in-out;
+  &:hover {
+    background: initial;
+    color: $page-background-color--dark;
+    border-width: $line-thickness+2;
 
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-dark !important;
+    }
+  }
 }

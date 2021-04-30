@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import styles from './Button.module.scss'
 import {motion} from "framer-motion";
 import {removeWebpFormat} from "../Image/Images";
+import {thumbnailBackgroundSize} from "../../helpers/animation";
 // todo -- check this import with the -- BEM styles
 
 
@@ -73,9 +74,19 @@ export const OfferingButton = ({label, icon, link, externalLink, callback, onCli
 }
 
 export const EmButton = ({toggle, label, icon, onClick}) => {
+  const [background, setBackground] = useState(null)
+  useEffect(() => {
+    if (toggle) {
+      const asset = removeWebpFormat() ? require('images/background--generic.jpg') : require('images/background--generic.jpg?webp');
+      let background = {backgroundImage: `url('${asset}')`}
+      setBackground(background);
+    }
+  }, [toggle])
   return(
-    <button
+    <motion.button
       className={(toggle) ? styles.EmButtonActive : styles.EmButtonDefault}
+      style={background}
+      animate={thumbnailBackgroundSize}
       onClick={(e) => {
         e.preventDefault();
         onClick();
@@ -83,6 +94,6 @@ export const EmButton = ({toggle, label, icon, onClick}) => {
     >
       {icon}
       <em>{label}</em>
-    </button>
+    </motion.button>
   )
 }

@@ -84,7 +84,7 @@ export async function apiRunnerIdeas() {
     const sheets = google.sheets({ version: "v4", auth: jwt });
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.SPREADSHEET_ID,
-      range: "events"
+      range: "ideas"
     });
     return(response);
   } catch (err) {
