@@ -55,7 +55,7 @@ export async function getStaticProps(context) {
 
   let offeringData;
   if (!response.data) {
-    offeringData = defaultOffering;
+    offeringData = [defaultOffering];
   } else {
     offeringData = mapOfferingData(response.data.values)
   }

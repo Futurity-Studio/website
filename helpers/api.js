@@ -4,15 +4,15 @@ import { google } from "googleapis";
 // OFFERINGS
 
 export const defaultOffering = {
-  'codedName': "",
-  'contentType': "",
-  'lab': "",
-  'name': "",
-  'descLong': "",
-  'descContents': "",
-  'features': "",
-  'photoLink': "",
-  'photoFile': "",
+  'codedName': "_",
+  'contentType': "_",
+  'lab': "acommerce",
+  'name': "_",
+  'descLong': "_",
+  'descContents': "_",
+  'features': "_",
+  'photoLink': "_",
+  'photoFile': "placeholder.png",
   'storeLink': "http://www.futurity.studio",
 }
 export async function apiRunnerLabOfferings() {
@@ -34,7 +34,7 @@ export async function apiRunnerLabOfferings() {
     });
 
     // console.log(response)
-    // let tableData = response.data.values;
+    let tableData = response.data.values;
     // console.log(tableData)
 
     return(response);

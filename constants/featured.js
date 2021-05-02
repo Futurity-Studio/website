@@ -61,7 +61,7 @@ export const FeatureContent = [
       backupImage: 'tomeato-optimized.png',
     },
     banner: {
-      image: 'tomeato-optimized.gif',
+      image: 'tomeato-optimizedSmall.gif',
       mobileImage: 'tomeato-optimizedSmall.gif',
       backupImage: 'tomeato-optimized.png',
     },
