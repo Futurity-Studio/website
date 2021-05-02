@@ -3,50 +3,64 @@
 .Modules{
   margin: 0 !important;
   position: relative;
-
-  // TODO -- mobile here
-  //height: 103vh;
-  //height: calc(var(--vh, 1vh) * 103);
-  //overflow: hidden;
-  //background: lightblue;
-
-  //&.scroll{
-  //  //height: 100vh;
-  //  overflow: scroll;
-  //}
-
-
-
-
   .ModulesSectionContent{
+    z-index: 2;
+    position: relative;
     margin: 0 auto;
     max-width: $section-width;
     width: 100%;
     padding: $section-padding $main-padding;
-    >div{
+    @include media("<=tablet"){
+      padding: $section-padding*.25 $main-padding;
+    }
+    @include media("portrait"){
+      padding: $section-padding*.25 $main-padding;
+    }
+    >div {
       min-height: 60vh;
       min-height: calc(var(--vh, 1vh) * 60);
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      >div{
-        align-self: center;
-        //margin-left: 200px;
+      @include media("portrait") {
+        justify-content: center;
+        min-height: 20vh;
+        min-height: calc(var(--vh, 1vh) * 20);
+      }
+      @include media("<=1024px") {
+        justify-content: center;
+        min-height: 30vh;
+        min-height: calc(var(--vh, 1vh) * 30);
+      }
+
+      > div {
+        background: $page-background-color--light;
         min-width: 300px;
         max-width: 500px;
-        p, h4{
+        align-self: center;
+
+        p, h4 {
           max-width: 55ex;
+
           em {
             font-weight: bold;
           }
         }
       }
     }
+      >div:nth-of-type(6){
+        padding-top: $content-padding/2;
+        svg{
+          height: 100%;
+          width: 100vw;
+        }
+      }
     .ModulesSkip{
+      display: none;
       position: sticky;
       top: $menu-page-padding;
       min-height: initial;
-      display: flex;
+      //display: flex;
       flex-direction: row;
       justify-content: flex-end;
       >div{
@@ -58,9 +72,7 @@
     }
   }
   .ModulesCircleWrapper{
-    //background: palegoldenrod;
-    //height: 100vh;
-    //height: calc(var(--vh, 1vh) * 100);
+    z-index: 1;
     width: 100vw;
     position: absolute;
     top: 0;
@@ -76,16 +88,77 @@
 
     svg{
       transform-origin: center !important;
+      display: none;
     }
-
-    // TODO -- mobile here
-
-    @include media(">=1024px"){
+    @include media(">1024px"){
       svg{
+        display: initial;
         height: 100vh;
         height: calc(var(--vh, 1vh) * 100);
         position: relative;
         left: -50vh;
+      }
+    }
+  }
+}
+
+.Overview{
+  margin: 0 !important;
+  min-height: 50vh;
+  min-height: calc(var(--vh, 1vh) * 50);
+  background: $page-background-color--dark;
+  padding: $section-padding 0;
+  color: $page-background-color--light;
+  >div{
+    margin: 0 auto;
+    padding: 0 $main-padding;
+    max-width: $section-width;
+    width: 100%;
+    display: grid;
+    grid: min-content 1fr 1fr / 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    p, h4 {
+      max-width: 55ex;
+    }
+
+    > div:nth-of-type(1) {
+      //background: red;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+    > div:nth-of-type(2) {
+      //background: purple;
+    }
+    > div:nth-of-type(3) {
+      //background: green;
+    }
+    > div:nth-of-type(4) {
+      //background: teal;
+    }
+    > div:nth-of-type(5) {
+      //background: orange;
+      position: relative;
+    }
+    > div:nth-of-type(6) {
+      //background: pink;
+      grid-column: 3 / 4;
+      grid-row: 2 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include media("<768px"){
+      grid: min-content 1fr 1fr 1fr / 1fr 1fr;
+      > div:nth-of-type(1) {
+        //background: red;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+      > div:nth-of-type(6) {
+        //background: pink;
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
       }
     }
   }

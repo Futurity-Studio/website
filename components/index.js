@@ -15,7 +15,7 @@ import Card from "./Card/Card";
 import DeliverableSampler from "./DeliverableSampler/DeliverableSampler";
 import CommunityJoin from "./Form/CommunityJoin";
 import Idea from "./Idea/Idea";
-import { Modules } from './SynthesizingFutures/synthfutures'
+import { Modules, Sfoverview} from './SynthesizingFutures/synthfutures'
 
 export {
   Menu,
@@ -38,5 +38,5 @@ export {
   CommunityJoin,
   Idea,
   EmButton,
-  Modules,
+  Modules, Sfoverview
 }

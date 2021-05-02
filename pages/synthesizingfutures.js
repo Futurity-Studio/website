@@ -9,7 +9,7 @@ import {
   EmButton,
   Footer,
   Icon,
-  ICONS, Modules,
+  ICONS, Modules, Sfoverview,
   StealthButton,
   THEME
 } from "../components";
@@ -21,26 +21,16 @@ import {useIntersection,} from "react-use";
 // todo -- see if forcing a rerender on start handles the ref positions without needing defaulted view...
 
 const Synthesizingfutures = () => {
-  // const [lockScroll, toggleLockedScroll] = useToggle(false);
 
-
-  const [lockScroll, setLockedScroll] = useState(true);
-  // useLockBodyScroll(lockScroll);
   const refDetails = useRef();
   const refOverview = useRef();
   const refCohorts = useRef();
-  // const refModules = useRef();
   const { scrollY } = useViewportScroll();
   let inputRangeOrigin = (refOverview.current) ? refOverview.current.offsetTop - refOverview.current.offsetHeight : 1080*.5;
-  // console.log(inputRangeOrigin)
   let gap = 150;
   useEffect(() => {
     gap = window.innerHeight * .125;
   }, [])
-  // console.log(gap);
-
-  // const { scrollYProgress } = useElementScroll(refModules)
-  // const rotationValue = useTransform(scrollYProgress,[0,.25,.5,.75, 1],[0,0,-90,-180,-270]);
 
   let y1 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap    ], [gap, 0]);
   let y2 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+ 50], [gap+ 50, 0]);
@@ -48,59 +38,12 @@ const Synthesizingfutures = () => {
   let y4 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+150], [gap+ 150, 0]);
   let y5 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+250], [gap+ 200, 0]);
 
-  // const modulesIntersection = useIntersection(refModules, {
-  //   root: null,
-  //   rootMargin: '0px',
-  //   threshold: 0.96,
-  // });
-  //
-  //
-  //
-  // // useEffect(() => {
-  // //   window.addEventListener('scroll', (e) => {
-  // //     console.log(e)
-  // //   });
-  // // },[window])
-  //
-  // useEffect(() => {
-  //   // console.log(lockScroll)
-  //
-  //   if (modulesIntersection){
-  //     console.log(modulesIntersection.intersectionRatio)
-  //     // console.log(modulesIntersection.isIntersecting)
-  //     // if (modulesIntersection.isIntersecting){
-  //       // setLockedScroll(false)
-  //     // } else {
-  //     //   setLockedScroll(true)
-  //     // }
-  //     console.log(modulesIntersection.intersectionRatio)
-  //     if (modulesIntersection.intersectionRatio > .96 && lockScroll){
-  //       // setLockedScroll(false)
-  //       console.log('unlocking module locking scroll')
-  //       setLockedScroll(false);
-  //     // } else if (modulesIntersection.intersectionRatio > 0.99 && !lockScroll){
-  //     //   // setLockedScroll(true)
-  //     } else if (modulesIntersection.intersectionRatio < 0.4 && !lockScroll){
-  //       setLockedScroll(true)
-  //     }
-  //
-  //
-  //
-  //
-  //     // console.log(modulesIntersection.intersectionRect)
-  //
-  //   }
-  // }, [modulesIntersection] )
-
   return(
     <motion.main
       className={'SynthFutures'}
       initial={{  opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
       animate={{  opacity: 1, transition:{  delay: .25, duration: .25, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
-      style={{
-        // overflow: (lockScroll) ? 'hidden' : 'initials'
-      }}
     >
       <section className={'banner'}>
         <div className={'background'}>
@@ -127,40 +70,8 @@ const Synthesizingfutures = () => {
           <div />
         </div>
       </section>
-      <section className={'overview'} ref={refOverview}>
-        <div className={'section-content'}>
 
-          <div>
-            <h2>Four Step Futures Synthesis</h2>
-          </div>
-          <motion.div style={{y: y1}}>
-            <h4>01_a map_</h4>
-            <h3>Mapping Futures Landscape</h3>
-          </motion.div>
-          <motion.div style={{y: y2}}>
-            <h4>02_a story_</h4>
-            <h3>Building Futures World</h3>
-          </motion.div>
-          <motion.div style={{y: y3}}>
-            <h4>03_an object_</h4>
-            <h3>Making Future Artifact</h3>
-          </motion.div>
-          <motion.div style={{y: y4}}>
-            <h4>04_a plan_</h4>
-            <h3>Forming Roadmap and Backcasting</h3>
-          </motion.div>
-          <motion.div style={{y: y5}}>
-            <div>
-              <em>Build a full set of capabilities</em>
-              <h4>
-                Your team will come away with a fully-rounded set of skills from business, engineering, and design - all critical to ongoing success and growth
-              </h4>
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
-
+      <Sfoverview />
       <Modules />
 
       <section className={'details'} ref={refDetails}>

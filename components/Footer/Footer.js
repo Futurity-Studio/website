@@ -131,13 +131,16 @@ const Footer = () => {
       <div className={'section-content'}>
 
         <DividedContent
-          medLeft={size.width >= breakpoint}
+          // medLeft={size.width >= breakpoint}
           hiddenBar={true}
           left={<div>
             <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
               <a target='_blank' className={styles.cta}>
                 <motion.div whileHover="hover" initial="initial">
-                  <h3>Let's Build Better Futures.</h3>
+                  <div>
+                    <em>Contact us</em>
+                    <h3>Let's Build Better Futures.</h3>
+                  </div>
                   <motion.div
                     className={styles.contactMail} variants={growArrow}
                   >

@@ -167,7 +167,7 @@ $breakpoint: 1024px;
   }
 
   /* Mobile */
-  @include media("<=#{$breakpoint}") {
+  @include media("<#{$breakpoint}") {
     top: .5rem !important;
     height: calc(#{$menu-height} * .65);
     padding: 0 $main-padding / 2 !important;

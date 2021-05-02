@@ -81,6 +81,10 @@ section{
     margin: $section-padding*.25 0;
     //padding: $section-padding*.75 0;
   }
+  @include media("portrait") {
+    margin: $section-padding*.25 0;
+    //padding: $section-padding*.75 0;
+  }
 
   &.large{
     padding: $section-padding*1.75 0;

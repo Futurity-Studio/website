@@ -617,7 +617,7 @@
       }
 
       @include media("<=1024px"){
-        grid: .6fr .4fr / 1fr;
+        grid: .8fr .2fr / 1fr;
       }
     }
     .background{
@@ -656,137 +656,6 @@
       }
     }
 
-  }
-  .overview{
-    margin: 0 !important;
-    min-height: 50vh;
-    min-height: calc(var(--vh, 1vh) * 50);
-    background: $page-background-color--dark;
-    padding: $section-padding 0;
-    color: $page-background-color--light;
-    .section-content {
-      display: grid;
-      grid: min-content 1fr 1fr / 1fr 1fr 1fr;
-      grid-column-gap: 1rem;
-
-      p, h4 {
-        max-width: 55ex;
-      }
-
-      > div:nth-of-type(1) {
-        //background: red;
-        grid-column: 1 / 4;
-        grid-row: 1 / 2;
-      }
-      > div:nth-of-type(2) {
-        //background: purple;
-      }
-      > div:nth-of-type(3) {
-        //background: green;
-      }
-      > div:nth-of-type(4) {
-        //background: teal;
-      }
-      > div:nth-of-type(5) {
-        //background: orange;
-        position: relative;
-      }
-      > div:nth-of-type(6) {
-        //background: pink;
-        grid-column: 3 / 4;
-        grid-row: 2 / 4;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
-  }
-  .modules{
-    margin: 0 !important;
-    position: relative;
-
-    // TODO -- mobile here
-    height: 103vh;
-    height: calc(var(--vh, 1vh) * 103);
-    overflow: hidden;
-    background: lightblue;
-
-    &.scroll{
-      //height: 100vh;
-      overflow: scroll;
-    }
-
-
-
-
-    .section-content{
-      padding: $section-padding $main-padding;
-      >div{
-        min-height: 60vh;
-        min-height: calc(var(--vh, 1vh) * 60);
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        >div{
-          align-self: center;
-          //margin-left: 200px;
-          min-width: 300px;
-          max-width: 500px;
-          p, h4{
-            max-width: 55ex;
-            em {
-              font-weight: bold;
-            }
-          }
-        }
-      }
-      .skip{
-        position: sticky;
-        top: $menu-page-padding;
-        min-height: initial;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        >div{
-          display: grid;
-          grid: min-content min-content min-content / 1fr;
-          justify-items: flex-end;
-          grid-row-gap: $content-padding/8;
-        }
-      }
-    }
-    .circleWrapper{
-      //background: palegoldenrod;
-      //height: 100vh;
-      //height: calc(var(--vh, 1vh) * 100);
-      width: 100vw;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      >div{
-        position: sticky;
-        top: 2rem;
-        //background: mediumturquoise;
-        display: grid;
-        grid: 1fr / 1fr;
-      }
-
-      svg{
-        transform-origin: center;
-      }
-
-      // TODO -- mobile here
-
-      @include media(">=1024px"){
-        svg{
-          height: 100vh;
-          height: calc(var(--vh, 1vh) * 100);
-          position: relative;
-          left: -50vh;
-        }
-      }
-    }
   }
   .details{
     margin-top: 0 !important;
