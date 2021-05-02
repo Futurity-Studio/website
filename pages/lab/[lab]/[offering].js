@@ -98,18 +98,19 @@ export async function getStaticPaths() {
     return {
       notFound: true,
     }
+  } else {
+    const offeringData = mapOfferingData(response.data.values)
+    const paths = offeringData.map(o => {
+      return ({
+        params: {
+          lab: o.lab.toLowerCase(),
+          offering: encodeURI(o.name.replace(/ /g, '').replace(/\//g, '').replace(/:/g, '').replace(/\./g, ''))
+        }
+      })
+    })
+    console.log(paths)
+    return {paths, fallback: true}
   }
-  const offeringData = mapOfferingData(response.data.values)
-  const paths = offeringData.map(o => {
-    return({
-      params: {
-        lab: o.lab.toLowerCase(),
-        offering:encodeURI(o.name.replace(/ /g,'').replace(/\//g,'').replace(/:/g,'').replace(/\./g,''))
-      }})
-  })
-  paths.push()
-  // console.log(paths)
-  return { paths, fallback: true }
 }
 
 export default Offering;

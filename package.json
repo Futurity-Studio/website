@@ -45,6 +45,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^3.2.0",
     "frontmatter-markdown-loader": "^2.0.0",
     "netlify-plugin-cache-nextjs": "^1.5.2"
   }
