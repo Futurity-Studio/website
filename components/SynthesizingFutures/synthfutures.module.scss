@@ -1,0 +1,92 @@
+@import "theme/_constants";
+
+.Modules{
+  margin: 0 !important;
+  position: relative;
+
+  // TODO -- mobile here
+  //height: 103vh;
+  //height: calc(var(--vh, 1vh) * 103);
+  //overflow: hidden;
+  //background: lightblue;
+
+  //&.scroll{
+  //  //height: 100vh;
+  //  overflow: scroll;
+  //}
+
+
+
+
+  .ModulesSectionContent{
+    margin: 0 auto;
+    max-width: $section-width;
+    width: 100%;
+    padding: $section-padding $main-padding;
+    >div{
+      min-height: 60vh;
+      min-height: calc(var(--vh, 1vh) * 60);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      >div{
+        align-self: center;
+        //margin-left: 200px;
+        min-width: 300px;
+        max-width: 500px;
+        p, h4{
+          max-width: 55ex;
+          em {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .ModulesSkip{
+      position: sticky;
+      top: $menu-page-padding;
+      min-height: initial;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      >div{
+        display: grid;
+        grid: min-content min-content min-content / 1fr;
+        justify-items: flex-end;
+        grid-row-gap: $content-padding/8;
+      }
+    }
+  }
+  .ModulesCircleWrapper{
+    //background: palegoldenrod;
+    //height: 100vh;
+    //height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    >div{
+      position: sticky;
+      top: 2rem;
+      //background: mediumturquoise;
+      display: grid;
+      grid: 1fr / 1fr;
+    }
+
+    svg{
+      transform-origin: center !important;
+    }
+
+    // TODO -- mobile here
+
+    @include media(">=1024px"){
+      svg{
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        position: relative;
+        left: -50vh;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {motion, useViewportScroll, useTransform, transform} from "framer-motion";
+import {motion, useViewportScroll, useTransform, transform, useElementScroll} from "framer-motion";
 import Link from 'next/link';
 import Lottie from "lottie-react";
 import {
@@ -9,27 +9,38 @@ import {
   EmButton,
   Footer,
   Icon,
-  ICONS,
+  ICONS, Modules,
   StealthButton,
   THEME
 } from "../components";
 import { cross } from "../constants/lottie";
 import BackgroundWide from "../components/Icon/BackgroundWide";
 import {scrollToRef} from "../helpers/utils";
+import {useIntersection,} from "react-use";
+
+// todo -- see if forcing a rerender on start handles the ref positions without needing defaulted view...
 
 const Synthesizingfutures = () => {
-  const [currentModule, setCurrentModule] = useState(1);
+  // const [lockScroll, toggleLockedScroll] = useToggle(false);
+
+
+  const [lockScroll, setLockedScroll] = useState(true);
+  // useLockBodyScroll(lockScroll);
   const refDetails = useRef();
   const refOverview = useRef();
   const refCohorts = useRef();
+  // const refModules = useRef();
   const { scrollY } = useViewportScroll();
   let inputRangeOrigin = (refOverview.current) ? refOverview.current.offsetTop - refOverview.current.offsetHeight : 1080*.5;
-  console.log(inputRangeOrigin)
+  // console.log(inputRangeOrigin)
   let gap = 150;
   useEffect(() => {
     gap = window.innerHeight * .125;
   }, [])
-  console.log(gap);
+  // console.log(gap);
+
+  // const { scrollYProgress } = useElementScroll(refModules)
+  // const rotationValue = useTransform(scrollYProgress,[0,.25,.5,.75, 1],[0,0,-90,-180,-270]);
 
   let y1 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap    ], [gap, 0]);
   let y2 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+ 50], [gap+ 50, 0]);
@@ -37,12 +48,59 @@ const Synthesizingfutures = () => {
   let y4 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+150], [gap+ 150, 0]);
   let y5 = useTransform(scrollY, [inputRangeOrigin, inputRangeOrigin+gap+250], [gap+ 200, 0]);
 
+  // const modulesIntersection = useIntersection(refModules, {
+  //   root: null,
+  //   rootMargin: '0px',
+  //   threshold: 0.96,
+  // });
+  //
+  //
+  //
+  // // useEffect(() => {
+  // //   window.addEventListener('scroll', (e) => {
+  // //     console.log(e)
+  // //   });
+  // // },[window])
+  //
+  // useEffect(() => {
+  //   // console.log(lockScroll)
+  //
+  //   if (modulesIntersection){
+  //     console.log(modulesIntersection.intersectionRatio)
+  //     // console.log(modulesIntersection.isIntersecting)
+  //     // if (modulesIntersection.isIntersecting){
+  //       // setLockedScroll(false)
+  //     // } else {
+  //     //   setLockedScroll(true)
+  //     // }
+  //     console.log(modulesIntersection.intersectionRatio)
+  //     if (modulesIntersection.intersectionRatio > .96 && lockScroll){
+  //       // setLockedScroll(false)
+  //       console.log('unlocking module locking scroll')
+  //       setLockedScroll(false);
+  //     // } else if (modulesIntersection.intersectionRatio > 0.99 && !lockScroll){
+  //     //   // setLockedScroll(true)
+  //     } else if (modulesIntersection.intersectionRatio < 0.4 && !lockScroll){
+  //       setLockedScroll(true)
+  //     }
+  //
+  //
+  //
+  //
+  //     // console.log(modulesIntersection.intersectionRect)
+  //
+  //   }
+  // }, [modulesIntersection] )
+
   return(
     <motion.main
       className={'SynthFutures'}
       initial={{  opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
       animate={{  opacity: 1, transition:{  delay: .25, duration: .25, easings: "linear" } }}
       exit={{     opacity: 0, transition:{  delay: .25, duration: .25, easings: "linear" } }}
+      style={{
+        // overflow: (lockScroll) ? 'hidden' : 'initials'
+      }}
     >
       <section className={'banner'}>
         <div className={'background'}>
@@ -102,51 +160,9 @@ const Synthesizingfutures = () => {
 
         </div>
       </section>
-      <section className={'modules'}>
-        <div className={'section-content'}>
-          <div className={'skip'}>
-            {/*<em>Modules {currentModule} / 4</em>*/}
-            <div>
-              <StealthButton icon={<Icon icon={ICONS.DOUBLE_DOWN} theme={THEME.DARK} />} label={'Skip to'} />
-              <EmButton label={'workshop offerings'} icon={<Icon icon={ICONS.INFO} theme={THEME.DARK} />} toggle={false} onClick={() => scrollToRef(refDetails)}/>
-              <EmButton label={'Upcoming Cohorts'} icon={<Icon icon={ICONS.CALENDAR} theme={THEME.DARK} />} toggle={false} onClick={() => scrollToRef(refCohorts)}/>
-            </div>
-          </div>
-          <div>
-            <div>
-              <em>Module 1</em>
-              <h4>
-                <em>Mapping the Futures Space</em> starts with generating multiple scenarios and solutions. You will create detailed projections of positive and negative consequences, to identify the most desirable courses of action.
-              </h4>
-            </div>
-          </div>
-          <div>
-            <div>
-              <em>Module 2</em>
-              <h4>
-                <em>Building Future World</em> involves creating context and narrative around your desired future product or service. Combining techniques used in stories and screenplays, participants put themselves in the life of customers and users - thus improving the product idea and thinking through how to communicate it.
-              </h4>
-            </div>
-          </div>
-          <div>
-            <div>
-              <em>Module 3</em>
-              <h4>
-                <em>Designing Future Artifacts</em> is about making prototypes for fast testing with colleagues, clients, and other audiences. Building and designing an artifact can also help you make decisions and open up new ideas and possibilities that a mere thought- or digital exercise would not uncover.
-              </h4>
-            </div>
-          </div>
-          <div>
-            <div>
-              <em>Module 4</em>
-              <h4>
-                <em>Creating Future Roadmaps</em> or backcasting guides a plan of action in order to get to your desired future, by working backwards in steps to the present day from the future scenario you created.
-              </h4>
-            </div>
-          </div>
-        </div>
 
-      </section>
+      <Modules />
+
       <section className={'details'} ref={refDetails}>
         <BorderButton
           content={<em>Workshop Offerings</em>}
