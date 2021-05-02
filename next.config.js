@@ -7,9 +7,6 @@ const sitemap = require('nextjs-sitemap-generator');
 // -- todo -  this for SEO - https://snipcart.com/blog/react-seo-nextjs-tutorial
 
 const nextConfig = {
-  distDir: 'build',
-  webpack: (configuration, options) => {
-  },
   target: 'serverless',
 };
 
