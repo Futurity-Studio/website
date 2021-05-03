@@ -38,9 +38,7 @@ const Offering = ({offering, lab}) => {
                 />
               </div>
               <div>
-                {
                   <Image src={offering.photoFile} alt={offering.name}/>
-                }
               </div>
             </div>
           </section>
@@ -59,7 +57,7 @@ const Offering = ({offering, lab}) => {
       <Footer />
     </motion.main>
   )
-}
+};
 
 export async function getStaticProps(context) {
 

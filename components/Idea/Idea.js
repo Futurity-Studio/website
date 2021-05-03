@@ -6,9 +6,9 @@ const Idea = ({idea, unq, descLong}) => {
   return(
     <div className={styles.Idea}>
       <em>{idea.location}</em>
-      <h4>{idea.title}</h4>
+      <h4>{idea.date}: {idea.title}</h4>
       {descLong}
-      <Link href={idea.hostLink}><a target="_blank">{idea.format} at {idea.host}</a></Link>
+      <Link href={idea.hostLink}><a target="_blank">{idea.format} at {idea.host || 'TBD'}</a></Link>
     </div>
   )
 }
