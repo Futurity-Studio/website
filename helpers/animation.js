@@ -67,9 +67,9 @@ export const landingContainer = {
 }
 
 export const landingItems = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
 }
 
 // Todo finish this!
@@ -80,4 +80,32 @@ export const landingItemsHeading = {
     position: "fixed",
     top: 10,
   },
+}
+
+
+export const thumbnailBackgroundSize = {
+  backgroundSize: '100% 150%',
+  transition: {
+    duration: 6,
+    easings: "backInOut",
+    repeat: Infinity,
+    repeatType: "mirror"
+  }
+};
+
+export const chatBubble = {
+  initial: {
+    y: 0,
+    x:0
+  },
+  hover: {
+    scale:[1, 1.1, .9],
+    times: [0, .5, 1],
+    transition: {
+      duration: 1,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeIn",
+    }
+  }
 }

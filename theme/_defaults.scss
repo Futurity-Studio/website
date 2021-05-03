@@ -21,6 +21,14 @@ body{
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
   }
+
+  // 404
+  >div >div >div >div{
+    min-height: 100%;
+    display: inline-flex !important;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 h1{
@@ -70,6 +78,10 @@ section{
   //padding: $section-padding 0;
   margin: $section-padding 0;
   @include media("<=tablet") {
+    margin: $section-padding*.25 0;
+    //padding: $section-padding*.75 0;
+  }
+  @include media("portrait") {
     margin: $section-padding*.25 0;
     //padding: $section-padding*.75 0;
   }

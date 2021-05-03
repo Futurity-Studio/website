@@ -1,8 +1,10 @@
 @import "theme/constants";
 @import "theme/vendor_mixins";
 
+$breakpoint: 1024px;
+
 .Menu{
-  z-index: 9;
+  z-index: 100;
   position: fixed;
   top: 2rem;
   left: 2rem;
@@ -17,6 +19,12 @@
   align-items: center;
   overflow: hidden;
 
+  mix-blend-mode: exclusion;
+  &:hover{
+    background: $page-background-color--dark !important;
+    mix-blend-mode: normal !important;
+  }
+
   section{
     grid-column: 1 / span 3 ;
   }
@@ -24,7 +32,6 @@
   * {
     color: $menu-color !important;
   }
-  mix-blend-mode: exclusion;
 
   .logoWrapper {
     height: 100%;
@@ -55,7 +62,7 @@
     margin: 0;
     display: grid;
     //grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    grid-template-columns: min-content min-content 90px 160px;
+    grid-template-columns: min-content min-content min-content 90px 160px;
     grid-column-gap: 2rem;
     align-items: center;
     height: 100%;
@@ -109,7 +116,7 @@
   }
 
   .contactButton{
-    @include media("<880px") {
+    @include media("<#{$breakpoint}") {
       display: none;
     }
     > a {
@@ -120,7 +127,7 @@
   }
 
   .mobileMenuButton{
-    @include media(">=880px") {
+    @include media(">=#{$breakpoint}") {
       display: none;
     }
     display: flex;
@@ -165,7 +172,7 @@
   }
 
   /* Mobile */
-  @include media("<=880px") {
+  @include media("<#{$breakpoint}") {
     top: .5rem !important;
     height: calc(#{$menu-height} * .65);
     padding: 0 $main-padding / 2 !important;

@@ -12,6 +12,7 @@
   padding-left: $main-padding;
   margin-left: calc((100vw - #{$main-width-max}) / 2);
   overflow: hidden;
+  cursor: pointer;
 
   @include media("<=1280px") {
     margin-left: 0 !important;

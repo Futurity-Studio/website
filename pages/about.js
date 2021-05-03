@@ -10,7 +10,18 @@ import {getAnchor, getParam, openInNewTab, scrollToRef} from "../helpers/utils";
 import { Advisors } from "../constants/featured";
 
 const About = () => {
+  const refClients = useRef()
   const router = useRouter();
+
+  useEffect(() => {
+    const {i} = router.query
+    console.log(i)
+    if ((i ==='clients') && (refClients)){
+      scrollToRef(refClients)
+    }
+  }, [router.query]);
+
+
   const [ deliverableSection, setDeliverableSection ] = useState(0);
   const [ methodologySection, setMethodologySection ] = useState(null);
 
@@ -140,7 +151,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className={'clients'}>
+      <section className={'clients'} ref={refClients}>
         <BorderButton
           id={'Our Customers'}
           content={<em>Proudly Serving</em>}

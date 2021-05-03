@@ -4,18 +4,35 @@
 .ThumbnailBase{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content auto min-content;
+  grid-template-rows: min-content min-content 1fr auto min-content;
   cursor: pointer;
 
   em{
     margin: $content-padding/2 $content-padding/2 0;
   }
-  div{
+  > div{
     margin: $content-padding/2 $content-padding/2 0;
     &:first-of-type{
       margin-top: 0;
     }
     &:nth-of-type(2){
+      margin-top: 0 !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      em{
+        margin: 0!important;
+        font-weight: bold;
+      }
+      >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: .2rem;
+      }
+    }
+    &:nth-of-type(3){
       display: grid;
       grid-template-columns: min-content auto min-content;
       grid-template-rows: min-content 1fr;
@@ -69,38 +86,81 @@
 .Details{
   align-self: stretch;
   margin-top: $content-padding/2;
-  table{
-    margin-top: $content-padding/2;
 
-    border-collapse:collapse;
-    //border:1px solid $menu-inverse-color;
+  > div{
+    display: grid;
+    grid: 70vh / .4fr .6fr;
+    grid-column-gap: $content-padding/2;
+    height: 70vh;
 
-    td{
-      //border:1px solid $menu-inverse-color;
+    @include media("<=768px"){
+      grid: auto / 1fr;
+      height: auto;
+
+      > div:nth-of-type(1) {
+        display: none;
+      }
+    }
+
+
+  >div:nth-of-type(1){
+      text-transform: capitalize;
+      margin-top: 22px !important;
+      >div {
+        cursor: pointer;
+      }
+    }
+    > div:nth-of-type(2) {
+      overflow: scroll;
+
+      &::-webkit-scrollbar-track
+      {
+        -webkit-box-shadow: none;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar
+      {
+        width: $line-thickness;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb
+      {
+        background-color: $page-background-color--dark;
+        border: $line-thickness solid $page-background-color--dark;
+      }
+
+
+      >div:first-of-type{
+        margin-top: 20px !important;
+      }
     }
   }
-  thead th:nth-of-type(odd){
-    @extend %label;
-    text-align: right;
-    padding-right: .5rem;
-  }
-  thead th:nth-of-type(even){
-    font-weight: normal;
-    text-align: left;
-    min-width: 30%;
-  }
-  tbody td:nth-of-type(odd){
-    text-align: right;
-    padding-right: .5rem;
-  }
-  tbody td:nth-of-type(even){
-    text-align: left;
-    min-width: 30%;
-  }
-  tbody td{
-    padding: 4px;
-  }
-  p{
-    margin: 1/3rem;
+}
+
+.OfferingCard{
+  margin: $content-padding/2 0;
+  > div{
+    display: grid;
+    grid: 1fr / auto min-content;
+    //justify-content: flex-end;
+    //align-items: center;
+    cursor: pointer;
+    h4{
+      //flex-basis: 300px;
+    }
+    &:hover{
+      >div{
+        padding-right: 2rem;
+      }
+    }
+    >div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 2.5rem;
+      transition: padding-right .25s ease-out;
+    }
   }
 }

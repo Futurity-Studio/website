@@ -4,3 +4,100 @@
   cursor: pointer;
   @extend %labeled-icon;
 }
+
+.OfferingButton{
+  @extend .Button;
+
+  // normalize //
+  background: none;
+  border: none;
+  border-radius: 0;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+  // normalize done
+
+  width: 100%;
+  height: 4rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-size: 400% 200%;
+  background-repeat: no-repeat;
+  border-style: solid;
+  border-color: $page-background-color--dark;
+  border-width: $line-thickness;
+  transition: border-width 0.1s ease-in;
+
+  &:hover{
+    border-width: 5px;
+  }
+  >div {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    em{
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+$corner-radius: .5rem;
+
+.EmButtonDefault{
+  display: grid;
+  grid: 1fr / min-content min-content;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 1ex;
+  min-width: initial !important;
+  border: $line-thickness solid $page-background-color--dark;
+  border-radius: $corner-radius;
+  background: transparent;
+  cursor: pointer;
+  transition: all .15s ease-out;
+  > em {
+    white-space: nowrap;
+    position: relative;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover{
+    background: $page-background-color--dark;
+    color: $page-background-color--light;
+    svg,
+    g,
+    mask,
+    path,
+    use{
+      fill: $icon-light !important;
+      stroke: $icon-light !important;
+    }
+  }
+}
+.EmButtonActive{
+  @extend .EmButtonDefault;
+  background-size: 400% 200%;
+  background-repeat: no-repeat !important;
+  background-position: 0 0;
+  transition: background-position, border-width .25s ease-in-out;
+  &:hover {
+    background: initial;
+    color: $page-background-color--dark;
+    border-width: $line-thickness+2;
+
+    svg,
+    g,
+    mask,
+    path,
+    use {
+      fill: $icon-dark !important;
+    }
+  }
+}

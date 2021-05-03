@@ -12,11 +12,12 @@ const Menu = () => {
 
   const menuVariant = {
     initial: {
-      opacity: 0
+      opacity: 0,
+      background: 'rgba(0, 0, 0, 0)',
     },
     animateIn: {
       opacity: 1,
-      height: (size.width < 880) ? 58 : 82,
+      height: (size.width < 1024) ? 58 : 82,
       background: 'rgba(0, 0, 0, 0)',
       mixBlendMode: 'exclusion',
       transition: {
@@ -133,7 +134,6 @@ const Menu = () => {
       }
     }
   }
-
 
   const router = useRouter();
   const [mobileMenu, setMobileMenu] = useState(false);

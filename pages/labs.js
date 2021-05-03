@@ -7,9 +7,6 @@ import Link from "next/link";
 import {motion, useElementScroll} from "framer-motion";
 import {LabGallery, LabThumbnail} from "../components/Labs/Lab";
 
-const scrollToRef = (ref) => {
-  window.scrollTo( 0, ref.current.offsetTop - 80, { behavior: 'smooth' });
-}
 
 
 
@@ -47,6 +44,7 @@ const Labs = () => {
 
 
 
+// TODO -- add target on button here
 
   return(
     <motion.main

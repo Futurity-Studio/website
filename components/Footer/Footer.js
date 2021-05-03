@@ -8,17 +8,27 @@ import {motion} from "framer-motion";
 import { useWindowSize } from "react-use";
 
 const Footer = () => {
+  const [hack, setRedraw] = useState(false);
   const router = useRouter();
   const footerNavRefs = LINKS.map(_ => useRef(null));
   const size = useWindowSize();
   const breakpoint = 1024;
+
+  let isSafari;
+  useEffect(() => {
+    setRedraw(true);
+    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    if (isSafari){
+      setRedraw(true)
+    }
+  },[])
 
   const navAnimations = {
     initial: {
       color: 'rgba(247,247,247,1)',
     },
     hover: {
-      color: 'rgba(247,247,247,0)',
+      color: (hack) ? 'rgba(247,247,247,1)' : 'rgba(247,247,247,0)',
       backgroundSize: '100% 100%',
       transition: {
         duration: .10,
@@ -50,7 +60,6 @@ const Footer = () => {
     hover: {
       y: 0,
       transition: {
-        delay: .1,
         duration: .1,
         easings: "backInOut",
       }
@@ -132,13 +141,16 @@ const Footer = () => {
       <div className={'section-content'}>
 
         <DividedContent
-          medLeft={size.width >= breakpoint}
+          // medLeft={size.width >= breakpoint}
           hiddenBar={true}
           left={<div>
             <Link prefetch={false} href={'mailto:inquiry@futurity.studio'}>
               <a target='_blank' className={styles.cta}>
                 <motion.div whileHover="hover" initial="initial">
-                  <h3>Let's Future.</h3>
+                  <div>
+                    <em>Contact us</em>
+                    <h3>Let's Build Better Futures.</h3>
+                  </div>
                   <motion.div
                     className={styles.contactMail} variants={growArrow}
                   >
