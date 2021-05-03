@@ -1,5 +1,5 @@
 import {apiRunnerLabOfferings, defaultOffering, mapOfferingData} from "../../../helpers/api";
-import {DividedContent, Footer, Icon, ICONS, Image, OfferingButton, THEME} from "../../../components";
+import {Footer, Icon, ICONS, Image, OfferingButton, THEME} from "../../../components";
 import {motion} from "framer-motion";
 import React from "react";
 import {LabData} from "../../../constants";
@@ -8,8 +8,6 @@ import {useRouter} from "next/router";
 
 const Offering = ({offering, lab}) => {
   const router = useRouter();
-  // console.log({offering, lab})
-
   return (
     <motion.main
       className={'Offering'}
