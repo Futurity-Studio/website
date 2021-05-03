@@ -1,24 +1,15 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {motion, useViewportScroll, useTransform, transform, useElementScroll} from "framer-motion";
+import React, {useEffect, useRef} from 'react';
+import {motion, useViewportScroll, useTransform} from "framer-motion";
 import Link from 'next/link';
-import Lottie from "lottie-react";
 import {
   BorderButton,
-  CommunityJoin,
-  DividedContent,
   EmButton,
   Footer,
   Icon,
   ICONS, Modules, Sfoverview,
-  StealthButton,
   THEME
 } from "../components";
-import { cross } from "../constants/lottie";
 import BackgroundWide from "../components/Icon/BackgroundWide";
-import {scrollToRef} from "../helpers/utils";
-import {useIntersection,} from "react-use";
-
-// todo -- see if forcing a rerender on start handles the ref positions without needing defaulted view...
 
 const Synthesizingfutures = () => {
 
@@ -157,7 +148,11 @@ const Synthesizingfutures = () => {
               <em>Cost</em>
               <h4>€1200 (Euro)</h4>
               <p>We offer scholarships to people in need, BIPOC, and other underrepresented people </p>
-              <EmButton label={'enroll now'} toggle={true}/>
+              <EmButton
+                label={'enroll now'}
+                toggle={true}
+                onClick={() => (window.open('mailto:inquiry@futurity.studio', "") )}
+              />
             </div>
             <div>
               <p>

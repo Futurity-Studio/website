@@ -19,6 +19,12 @@ $breakpoint: 1024px;
   align-items: center;
   overflow: hidden;
 
+  mix-blend-mode: exclusion;
+  &:hover{
+    background: $page-background-color--dark !important;
+    mix-blend-mode: normal !important;
+  }
+
   section{
     grid-column: 1 / span 3 ;
   }
@@ -26,7 +32,6 @@ $breakpoint: 1024px;
   * {
     color: $menu-color !important;
   }
-  mix-blend-mode: exclusion;
 
   .logoWrapper {
     height: 100%;

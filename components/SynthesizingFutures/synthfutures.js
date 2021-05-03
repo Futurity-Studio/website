@@ -5,13 +5,7 @@ import {Icon, ICONS, THEME} from "../Icon/Icon";
 import {scrollToRef} from "../../helpers/utils";
 import styles from './synthfutures.module.scss'
 import {useOrientation, useWindowSize} from "react-use";
-
-const getCenterScrollPos = (ref) => {
-  return( ref.current.getBoundingClientRect().top + window.scrollY - window.innerHeight/2 + ref.current.offsetHeight/2)
-}
-const getBottomThirdScrollPos = (ref) => {
-  return( ref.current.getBoundingClientRect().top + window.scrollY - window.innerHeight/2)
-}
+import {getCenterScrollPos, getBottomThirdScrollPos} from "../../helpers/utils";
 
 export const Modules = () => {
   const [hack, setRedraw] = useState(false);

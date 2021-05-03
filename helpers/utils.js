@@ -31,3 +31,10 @@ export const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
   if (newWindow) newWindow.opener = null
 }
+
+export const getCenterScrollPos = (ref) => {
+  return( ref.current.getBoundingClientRect().top + window.scrollY - window.innerHeight/2 + ref.current.offsetHeight/2)
+}
+export const getBottomThirdScrollPos = (ref) => {
+  return( ref.current.getBoundingClientRect().top + window.scrollY - window.innerHeight/2)
+}

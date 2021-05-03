@@ -23,6 +23,12 @@ $breakpoint: 1024px;
     color: $font-color--light;
   }
 
+  >div >div:first-of-type{
+    @include media(">=1024px") {
+      grid-template-columns: 450px 2px 1fr !important;
+    }
+  }
+
   .navItemBasic{
     background-color: $font-color--light;
     background-clip: text;

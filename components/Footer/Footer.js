@@ -8,17 +8,27 @@ import {motion} from "framer-motion";
 import { useWindowSize } from "react-use";
 
 const Footer = () => {
+  const [hack, setRedraw] = useState(false);
   const router = useRouter();
   const footerNavRefs = LINKS.map(_ => useRef(null));
   const size = useWindowSize();
   const breakpoint = 1024;
+
+  let isSafari;
+  useEffect(() => {
+    setRedraw(true);
+    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    if (isSafari){
+      setRedraw(true)
+    }
+  },[])
 
   const navAnimations = {
     initial: {
       color: 'rgba(247,247,247,1)',
     },
     hover: {
-      color: 'rgba(247,247,247,0)',
+      color: (hack) ? 'rgba(247,247,247,1)' : 'rgba(247,247,247,0)',
       backgroundSize: '100% 100%',
       transition: {
         duration: .10,
