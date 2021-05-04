@@ -164,7 +164,7 @@ const Synthesizingfutures = () => {
             <div className={'cohorts--modules'}>
               <div>
                 <em>Module 1 - Date & Time</em>
-                <p>Thursday June 3rd, 17-16 CET</p>
+                <p>Thursday June 3rd, 17-20 CET</p>
                 <p>
                   Mapping the Futures Space starts with generating multiple scenarios and solutions. You will create detailed projections of positive and negative consequences, to identify the most desirable courses of action.
                 </p>
@@ -177,7 +177,7 @@ const Synthesizingfutures = () => {
 
               <div>
                 <em>Module 2 - Date & Time</em>
-                <p>Thursday June 10rd, 17-16 CET</p>
+                <p>Thursday June 10th, 17-20 CET</p>
                 <p>
                   Building Future Worlds involves creating context and narrative around your desired future product or service. Combining techniques used in stories and screenplays, participants put themselves in the life of customers and users - thus improving the product idea and thinking through how to communicate it.
                 </p>
@@ -190,7 +190,7 @@ const Synthesizingfutures = () => {
 
               <div>
                 <em>Module 3 - Date & Time</em>
-                <p>Thursday June 17rd, 17-16 CET</p>
+                <p>Thursday June 17th, 17-20 CET</p>
                 <p>
                   Designing Future Artifacts is about making prototypes for fast testing with colleagues, clients, and other audiences. Building and designing an artifact can also help you make decisions and open up new ideas and possibilities that a mere thought- or digital exercise would not uncover.
                 </p>
@@ -203,7 +203,7 @@ const Synthesizingfutures = () => {
 
               <div>
                 <em>Module 4 - Date & Time</em>
-                <p>Thursday June 24rd, 17-16 CET</p>
+                <p>Thursday June 24th, 17-20 CET</p>
                 <p>
                   Creating Future Roadmaps or backcasting guides a plan of action in order to get to your desired future, by working backwards in steps to the present day from the future scenario you created.
                 </p>
