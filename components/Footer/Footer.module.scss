@@ -139,6 +139,21 @@ $breakpoint: 1024px;
     }
   }
 
+  .documentFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    a{
+      position: relative;
+      top: -3px;
+      em{
+        text-decoration: underline;
+      }
+    }
+  }
+
   .location {
     @include media("<=500px") {
       grid-column: 1 / span 11 !important;

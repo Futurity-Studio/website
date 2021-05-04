@@ -178,8 +178,14 @@ const Footer = () => {
           medLeft={true}
           hiddenBar={true}
           right={
-            <div>
+            <div className={styles.documentFooter}>
               <p>Building Better Futures Faster<br />Copyright &#169; Futurity Studio</p>
+              <em>We don't use cookies</em>
+              <Link prefetch={false} href={'https://www.privacypolicygenerator.info/live.php?token=huTV3vpAX0DiYic7ktoDpXYXI8AgfxlU'}>
+                <a>
+                  <em>Privacy Policy</em>
+                </a>
+              </Link>
             </div>
           }
           left={
