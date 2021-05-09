@@ -2832,10 +2832,10 @@
     rollup-plugin-terser "^7.0.2"
     typescript "^4.1.5"
 
-"@netlify/plugin-nextjs@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.1.0.tgz#93f81c4bc6201584f42e74dc86b25cfadeb2639f"
-  integrity sha512-UJ3I69fx5j2/ZIw+ODnOGZd4GLv1ogfGBQdIticrmysbx+hHb5UjaFyy2JL8pXYyE37oDjEZJWi/PyTyTbx4lQ==
+"@netlify/plugin-nextjs@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.2.2.tgz#d8910d8ad08d4032b3b0e2bbdbcbf40ad11de494"
+  integrity sha512-DRL3lLhckbZ/JUTxV85za/95/RR9QJCGLL9D3nwidGmvMTn/8YgtHXNW31/j3jA4THKBw+IpC6vcp8qEMI7FsQ==
   dependencies:
     "@sls-next/lambda-at-edge" "^1.5.2"
     adm-zip "^0.5.4"
