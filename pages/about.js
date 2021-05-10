@@ -22,54 +22,54 @@ const About = () => {
   }, [router.query]);
 
 
-  const [ deliverableSection, setDeliverableSection ] = useState(0);
-  const [ methodologySection, setMethodologySection ] = useState(null);
+  // const [ deliverableSection, setDeliverableSection ] = useState(0);
+  // const [ methodologySection, setMethodologySection ] = useState(null);
 
   const anchors = {'methodology': useRef(null), 'team': useRef(null)};
 
-  const [ analysisRef, analysisRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (analysisRefInView){
-      setDeliverableSection(0);
-    }
-  }, [analysisRefInView])
-  const [ artifactRef, artifactRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (artifactRefInView){
-      setDeliverableSection(1);
-    }
-  }, [artifactRefInView])
-  const [ actionRef, actionRefInView] = useInView({
-    rootMargin: '0px 0px -45% 0px',
-    threshold: 0.25,
-    triggerOnce: true
-  });
-  useEffect(() => {
-    if (actionRefInView){
-      setDeliverableSection(2);
-    }
-  }, [actionRefInView])
-
-  useEffect(() => {
-    // if( !router.asPath.includes(('#')) ) {
-    //   setTimeout(() => {
-    //     window.scrollTo(0, 0);
-    //   }, 100);
-    // } else {
-    //   let toAnchor = getAnchor(router);
-    //   if (toAnchor && anchors[toAnchor]) {
-    //     scrollToRef(anchors[toAnchor])
-    //   }
-    // }
-  }, []);
+  // const [ analysisRef, analysisRefInView] = useInView({
+  //   rootMargin: '0px 0px -45% 0px',
+  //   threshold: 0.25,
+  //   triggerOnce: true
+  // });
+  // useEffect(() => {
+  //   if (analysisRefInView){
+  //     setDeliverableSection(0);
+  //   }
+  // }, [analysisRefInView])
+  // const [ artifactRef, artifactRefInView] = useInView({
+  //   rootMargin: '0px 0px -45% 0px',
+  //   threshold: 0.25,
+  //   triggerOnce: true
+  // });
+  // useEffect(() => {
+  //   if (artifactRefInView){
+  //     setDeliverableSection(1);
+  //   }
+  // }, [artifactRefInView])
+  // const [ actionRef, actionRefInView] = useInView({
+  //   rootMargin: '0px 0px -45% 0px',
+  //   threshold: 0.25,
+  //   triggerOnce: true
+  // });
+  // useEffect(() => {
+  //   if (actionRefInView){
+  //     setDeliverableSection(2);
+  //   }
+  // }, [actionRefInView])
+  //
+  // useEffect(() => {
+  //   // if( !router.asPath.includes(('#')) ) {
+  //   //   setTimeout(() => {
+  //   //     window.scrollTo(0, 0);
+  //   //   }, 100);
+  //   // } else {
+  //   //   let toAnchor = getAnchor(router);
+  //   //   if (toAnchor && anchors[toAnchor]) {
+  //   //     scrollToRef(anchors[toAnchor])
+  //   //   }
+  //   // }
+  // }, []);
 
 
   const [background, setBackground] = useState(null)
