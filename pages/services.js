@@ -135,7 +135,7 @@ const Services = () => {
 
           <DividedContent
             smallRight={true}
-            left={<p>We help companiesWe help companies recognize & plan existential threats and emerging markets, reach sustainable development goals, achieve an emerging market fit, and discover novel business strategies.<br /><br />Our work goes beyond writing reports and creating design thinking exercises. The future synthesis approach transforms the perfect mix of data science, experimentation, and forecasting into a narrative artifact, product, and experience to help your team realize a better future faster.</p>}
+            left={<p>We help companies recognize & plan existential threats and emerging markets, reach sustainable development goals, achieve an emerging market fit, and discover novel business strategies.<br /><br />Our work goes beyond writing reports and creating design thinking exercises. The future synthesis approach transforms the perfect mix of data science, experimentation, and forecasting into a narrative artifact, product, and experience to help your team realize a better future faster.</p>}
             right={
               <div>
                 <svg
